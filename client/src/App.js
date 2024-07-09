@@ -1,14 +1,20 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar'
+import WhyUs from './Components/WhyUs'
+import Stats from './Pages/Stats'
 
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
+      <div className='relative top-24 '>
+        <Stats />
+        <WhyUs />
       
-    </Router>
+      </div>
+    </BrowserRouter>
   )
 }
 
