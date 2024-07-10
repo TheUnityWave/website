@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
-          <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
+          <li className='hover:text-primary transition cursor-pointer'>About Us</li>
           <li className='hover:text-primary transition cursor-pointer' onClick={() => scrollToSection('services')}>Services</li>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
           <li onClick={() => scrollToSection('getintouch')} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
