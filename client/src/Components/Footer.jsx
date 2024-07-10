@@ -1,5 +1,6 @@
 import logo from '../Images/logo.png';
 import React from 'react';
+import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -14,17 +15,17 @@ const Footer = () => {
                             Plot number 505, Gurugram, Haryana 122022, IN
                         </address>
                         <div className="flex mt-4">
-                            <a href="#" className="mr-4">
-                                <img src="path-to-facebook-icon" alt="Facebook" />
+                            <a href="#" className="mr-8">
+                                <Facebook />
                             </a>
-                            <a href="#" className="mr-4">
-                                <img src="path-to-linkedin-icon" alt="LinkedIn" />
+                            <a href="#" className="mr-8">
+                                <Instagram />
                             </a>
-                            <a href="#" className="mr-4">
-                                <img src="path-to-youtube-icon" alt="YouTube" />
+                            <a href="#" className="mr-8">
+                                <Youtube />
                             </a>
-                            <a href="#">
-                                <img src="path-to-instagram-icon" alt="Instagram" />
+                            <a href="#" className='mr-8'>
+                                <Linkedin />
                             </a>
                         </div>
                     </div>
