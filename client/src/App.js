@@ -12,12 +12,22 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
+
       <div className='relative top-24 font-primary'>
-        <Stats />
-        <Services />
-        <WhyUs />
-        <GetInTouch/>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Stats />
+              <Services />
+              <WhyUs />
+              <GetInTouch/>
+            </>
+          } />
+          <Route path="/career" element={<Careers />} />
+        </Routes>
       </div>
+
+      <Footer />
     </BrowserRouter>
   )
 }
