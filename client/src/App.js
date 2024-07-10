@@ -25,9 +25,9 @@ function App() {
           } />
           <Route path="/career" element={<Careers />} />
         </Routes>
+          <Footer />
       </div>
 
-      <Footer />
     </BrowserRouter>
   )
 }
