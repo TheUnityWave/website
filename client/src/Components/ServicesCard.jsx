@@ -73,7 +73,7 @@ const ServicesPage = () => {
       {servicesJson.services.map((service, index) => (
         <div 
           key={service.id} 
-          className={`services w-full flex justify-around items-center px-8 py-12 ${
+          className={`services w-full flex flex-col gap-6 justify-around items-center px-8 py-12 ${
             index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
           }`}
         >
@@ -88,9 +88,9 @@ const ServicesPage = () => {
               Know More
             </button>
           </div>
-          <div className="images flex justify-center items-center gap-4">
+          <div className="images flex md:flex-row flex-col justify-center items-center gap-4">
             {service.images.map((item, itemIndex) => (
-              <img key={itemIndex} src={item} alt={`${service.name} image ${itemIndex + 1}`} className="max-w-full h-auto" />
+              <img key={itemIndex} src={item} alt={`${service.name} image ${itemIndex + 1}`} className="max-w-full h-auto rounded-md" />
             ))}
           </div>
         </div>
