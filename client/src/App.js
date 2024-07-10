@@ -1,21 +1,24 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import WhyUs from './Components/WhyUs'
 import Careers from './Pages/Careers'
 import Footer from './Components/Footer'
-
+import Stats from './Pages/Stats'
+import GetInTouch from './Pages/GetInTouch'
+import Services from './Pages/Services'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<WhyUs />} />
-        <Route path="/career" element={<Careers />} />
-      </Routes>
-      <Footer />
-    </Router>
+      <div className='relative top-24 font-primary'>
+        <Stats />
+        <Services />
+        <WhyUs />
+        <GetInTouch/>
+      </div>
+    </BrowserRouter>
   )
 }
 
