@@ -3,7 +3,7 @@ import MapComponent from '../Components/MapComponent'
 
 export default function GetInTouch() {
     return (
-        <div className='flex flex-col md:px-24 px-12 py-12 font-primary'>
+        <div id='getintouch' className='flex flex-col md:px-24 px-12 py-12 font-primary'>
 
             <h1 className='title text-primary font-primary font-bold text-4xl'>Get in Touch</h1>
 

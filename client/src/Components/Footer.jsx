@@ -4,7 +4,7 @@ import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-cyan-900 text-white">
+        <footer className="bg-primary text-white">
             <div className="container mx-auto px-4 py-16">
                 <div className="flex flex-wrap justify-between md:mx-16">
                     <div className="mx-5 w-auto md:w-1/4 mb-6 md:mb-0">

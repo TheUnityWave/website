@@ -10,24 +10,33 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn(`Element with ID '${sectionId}' not found.`);
+    }
+  };
+
   return (
     <>
       <div className='bg-white h-24 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
         <Link to="/">
-          <img src={Logo} alt='logo' className='h-24'/>
+          <img src={Logo} alt='logo' className='h-24' />
         </Link>
         <div onClick={toggleMenu} className='block md:hidden cursor-pointer'>
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
-          <li className='hover:text-primary transition'><Link to="/">Home</Link></li>
-          <li className='hover:text-primary transition'><Link to="/about">About Us</Link></li>
-          <li className='hover:text-primary transition'><Link to="/services">Services</Link></li>
-          <li className='hover:text-primary transition'><Link to="/career">Career</Link></li>
-          <li>
-            <Link to="/contact" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
+          <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
+          <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
+          <li className='hover:text-primary transition cursor-pointer' onClick={() => scrollToSection('services')}>Services</li>
+          <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
+          <li onClick={() => scrollToSection('getintouch')} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
+            {/* <Link to="/contact" > */}
               Get in Touch
-            </Link>
+            {/* </Link> */}
           </li>
         </ul>
       </div>
