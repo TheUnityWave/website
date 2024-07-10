@@ -4,7 +4,7 @@ import careersImage from '../Images/career.png';
 const Careers = () => {
   return (
     <>
-      <div className="pt-10">
+      <div className="">
         <img src={careersImage} alt="Careers" className="w-full h-96 object-cover" />
       </div>
 
