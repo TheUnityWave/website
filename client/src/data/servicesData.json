@@ -1,0 +1,128 @@
+{
+  "services": [
+    {
+      "id": "soft-services",
+      "name": "Soft Services",
+      "images": [
+        "https://imgur.com/xaUO9R9.jpg",
+        "https://imgur.com/nSC0sJc.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "House Keeping",
+          "image": "https://imgur.com/LNlYm3Y.jpg",
+          "description": "Comprehensive cleaning and maintenance of living spaces."
+        },
+        {
+          "name": "Pantry valet",
+          "image": "https://imgur.com/4Q5HcK0.jpg",
+          "description": "Efficient management and stocking of office pantries."
+        },
+        {
+          "name": "Office boy",
+          "image": "https://imgur.com/tc09odr.jpg",
+          "description": "General assistance and support in office environments."
+        },
+        {
+          "name": "Driver",
+          "image": "https://imgur.com/LzRZHzD.jpg",
+          "description": "Professional transportation services for executives and staff."
+        }        
+      ]
+    },
+    {
+      "id": "specialization",
+      "name": "Specialization Services",
+      "images": [
+        "https://imgur.com/Lih8FiT.jpg",
+        "https://imgur.com/VhMd2G9.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "Façade cleaning through manpower",
+          "image": "https://imgur.com/tc09odr.jpg",
+          "description": "Manual cleaning of building exteriors by trained professionals."
+        },
+        {
+          "name": "Façade cleaning through drones",
+          "image": "https://imgur.com/LzRZHzD.jpg",
+          "description": "Innovative drone technology for efficient and safe exterior cleaning."
+        },
+        {
+          "name": "Marble and granite polishing",
+          "image": "https://imgur.com/tc09odr.jpg",
+          "description": "Expert polishing services for marble and granite surfaces."
+        },
+        {
+          "name": "Carpet and upholstery cleaning",
+          "image": "https://imgur.com/LzRZHzD.jpg",
+          "description": "Deep cleaning of carpets and upholstered furniture."
+        },
+        {
+          "name": "Waste Management",
+          "image": "https://imgur.com/tc09odr.jpg",
+          "description": "Comprehensive waste collection, segregation, and disposal services."
+        }
+      ]
+    },
+    {
+        "id": "business",
+        "name": "Business Support",
+        "images": [
+          "https://imgur.com/1gybWfJ.jpg"
+        ],
+        "subservices": [
+          {
+            "name": "Business support manpower",
+            "image": "https://imgur.com/4Q5HcK0.jpg",
+            "description": "Manual cleaning of building exteriors by trained professionals."
+          },
+          {
+            "name": "Corporate wellness",
+            "image": "https://imgur.com/LzRZHzD.jpg",
+            "description": "Innovative drone technology for efficient and safe exterior cleaning."
+          },
+          {
+            "name": "Organizing Functions",
+            "image": "https://imgur.com/LzRZHzD.jpg",
+            "description": "Expert polishing services for marble and granite surfaces."
+          }
+        ]
+      },
+      {
+        "id": "technical",
+        "name": "Technical Services",
+        "images": [
+          "https://imgur.com/VhMd2G9.jpg",
+          "https://imgur.com/Lih8FiT.jpg"
+        ],
+        "subservices": [
+          {
+            "name": "ETP",
+            "image": "https://imgur.com/tc09odr.jpg",
+            "description": "Manual cleaning of building exteriors by trained professionals."
+          },
+          {
+            "name": "WTP",
+            "image": "https://imgur.com/LzRZHzD.jpg",
+            "description": "Innovative drone technology for efficient and safe exterior cleaning."
+          },
+          {
+            "name": "HVAC",
+            "image": "https://imgur.com/tc09odr.jpg",
+            "description": "Expert polishing services for marble and granite surfaces."
+          },
+          {
+            "name": "Plumbing",
+            "image": "https://imgur.com/LzRZHzD.jpg",
+            "description": "Deep cleaning of carpets and upholstered furniture."
+          },
+          {
+            "name": "Power Supply",
+            "image": "https://imgur.com/tc09odr.jpg",
+            "description": "Comprehensive waste collection, segregation, and disposal services."
+          }
+        ]
+      }
+  ]
+}

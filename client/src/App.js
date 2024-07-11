@@ -7,6 +7,7 @@ import Footer from './Components/Footer'
 import Stats from './Pages/Stats'
 import GetInTouch from './Pages/GetInTouch'
 import Services from './Pages/Services'
+import ServiceDetails from './Pages/ServiceDetails'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             </>
           } />
           <Route path="/career" element={<Careers />} />
+          <Route path="/service/:serviceId" element={<ServiceDetails/>} />
         </Routes>
           <Footer />
       </div>
