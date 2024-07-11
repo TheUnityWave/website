@@ -1,0 +1,102 @@
+/* App.css */
+
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 40px;
+    padding-bottom: 100px; /* Increased padding for bottom space */
+    position: relative; /* Added relative positioning */
+  }
+  .header {
+    background: #36d1dc;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 5px solid #fff;
+    position: relative;
+    z-index: 1; /* Ensure header is above other content */
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .tagline {
+    font-size: 1.5em;
+    margin: 10px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .content {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Ensure relative positioning */
+    z-index: 1; /* Ensure content is above background */
+    margin-bottom: 40px; /* Added margin between sections */
+    background: #e8f4fa; /* Light blue background for content */
+    border-radius: 12px;
+  }
+  .content.vision {
+    background: #e0f7fa; /* Specific light blue for vision */
+  }
+  .content.mission {
+    background: #e8f5e9; /* Specific light green for mission */
+  }
+  .content h2 {
+    font-size: 2.5em;
+    margin: 0 0 20px;
+    color: #36d1dc;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: color 0.3s ease;
+    cursor: pointer; /* Add cursor pointer for hover effect */
+  }
+  .content h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 100px; /* Increased width of underline */
+    height: 5px; /* Increased height of underline */
+    background: #36d1dc;
+    border-radius: 2px;
+    transition:0.3s ease; /* Smooth transition for underline color */
+  }
+  .content:hover h2 {
+    color: #5b86e5; /* Change text color on hover */
+  }
+  .content:hover h2::after {
+    background: #5b86e5; /* Change underline color on hover */
+  }
+  .content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    text-align: center;
+    margin: 0;
+  }
