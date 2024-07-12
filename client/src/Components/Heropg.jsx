@@ -3,10 +3,10 @@ import CompanyImage from '../Images/company1.jpg';
 
 const MainContent = () => {
   return (
-    <div className="min-h-screen w-full bg-gray-100 pt-24">
+    <div className="w-full bg-gray-100 pt-24">
       {/* Main Section */}
-      <div className="flex flex-col md:flex-row w-full h-screen">
-        <div className="w-full md:w-1/2 bg-[#21506E] text-white flex items-center justify-center p-8">
+      <div className="flex flex-col md:flex-row w-full">
+        <div className="md:w-1/2 bg-[#21506E] text-white flex items-center justify-center p-8 style={{ height: '500px' }}">
           <div className="text-center md:text-left max-w-lg">
             <h1 className="text-4xl font-bold">The Unity Wave</h1>
             <p className="text-lg mt-4">
@@ -17,7 +17,7 @@ const MainContent = () => {
             </button>
           </div>
         </div>
-        <div className="w-full md:w-1/2 h-full">
+        <div className="w-full md:w-1/2" style={{ height: '500px' }}>
           <img src={CompanyImage} alt="Company Working" className="w-full h-full object-cover" />
         </div>
       </div>
