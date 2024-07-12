@@ -8,6 +8,7 @@ import Stats from './Pages/Stats'
 import GetInTouch from './Pages/GetInTouch'
 import Services from './Pages/Services'
 import ServiceDetails from './Pages/ServiceDetails'
+import Testimonials from './Pages/Testimonials'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -70,6 +71,7 @@ function App() {
             <Stats />
             <Services />
             <WhyUs />
+            <Testimonials/>
           </>
         } />
         <Route path="/career" element={<Careers />} />
