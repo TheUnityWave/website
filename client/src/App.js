@@ -1,12 +1,15 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './Components/Navbar'
-import WhyUs from './Components/WhyUs'
-import Careers from './Pages/Careers'
-import Footer from './Components/Footer'
-import Stats from './Pages/Stats'
-import GetInTouch from './Pages/GetInTouch'
-import Services from './Pages/Services'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import WhyUs from './Components/WhyUs';
+import Careers from './Pages/Careers';
+import Footer from './Components/Footer';
+import Stats from './Pages/Stats';
+import GetInTouch from './Pages/GetInTouch';
+import Services from './Pages/Services';
+import EmployeeVerification from './Pages/EmployeeVerification';
+import AdminDashboard from './Pages/AdminDashboard';
+import EmployeeDashboard from './Pages/EmployeeDashboard';
 
 function App() {
   return (
@@ -20,16 +23,19 @@ function App() {
               <Stats />
               <Services />
               <WhyUs />
-              <GetInTouch/>
+              <GetInTouch />
             </>
           } />
           <Route path="/career" element={<Careers />} />
-        </Routes>
-          <Footer />
-      </div>
 
+          {/* <Route path="/employee-verification" element={<EmployeeVerification />} /> */}
+          <Route path="/admin/*" element={<AdminDashboard />} />
+          <Route path="/employee/*" element={<EmployeeDashboard />} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
