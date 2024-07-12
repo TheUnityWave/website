@@ -3,7 +3,7 @@ import React from 'react'
 
 const TestimonialCard = ({ name, title, review, imageUrl }) => {
     return (
-      <div className="item mx-auto w-[23rem] h-[23rem] flex flex-col justify-center items-center bg-white rounded-lg overflow-hidden shadow-md shadow-white">
+      <div className="item mx-auto w-[23rem] h-full md:h-[24rem] flex flex-col justify-center items-center bg-white rounded-lg overflow-hidden shadow-md shadow-white">
         <div className="px-6 py-4">
           <div className="flex justify-center mb-4">
             <img 
