@@ -9,11 +9,11 @@ const Services = () => {
       {servicesJson.services.map((service, index) => (
         <div 
           key={service.id} 
-          className={`services w-full flex flex-col gap-6 justify-around items-center px-8 py-12 ${
+          className={`services flex flex-col gap-6 w-[100vw]  justify-around items-start px-8 py-12 ${
             index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
           }`}
         >
-          <div className='content text-primary flex flex-col gap-8'>
+          <div className='content text-primary flex flex-col gap-6'>
             <h1 className='text-4xl font-semibold'>{service.name}</h1>
             <ul>
               {service.subservices.map((item, itemIndex) => (

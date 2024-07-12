@@ -13,7 +13,7 @@ const ServiceDetails = () => {
 
   return (
     <div className="w-[100vw] h-auto">
-      <h1 className="text-4xl font-bold text-center bg-primary py-6 text-white">{service.name}</h1>
+      <h1 className="text-4xl font-bold text-center bg-primary pt-6 text-white">{service.name}</h1>
       <div className="">
         {service.subservices.map((subservice, index) => (
           <ServiceCard
