@@ -3,6 +3,7 @@ import careersImage from '../Images/career.png';
 import axios from 'axios';
 
 const Careers = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -23,6 +24,7 @@ const Careers = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const data = new FormData();
     for (const key in formData) {
       data.append(key, formData[key]);
@@ -38,6 +40,8 @@ const Careers = () => {
     } catch (error) {
       console.error('Error submitting application:', error);
       alert('Error submitting application. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -154,9 +158,9 @@ const Careers = () => {
             <div className="flex items-center justify-center">
               <button
                 className="w-full bg-cyan-900  text-white font-semibold py-3 px-6 mt-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
+                type="submit" disabled={isLoading}
               >
-                Submit
+                {isLoading ? 'Submitting...' : 'Submit'}
               </button>
             </div>
           </form>

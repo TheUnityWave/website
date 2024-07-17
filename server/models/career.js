@@ -26,10 +26,8 @@ const CareerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  resumeFile: {
-    type: String,
-    required: true,
-  },
+  resumeFile: { type: String, required: true },
+  viewableResumeFile: { type: String, required: true },
   createdAt: {
     type: Date,
     default: Date.now,
