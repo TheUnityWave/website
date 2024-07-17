@@ -13,11 +13,11 @@ export default function Testimonials() {
     const options = {
         loop: true,
         center: true,
-        margin: 0,
+        margin: 35,
         responsiveClass: true,
         autoplay: true,
         autoplayTimeout: 3000,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         animateOut: 'slideOutUp',
         nav: false,
         responsive: {

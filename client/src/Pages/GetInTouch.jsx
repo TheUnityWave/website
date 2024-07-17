@@ -7,6 +7,7 @@ export default function GetInTouch() {
         firstName: '',
         lastName: '',
         email: '',
+        mobile: '',
         message: ''
     });
 
@@ -50,6 +51,10 @@ export default function GetInTouch() {
                         <label className='w-full'>
                             <p className='block mb-2 text-md font-medium text-gray-900'>E-mail <br /> </p>
                             <input id='email' value={formData.email} onChange={handleChange} type="email" required placeholder='johndoe@gmail.com' className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500' />
+                        </label>
+                        <label className='w-full'>
+                            <p className='block mb-2 text-md font-medium text-gray-900'>Mobile Number <br /> </p>
+                            <input id='mobile' value={formData.mobile} onChange={handleChange} type="tel" required placeholder='9876543210' className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500' />
                         </label>
                         <label className='w-full'>
                             <p className='block mb-2 text-md font-medium text-gray-900'>Message <br /> </p>
