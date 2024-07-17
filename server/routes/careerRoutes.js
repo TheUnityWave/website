@@ -17,11 +17,9 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: 'resumes',
-    // allowed_formats: ['pdf', 'doc', 'docx'],
     resource_type: 'auto',
-    format: async (req, file) => 'pdf', // supports promises as well
-    // transformation: [{ quality: 'auto' }],
-    public_id: (req, file) => file.filename,
+    format: async (req, file) => file.mimetype.split('/')[1], // keep the original format
+    public_id: (req, file) => file.originalname.split('.')[0], // use the original file name without extension
   },
 });
 
@@ -38,11 +36,8 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
     let resumeFile = null;
 
     if (req.file) {
-      // Construct the Cloudinary URL with PDF format
-      resumeFile = cloudinary.url(req.file.filename, {
-        format: 'pdf',
-        resource_type: 'auto'
-      });
+      // Get the secure URL from Cloudinary
+      resumeFile = req.file.path;
       console.log('File uploaded to Cloudinary:', resumeFile);
     } else {
       console.log('No file was uploaded');
