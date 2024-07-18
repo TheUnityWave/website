@@ -13,7 +13,7 @@ const GetInTouchSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    mobileNumber: {
+    mobile: {
         type: String, 
         required: true
     },
