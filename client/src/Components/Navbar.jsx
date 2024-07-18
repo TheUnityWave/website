@@ -25,9 +25,9 @@ export default function Navbar() {
 
   return (
     <>
-      <div className='bg-white h-24 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
+      <div className='bg-white h-20 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
         <Link to="/">
-          <img src={Logo} alt='logo' className='h-24' />
+          <img src={Logo} alt='logo' className='h-20' />
         </Link>
         <div onClick={toggleMenu} className='block md:hidden cursor-pointer'>
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
@@ -37,7 +37,7 @@ export default function Navbar() {
           <li className='hover:text-primary transition cursor-pointer'>About Us</li>
           <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
-          <li onClick={() => handleNavigation('getintouch')} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
+          <li onClick={() => handleNavigation('getintouch')} className='btn'>
             Get in Touch
           </li>
         </ul>
@@ -50,7 +50,7 @@ export default function Navbar() {
             <li ><Link to="/services" onClick={toggleMenu}>Services</Link></li>
             <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
             <li className='my-4'>
-              <Link to="/contact" onClick={toggleMenu} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
+              <Link to="/contact" onClick={toggleMenu} className='btn'>
                 Get in Touch
               </Link>
             </li>

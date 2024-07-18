@@ -39,7 +39,7 @@ export default function Testimonials() {
 
     return (
         <div className="testimonials bg-primary md:p-24 py-24 flex flex-col gap-12">
-            <h1 className='text-4xl text-white w-full text-left font-bold'> What They Say About Us... </h1>
+            <h1 className='text-3xl text-white w-full text-left font-bold'> What They Say About Us... </h1>
             <div className=' flex justify-center items-center gap-5'>
                 <OwlCarousel className="owl-theme" {...options}>
                     {testimonialsData.testimonials.map((item) => (
