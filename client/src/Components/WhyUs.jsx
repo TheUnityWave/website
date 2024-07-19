@@ -12,7 +12,7 @@ const WhyUs = () => {
                 <img src={logo} alt="Logo" className="contrast-200" />
             </div>
             <div className="flex flex-wrap justify-evenly gap-8">
-                <div className="md:w-1/5 text-3xl leading-normal font-bold ">Why are we client’s favourite FM company?</div>
+                <div className="md:w-1/5 text-4xl leading-normal font-bold ">Why are we client’s favourite FM company?</div>
                 <div className="w-full md:w-1/4 border-2 border-stone-400 p-9 relative mb-16 md:mb-0">
                     <div className="absolute px-2 -top-8 left-8 bg-cyan-900">
                         <img src={verificationImage} alt="Border" className="w-16 h-16" />

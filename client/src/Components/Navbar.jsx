@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Logo from '../Images/logo.png'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
-
-  const navigate = useNavigate();
 
   const handleNavigation = (sectionId) => {
     if (typeof window.scrollToSection === 'function') {

@@ -32,7 +32,7 @@ export default function GetInTouch() {
     return (
         <div id='getintouch' className='flex flex-col md:px-24 px-12 py-12 font-primary'>
 
-            <h1 className='title text-primary font-primary font-bold text-3xl'>Get in Touch</h1>
+            <h1 className='title text-primary font-primary font-bold text-4xl'>Get in Touch</h1>
 
             <div className='form-map-conatiner flex flex-col md:flex-row justify-between md:gap-16 gap-8'>
 
