@@ -7,14 +7,14 @@ import techImage from '../Images/Circuit.png';
 
 const WhyUs = () => {
     return (
-        <div className="relative bg-cyan-900 text-white md:py-32 py-16 px-16">
+        <div className="relative bg-primary overflow-hidden w-[100vw] text-white md:py-32 py-16 px-16">
             <div className="absolute bottom-0 right-0 opacity-30 md:w-1/3">
                 <img src={logo} alt="Logo" className="contrast-200" />
             </div>
             <div className="flex flex-wrap justify-evenly gap-8">
                 <div className="md:w-1/5 text-4xl leading-normal font-bold ">Why are we client’s favourite FM company?</div>
                 <div className="w-full md:w-1/4 border-2 border-stone-400 p-9 relative mb-16 md:mb-0">
-                    <div className="absolute px-2 -top-8 left-8 bg-cyan-900">
+                    <div className="absolute px-2 -top-8 left-8 bg-primary">
                         <img src={verificationImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
@@ -26,7 +26,7 @@ const WhyUs = () => {
                 </div>
 
                 <div className="w-full md:w-1/4 border-2 border-stone-400 p-9 relative">
-                    <div className="absolute px-2 -top-8 left-8 bg-cyan-900">
+                    <div className="absolute px-2 -top-8 left-8 bg-primary">
                         <img src={trainingImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
@@ -38,7 +38,7 @@ const WhyUs = () => {
                 </div>
 
                 <div className="w-full md:w-1/4 border-2 border-stone-400 p-9 mt-16 relative">
-                    <div className="absolute px-2 -top-8 left-8 bg-cyan-900">
+                    <div className="absolute px-2 -top-8 left-8 bg-primary">
                         <img src={issueResolveImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
@@ -50,7 +50,7 @@ const WhyUs = () => {
                 </div>
 
                 <div className="w-full md:w-1/4 border-2 border-stone-400 p-9 mt-16 relative">
-                    <div className="absolute px-2 -top-8 left-8 bg-cyan-900">
+                    <div className="absolute px-2 -top-8 left-8 bg-primary">
                         <img src={techImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">

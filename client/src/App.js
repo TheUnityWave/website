@@ -9,6 +9,7 @@ import GetInTouch from './Pages/GetInTouch'
 import Services from './Pages/Services'
 import ServiceDetails from './Pages/ServiceDetails'
 import Testimonials from './Pages/Testimonials'
+import HeroPg from './Pages/HeroPg'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -68,6 +69,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
+            <HeroPg/>
             <Stats />
             <Services />
             <WhyUs />
