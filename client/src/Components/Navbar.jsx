@@ -44,12 +44,12 @@ export default function Navbar() {
           <ul className='text-center flex flex-col items-center justify-center h-full gap-6'>
             <li ><Link to="/" onClick={toggleMenu}>Home</Link></li>
             <li ><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-            <li ><Link to="/services" onClick={toggleMenu}>Services</Link></li>
+            <li onClick={() => handleNavigation('services')}>Services</li>
             <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
-            <li className='my-4'>
-              <Link to="/contact" onClick={toggleMenu} className='btn'>
+            <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
+           
                 Get in Touch
-              </Link>
+             
             </li>
           </ul>
         </div>
