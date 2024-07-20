@@ -1,92 +1,30 @@
+// Services.js
 import React from 'react';
-import Soft1Img from '../Images/soft1.png'
-import Soft2Img from '../Images/soft2.png'
-import Dummy from '../Images/dummy.png'
-import Sample from '../Images/Image.png'
-import Clean from '../Images/clean.png'
-import Business from '../Images/business.png'
+import { Link } from 'react-router-dom';
+import servicesJson from '../data/servicesData.json';
 
 const Services = () => {
-  const servicesJson = {
-    "services": [
-      {
-        "id": 1,
-        "name": "Soft Services",
-        "items": [
-          "House Keeping",
-          "Pantry valet",
-          "Office boy",
-          "Driver",
-          "Mailroom boy"
-        ],
-        "images": [
-            Soft1Img,
-          Soft2Img
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Specialization Services",
-        "items": [
-          "Façade cleaning through manpower",
-          "Façade cleaning through drones",
-          "Marble and granite polishing",
-          "Carpet and upholstery cleaning",
-          "Waste Management"
-        ],
-        "images": [
-            Dummy,
-            Clean
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Business Support",
-        "items": [
-          "Business support manpower",
-          "Corporate wellness",
-          "Organizing Functions"
-        ],
-        "images": [
-         Business
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Technical Services",
-        "items": [
-          "ETP",
-          "WTP",
-          "HVAC",
-          "Plumbing",
-          "Power Supply"
-        ],
-        "images": [
-            Sample,Dummy
-        ]
-      }
-    ]
-  };
-
   return (
     <div className="services-page" id='services'>
       {servicesJson.services.map((service, index) => (
         <div 
           key={service.id} 
-          className={`services w-full flex flex-col gap-6 justify-around items-center px-8 py-12 ${
+          className={`services flex flex-col gap-6 w-[100vw]  justify-around items-start px-8 py-12 ${
             index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
           }`}
         >
-          <div className='content text-primary flex flex-col gap-8'>
+          <div className='content text-primary flex flex-col gap-6'>
             <h1 className='text-4xl font-semibold'>{service.name}</h1>
             <ul>
-              {service.items.map((item, itemIndex) => (
-                <li key={itemIndex}>{item}</li>
+              {service.subservices.map((item, itemIndex) => (
+                <li key={itemIndex}>{item.name}</li>
               ))}
             </ul>
-            <button className='btn bg-primary w-36 text-left text-white px-4 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
-              Know More
-            </button>
+            <Link to={`/service/${service.id}`}>
+              <button className='btn bg-primary w-36 text-left text-white px-4 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
+                Know More
+              </button>
+            </Link>
           </div>
           <div className="images flex md:flex-row flex-col justify-center items-center gap-4">
             {service.images.map((item, itemIndex) => (

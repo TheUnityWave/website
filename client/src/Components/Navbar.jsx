@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Logo from '../Images/logo.png'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.warn(`Element with ID '${sectionId}' not found.`);
+  const navigate = useNavigate();
+
+  const handleNavigation = (sectionId) => {
+    if (typeof window.scrollToSection === 'function') {
+      window.scrollToSection(sectionId);
+    }
+    if (isMenuOpen) {
+      toggleMenu();
     }
   };
+  
 
   return (
     <>
@@ -31,12 +35,10 @@ export default function Navbar() {
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
           <li className='hover:text-primary transition cursor-pointer'>About Us</li>
-          <li className='hover:text-primary transition cursor-pointer' onClick={() => scrollToSection('services')}>Services</li>
+          <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
-          <li onClick={() => scrollToSection('getintouch')} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
-            {/* <Link to="/contact" > */}
-              Get in Touch
-            {/* </Link> */}
+          <li onClick={() => handleNavigation('getintouch')} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
+            Get in Touch
           </li>
         </ul>
       </div>

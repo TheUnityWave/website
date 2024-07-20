@@ -1,0 +1,33 @@
+{
+    "testimonials": [
+        {
+           
+            "name": "John Doe",
+            "title": "CEO, ABC Company",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "logo.png"
+        },
+        {
+            
+            "name": "Jane Doe",
+            "title": "CEO, ABC Company",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "clean.png"
+
+        },
+        {
+            
+            "name": "John Smith",
+            "title": "CEO, ABC Company",
+            "image": "soft1.png",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            
+            "name": "Rachita Dashore",
+            "title": "CEO, XYZ Company",
+            "image": "soft1.png",
+            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+    ]
+}
