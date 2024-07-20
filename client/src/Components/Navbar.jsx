@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import Logo from '../Images/logo.png'
-import { Menu, X } from 'lucide-react'
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Logo from '../Images/logo.png';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const navigate = useNavigate();
 
@@ -21,7 +21,6 @@ export default function Navbar() {
       toggleMenu();
     }
   };
-  
 
   return (
     <>
@@ -34,11 +33,16 @@ export default function Navbar() {
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
-          <li className='hover:text-primary transition cursor-pointer'>About Us</li>
+          <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
           <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>
           <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
           <li onClick={() => handleNavigation('getintouch')} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer'>
             Get in Touch
+          </li>
+          <li>
+            <Link to="/login" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+              Login as Employee
+            </Link>
           </li>
         </ul>
       </div>
@@ -54,9 +58,14 @@ export default function Navbar() {
                 Get in Touch
               </Link>
             </li>
+            <li className='my-4'>
+              <Link to="/login" onClick={toggleMenu} className='btn bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                Login as Employee
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
     </>
-  )
+  );
 }

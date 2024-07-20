@@ -55,9 +55,9 @@ const JobApplications = () => {
                                 <a href={application.resumeFile} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                     View Resume
                                 </a>
-                                <a href={application.viewableResumeFile} target="_blank" rel="noopener noreferrer" className="ml-4 text-blue-500 hover:underline">
+                                {/* <a href={application.viewableResumeFile} target="_blank" rel="noopener noreferrer" className="ml-4 text-blue-500 hover:underline">
                                     View Viewable Resume
-                                </a>
+                                </a> */}
                                 <button
                                     onClick={() => sendCredentials(application._id)}
                                     className="mt-4 bg-green-500 text-white py-2 px-4 rounded"

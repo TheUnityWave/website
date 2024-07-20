@@ -65,28 +65,28 @@ function ScrollManager() {
 function App() {
   return (
     <BrowserRouter>
-    <ScrollManager />
-    <Navbar />
-    <div className='relative top-24 font-primary'>
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Stats />
-            <Services />
-            <WhyUs />
-            <Testimonials/>
-          </>
-        } />
-        <Route path="/career" element={<Careers />} />
-        <Route path="/service/:serviceId" element={<ServiceDetails/>} />
-        <Route path="/login" element={<Login />} />
+      <ScrollManager />
+      <Navbar />
+      <div className='relative top-24 font-primary'>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Stats />
+              <Services />
+              <WhyUs />
+              <Testimonials />
+              <GetInTouch />
+            </>
+          } />
+          <Route path="/career" element={<Careers />} />
+          <Route path="/service/:serviceId" element={<ServiceDetails />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/employee/*" element={<EmployeeDashboard />} />
-      </Routes>
-      <GetInTouch/>
-      <Footer />
-    </div>
-  </BrowserRouter>
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
