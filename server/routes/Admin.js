@@ -3,8 +3,10 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs');
 const EmployeeVerification = require('../models/EmployeeVerification');
+const GetInTouch = require('../models/getintouch');
 const JobApplication = require('../models/Career'); 
 const Career = require('../models/Career');
+const fetchEmployee = require('../middleware/fetchEmployee');
 
 
 // Endpoint to fetch all the job applications.
@@ -106,6 +108,16 @@ router.post('/send-credentials/:id', async (req, res) => {
         res.json({ message: 'Credentials sent and employee details saved' });
     } catch (error) {
         res.status(500).json({ message: 'Error sending credentials', error });
+    }
+});
+
+
+router.get('/get-in-touch', async (req, res) => {
+    try {
+        const getInTouchRequests = await GetInTouch.find().sort({ createdAt: -1 });
+        res.json(getInTouchRequests);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching Get in Touch requests', error: error.message });
     }
 });
 
