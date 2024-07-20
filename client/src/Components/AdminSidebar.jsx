@@ -15,6 +15,11 @@ const AdminSidebar = () => {
                         Employees
                     </Link>
                 </li>
+                <li>
+                    <Link to="/admin/getintouch" className="block p-2 text-gray-800 hover:bg-gray-200 rounded">
+                        Get in Touch Requests
+                    </Link>
+                </li>
             </ul>
         </div>
     );

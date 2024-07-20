@@ -1,12 +1,20 @@
 // EmployeeDashboard.js
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect} from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
 import EmployeeVerification from './EmployeeVerification';
 import EmployeeTraining from './EmployeeTraining';
 import RaiseTicket from './RaiseTicket';
 
 const EmployeeDashboard = () => {
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div className="flex">
       <Sidebar />

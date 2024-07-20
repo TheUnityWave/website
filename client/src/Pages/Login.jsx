@@ -32,7 +32,7 @@ const Login = () => {
     
                 // Navigate based on isAdmin value
                 if (json.isAdmin) {
-                    navigate("/admin");
+                    navigate("/admin/job-applications");
                 } else {
                     navigate("/employee/verification");
                 }
