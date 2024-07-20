@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 
 const EmployeeVerification = () => {
     const [isCameraOpen, setIsCameraOpen] = useState(false);
@@ -19,21 +20,21 @@ const EmployeeVerification = () => {
     });
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
+    const aadhaarFileRef = useRef(null);
 
-    // Calculate verification progress percentage
     useEffect(() => {
         const stepsCompleted = [
             isPhotoTaken,
             isHometownVerified,
             isCurrentAddressVerified,
-            isAadhaarUploaded, // Include Aadhaar upload in progress calculation
+            isAadhaarUploaded,
             step5Data.question1 !== '',
             step5Data.question2 !== '',
             step5Data.question3 !== '',
-            isQuestionsVerified // Include custom questions verification in progress calculation
+            isQuestionsVerified
         ].filter(step => step).length;
 
-        const totalSteps = 8; // Total number of verification steps
+        const totalSteps = 8;
         const progressPercentage = (stepsCompleted / totalSteps) * 100;
 
         setVerificationProgress(progressPercentage);
@@ -78,19 +79,19 @@ const EmployeeVerification = () => {
     };
 
     const handleHometownSubmit = () => {
-        setIsHometownVerified(true); 
+        setIsHometownVerified(true);
     };
 
     const handleCurrentAddressSubmit = () => {
-        setIsCurrentAddressVerified(true); 
+        setIsCurrentAddressVerified(true);
     };
 
     const handleAadhaarSubmit = () => {
-        setIsAadhaarUploaded(true); 
+        setIsAadhaarUploaded(true);
     };
 
     const handleQuestionsSubmit = () => {
-        setIsQuestionsVerified(true); 
+        setIsQuestionsVerified(true);
     };
 
     const handleQuestionChange = (event) => {
@@ -105,15 +106,55 @@ const EmployeeVerification = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+    const dataURItoBlob = (dataURI) => {
+        const byteString = atob(dataURI.split(',')[1]);
+        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        const ab = new ArrayBuffer(byteString.length);
+        const ia = new Uint8Array(ab);
+        for (let i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ab], { type: mimeString });
+    };
+
+    const handleSubmit = async () => {
+        try {
+            const formData = new FormData();
+            if (capturedImage) {
+                const photoBlob = dataURItoBlob(capturedImage);
+                formData.append('EmployeePhoto', photoBlob, 'employee_photo.png');
+            }
+            formData.append('hometownAddress', hometownAddress);
+            formData.append('currentAddress', currentAddress);
+            formData.append('policeVerificationDetails', JSON.stringify(step5Data));
+            if (aadhaarFileRef.current.files[0]) {
+                formData.append('AdhaarCard', aadhaarFileRef.current.files[0]);
+            }
+
+            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            if (response.status === 200) {
+                alert('Employee verification data saved successfully');
+            } else {
+                alert('Failed to save employee verification data');
+            }
+        } catch (error) {
+            console.error('Error submitting verification data:', error);
+            alert('An error occurred while submitting verification data');
+        }
+    };
+
     return (
         <div className="flex">
             <div className="p-4 md:p-8 bg-gray-100 flex-1">
-                {/* Verification Steps */}
                 <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-4 px-6 min-h-16">
                     Fill in the details to complete your verification
                 </h2>
 
-                {/* Verification Progress */}
                 <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
                     <div className="flex items-center justify-between mb-4">
                         <h3 className="text-lg font-medium">Verification Progress</h3>
@@ -129,7 +170,6 @@ const EmployeeVerification = () => {
                     </div>
                 </div>
 
-                {/* Step 1: Take a Photo */}
                 <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
                     <div className="flex justify-between items-center mb-4">
                         <h3 className="text-lg font-medium">Step 1: Take a Photo*</h3>
@@ -170,7 +210,6 @@ const EmployeeVerification = () => {
                     )}
                 </div>
 
-                {/* Step 2: Enter Hometown Address */}
                 <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
                     <h3 className="text-lg font-medium mb-2">Step 2: Enter your Hometown Address*</h3>
                     {!isHometownVerified ? (
@@ -197,7 +236,6 @@ const EmployeeVerification = () => {
                     )}
                 </div>
 
-                {/* Step 3: Enter Current Address */}
                 <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
                     <h3 className="text-lg font-medium mb-2">Step 3: Enter your Current Address*</h3>
                     {!isCurrentAddressVerified ? (
@@ -224,13 +262,13 @@ const EmployeeVerification = () => {
                     )}
                 </div>
 
-                {/* Step 4: Upload Aadhaar Card */}
                 <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
                     <h3 className="text-lg font-medium mb-2">Step 4: Upload your Aadhaar Card*</h3>
                     {!isAadhaarUploaded ? (
                         <>
                             <input
                                 type="file"
+                                ref={aadhaarFileRef}
                                 className="border border-gray-300 p-2 w-full rounded mb-2"
                             />
                             <button
@@ -247,7 +285,6 @@ const EmployeeVerification = () => {
                     )}
                 </div>
 
-                {/* Step 5: Custom Form */}
                 <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
                     <h3 className="text-lg font-medium mb-2">Step 5: Custom Verification Questions*</h3>
                     {!isQuestionsVerified ? (
@@ -306,6 +343,15 @@ const EmployeeVerification = () => {
                             <span className="bg-green-500 text-white px-3 py-1 rounded-md">Verified</span>
                         </>
                     )}
+                </div>
+
+                <div className="bg-white p-4 md:p-6 rounded shadow-md mb-6">
+                    <button
+                        className="bg-cyan-900 text-white px-4 py-2 rounded"
+                        onClick={handleSubmit}
+                    >
+                        Submit Verification Data
+                    </button>
                 </div>
             </div>
         </div>

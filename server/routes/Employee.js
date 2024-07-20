@@ -1,71 +1,73 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const path = require('path');
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const EmployeeVerification = require('../models/EmployeeVerification');
+const path = require('path');
+require('dotenv').config();
 
-// Multer storage configuration
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-      cb(null, './uploads/'); // Directory where files will be stored
-  },
-  filename: function (req, file, cb) {
-      // Generating a unique filename
-      cb(null, Date.now() + path.extname(file.originalname));
-  }
+// Cloudinary configuration
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// File filter to accept only images
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image/') || file.mimetype === 'application/pdf') {
-      cb(null, true); // Accept the file
-  } else {
-      cb(new Error('File type not supported. Only images and PDF files are allowed.'), false); // Reject the file
-  }
-};
-
+// Cloudinary storage configuration
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'uploads', // Specify the folder in Cloudinary where files will be uploaded
+        allowed_formats: ['jpg', 'jpeg', 'png', 'pdf'], // Specify allowed formats
+        public_id: (req, file) => { // Specify how each file should be named in Cloudinary
+            const fileName = path.parse(file.originalname).name;
+            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+            return `${fileName}-${uniqueSuffix}`;
+        },
+    },
+});
 
 // Multer upload configuration
-const upload = multer({
-    storage: storage,
-    fileFilter: fileFilter,
-    limits: {
-        fileSize: 1024 * 1024 * 5 // 5 MB file size limit
-    }
-});
+const upload = multer({ storage: storage });
 
 // POST /api/employee/employee-verification endpoint to handle form data and file upload
-router.post('/employee-verification', upload.fields([{ name: 'EmployeePhoto', maxCount: 1 }, { name: 'AdhaarCard', maxCount: 1 }]), async (req, res) => {
+router.post('/employee-verification', upload.fields([
+    { name: 'EmployeePhoto', maxCount: 1 },
+    // { name: 'AdhaarCard', maxCount: 1 }
+]), async (req, res) => {
     try {
         console.log('Request Body:', req.body);
-        console.log('Files:', req.files); // Uploaded file details
+        console.log('Files:', req.files); // Check files received
 
-        // Destructuring data from req.body and req.file
+        // Ensure req.files is defined and contains expected fields
+        // if (!req.files || !req.files.EmployeePhoto || !req.files.AdhaarCard) {
+        //     throw new Error('Uploaded files not found');
+        // }
+
+        // Destructuring data from req.body
         const { hometownAddress, currentAddress, policeVerificationDetails } = req.body;
-        const { EmployeePhoto, AdhaarCard } = req.files;
+
+        // Get file URLs from Cloudinary
+        const EmployeePhoto = req.files.EmployeePhoto[0].path;
+        // const AdhaarCard = req.files.AdhaarCard[0].path;
 
         // Creating a new instance of EmployeeVerification
         const newVerification = new EmployeeVerification({
-            EmployeePhoto: EmployeePhoto[0].path,
+            EmployeePhoto,
             hometownAddress,
             currentAddress,
             policeVerificationDetails,
-            AdhaarCard: AdhaarCard[0].path
+            // AdhaarCard
         });
 
         // Saving the new instance to MongoDB
         await newVerification.save();
+
         res.status(200).json({ message: 'Employee verification data saved successfully' });
     } catch (err) {
-        if (err instanceof multer.MulterError) {
-            // Handling Multer errors
-            console.error('Multer Error:', err);
-            res.status(400).json({ message: 'File upload error', error: err.message });
-        } else {
-            // Handling other internal server errors
-            console.error('Internal Server Error:', err);
-            res.status(500).json({ message: 'Internal server error' });
-        }
+        console.error('Error:', err.message);
+        res.status(500).json({ message: 'Internal server error' });
     }
 });
 
