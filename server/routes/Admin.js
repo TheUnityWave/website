@@ -3,36 +3,11 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs');
 const EmployeeVerification = require('../models/EmployeeVerification');
-const JobApplication = require('../models/career'); 
-const Career = require('../models/career');
-
-// GET /api/admin/employee-verifications endpoint to fetch all employee verification data
-router.get('/employee-verifications', async (req, res) => {
-    try {
-        const verifications = await EmployeeVerification.find();
-        res.status(200).json(verifications);
-    } catch (err) {
-        console.error('Error fetching employee verifications:', err);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
-
-// GET /api/admin/employee-verifications/:id endpoint to fetch a specific employee verification by ID
-router.get('/employee-verifications/:id', async (req, res) => {
-    const { id } = req.params;
-    try {
-        const verification = await EmployeeVerification.findById(id);
-        if (!verification) {
-            return res.status(404).json({ message: 'Employee verification not found' });
-        }
-        res.status(200).json(verification);
-    } catch (err) {
-        console.error('Error fetching employee verification by ID:', err);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
+const JobApplication = require('../models/Career'); 
+const Career = require('../models/Career');
 
 
+// Endpoint to fetch all the job applications.
 router.get('/job-applications', async (req, res) => {
     try {
         const applications = await Career.find();
@@ -43,7 +18,7 @@ router.get('/job-applications', async (req, res) => {
 });
 
 
-
+// Endpoint to fetch all the employees.
 router.get('/employees', async (req, res) => {
     try {
         const employees = await EmployeeVerification.find();
@@ -54,7 +29,7 @@ router.get('/employees', async (req, res) => {
 });
 
 
-// API endpoint to update isAdmin field
+// Endpoint to update isAdmin field. (To make an employee Admin)
 router.put('/api/admin/employees/:id', async (req, res) => {
     try {
         const employee = await EmployeeVerification.findByIdAndUpdate(
@@ -69,11 +44,12 @@ router.put('/api/admin/employees/:id', async (req, res) => {
 });
 
 
-// Function to generate a random password
+// Function to generate a random password.
 const generatePassword = () => {
     return Math.random().toString(36).slice(-8); // Simple example, improve as needed
 };
-// API endpoint to send credentials and save details
+
+// Endpoint to send credentials and save details of employee.
 router.post('/send-credentials/:id', async (req, res) => {
     try {
         const application = await JobApplication.findById(req.params.id);
