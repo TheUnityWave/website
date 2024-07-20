@@ -1,30 +1,50 @@
-// server.js
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('dotenv').config();
+const dotenv = require('dotenv');
+const connectToMongoDB = require('./db');
+const employeeRoutes = require('./routes/Employee');
+const adminRoutes = require('./routes/Admin');
+const careerRoutes = require('./routes/careerRoutes');
+const getintouchRoute = require('./routes/getintouchRoute');
+const login = require('./routes/Login');
+const multer = require('multer');
 
 const app = express();
+const PORT = process.env.PORT || 5000; // Adjust port as needed
+
+// Multer middleware setup
+const storage = multer.memoryStorage(); // or multer.diskStorage() for persistent storage
+const upload = multer({ storage: storage });
 
 // Middleware
-app.use(cors());
+app.use(cors()); // Enable CORS if needed
 app.use(bodyParser.json());
+app.use(express.json({ limit: '10mb' })); // Handle JSON bodies
+app.use(express.urlencoded({ limit: '10mb', extended: true })); // Handle URL-encoded bodies
+// Uncomment the above if you need to handle form data or JSON requests
 
-// Connect to MongoDB Atlas
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('Connected to MongoDB Atlas'))
-.catch((err) => console.error('Error connecting to MongoDB:', err));
+// Load environment variables
+dotenv.config({ path: __dirname + '/.env' });
 
-// Career Routes
-const careerRoutes = require('./routes/careerRoutes');
+// Connect to MongoDB
+connectToMongoDB();
+
+// Routes
+app.use('/api/employee', employeeRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/login', login);
 app.use('/api/careers', careerRoutes);
-//Get in touch routes
-const getintouchRoute = require('./routes/getintouchRoute');
 app.use('/api/getintouch', getintouchRoute);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).json({ message: 'Internal server error' });
+});
+
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

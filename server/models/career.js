@@ -1,4 +1,3 @@
-// models/Career.js
 const mongoose = require('mongoose');
 
 const CareerSchema = new mongoose.Schema({
@@ -26,12 +25,19 @@ const CareerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  resumeFile: { type: String, required: true },
-  viewableResumeFile: { type: String, required: true },
+  resumeFile: {
+    type: String,
+    required: true,
+  },
+  viewableResumeFile: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-module.exports = mongoose.model('Career', CareerSchema);
+// Check if the model already exists before defining it
+module.exports = mongoose.models.Career || mongoose.model('Career', CareerSchema);

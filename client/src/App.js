@@ -9,7 +9,11 @@ import GetInTouch from './Pages/GetInTouch'
 import Services from './Pages/Services'
 import ServiceDetails from './Pages/ServiceDetails'
 import Testimonials from './Pages/Testimonials'
-import HeroPg from './Pages/HeroPg'
+import HeroPg from './Pages/HeroPg';
+import Login from './Pages/Login';
+import EmployeeVerification from './Pages/EmployeeVerification';
+import AdminDashboard from './Pages/AdminDashboard';
+import EmployeeDashboard from './Pages/EmployeeDashboard';
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -59,31 +63,32 @@ function ScrollManager() {
 }
 
 
-
 function App() {
   return (
     <BrowserRouter>
-    <ScrollManager />
-    <Navbar />
-    <div className='relative top-20 font-primary'>
-      <Routes>
-        <Route path="/" element={
-          <>
-            <HeroPg/>
-            <Stats />
-            <Services />
-            <WhyUs />
-            <Testimonials/>
-          </>
-        } />
-        <Route path="/career" element={<Careers />} />
-        <Route path="/service/:serviceId" element={<ServiceDetails/>} />
-      </Routes>
-      <GetInTouch/>
-      <Footer />
-    </div>
-  </BrowserRouter>
+      <ScrollManager />
+      <Navbar />
+      <div className='relative top-24 font-primary'>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Stats />
+              <Services />
+              <WhyUs />
+              <Testimonials />
+              <GetInTouch />
+            </>
+          } />
+          <Route path="/career" element={<Careers />} />
+          <Route path="/service/:serviceId" element={<ServiceDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin/*" element={<AdminDashboard />} />
+          <Route path="/employee/*" element={<EmployeeDashboard />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
