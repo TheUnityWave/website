@@ -32,7 +32,7 @@ router.get('/employees', async (req, res) => {
 
 
 // Endpoint to update isAdmin field. (To make an employee Admin)
-router.put('/api/admin/employees/:id', async (req, res) => {
+router.put('/employees/:id', async (req, res) => {
     try {
         const employee = await EmployeeVerification.findByIdAndUpdate(
             req.params.id,
@@ -90,6 +90,9 @@ router.post('/send-credentials/:id', async (req, res) => {
             firstName: application.firstName,
             lastName: application.lastName,
             email: application.email,
+            mobile: application.mobileNumber,
+            job: application.jobCategory,
+            experience: application.experience,
             password: hashedPassword, // Save the hashed password
             isAdmin: false,
             EmployeePhoto: '', // Update if you have a photo

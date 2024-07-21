@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
+const fetchEmployee = require('../middleware/fetchEmployee');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const EmployeeVerification = require('../models/EmployeeVerification');
 const path = require('path');
@@ -18,9 +19,9 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'uploads', // Specify the folder in Cloudinary where files will be uploaded
-        allowed_formats: ['jpg', 'jpeg', 'png', 'pdf'], // Specify allowed formats
-        public_id: (req, file) => { // Specify how each file should be named in Cloudinary
+        folder: 'uploads',
+        allowed_formats: ['jpg', 'jpeg', 'png', 'pdf'],
+        public_id: (req, file) => {
             const fileName = path.parse(file.originalname).name;
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
             return `${fileName}-${uniqueSuffix}`;
@@ -31,43 +32,86 @@ const storage = new CloudinaryStorage({
 // Multer upload configuration
 const upload = multer({ storage: storage });
 
-// POST /api/employee/employee-verification endpoint to handle form data and file upload
-router.post('/employee-verification', upload.fields([
+// Single route for handling different types of data and file uploads
+router.post('/employee-verification', fetchEmployee, upload.fields([
     { name: 'EmployeePhoto', maxCount: 1 },
-    // { name: 'AdhaarCard', maxCount: 1 }
+    { name: 'AdhaarCard', maxCount: 1 }
 ]), async (req, res) => {
     try {
+        const employee = req.employee;
+
         console.log('Request Body:', req.body);
         console.log('Files:', req.files); // Check files received
-
-        // Ensure req.files is defined and contains expected fields
-        // if (!req.files || !req.files.EmployeePhoto || !req.files.AdhaarCard) {
-        //     throw new Error('Uploaded files not found');
-        // }
 
         // Destructuring data from req.body
         const { hometownAddress, currentAddress, policeVerificationDetails } = req.body;
 
-        // Get file URLs from Cloudinary
-        const EmployeePhoto = req.files.EmployeePhoto[0].path;
-        // const AdhaarCard = req.files.AdhaarCard[0].path;
+        // Collect file paths from Cloudinary
+        const EmployeePhoto = req.files.EmployeePhoto ? req.files.EmployeePhoto[0].path : null;
+        const AdhaarCard = req.files.AdhaarCard ? req.files.AdhaarCard[0].path : null;
 
-        // Creating a new instance of EmployeeVerification
-        const newVerification = new EmployeeVerification({
-            EmployeePhoto,
-            hometownAddress,
-            currentAddress,
-            policeVerificationDetails,
-            // AdhaarCard
-        });
+        // Find and update the employee verification data
+        const updatedEmployee = await EmployeeVerification.findOneAndUpdate(
+            { _id: employee._id },
+            {
+                $set: {
+                    EmployeePhoto,
+                    hometownAddress,
+                    currentAddress,
+                    policeVerificationDetails,
+                    AdhaarCard,
+                    // Update verification status as needed
+                    // isHometownVerified: !!hometownAddress,
+                    // isCurrentAddressVerified: !!currentAddress,
+                    // isAadhaarUploaded: !!AdhaarCard,
+                    // isQuestionsVerified: !!policeVerificationDetails
+                }
+            },
+            { new: true }
+        );
 
-        // Saving the new instance to MongoDB
-        await newVerification.save();
+        if (!updatedEmployee) {
+            return res.status(404).json({ message: 'Employee not found' });
+        }
 
-        res.status(200).json({ message: 'Employee verification data saved successfully' });
+        res.status(200).json({ message: 'Employee verification data updated successfully', updatedEmployee });
     } catch (err) {
         console.error('Error:', err.message);
         res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+router.get('/get-employee', fetchEmployee, async (req, res) => {
+    try {
+        const employee = req.employee;
+        if (!employee) {
+            return res.status(404).json({ error: 'Employee not found' });
+        }
+        res.status(200).json(employee);
+    } catch (error) {
+        console.error('Error fetching employee:', error.message);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+router.get('/user', async (req, res) => {
+    const token = req.headers['authorization'];
+
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await EmployeeVerification.findById(decoded.id).select('-password');
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.json(user);
+    } catch (error) {
+        res.status(401).json({ message: 'Invalid token' });
     }
 });
 

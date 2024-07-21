@@ -72,6 +72,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
+              <HeroPg />
               <Stats />
               <Services />
               <WhyUs />

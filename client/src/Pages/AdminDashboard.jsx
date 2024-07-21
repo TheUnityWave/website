@@ -18,7 +18,7 @@ const AdminDashboard = () => {
     return (
         <div className="flex">
             <AdminSidebar />
-            <div className="ml-64 p-4 w-full">
+            <div className="p-4 w-full">
                 <Routes>
                     <Route path="job-applications" element={<JobApplications />} />
                     <Route path="employees" element={<Employees />} />

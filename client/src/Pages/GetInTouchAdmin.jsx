@@ -18,11 +18,11 @@ const GetInTouchAdmin = () => {
     }, []);
 
     return (
-        <div className="p-4 md:p-8 bg-gray-100 flex-1">
+        <div className="p-4 md:p-8 bg-gray-100 flex-1 h-screen">
             <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-4 px-6 min-h-16">
                 Get in Touch Requests
             </h2>
-            <div className="mt-4">
+            <div className="mt-4 overflow-y-auto h-[calc(100vh-72px-2rem)]">
                 {requests.length > 0 ? (
                     <ul>
                         {requests.map((request) => (

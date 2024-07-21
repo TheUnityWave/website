@@ -1,26 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const AdminSidebar = () => {
     return (
-        <div className="bg-white shadow-md h-screen overflow-y-auto fixed top-24 left-0 bottom-0 w-64">
-            <ul className="space-y-2 p-4">
-                <li>
-                    <Link to="/admin/job-applications" className="block p-2 text-gray-800 hover:bg-gray-200 rounded">
+        <div className="bg-cyan-900 text-white w-96 min-h-screen p-4">
+            <nav className="flex flex-col space-y-4">
+                    <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-2 rounded">
                         Job Applications
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/admin/employees" className="block p-2 text-gray-800 hover:bg-gray-200 rounded">
+                    </NavLink>
+                    <NavLink to="/admin/employees" className="hover:bg-cyan-700 p-2 rounded">
                         Employees
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/admin/getintouch" className="block p-2 text-gray-800 hover:bg-gray-200 rounded">
+                    </NavLink>
+                    <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 p-2 rounded">
                         Get in Touch Requests
-                    </Link>
-                </li>
-            </ul>
+                    </NavLink>
+            </nav>
         </div>
     );
 };

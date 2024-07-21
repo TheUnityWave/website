@@ -35,7 +35,7 @@ router.post('/', [
             }
         };
 
-        const authToken = jwt.sign(data, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const authToken = jwt.sign(data, process.env.JWT_SECRET);
         res.json({ authToken, isAdmin: user.isAdmin });
     } catch (error) {
         console.log(error.message);

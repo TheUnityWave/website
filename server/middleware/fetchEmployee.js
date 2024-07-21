@@ -1,18 +1,25 @@
 const jwt = require('jsonwebtoken');
+const EmployeeVerification = require('../models/EmployeeVerification'); // Adjust the path as necessary
 
-fetchEmployee = (req, res, next) => {
-    // Get the employee from jwt token and add id to req object.
+const fetchEmployee = async (req, res, next) => {
     const token = req.header('auth-token');
-    if(!token) {
-        res.status(401).send({error: "Please Authenticate using a valid token"});
+    if (!token) {
+        return res.status(401).send({ error: "Please Authenticate using a valid token" });
     }
     try {
         const data = jwt.verify(token, process.env.JWT_SECRET);
-        req.employee = data.employee; 
+        console.log('JWT Data:', data); // Debugging log
+        const employee = await EmployeeVerification.findById(data.user.id);
+        console.log('Employee:', employee); // Debugging log
+        if (!employee) {
+            return res.status(404).send({ error: "Employee not found" });
+        }
+        req.employee = employee;
         next();
     } catch (error) {
-        res.status(401).send({error: "Please Authenticate using a valid token"});
+        console.error('Error in fetchEmployee middleware:', error.message);
+        res.status(401).send({ error: "Please Authenticate using a valid token" });
     }
-}
+};
 
 module.exports = fetchEmployee;
