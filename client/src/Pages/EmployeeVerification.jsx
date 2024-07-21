@@ -5,22 +5,16 @@ const EmployeeVerification = () => {
     const [isCameraOpen, setIsCameraOpen] = useState(false);
     const [isPhotoTaken, setIsPhotoTaken] = useState(false);
     const [capturedImage, setCapturedImage] = useState(null);
+
     const [employeeData, setEmployeeData] = useState({
         hometownAddress: '',
         currentAddress: '',
-        isHometownVerified: false,
-        isCurrentAddressVerified: false,
-        isAadhaarUploaded: false,
         step5Data: {
             question1: '',
             question2: '',
             question3: ''
         },
-        isQuestionsVerified: false,
-        EmployeePhoto: null
     });
-    const [verificationProgress, setVerificationProgress] = useState(0);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const aadhaarFileRef = useRef(null);
@@ -39,19 +33,20 @@ const EmployeeVerification = () => {
                     setEmployeeData({
                         hometownAddress: data.hometownAddress || '',
                         currentAddress: data.currentAddress || '',
-                        isHometownVerified: data.isHometownVerified || false,
-                        isCurrentAddressVerified: data.isCurrentAddressVerified || false,
-                        isAadhaarUploaded: data.isAadhaarUploaded || false,
+                        isHometownVerified: (data.hometownAddress ? true : false),
+                        isCurrentAddressVerified: (data.currentAddress ? true : false),
+                        AadhaarCard: data.AdhaarCard,
+                        isAadhaarUploaded: (data.AdhaarCard ? true : false),
                         step5Data: {
                             question1: data.policeVerificationDetails.question1 || '',
                             question2: data.policeVerificationDetails.question2 || '',
                             question3: data.policeVerificationDetails.question3 || ''
                         },
-                        isQuestionsVerified: data.isQuestionsVerified || false,
-                        EmployeePhoto: data.EmployeePhoto || null
+                        isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                        EmployeePhoto: data.EmployeePhoto
                     });
                     setIsPhotoTaken(!!data.EmployeePhoto);
-                    setCapturedImage(data.EmployeePhoto || null);
+                    setCapturedImage(data.EmployeePhoto);
                 } else {
                     console.error('Failed to fetch employee data');
                 }
@@ -62,24 +57,6 @@ const EmployeeVerification = () => {
 
         fetchEmployeeData();
     }, []);
-
-    useEffect(() => {
-        const stepsCompleted = [
-            isPhotoTaken,
-            employeeData.isHometownVerified,
-            employeeData.isCurrentAddressVerified,
-            employeeData.isAadhaarUploaded,
-            employeeData.step5Data.question1 !== '',
-            employeeData.step5Data.question2 !== '',
-            employeeData.step5Data.question3 !== '',
-            employeeData.isQuestionsVerified
-        ].filter(step => step).length;
-
-        const totalSteps = 8;
-        const progressPercentage = (stepsCompleted / totalSteps) * 100;
-
-        setVerificationProgress(progressPercentage);
-    }, [isPhotoTaken, employeeData]);
 
     const openCamera = () => {
         setIsCameraOpen(true);
@@ -109,15 +86,8 @@ const EmployeeVerification = () => {
         context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
         const imageData = canvasRef.current.toDataURL('image/png');
         setCapturedImage(imageData);
-        setEmployeeData(prevData => ({ ...prevData, EmployeePhoto: imageData }));
         closeCamera();
         setIsPhotoTaken(true);
-    };
-
-    const retakePhoto = () => {
-        setIsPhotoTaken(false);
-        setCapturedImage(null);
-        openCamera();
     };
 
     const handleHometownSubmit = async () => {
@@ -228,10 +198,6 @@ const EmployeeVerification = () => {
         }));
     };
 
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
-
     const dataURItoBlob = (dataURI) => {
         const byteString = atob(dataURI.split(',')[1]);
         const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
@@ -277,25 +243,12 @@ const EmployeeVerification = () => {
                 </h2>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
                     <h3 className="text-lg font-semibold mb-4">Step 1: Capture Photo</h3>
-                    {isPhotoTaken ? (
+                    {employeeData.EmployeePhoto ? (
                         <div>
-                            <img src={capturedImage} alt="Captured" className="mb-4 w-1/4" />
+                            <img src={employeeData.EmployeePhoto} alt="Captured" className="mb-4 w-1/4" />
                             <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
                                 Verified
                             </p>
-
-                            {/* <button
-                                className="bg-yellow-500 text-white px-4 py-2 rounded mr-2"
-                                onClick={retakePhoto}
-                            >
-                                Retake Photo
-                            </button>
-                            <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded"
-                                onClick={handlePhotoSubmit}
-                            >
-                                Save Photo
-                            </button> */}
                         </div>
                     ) : (
                         <div>
@@ -317,19 +270,34 @@ const EmployeeVerification = () => {
                                     <canvas ref={canvasRef} width="640" height="480" style={{ display: 'none' }} />
                                 </div>
                             ) : (
-                                <button
-                                    className="bg-blue-500 text-white px-4 py-2 rounded"
-                                    onClick={openCamera}
-                                >
-                                    Open Camera
-                                </button>
+                                <div>
+                                    {capturedImage ? (
+                                        <div>
+                                            <img src={capturedImage} alt="Captured" className="mb-4 w-1/4" />
+                                            <button
+                                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                                onClick={handlePhotoSubmit}
+                                            >
+                                                Save Photo
+                                            </button>
+                                        </div>
+                                    ) :
+                                        (
+                                            <button
+                                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                                onClick={openCamera}
+                                            >
+                                                Open Camera
+                                            </button>
+                                        )}
+                                </div>
                             )}
                         </div>
                     )}
                 </div>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
                     <h3 className="text-lg font-semibold mb-4">Step 2: Verify Hometown Address</h3>
-                    {!employeeData.hometownAddress ? (
+                    {employeeData.isHometownVerified === false ? (
                         <div>
                             <input
                                 type="text"
@@ -359,7 +327,7 @@ const EmployeeVerification = () => {
                 </div>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
                     <h3 className="text-lg font-semibold mb-4">Step 3: Verify Current Address</h3>
-                    {!employeeData.currentAddress ? (
+                    {employeeData.isCurrentAddressVerified === false ? (
                         <div>
                             <input
                                 type="text"
@@ -388,21 +356,33 @@ const EmployeeVerification = () => {
                 </div>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
                     <h3 className="text-lg font-semibold mb-4">Step 4: Upload Aadhaar Card</h3>
-                    <input
-                        type="file"
-                        ref={aadhaarFileRef}
-                        className="mb-4"
-                    />
-                    <button
-                        className="bg-blue-500 text-white px-4 py-2 rounded"
-                        onClick={handleAadhaarSubmit}
-                    >
-                        Upload Aadhaar Card
-                    </button>
+                    {employeeData.isAadhaarUploaded === false ? (
+                        <div>
+                            <input
+                                type="file"
+                                ref={aadhaarFileRef}
+                                className="mb-4"
+                            />
+                            <button
+                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                onClick={handleAadhaarSubmit}
+                            >
+                                Upload Aadhaar Card
+                            </button>
+                        </div>
+                    ) :
+                        (
+                            <div>
+                                <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>                                
+                                <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                    Verified
+                                </p>
+                            </div>
+                        )}
                 </div>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
                     <h3 className="text-lg font-semibold mb-4">Step 5: Answer Police Verification Questions</h3>
-                    {!employeeData.step5Data ? (
+                    {employeeData.isQuestionsVerified === false ? (
                         <div>
                             <input
                                 type="text"
@@ -443,57 +423,6 @@ const EmployeeVerification = () => {
 
                         )}
 
-                </div>
-            </div>
-            <div className="relative">
-                <button
-                    className="absolute top-0 right-0 mt-4 mr-4 text-gray-500 hover:text-gray-700 focus:outline-none"
-                    onClick={toggleSidebar}
-                >
-                    {isSidebarOpen ? '❌' : '☰'}
-                </button>
-                <div className={`fixed top-0 right-0 h-full bg-white shadow-lg w-64 transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
-                    <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-4 px-6 mb-4">
-                        Verification Progress
-                    </h2>
-                    <div className="p-4">
-                        <div className="mb-4">
-                            <div className="flex justify-between items-center">
-                                <span>Step 1</span>
-                                <span>{isPhotoTaken ? '✅' : '❌'}</span>
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <div className="flex justify-between items-center">
-                                <span>Step 2</span>
-                                <span>{employeeData.isHometownVerified ? '✅' : '❌'}</span>
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <div className="flex justify-between items-center">
-                                <span>Step 3</span>
-                                <span>{employeeData.isCurrentAddressVerified ? '✅' : '❌'}</span>
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <div className="flex justify-between items-center">
-                                <span>Step 4</span>
-                                <span>{employeeData.isAadhaarUploaded ? '✅' : '❌'}</span>
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <div className="flex justify-between items-center">
-                                <span>Step 5</span>
-                                <span>{employeeData.isQuestionsVerified ? '✅' : '❌'}</span>
-                            </div>
-                        </div>
-                        <div className="bg-gray-200 rounded-full h-4 mt-4">
-                            <div
-                                className="bg-green-500 h-4 rounded-full"
-                                style={{ width: `${verificationProgress}%` }}
-                            />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div >

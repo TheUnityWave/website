@@ -43,30 +43,34 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
         console.log('Request Body:', req.body);
         console.log('Files:', req.files); // Check files received
 
+        // Initialize an empty update object
+        const updateData = {};
+
         // Destructuring data from req.body
         const { hometownAddress, currentAddress, policeVerificationDetails } = req.body;
 
         // Collect file paths from Cloudinary
-        const EmployeePhoto = req.files.EmployeePhoto ? req.files.EmployeePhoto[0].path : null;
-        const AdhaarCard = req.files.AdhaarCard ? req.files.AdhaarCard[0].path : null;
+        if (req.files.EmployeePhoto && req.files.EmployeePhoto.length > 0) {
+            updateData.EmployeePhoto = req.files.EmployeePhoto[0].path;
+        }
+        if (req.files.AdhaarCard && req.files.AdhaarCard.length > 0) {
+            updateData.AdhaarCard = req.files.AdhaarCard[0].path;
+        }
+
+        // Add other fields to updateData only if they are present
+        if (hometownAddress) updateData.hometownAddress = hometownAddress;
+        if (currentAddress) updateData.currentAddress = currentAddress;
+        if (policeVerificationDetails) updateData.policeVerificationDetails = policeVerificationDetails;
+
+        // If there are no updates to be made, return an appropriate response
+        if (Object.keys(updateData).length === 0) {
+            return res.status(400).json({ message: 'No valid fields to update' });
+        }
 
         // Find and update the employee verification data
         const updatedEmployee = await EmployeeVerification.findOneAndUpdate(
             { _id: employee._id },
-            {
-                $set: {
-                    EmployeePhoto,
-                    hometownAddress,
-                    currentAddress,
-                    policeVerificationDetails,
-                    AdhaarCard,
-                    // Update verification status as needed
-                    // isHometownVerified: !!hometownAddress,
-                    // isCurrentAddressVerified: !!currentAddress,
-                    // isAadhaarUploaded: !!AdhaarCard,
-                    // isQuestionsVerified: !!policeVerificationDetails
-                }
-            },
+            { $set: updateData },
             { new: true }
         );
 
@@ -80,6 +84,7 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
         res.status(500).json({ message: 'Internal server error' });
     }
 });
+
 
 router.get('/get-employee', fetchEmployee, async (req, res) => {
     try {
