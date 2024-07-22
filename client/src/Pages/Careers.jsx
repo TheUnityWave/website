@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import careersImage from '../Images/career.png';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Careers = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,11 +36,22 @@ const Careers = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log(response.data);
-      alert('Application submitted successfully!');
+      toast.success("Application Sent Successfully");
+      setIsLoading(false);
+
       // Reset form or redirect user
+      setFormData({
+        firstName: '',
+        lastName: '',
+        mobileNumber: '',
+        email: '',
+        experience: '',
+        jobCategory: '',
+        resumeFile: null,
+      });
     } catch (error) {
       console.error('Error submitting application:', error);
-      alert('Error submitting application. Please try again.');
+      toast.success("Please try again later");
     } finally {
       setIsLoading(false);
     }

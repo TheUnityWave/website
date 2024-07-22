@@ -52,9 +52,9 @@ export default function Navbar() {
             <li onClick={() => handleNavigation('services')}>Services</li>
             <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
             <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
-           
-                Get in Touch
-             
+
+              Get in Touch
+
             </li>
             <li className='my-4'>
               <Link to="/login" onClick={toggleMenu} className='btn bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>

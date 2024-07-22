@@ -14,6 +14,7 @@ import Login from './Pages/Login';
 import EmployeeVerification from './Pages/EmployeeVerification';
 import AdminDashboard from './Pages/AdminDashboard';
 import EmployeeDashboard from './Pages/EmployeeDashboard';
+import ToastNotifications from './Components/ToastNotifications';
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -66,6 +67,7 @@ function ScrollManager() {
 function App() {
   return (
     <BrowserRouter>
+      <ToastNotifications />
       <ScrollManager />
       <Navbar />
       <div className='relative top-24 font-primary'>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MapComponent from '../Components/MapComponent'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function GetInTouch() {
     const [formData, setFormData] = useState({
@@ -23,10 +24,19 @@ export default function GetInTouch() {
                 headers: { "Content-Type": "application/json" }
             });
             console.log(res.data);
-            alert("Form Submitted! We'll get back to you soon!")
+            toast.success("Message Sent Successfully");
+
+            // Reset form fields after successful submission
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                mobile: '',
+                message: ''
+            });
         } catch (err) {
+            toast.success("Please try again later");
             console.error('Error submitting form:', err);
-            alert('Error submitting form. Please try again.')
         }
     }
     return (

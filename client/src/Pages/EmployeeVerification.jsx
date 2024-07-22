@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const EmployeeVerification = () => {
     const [isCameraOpen, setIsCameraOpen] = useState(false);
@@ -105,12 +106,13 @@ const EmployeeVerification = () => {
 
             if (response.status === 200) {
                 setEmployeeData(prevData => ({ ...prevData, isHometownVerified: true }));
+                toast.success("Address Uploaded");
             } else {
-                alert('Failed to verify hometown address');
+                toast.success("Something went wrong");
             }
         } catch (error) {
             console.error('Error submitting hometown address:', error);
-            alert('An error occurred while submitting hometown address');
+            toast.success("Something went wrong");
         }
     };
 
@@ -129,12 +131,13 @@ const EmployeeVerification = () => {
 
             if (response.status === 200) {
                 setEmployeeData(prevData => ({ ...prevData, isCurrentAddressVerified: true }));
+                toast.success("Address Uploaded");
             } else {
-                alert('Failed to verify current address');
+                toast.success("Something went wrong");
             }
         } catch (error) {
             console.error('Error submitting current address:', error);
-            alert('An error occurred while submitting current address');
+            toast.success("Something went wrong");
         }
     };
 
@@ -154,12 +157,13 @@ const EmployeeVerification = () => {
 
             if (response.status === 200) {
                 setEmployeeData(prevData => ({ ...prevData, isAadhaarUploaded: true }));
+                toast.success("Aadhaar Card Uploaded");
             } else {
-                alert('Failed to upload Aadhaar card');
+                toast.success("Something went wrong");
             }
         } catch (error) {
             console.error('Error submitting Aadhaar card:', error);
-            alert('An error occurred while submitting Aadhaar card');
+            toast.success("Something went wrong");
         }
     };
 
@@ -178,12 +182,13 @@ const EmployeeVerification = () => {
 
             if (response.status === 200) {
                 setEmployeeData(prevData => ({ ...prevData, isQuestionsVerified: true }));
+                toast.success("Police Verification Done");
             } else {
-                alert('Failed to verify questions');
+                toast.success("Something went wrong");
             }
         } catch (error) {
             console.error('Error submitting questions:', error);
-            alert('An error occurred while submitting questions');
+            toast.success("Something went wrong");
         }
     };
 
@@ -225,19 +230,22 @@ const EmployeeVerification = () => {
             });
 
             if (response.status === 200) {
-                alert('Employee photo saved successfully');
+                toast.success("Photo saved successfully");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2500);
             } else {
-                alert('Failed to save employee photo');
+                toast.success("Something went wrong");
             }
         } catch (error) {
             console.error('Error submitting photo:', error);
-            alert('An error occurred while submitting photo');
+            toast.success("Something went wrong");
         }
     };
 
     return (
-        <div className="flex">
-            <div className="p-4 md:p-8 bg-gray-100 flex-1">
+        <div className="flex h-3/5">
+            <div className="p-4 md:p-8 bg-gray-100 flex-1 overflow-y-auto h-[calc(100vh-72px-2rem)]">
                 <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-4 px-6 mb-4 rounded-md">
                     Employee Verification
                 </h2>
@@ -275,7 +283,7 @@ const EmployeeVerification = () => {
                                         <div>
                                             <img src={capturedImage} alt="Captured" className="mb-4 w-1/4" />
                                             <button
-                                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                                className="bg-cyan-900 text-white px-4 py-2 rounded"
                                                 onClick={handlePhotoSubmit}
                                             >
                                                 Save Photo
@@ -284,7 +292,7 @@ const EmployeeVerification = () => {
                                     ) :
                                         (
                                             <button
-                                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                                className="bg-cyan-900 text-white px-4 py-2 rounded"
                                                 onClick={openCamera}
                                             >
                                                 Open Camera
@@ -308,7 +316,7 @@ const EmployeeVerification = () => {
                             />
 
                             <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                className="bg-cyan-900 text-white px-4 py-2 rounded"
                                 onClick={handleHometownSubmit}
                             >
                                 Verify Hometown Address
@@ -337,7 +345,7 @@ const EmployeeVerification = () => {
                                 onChange={(e) => setEmployeeData({ ...employeeData, currentAddress: e.target.value })}
                             />
                             <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                className="bg-cyan-900 text-white px-4 py-2 rounded"
                                 onClick={handleCurrentAddressSubmit}
                             >
                                 Verify Current Address
@@ -364,7 +372,7 @@ const EmployeeVerification = () => {
                                 className="mb-4"
                             />
                             <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                className="bg-cyan-900 text-white px-4 py-2 rounded"
                                 onClick={handleAadhaarSubmit}
                             >
                                 Upload Aadhaar Card
@@ -373,7 +381,7 @@ const EmployeeVerification = () => {
                     ) :
                         (
                             <div>
-                                <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>                                
+                                <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>
                                 <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
                                     Verified
                                 </p>
@@ -409,7 +417,7 @@ const EmployeeVerification = () => {
                                 onChange={handleQuestionChange}
                             />
                             <button
-                                className="bg-blue-500 text-white px-4 py-2 rounded"
+                                className="bg-cyan-900 text-white px-4 py-2 rounded"
                                 onClick={handleQuestionsSubmit}
                             >
                                 Verify Questions

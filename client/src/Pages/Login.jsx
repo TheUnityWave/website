@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import logo from '../Images/logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -30,27 +31,32 @@ const Login = () => {
 
                 // Navigate based on isAdmin value
                 if (isAdmin) {
+                    toast.success("Logged In Successfully");
                     navigate("/admin/job-applications");
                 } else {
+                    toast.success("Logged In Successfully");
                     navigate("/employee/verification");
                 }
             } else {
+                toast.error("Invalid Credentials");
                 setErrorMessage("Invalid credentials, please try again.");
             }
         } catch (error) {
+            toast.error("Invalid Credentials");
             console.error("Error during login:", error);
             setErrorMessage("An error occurred. Please try again.");
         }
     };
 
     return (
-        <div className="flex items-center justify-center w-full bg-gray-100">
-            <div className="relative w-full max-w-xl bg-[#D9D9D9] rounded-lg shadow-md p-6">
-                <div className="absolute top-0 right-0 bottom-0 w-2 bg-[#21506E]"></div>
-                <div className="absolute bottom-0 right-0 left-0 h-2 bg-[#21506E]"></div>
+        <div className="flex items-center justify-center w-full bg-gray-100 h-screen">
+            <div className="relative w-full max-w-xl bg-[#D9D9D9] rounded-lg p-6">
                 <img src={logo} alt="Logo" className="w-12 h-12 mx-auto mb-4" />
                 <h2 className="text-2xl text-[#21506E] font-bold text-center mb-6">The Unity Wave!</h2>
                 <h3 className="text-3xl text-[#21506E] font-bold text-center mb-6">Log In</h3>
+                <p className="mt-6 text-center text-gray-600">
+                    For new employees, please log in using the credentials that were sent to your email.
+                </p>
                 {errorMessage && <p className="text-center text-red-500">{errorMessage}</p>}
                 <form onSubmit={handleLoginSubmit}>
                     <div className="mb-4">
@@ -82,9 +88,6 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
-                <p className="mt-6 text-center text-gray-600">
-                    Don't have an account? <Link to="/signup" className="text-[#21506E] hover:underline">Signup</Link>
-                </p>
             </div>
         </div>
     );
