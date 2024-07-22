@@ -1,32 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Career = require('../models/Career');
-const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const path = require('path');
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
+const createUploadMiddleware = require('../middleware/cloudinary');
 
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: 'resumes',
-    resource_type: 'auto',
-    allowed_formats: ['pdf', 'doc', 'docx'], // Add other formats if needed
-    public_id: (req, file) => {
-      const fileName = path.parse(file.originalname).name;
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-      return `${fileName}-${uniqueSuffix}`;
-    },
-  },
-});
+const upload = createUploadMiddleware('resumes');
 
-const upload = multer({ storage: storage });
 
 router.post('/', upload.single('resumeFile'), async (req, res) => {
 

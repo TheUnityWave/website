@@ -249,6 +249,7 @@ const EmployeeVerification = () => {
             if (capturedImage) {
                 const photoBlob = dataURItoBlob(capturedImage);
                 formData.append('EmployeePhoto', photoBlob, 'employee_photo.png');
+                console.log(photoBlob);
             }
 
             const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
@@ -260,6 +261,7 @@ const EmployeeVerification = () => {
 
             if (response.status === 200) {
                 alert('Employee photo saved successfully');
+                console.log(response.data.url);
             } else {
                 alert('Failed to save employee photo');
             }
@@ -284,7 +286,7 @@ const EmployeeVerification = () => {
                                 Verified
                             </p>
 
-                            {/* <button
+                            <button
                                 className="bg-yellow-500 text-white px-4 py-2 rounded mr-2"
                                 onClick={retakePhoto}
                             >
@@ -295,7 +297,7 @@ const EmployeeVerification = () => {
                                 onClick={handlePhotoSubmit}
                             >
                                 Save Photo
-                            </button> */}
+                            </button>
                         </div>
                     ) : (
                         <div>
