@@ -9,6 +9,7 @@ const upload = createUploadMiddleware('employee_verification');
 const EmployeeVerification = require('../models/EmployeeVerification');
 const path = require('path');
 require('dotenv').config();
+const jwt = require('jsonwebtoken');
 
 // Single route for handling different types of data and file uploads
 router.post('/employee-verification', fetchEmployee, upload.fields([
@@ -81,7 +82,13 @@ router.get('/get-employee', fetchEmployee, async (req, res) => {
 });
 
 router.get('/user', async (req, res) => {
-    const token = req.headers['authorization'];
+    const authHeader = req.headers['auth-token'];
+    if (!authHeader) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+
+    const token = authHeader.split(' ')[1];
+    console.log('Received token:', token); // Debugging log
 
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
@@ -89,14 +96,17 @@ router.get('/user', async (req, res) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const user = await EmployeeVerification.findById(decoded.id).select('-password');
+        console.log('Decoded token:', decoded); // Debugging log
+        const user = await EmployeeVerification.findById(decoded.user.id).select('-password');
 
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
 
+        console.log('User data sent:', user);
         res.json(user);
     } catch (error) {
+        console.error('Error in /user route:', error.message);
         res.status(401).json({ message: 'Invalid token' });
     }
 });
