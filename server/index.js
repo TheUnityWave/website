@@ -10,12 +10,12 @@ const getintouchRoute = require('./routes/getintouchRoute');
 const login = require('./routes/Login');
 const multer = require('multer');
 
+require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000; // Adjust port as needed
 
 // Multer middleware setup
 const storage = multer.memoryStorage(); // or multer.diskStorage() for persistent storage
-const upload = multer({ storage: storage });
 
 // Middleware
 app.use(cors()); // Enable CORS if needed

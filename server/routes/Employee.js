@@ -1,36 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const cloudinary = require('cloudinary').v2;
 const fetchEmployee = require('../middleware/fetchEmployee');
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+const createUploadMiddleware = require('../middleware/cloudinary');
+
+const upload = createUploadMiddleware('employee_verification');
+
 const EmployeeVerification = require('../models/EmployeeVerification');
 const path = require('path');
 require('dotenv').config();
-
-// Cloudinary configuration
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-// Cloudinary storage configuration
-const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        folder: 'uploads',
-        allowed_formats: ['jpg', 'jpeg', 'png', 'pdf'],
-        public_id: (req, file) => {
-            const fileName = path.parse(file.originalname).name;
-            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-            return `${fileName}-${uniqueSuffix}`;
-        },
-    },
-});
-
-// Multer upload configuration
-const upload = multer({ storage: storage });
 
 // Single route for handling different types of data and file uploads
 router.post('/employee-verification', fetchEmployee, upload.fields([
@@ -78,7 +56,10 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
             return res.status(404).json({ message: 'Employee not found' });
         }
 
-        res.status(200).json({ message: 'Employee verification data updated successfully', updatedEmployee });
+        res.status(200).json({ 
+            message: 'Employee verification data updated successfully',  
+            updatedEmployee: updatedEmployee.toObject()
+        });
     } catch (err) {
         console.error('Error:', err.message);
         res.status(500).json({ message: 'Internal server error' });

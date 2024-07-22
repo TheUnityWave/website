@@ -4,7 +4,7 @@ import mobimage from '../Images/mobimage.jpg'
 export default function HeroPg() {
   return (
     <div 
-      className={`heropg bg-primary h-[90vh] overflow-hidden text-white flex md:flex-row flex-col justify-between items-center relative`}
+      className={`heropg bg-primary h-[99vh] overflow-hidden text-white flex md:flex-row flex-col justify-between items-center relative`}
     >
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"

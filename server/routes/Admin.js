@@ -59,6 +59,15 @@ router.post('/send-credentials/:id', async (req, res) => {
             return res.status(404).json({ message: 'Job application not found' });
         }
 
+        const career = await Career.findById(req.params.id);
+        if (!career) {
+            return res.status(404).json({ message: 'Career application not found' });
+        }
+
+        if (career.sendCredentials) {
+            return res.status(400).json({ message: 'Credentials have already been sent for this application' });
+        }
+        console.log("sendCredentials value: ", career.sendCredentials)
         const password = generatePassword();
         const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
 
@@ -107,6 +116,12 @@ router.post('/send-credentials/:id', async (req, res) => {
         });
 
         await newEmployee.save();
+
+        // Update the sendCredentials flag in the Career model
+        career.sendCredentials = true;
+        await career.save();
+        
+        console.log("sendCredentials value: ", career.sendCredentials)
 
         res.json({ message: 'Credentials sent and employee details saved' });
     } catch (error) {
