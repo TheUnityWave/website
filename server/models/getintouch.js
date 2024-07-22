@@ -20,6 +20,10 @@ const GetInTouchSchema = new mongoose.Schema({
     message: {
         type: String,
     },
+    isContacted: {
+        type: Boolean,
+        default: false
+    },
     createdAt: {
         type: Date,
         default: Date.now,

@@ -139,4 +139,27 @@ router.get('/get-in-touch', async (req, res) => {
     }
 });
 
+// / Update isContacted status
+router.patch('/get-in-touch/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { isContacted } = req.body;
+  
+      const updatedRequest = await GetInTouch.findByIdAndUpdate(
+        id,
+        { isContacted },
+        { new: true }
+      );
+  
+      if (!updatedRequest) {
+        return res.status(404).json({ message: 'Request not found' });
+      }
+  
+      res.json(updatedRequest);
+    } catch (error) {
+      console.error('Error updating get in touch request:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
+
 module.exports = router;

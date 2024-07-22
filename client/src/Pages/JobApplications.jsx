@@ -4,13 +4,13 @@ const JobApplications = () => {
     const [applications, setApplications] = useState([]);
 
     useEffect(() => {
-        
+
         const fetchApplications = async () => {
             try {
                 const response = await fetch('http://localhost:5000/api/admin/job-applications');
                 const data = await response.json();
                 setApplications(data);
-                console.log(data);
+                // console.log(data);
             } catch (error) {
                 console.error('Error fetching job applications:', error);
             }
@@ -18,7 +18,7 @@ const JobApplications = () => {
         fetchApplications();
 
     }, [applications]);
-        const sendCredentials = async (id) => {
+    const sendCredentials = async (id) => {
         try {
             const response = await fetch(`http://localhost:5000/api/admin/send-credentials/${id}`, {
                 method: 'POST',
@@ -29,16 +29,10 @@ const JobApplications = () => {
             if (response.ok) {
                 const data = await response.json();
                 alert('Credentials sent successfully');
-                // Update the specific application in the state
-                // setApplications(prevApplications =>
-                    //     prevApplications.map(app =>
-                        //         app._id === id ? { ...app, sendCredentials: true } : app
-                        //     )
-                        // );
-                    } else {
-                        const errorData = await response.json();
-                        alert(errorData.message || 'Failed to send credentials');
-                    }
+            } else {
+                const errorData = await response.json();
+                alert(errorData.message || 'Failed to send credentials');
+            }
         } catch (error) {
             console.error('Error sending credentials:', error);
             alert('Error sending credentials');
@@ -63,23 +57,23 @@ const JobApplications = () => {
                                 <p><strong>Experience:</strong> {application.experience}</p>
                                 <p><strong>Job Category:</strong> {application.jobCategory}</p>
                                 <div className='flex py-6 gap-6 items-center'>
-                                <div>
-                                <a href={application.resumeFile} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                                    View Resume
-                                </a>
+                                    <div>
+                                        <a href={application.resumeFile} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                            View Resume
+                                        </a>
+                                    </div>
+                                    {application.sendCredentials ? (
+                                        <p className=" text-gray-500">Credentials Already Sent</p>
+                                    ) : (
+                                        <button
+                                            onClick={() => sendCredentials(application._id)}
+                                            className=" bg-green-500 text-white py-2 px-4 rounded"
+                                        >
+                                            Send Credentials
+                                        </button>
+                                    )}
                                 </div>
-                                {application.sendCredentials ? (
-                                    <p className=" text-gray-500">Credentials Already Sent</p>
-                                ) : (
-                                    <button
-                                        onClick={() => sendCredentials(application._id)}
-                                        className=" bg-green-500 text-white py-2 px-4 rounded"
-                                    >
-                                        Send Credentials
-                                    </button>
-                                )}
-                                </div>
-                    
+
                             </li>
                         ))}
                     </ul>
