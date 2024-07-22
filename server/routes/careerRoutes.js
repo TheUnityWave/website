@@ -33,7 +33,7 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
   try {
     const { firstName, lastName, mobileNumber, email, experience, jobCategory } = req.body;
     let resumeFile = null;
-    let viewableResumeFile = null;
+    // let viewableResumeFile = null;
 
     if (req.file) {
       resumeFile = req.file.path;
@@ -46,10 +46,10 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
         pages: true,
         public_id: `${fileName}_viewable`
       });
-      viewableResumeFile = result.secure_url;
+      // viewableResumeFile = result.secure_url;
 
       console.log('Original file uploaded to Cloudinary:', resumeFile);
-      console.log('Viewable file created:', viewableResumeFile);
+      // console.log('Viewable file created:', viewableResumeFile);
     } else {
       console.log('No file was uploaded');
     }
@@ -62,7 +62,7 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
       experience,
       jobCategory,
       resumeFile,
-      viewableResumeFile,
+      // viewableResumeFile,
     });
 
     await newCareer.save();
@@ -70,7 +70,7 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
     res.status(201).json({ 
       message: 'Application submitted successfully', 
       fileUrl: resumeFile,
-      viewableFileUrl: viewableResumeFile 
+      // viewableFileUrl: viewableResumeFile 
     });
   } catch (error) {
     res.status(500).json({ message: 'Error submitting application', error: error.message });

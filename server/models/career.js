@@ -29,10 +29,10 @@ const CareerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  viewableResumeFile: {
-    type: String,
-    required: true,
-  },
+  // viewableResumeFile: {
+  //   type: String,
+  //   required: true,
+  // },
   sendCredentials: { type: Boolean, default: false },
   createdAt: {
     type: Date,
