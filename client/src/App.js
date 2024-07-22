@@ -68,7 +68,7 @@ function App() {
     <BrowserRouter>
       <ScrollManager />
       <Navbar />
-      <div className='relative top-24 font-primary'>
+      <div className='relative top-20 font-primary overflow-x-hidden'>
         <Routes>
           <Route path="/" element={
             <>
