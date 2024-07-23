@@ -18,13 +18,13 @@ const AdminSidebar = () => {
     }
 
     return (
-        <div className="bg-cyan-900 text-white w-64 p-4 flex flex-col justify-between">
+        <div className="bg-cyan-900 text-white w-80 p-4 flex flex-col justify-between">
             <nav className="flex flex-col space-y-4">
                 <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-2 rounded">
                     Job Applications
                 </NavLink>
                 <NavLink to="/admin/employees" className="hover:bg-cyan-700 p-2 rounded">
-                    Employees
+                    Employees Detail
                 </NavLink>
                 <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 p-2 rounded">
                     Get in Touch Requests
