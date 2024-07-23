@@ -4,15 +4,13 @@ import Navbar from './Components/Navbar'
 import Login from './Components/login';
 import Signup from './Components/signup';
 import MainContent from './Components/Heropg';
+import AboutUs from './Components/AboutUs';
 
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <MainContent/>
-      <Signup/>
-      <Login/>
+      <AboutUs/>
     </Router>
   )
 }

@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        '5': '5px', // Example for custom border width
+        '6': '6px',
+      },
       colors: {
         primary: '#21506E',
       },
