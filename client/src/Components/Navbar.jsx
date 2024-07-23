@@ -38,9 +38,15 @@ export default function Navbar() {
             Get in Touch
           </li>
           <li>
+            { (!localStorage.getItem('token')) ?
             <Link to="/login" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
               Login as Employee
             </Link>
+            :
+            <Link to="/employee/verification" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+              Employee Dashboard
+            </Link>
+            }
           </li>
         </ul>
       </div>
