@@ -10,7 +10,6 @@ const EmployeeVerification = require('../models/EmployeeVerification');
 const path = require('path');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const jwt = require('jsonwebtoken');
 
 // Single route for handling different types of data and file uploads
 router.post('/employee-verification', fetchEmployee, upload.fields([
