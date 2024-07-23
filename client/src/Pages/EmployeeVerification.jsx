@@ -116,6 +116,76 @@ const EmployeeVerification = () => {
         }
     };
 
+    const handleHometownUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: false,
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    EmployeePhoto: data.EmployeePhoto
+                });
+                setIsPhotoTaken(!!data.EmployeePhoto);
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
+
+    const handleCurrentAddressUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: false,
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    EmployeePhoto: data.EmployeePhoto
+                });
+                setIsPhotoTaken(!!data.EmployeePhoto);
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
+
     const handleCurrentAddressSubmit = async () => {
         try {
             const response = await axios.post(
@@ -167,6 +237,41 @@ const EmployeeVerification = () => {
         }
     };
 
+    const handleAadhaarUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: false,
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    EmployeePhoto: data.EmployeePhoto
+                });
+                setIsPhotoTaken(!!data.EmployeePhoto);
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
+
     const handleQuestionsSubmit = async () => {
         try {
             const response = await axios.post(
@@ -191,6 +296,41 @@ const EmployeeVerification = () => {
             toast.success("Something went wrong");
         }
     };
+
+    const handleQuestionsUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: false,
+                    EmployeePhoto: data.EmployeePhoto
+                });
+                setIsPhotoTaken(!!data.EmployeePhoto);
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
 
     const handleQuestionChange = (event) => {
         const { name, value } = event.target;
@@ -244,26 +384,79 @@ const EmployeeVerification = () => {
         }
     };
 
+    const handlePhotoUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    EmployeePhoto: null
+                });
+                setIsPhotoTaken(false);
+                setIsCameraOpen(true);
+                navigator.mediaDevices
+                    .getUserMedia({ video: true })
+                    .then((stream) => {
+                        videoRef.current.srcObject = stream;
+                        videoRef.current.play();
+                    })
+                    .catch((err) => {
+                        console.error("Error accessing the camera: ", err);
+                    });
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
+
     return (
-        <div className="flex h-3/5">
-            <div className="p-4 md:p-8 bg-gray-100 flex-1 overflow-y-auto h-[calc(100vh-72px-2rem)]">
-                <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-4 px-6 mb-4 rounded-md">
+        <div className="flex">
+            <div className=" md:p-8 bg-gray-100 flex-1 overflow-y-auto h-[calc(100vh-72px-2rem)]">
+                <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-3 px-6 mb-4 rounded-md">
                     Employee Verification
                 </h2>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
                     <h3 className="text-lg font-semibold mb-4">Step 1: Capture Photo</h3>
                     {employeeData.EmployeePhoto ? (
                         <div>
-                            <img src={employeeData.EmployeePhoto} alt="Captured" className="mb-4 w-1/4" />
-                            <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                Verified
-                            </p>
+                            <div className='flex items-center justify-between'>
+                                <img src={employeeData.EmployeePhoto} alt="Captured" className="mb-4 w-1/4" />
+                                <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                    Verified
+                                </p>
+                            </div>
+                            <button
+                                className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                onClick={handlePhotoUpdate}
+                            >
+                                Update
+                            </button>
                         </div>
                     ) : (
                         <div>
                             {isCameraOpen ? (
                                 <div>
-                                    <video ref={videoRef} width="640" height="480" className="mb-4" />
+                                    <video ref={videoRef} width="300" height="300" className="mb-4" />
                                     <button
                                         className="bg-green-500 text-white px-4 py-2 rounded mr-2"
                                         onClick={takePhoto}
@@ -305,7 +498,7 @@ const EmployeeVerification = () => {
                     )}
                 </div>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 2: Verify Hometown Address</h3>
+                    <h3 className="text-lg font-semibold mb-4">Step 2: Hometown Address</h3>
                     {employeeData.isHometownVerified === false ? (
                         <div>
                             <input
@@ -326,16 +519,24 @@ const EmployeeVerification = () => {
                     ) :
                         (
                             <div>
-                                <p>{employeeData.hometownAddress}</p>
-                                <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                    Verified
-                                </p>
+                                <div className='flex justify-between'>
+                                    <p className='italic'>{employeeData.hometownAddress}</p>
+                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                        Verified
+                                    </p>
+                                </div>
+                                <button
+                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                    onClick={handleHometownUpdate}
+                                >
+                                    Update
+                                </button>
                             </div>
                         )}
 
                 </div>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 3: Verify Current Address</h3>
+                    <h3 className="text-lg font-semibold mb-4">Step 3: Current Address</h3>
                     {employeeData.isCurrentAddressVerified === false ? (
                         <div>
                             <input
@@ -355,10 +556,18 @@ const EmployeeVerification = () => {
                     ) :
                         (
                             <div>
-                                <p>{employeeData.currentAddress}</p>
-                                <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                    Verified
-                                </p>
+                                <div className='flex justify-between'>
+                                    <p className='italic'>{employeeData.currentAddress}</p>
+                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                        Verified
+                                    </p>
+                                </div>
+                                <button
+                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                    onClick={handleCurrentAddressUpdate}
+                                >
+                                    Update
+                                </button>
                             </div>
                         )}
 
@@ -372,6 +581,7 @@ const EmployeeVerification = () => {
                                 ref={aadhaarFileRef}
                                 className="mb-4"
                             />
+                            <br />
                             <button
                                 className="bg-cyan-900 text-white px-4 py-2 rounded"
                                 onClick={handleAadhaarSubmit}
@@ -382,10 +592,18 @@ const EmployeeVerification = () => {
                     ) :
                         (
                             <div>
-                                <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>
-                                <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                    Verified
-                                </p>
+                                <div className='flex items-center justify-between'>
+                                    <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>
+                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                        Verified
+                                    </p>
+                                </div>
+                                <button
+                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                    onClick={handleAadhaarUpdate}
+                                >
+                                    Update
+                                </button>
                             </div>
                         )}
                 </div>
@@ -426,9 +644,26 @@ const EmployeeVerification = () => {
                         </div>
                     ) :
                         (
-                            <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                Verified
-                            </p>
+                            <div>
+                                <div className='flex justify-between items-center'>
+                                    <div>
+                                        Question 1: {employeeData.step5Data.question1}
+                                        <br />
+                                        Question 2: {employeeData.step5Data.question2}
+                                        <br />
+                                        Question 3: {employeeData.step5Data.question3}
+                                    </div>
+                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                        Verified
+                                    </p>
+                                </div>
+                                <button
+                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                    onClick={handleQuestionsUpdate}
+                                >
+                                    Update
+                                </button>
+                            </div>
 
                         )}
 

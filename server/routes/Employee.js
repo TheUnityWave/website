@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const fetchEmployee = require('../middleware/fetchEmployee');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 const createUploadMiddleware = require('../middleware/cloudinary');
 
@@ -60,6 +62,39 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
             message: 'Employee verification data updated successfully',  
             updatedEmployee: updatedEmployee.toObject()
         });
+    } catch (err) {
+        console.error('Error:', err.message);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+// ENDPOINT TO CHANGE PASSWORD.
+router.post('/change-password', fetchEmployee, async (req, res) => {
+    try {
+        const { newPassword, confirmPassword } = req.body;
+
+        // Check if both passwords are provided
+        if (!newPassword || !confirmPassword) {
+            return res.status(400).json({ message: 'Please provide both new password and confirm password' });
+        }
+
+        // Check if the passwords match
+        if (newPassword !== confirmPassword) {
+            return res.status(400).json({ message: 'Passwords do not match' });
+        }
+
+        // Fetch the current employee
+        const employee = req.employee;
+
+        // Hash the new password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+        // Update the employee's password in the database
+        employee.password = hashedPassword;
+        await employee.save();
+
+        res.status(200).json({ message: 'Password changed successfully' });
     } catch (err) {
         console.error('Error:', err.message);
         res.status(500).json({ message: 'Internal server error' });
