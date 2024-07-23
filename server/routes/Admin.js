@@ -12,7 +12,7 @@ const fetchEmployee = require('../middleware/fetchEmployee');
 // Endpoint to fetch all the job applications.
 router.get('/job-applications', async (req, res) => {
     try {
-        const applications = await Career.find();
+        const applications = await Career.find().sort({ createdAt: -1 });
         res.json(applications);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching job applications', error: error.message });
