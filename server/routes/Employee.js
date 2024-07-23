@@ -10,6 +10,7 @@ const EmployeeVerification = require('../models/EmployeeVerification');
 const path = require('path');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 // Single route for handling different types of data and file uploads
 router.post('/employee-verification', fetchEmployee, upload.fields([
@@ -101,6 +102,7 @@ router.get('/user', async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
+        console.log('User data sent:', user);
         res.json(user);
     } catch (error) {
         console.error('Token verification error:', error);
