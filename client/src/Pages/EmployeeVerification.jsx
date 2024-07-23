@@ -20,45 +20,46 @@ const EmployeeVerification = () => {
     const canvasRef = useRef(null);
     const aadhaarFileRef = useRef(null);
 
-    useEffect(() => {
-        const fetchEmployeeData = async () => {
-            try {
-                const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
-                    headers: {
-                        'auth-token': localStorage.getItem('token')
-                    }
-                });
-
-                if (response.status === 200) {
-                    const data = response.data;
-                    setEmployeeData({
-                        hometownAddress: data.hometownAddress || '',
-                        currentAddress: data.currentAddress || '',
-                        isHometownVerified: (data.hometownAddress ? true : false),
-                        isCurrentAddressVerified: (data.currentAddress ? true : false),
-                        AadhaarCard: data.AdhaarCard,
-                        isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                        step5Data: {
-                            question1: data.policeVerificationDetails.question1 || '',
-                            question2: data.policeVerificationDetails.question2 || '',
-                            question3: data.policeVerificationDetails.question3 || ''
-                        },
-                        isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
-                        EmployeePhoto: data.EmployeePhoto
-                    });
-                    setIsPhotoTaken(!!data.EmployeePhoto);
-                    setCapturedImage(data.EmployeePhoto);
-                } else {
-                    console.error('Failed to fetch employee data');
+    const fetchEmployeeData = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
                 }
-            } catch (error) {
-                console.error('Error fetching employee data:', error);
-            }
-        };
+            });
 
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    EmployeePhoto: data.EmployeePhoto
+                });
+                setIsPhotoTaken(!!data.EmployeePhoto);
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    };
+
+    useEffect(() => {
         fetchEmployeeData();
     }, []);
 
+    
     const openCamera = () => {
         setIsCameraOpen(true);
         navigator.mediaDevices
@@ -91,6 +92,95 @@ const EmployeeVerification = () => {
         setIsPhotoTaken(true);
     };
 
+    const dataURItoBlob = (dataURI) => {
+        const byteString = atob(dataURI.split(',')[1]);
+        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        const ab = new ArrayBuffer(byteString.length);
+        const ia = new Uint8Array(ab);
+        for (let i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ab], { type: mimeString });
+    };
+
+    // PHOTO SUBMIT.
+    const handlePhotoSubmit = async () => {
+        try {
+            const formData = new FormData();
+            if (capturedImage) {
+                const photoBlob = dataURItoBlob(capturedImage);
+                formData.append('EmployeePhoto', photoBlob, 'employee_photo.png');
+                console.log(photoBlob);
+            }
+
+            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                toast.success("Photo saved successfully");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2500);
+            } else {
+                toast.success("Something went wrong");
+            }
+        } catch (error) {
+            console.error('Error submitting photo:', error);
+            toast.success("Something went wrong");
+        }
+    };
+
+    // PHOTO UDPATE.
+    const handlePhotoUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
+                    step5Data: {
+                        question1: data.policeVerificationDetails.question1 || '',
+                        question2: data.policeVerificationDetails.question2 || '',
+                        question3: data.policeVerificationDetails.question3 || ''
+                    },
+                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    EmployeePhoto: null
+                });
+                setIsPhotoTaken(false);
+                setIsCameraOpen(true);
+                navigator.mediaDevices
+                    .getUserMedia({ video: true })
+                    .then((stream) => {
+                        videoRef.current.srcObject = stream;
+                        videoRef.current.play();
+                    })
+                    .catch((err) => {
+                        console.error("Error accessing the camera: ", err);
+                    });
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
+
+    // HOME TOWN SUBMIT.
     const handleHometownSubmit = async () => {
         try {
             const response = await axios.post(
@@ -116,6 +206,7 @@ const EmployeeVerification = () => {
         }
     };
 
+    // HOME TOWN UPDATE.
     const handleHometownUpdate = async () => {
         try {
             const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
@@ -151,6 +242,7 @@ const EmployeeVerification = () => {
         }
     }
 
+    // CURRENT ADDRESS SUBMIT.
     const handleCurrentAddressUpdate = async () => {
         try {
             const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
@@ -186,6 +278,7 @@ const EmployeeVerification = () => {
         }
     }
 
+    // CURRENT ADDRESS UPDATE.
     const handleCurrentAddressSubmit = async () => {
         try {
             const response = await axios.post(
@@ -211,6 +304,7 @@ const EmployeeVerification = () => {
         }
     };
 
+    // AADHAAR CARD SUBMIT.
     const handleAadhaarSubmit = async () => {
         try {
             const formData = new FormData();
@@ -227,6 +321,7 @@ const EmployeeVerification = () => {
 
             if (response.status === 200) {
                 setEmployeeData(prevData => ({ ...prevData, isAadhaarUploaded: true }));
+                fetchEmployeeData();
                 toast.success("Aadhaar Card Uploaded");
             } else {
                 toast.success("Something went wrong");
@@ -237,6 +332,7 @@ const EmployeeVerification = () => {
         }
     };
 
+    // AADHAAR CARD UPDATE.
     const handleAadhaarUpdate = async () => {
         try {
             const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
@@ -272,6 +368,7 @@ const EmployeeVerification = () => {
         }
     }
 
+    // POLICE VERIFICATION SUBMIT.
     const handleQuestionsSubmit = async () => {
         try {
             const response = await axios.post(
@@ -297,6 +394,7 @@ const EmployeeVerification = () => {
         }
     };
 
+    // POLICE VERIFICATION UPDATE.
     const handleQuestionsUpdate = async () => {
         try {
             const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
@@ -342,92 +440,6 @@ const EmployeeVerification = () => {
             }
         }));
     };
-
-    const dataURItoBlob = (dataURI) => {
-        const byteString = atob(dataURI.split(',')[1]);
-        const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-        const ab = new ArrayBuffer(byteString.length);
-        const ia = new Uint8Array(ab);
-        for (let i = 0; i < byteString.length; i++) {
-            ia[i] = byteString.charCodeAt(i);
-        }
-        return new Blob([ab], { type: mimeString });
-    };
-
-    const handlePhotoSubmit = async () => {
-        try {
-            const formData = new FormData();
-            if (capturedImage) {
-                const photoBlob = dataURItoBlob(capturedImage);
-                formData.append('EmployeePhoto', photoBlob, 'employee_photo.png');
-                console.log(photoBlob);
-            }
-
-            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    'auth-token': localStorage.getItem('token')
-                }
-            });
-
-            if (response.status === 200) {
-                toast.success("Photo saved successfully");
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2500);
-            } else {
-                toast.success("Something went wrong");
-            }
-        } catch (error) {
-            console.error('Error submitting photo:', error);
-            toast.success("Something went wrong");
-        }
-    };
-
-    const handlePhotoUpdate = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
-                headers: {
-                    'auth-token': localStorage.getItem('token')
-                }
-            });
-
-            if (response.status === 200) {
-                const data = response.data;
-                setEmployeeData({
-                    hometownAddress: data.hometownAddress || '',
-                    currentAddress: data.currentAddress || '',
-                    isHometownVerified: (data.hometownAddress ? true : false),
-                    isCurrentAddressVerified: (data.currentAddress ? true : false),
-                    AadhaarCard: data.AdhaarCard,
-                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
-                    EmployeePhoto: null
-                });
-                setIsPhotoTaken(false);
-                setIsCameraOpen(true);
-                navigator.mediaDevices
-                    .getUserMedia({ video: true })
-                    .then((stream) => {
-                        videoRef.current.srcObject = stream;
-                        videoRef.current.play();
-                    })
-                    .catch((err) => {
-                        console.error("Error accessing the camera: ", err);
-                    });
-                setCapturedImage(data.EmployeePhoto);
-            } else {
-                console.error('Failed to fetch employee data');
-            }
-        } catch (error) {
-            console.error('Error fetching employee data:', error);
-        }
-    }
 
     return (
         <div className="flex">
