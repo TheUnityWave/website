@@ -4,13 +4,12 @@ const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs');
 const EmployeeVerification = require('../models/EmployeeVerification');
 const GetInTouch = require('../models/getintouch');
-const JobApplication = require('../models/Career'); 
+const JobApplication = require('../models/Career');
 const Career = require('../models/Career');
-const fetchEmployee = require('../middleware/fetchEmployee');
-
+const { authorizeAdmin } = require('../middleware/authorizeAdmin');
 
 // Endpoint to fetch all the job applications.
-router.get('/job-applications', async (req, res) => {
+router.get('/job-applications', authorizeAdmin, async (req, res) => {
     try {
         const applications = await Career.find().sort({ createdAt: -1 });
         res.json(applications);
@@ -21,7 +20,7 @@ router.get('/job-applications', async (req, res) => {
 
 
 // Endpoint to fetch all the employees.
-router.get('/employees', async (req, res) => {
+router.get('/employees', authorizeAdmin, async (req, res) => {
     try {
         const employees = await EmployeeVerification.find();
         res.json(employees);
@@ -120,7 +119,7 @@ router.post('/send-credentials/:id', async (req, res) => {
         // Update the sendCredentials flag in the Career model
         career.sendCredentials = true;
         await career.save();
-        
+
         console.log("sendCredentials value: ", career.sendCredentials)
 
         res.json({ message: 'Credentials sent and employee details saved' });
@@ -130,7 +129,7 @@ router.post('/send-credentials/:id', async (req, res) => {
 });
 
 
-router.get('/get-in-touch', async (req, res) => {
+router.get('/get-in-touch', authorizeAdmin, async (req, res) => {
     try {
         const getInTouchRequests = await GetInTouch.find().sort({ createdAt: -1 });
         res.json(getInTouchRequests);
@@ -142,24 +141,24 @@ router.get('/get-in-touch', async (req, res) => {
 // / Update isContacted status
 router.patch('/get-in-touch/:id', async (req, res) => {
     try {
-      const { id } = req.params;
-      const { isContacted } = req.body;
-  
-      const updatedRequest = await GetInTouch.findByIdAndUpdate(
-        id,
-        { isContacted },
-        { new: true }
-      );
-  
-      if (!updatedRequest) {
-        return res.status(404).json({ message: 'Request not found' });
-      }
-  
-      res.json(updatedRequest);
+        const { id } = req.params;
+        const { isContacted } = req.body;
+
+        const updatedRequest = await GetInTouch.findByIdAndUpdate(
+            id,
+            { isContacted },
+            { new: true }
+        );
+
+        if (!updatedRequest) {
+            return res.status(404).json({ message: 'Request not found' });
+        }
+
+        res.json(updatedRequest);
     } catch (error) {
-      console.error('Error updating get in touch request:', error);
-      res.status(500).json({ message: 'Server error' });
+        console.error('Error updating get in touch request:', error);
+        res.status(500).json({ message: 'Server error' });
     }
-  });
+});
 
 module.exports = router;

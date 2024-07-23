@@ -7,7 +7,12 @@ const JobApplications = () => {
 
         const fetchApplications = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/job-applications');
+                const response = await fetch('http://localhost:5000/api/admin/job-applications', {
+                    headers: {
+                        'auth-token': localStorage.getItem('token'),
+                        'Content-Type': 'application/json'
+                    }
+                });
                 const data = await response.json();
                 setApplications(data);
                 // console.log(data);

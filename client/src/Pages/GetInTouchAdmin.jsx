@@ -9,7 +9,12 @@ const GetInTouchAdmin = () => {
 
     const fetchRequests = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/admin/get-in-touch');
+            const response = await fetch('http://localhost:5000/api/admin/get-in-touch', {
+                headers: {
+                    'auth-token': localStorage.getItem('token'),
+                    'Content-Type': 'application/json'
+                }
+            });
             const data = await response.json();
             setRequests(data);
         } catch (error) {
@@ -62,8 +67,8 @@ const GetInTouchAdmin = () => {
                                         onClick={() => handleMarkDone(request._id)}
                                         disabled={request.isContacted}
                                         className={`mt-2 px-4 py-2 rounded ${request.isContacted
-                                                ? 'bg-gray-300 cursor-not-allowed'
-                                                : 'bg-primary hover:bg-blue-600 text-white'
+                                            ? 'bg-gray-300 cursor-not-allowed'
+                                            : 'bg-primary hover:bg-blue-600 text-white'
                                             }`}
                                     >
                                         {request.isContacted ? 'Already Contacted' : 'Mark Done'}

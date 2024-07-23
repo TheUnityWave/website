@@ -6,7 +6,12 @@ const Employees = () => {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/employees');
+                const response = await fetch('http://localhost:5000/api/admin/employees', {
+                    headers: {
+                        'auth-token': localStorage.getItem('token'),
+                        'Content-Type': 'application/json'
+                    }
+                });
                 if (!response.ok) {
                     throw new Error('Failed to fetch employees');
                 }
@@ -14,7 +19,7 @@ const Employees = () => {
                 setEmployees(data);
             } catch (error) {
                 console.error('Error fetching employees:', error);
-                alert('Error fetching employees: ' + error.message);
+                // alert('Error fetching employees: ' + error.message);
             }
         };
 
@@ -36,11 +41,11 @@ const Employees = () => {
             } else {
                 const errorData = await response.json();
                 console.error('Failed to update employee:', errorData.message);
-                alert('Failed to update employee: ' + errorData.message);
+                // alert('Failed to update employee: ' + errorData.message);
             }
         } catch (error) {
             console.error('Error updating employee:', error);
-            alert('Error updating employee: ' + error.message);
+            // alert('Error updating employee: ' + error.message);
         }
     };
 
