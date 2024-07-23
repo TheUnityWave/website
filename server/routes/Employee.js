@@ -82,13 +82,8 @@ router.get('/get-employee', fetchEmployee, async (req, res) => {
 });
 
 router.get('/user', async (req, res) => {
-    const authHeader = req.headers['auth-token'];
-    if (!authHeader) {
-        return res.status(401).json({ message: 'No token provided' });
-    }
-
-    const token = authHeader.split(' ')[1];
-    console.log('Received token:', token); // Debugging log
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Extract token from 'Bearer <token>'
 
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });
@@ -96,18 +91,20 @@ router.get('/user', async (req, res) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        console.log('Decoded token:', decoded); // Debugging log
-        const user = await EmployeeVerification.findById(decoded.user.id).select('-password');
+        
+        // Use the user ID from the decoded token
+        const userId = decoded.user.id;
+
+        const user = await EmployeeVerification.findById(userId).select('-password');
 
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        console.log('User data sent:', user);
         res.json(user);
     } catch (error) {
-        console.error('Error in /user route:', error.message);
-        res.status(401).json({ message: 'Invalid token' });
+        console.error('Token verification error:', error);
+        res.status(401).json({ message: 'Invalid token', error: error.message });
     }
 });
 

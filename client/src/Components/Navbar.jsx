@@ -3,13 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../Images/logo.png';
 import { Menu, X } from 'lucide-react';
 import { toast } from 'react-toastify';
-import axios from 'axios';
-
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  // const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,83 +25,103 @@ export default function Navbar() {
     }
   };
 
-  const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('token');
+    setUser(null);
     navigate('/');
     toast.success("Logged out successfully");
   }
 
-
-  
-
-  const [employeeData, setEmployeeData] = useState({
-    firstName: "",
-                    lastName: '',
-                    email: '',
-                    mobile: '',
-                    EmployeePhoto: ''
-});
   useEffect(() => {
-    const fetchEmployeeData = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
-                headers: {
-                    'auth-token': localStorage.getItem('token')
-                }
-            });
-            console.log("this is token", localStorage.getItem('token'));
+    async function fetchUser() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        setUser(null);
+        setLoading(false);
+        return;
+      }
 
-            if (response.status === 200) {
-                const data = response.data;
-                setEmployeeData({
-                    
-                    firstName: data.firstName,
-                    lastName: data.lastName,
-                    email: data.email,
-                    mobile: data.mobile,
-                    EmployeePhoto: data.EmployeePhoto
-                });
-               
-            } else {
-                alert('Failed to fetch employee data');
-                console.error('Failed to fetch employee data');
-            }
-        } catch (error) {
-            console.error('Error fetching employee data:', error);
+      try {
+        const userData = await getCurrentUser(token);
+        setUser(userData);
+      } catch (err) {
+        setError(err.message);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchUser();
+  }, [location]); // Re-run when location changes, which includes login/logout actions
+
+  async function getCurrentUser(token) {
+    try {
+      const response = await fetch('http://localhost:5000/api/employee/user', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
-    };
+      });
 
-    fetchEmployeeData();
-}, [setEmployeeData]);
-  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to fetch user data');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      throw error;
+    }
+  }
 
   const renderUserInfo = () => {
-    if (employeeData) {
+    if (user) {
       return (
         <div className="flex items-center gap-4">
+          {(user.isAdmin) ?
+            <button className='bg-green-500 hover:bg-green-300 transition px-4 py-2 rounded-md'>ADMIN</button>
+            :
+            <div></div>
+
+          }
           <img
-            src={employeeData.EmployeePhoto}
-            alt={employeeData.firstName}
+            src={user.EmployeePhoto}
+            alt={user.firstName}
             className="w-10 h-10 rounded-full object-cover"
           />
           <div className="flex flex-col">
-            <span className="font-semibold">{employeeData.firstName} {employeeData.lastName} </span>
-            <span className="text-sm text-gray-600">{employeeData.email}</span>
+            <span className="font-semibold">{user.firstName} {user.lastName}</span>
+            <span className="text-sm text-gray-600">{user.email}</span>
+          </div>
+
+          <div>
+            {(user.isAdmin) ?
+
+              <Link to="/admin/job-applications" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                Admin Dashboard
+              </Link>
+              :
+              <Link to="/employee/verification" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                Employee Dashboard
+              </Link>
+
+            }
           </div>
         </div>
       );
     }
-    return null; // Return null when no user is logged in
+    return null;
   };
-
   return (
     <>
       <div className='bg-white h-20 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
         <Link to="/">
           <img src={Logo} alt='logo' className='h-20' />
         </Link>
-        
+
         <div onClick={toggleMenu} className='block md:hidden cursor-pointer'>
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
@@ -118,19 +139,19 @@ export default function Navbar() {
                 <Link to="/login" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
                   Login as Employee
                 </Link>
+
               </li>
             </>
             :
             <>
-            <li>
-            {renderUserInfo()}
-            </li>
-            <li>
-              {/* here is the code for profile img, name, email */}
-              <Link onClick={handleLogout} to="/" className="hover:bg-primary p-2 px-4 rounded mt-4">
-                Logout
-              </Link>
-            </li>
+              <li>
+                {renderUserInfo()}
+              </li>
+              <li>
+                <Link onClick={handleLogout} to="/" className="hover:bg-primary p-2 px-4 rounded mt-4">
+                  Logout
+                </Link>
+              </li>
             </>
           }
         </ul>
