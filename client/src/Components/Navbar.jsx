@@ -34,51 +34,59 @@ export default function Navbar() {
 
   
 
-  const [employees, setEmployees] = useState([]);
-
+  const [employeeData, setEmployeeData] = useState({
+    firstName: "",
+                    lastName: '',
+                    email: '',
+                    mobile: '',
+                    EmployeePhoto: ''
+});
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    console.log('Retrieved token:', token); // Debugging log
-  
-    const fetchEmployee = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/api/employee/user', {
-          headers: {
-            'auth-token': token,
-          },
-        });
-        if (!response.ok) {
-          throw new Error('Failed to fetch employee');
+    const fetchEmployeeData = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+            console.log("this is token", localStorage.getItem('token'));
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    email: data.email,
+                    mobile: data.mobile,
+                    EmployeePhoto: data.EmployeePhoto
+                });
+               
+            } else {
+                alert('Failed to fetch employee data');
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
         }
-        const data = await response.json();
-        setEmployees(data);
-      } catch (error) {
-        console.error('Error fetching employee:', error);
-        alert('Error fetching employee: ' + error.message);
-      }
     };
-  
-    if (token) {
-      fetchEmployee();
-    } else {
-      console.error('No token found in localStorage');
-    }
-  }, []);
-  
+
+    fetchEmployeeData();
+}, [setEmployeeData]);
   
 
   const renderUserInfo = () => {
-    if (employees) {
+    if (employeeData) {
       return (
         <div className="flex items-center gap-4">
           <img
-            src={employees.photo}
-            alt={employees.firstName}
+            src={employeeData.EmployeePhoto}
+            alt={employeeData.firstName}
             className="w-10 h-10 rounded-full object-cover"
           />
           <div className="flex flex-col">
-            <span className="font-semibold">{employees.firstName} {employees.lastName} </span>
-            <span className="text-sm text-gray-600">{employees.email}</span>
+            <span className="font-semibold">{employeeData.firstName} {employeeData.lastName} </span>
+            <span className="text-sm text-gray-600">{employeeData.email}</span>
           </div>
         </div>
       );
