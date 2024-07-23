@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const fetchEmployee = require('../middleware/fetchEmployee');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
 const createUploadMiddleware = require('../middleware/cloudinary');
 
