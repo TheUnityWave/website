@@ -81,12 +81,11 @@ export default function Navbar() {
     if (user) {
       return (
         <div className="flex items-center gap-4">
-          {(user.isAdmin) ?
+          {user.isAdmin ? (
             <button className='bg-green-500 hover:bg-green-300 transition px-4 py-2 rounded-md'>ADMIN</button>
-            :
+          ) : (
             <div></div>
-
-          }
+          )}
           <img
             src={user.EmployeePhoto}
             alt={user.firstName}
@@ -96,25 +95,12 @@ export default function Navbar() {
             <span className="font-semibold">{user.firstName} {user.lastName}</span>
             <span className="text-sm text-gray-600">{user.email}</span>
           </div>
-
-          <div>
-            {(user.isAdmin) ?
-
-              <Link to="/admin/job-applications" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
-                Admin Dashboard
-              </Link>
-              :
-              <Link to="/employee/verification" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
-                Employee Dashboard
-              </Link>
-
-            }
-          </div>
         </div>
       );
     }
     return null;
   };
+
   return (
     <>
       <div className='bg-white h-20 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
@@ -126,7 +112,7 @@ export default function Navbar() {
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
-          {!localStorage.getItem('token') ?
+          {!localStorage.getItem('token') || location.pathname === '/' ? (
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
@@ -136,13 +122,24 @@ export default function Navbar() {
                 Get in Touch
               </li>
               <li>
-                <Link to="/login" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
-                  Login as Employee
-                </Link>
-
+                {!localStorage.getItem('token') ? (
+                  <Link to="/login" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                    Login as Employee
+                  </Link>
+                ) : (
+                  user && (user.isAdmin ? (
+                    <Link to="/admin/job-applications" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                      Admin Dashboard
+                    </Link>
+                  ) : (
+                    <Link to="/employee/verification" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                      Employee Dashboard
+                    </Link>
+                  ))
+                )}
               </li>
             </>
-            :
+          ) : (
             <>
               <li>
                 {renderUserInfo()}
@@ -153,7 +150,7 @@ export default function Navbar() {
                 </Link>
               </li>
             </>
-          }
+          )}
         </ul>
       </div>
       <div className={`fixed inset-0 bg-white z-40 md:hidden transition-transform duration-700 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -164,9 +161,7 @@ export default function Navbar() {
             <li onClick={() => handleNavigation('services')}>Services</li>
             <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
             <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
-
               Get in Touch
-
             </li>
             <li className='my-4'>
               <Link to="/login" onClick={toggleMenu} className='btn bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
