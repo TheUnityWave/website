@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../Images/logo.png';
 import { Menu, X } from 'lucide-react';
 import { toast } from 'react-toastify';
+import ChangePasswordModal from './ChangePasswordModal';
 
 export default function Navbar() {
+  const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    toggleMenu();
     setUser(null);
     navigate('/');
     toast.success("Logged out successfully");
@@ -101,6 +104,11 @@ export default function Navbar() {
     return null;
   };
 
+  const toggleChangePassword = () => {
+    toggleMenu();
+    setIsChangePasswordOpen(!isChangePasswordOpen);
+  }
+
   return (
     <>
       <div className='bg-white h-20 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
@@ -112,7 +120,7 @@ export default function Navbar() {
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
-          {!localStorage.getItem('token') || location.pathname === '/' ? (
+          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
@@ -153,23 +161,61 @@ export default function Navbar() {
           )}
         </ul>
       </div>
+
+      {/* SMALL DEVICE */}
       <div className={`fixed inset-0 bg-white z-40 md:hidden transition-transform duration-700 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className='flex flex-col items-center justify-center h-full font-primary'>
           <ul className='text-center flex flex-col items-center justify-center h-full gap-6'>
-            <li ><Link to="/" onClick={toggleMenu}>Home</Link></li>
-            <li ><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-            <li onClick={() => handleNavigation('services')}>Services</li>
-            <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
-            <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
-              Get in Touch
-            </li>
-            <li className='my-4'>
-              <Link to="/login" onClick={toggleMenu} className='btn bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
-                Login as Employee
-              </Link>
-            </li>
+            {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
+              <>
+                <li ><Link to="/" onClick={toggleMenu}>Home</Link></li>
+                <li ><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
+                <li onClick={() => handleNavigation('services')}>Services</li>
+                <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
+                <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
+                  Get in Touch
+                </li>
+
+                <li>
+                  {!localStorage.getItem('token') ? (
+                    <Link to="/login" onClick={toggleMenu} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                      Login as Employee
+                    </Link>
+                  ) : (
+                    user && (user.isAdmin ? (
+                      <Link to="/admin/job-applications" onClick={toggleMenu} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                        Admin Dashboard
+                      </Link>
+                    ) : (
+                      <Link to="/employee/verification" onClick={toggleMenu} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                        Employee Dashboard
+                      </Link>
+                    ))
+                  )}
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  {renderUserInfo()}
+                </li>
+                <li>
+                  <Link onClick={toggleChangePassword} className="hover:bg-primary p-2 px-4 rounded mt-4">
+                    Change Password
+                  </Link>
+                </li>
+                <li>
+                  <Link onClick={handleLogout} to="/" className="hover:bg-primary p-2 px-4 rounded mt-4">
+                    Logout
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
+        {isChangePasswordOpen && (
+          <ChangePasswordModal onClose={toggleChangePassword} />
+        )}
       </div>
     </>
   );
