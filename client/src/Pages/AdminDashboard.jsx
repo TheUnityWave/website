@@ -4,6 +4,7 @@ import AdminSidebar from '../Components/AdminSidebar';
 import JobApplications from './JobApplications';
 import Employees from './Employees';
 import GetInTouchAdmin from './GetInTouchAdmin';
+import RaiseTicket from './RaiseTicket';
 
 const AdminDashboard = () => {
     const location = useLocation();
@@ -85,6 +86,7 @@ const AdminDashboard = () => {
                     <Route path="job-applications" element={<JobApplications />} />
                     <Route path="employees" element={<Employees />} />
                     <Route path="getintouch" element={<GetInTouchAdmin />} />
+                    <Route path="tickets" element={<RaiseTicket />} />
                 </Routes>
             </div>
         </div>

@@ -28,9 +28,6 @@ const Sidebar = () => {
           <NavLink to="/employee/training" className="hover:bg-cyan-700 p-2 rounded">
             Trainings
           </NavLink>
-          <NavLink to="/employee/raise-ticket" className="hover:bg-cyan-700 p-2 rounded">
-            Raise Ticket
-          </NavLink>
         </nav>
         <nav className='flex flex-col'>
           <NavLink onClick={toggleChangePassword} className="hover:bg-cyan-700 p-2 rounded mt-4">

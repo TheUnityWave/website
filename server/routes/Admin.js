@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const EmployeeVerification = require('../models/EmployeeVerification');
 const GetInTouch = require('../models/getintouch');
 const JobApplication = require('../models/Career');
+const Ticket = require('../models/RaiseTicket');
 const Career = require('../models/Career');
 const { authorizeAdmin } = require('../middleware/authorizeAdmin');
 
@@ -138,7 +139,7 @@ router.get('/get-in-touch', authorizeAdmin, async (req, res) => {
     }
 });
 
-// / Update isContacted status
+// Update isContacted status
 router.patch('/get-in-touch/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -147,6 +148,61 @@ router.patch('/get-in-touch/:id', async (req, res) => {
         const updatedRequest = await GetInTouch.findByIdAndUpdate(
             id,
             { isContacted },
+            { new: true }
+        );
+
+        if (!updatedRequest) {
+            return res.status(404).json({ message: 'Request not found' });
+        }
+
+        res.json(updatedRequest);
+    } catch (error) {
+        console.error('Error updating get in touch request:', error);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+router.get('/tickets', async (req, res) => {
+    try {
+        const tickets = await Ticket.find().sort({ createdAt: -1 });;
+        res.status(200).json(tickets);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+router.post('/tickets', async (req, res) => {
+    const { name, company, email, mobile, userType, complaint } = req.body;
+
+    try {
+        const newTicket = new Ticket({
+            name,
+            company,
+            email,
+            mobile,
+            userType,
+            complaint,
+            // otherComplaint: complaint === 'Others' ? otherComplaint : ''
+        });
+
+        const ticket = await newTicket.save();
+        res.status(200).json(ticket);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// Update isResolved status
+router.patch('/tickets/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { isResolved } = req.body;
+
+        const updatedRequest = await Ticket.findByIdAndUpdate(
+            id,
+            { isResolved },
             { new: true }
         );
 

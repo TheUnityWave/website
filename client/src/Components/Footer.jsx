@@ -1,8 +1,16 @@
 import logo from '../Images/logo.png';
-import React from 'react';
+import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
+import ChangePasswordModal from './ChangePasswordModal';
+import RaiseTicketModal from './RaiseTicketModal';
 
 const Footer = () => {
+    const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
+
+    const toggleChangePassword = () => {
+        setIsChangePasswordOpen(!isChangePasswordOpen);
+    }
     return (
         <footer className="bg-primary text-white">
             <div className="container mx-auto px-4 py-16">
@@ -46,6 +54,14 @@ const Footer = () => {
                                 <li><a href="#" className="hover:underline">Policy</a></li>
                                 <li><a href="#" className="hover:underline">Contact</a></li>
                                 <li><a href="#" className="hover:underline">Career</a></li>
+                                <li>
+                                    <NavLink onClick={toggleChangePassword} className="hover:underline opacity-100">
+                                        Raise a Ticket
+                                    </NavLink>
+                                    {isChangePasswordOpen && (
+                                        <RaiseTicketModal onClose={toggleChangePassword} />
+                                    )}
+                                </li>
                             </ul>
                         </div>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">

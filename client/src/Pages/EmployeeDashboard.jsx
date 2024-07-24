@@ -86,7 +86,6 @@ const EmployeeDashboard = () => {
         <Routes>
           <Route path="verification" element={<EmployeeVerification />} />
           <Route path="training" element={<EmployeeTraining />} />
-          <Route path="raise-ticket" element={<RaiseTicket />} />
         </Routes>
       </div>
     </div>

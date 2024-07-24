@@ -31,6 +31,9 @@ const AdminSidebar = () => {
                     <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 p-2 rounded">
                         Get in Touch Requests
                     </NavLink>
+                    <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-2 rounded">
+                        Raise Ticket
+                    </NavLink>
                 </nav>
                 <nav className='flex flex-col'>
                     <NavLink onClick={toggleChangePassword} className="hover:bg-cyan-700 p-2 rounded mt-4">
@@ -59,6 +62,9 @@ const AdminSidebar = () => {
                     <PhoneCall className='m-auto' />
                     Get in Touch Requests
                 </NavLink>
+                <NavLink to="/employee/raise-ticket" className="hover:bg-cyan-700 p-2 rounded">
+            Raise Ticket
+          </NavLink>
             </div>
         </>
     );

@@ -48,11 +48,11 @@
   color: #555;
   padding-bottom: 15px;
 }
-.active {
+.owl-item.active {
   opacity: 0.5;
   transition: all 0.3s;
 }
-.center {
+.owl-item.center {
   opacity: 1;
 }
 
