@@ -59,7 +59,7 @@ const EmployeeVerification = () => {
         fetchEmployeeData();
     }, []);
 
-    
+
     const openCamera = () => {
         setIsCameraOpen(true);
         navigator.mediaDevices
@@ -443,242 +443,244 @@ const EmployeeVerification = () => {
 
     return (
         <div className="flex">
-            <div className=" md:p-8 bg-gray-100 flex-1 overflow-y-auto h-[calc(100vh-72px-2rem)]">
+            <div className=" md:p-4 bg-gray-100 flex-1">
                 <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-3 px-6 mb-4 rounded-md">
                     Employee Verification
                 </h2>
-                <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 1: Capture Photo</h3>
-                    {employeeData.EmployeePhoto ? (
-                        <div>
-                            <div className='flex items-center justify-between'>
-                                <img src={employeeData.EmployeePhoto} alt="Captured" className="mb-4 w-1/4" />
-                                <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                    Verified
-                                </p>
-                            </div>
-                            <button
-                                className="bg-cyan-900 text-white px-3 py-1 rounded"
-                                onClick={handlePhotoUpdate}
-                            >
-                                Update
-                            </button>
-                        </div>
-                    ) : (
-                        <div>
-                            {isCameraOpen ? (
-                                <div>
-                                    <video ref={videoRef} width="300" height="300" className="mb-4" />
-                                    <button
-                                        className="bg-green-500 text-white px-4 py-2 rounded mr-2"
-                                        onClick={takePhoto}
-                                    >
-                                        Capture Photo
-                                    </button>
-                                    <button
-                                        className="bg-red-500 text-white px-4 py-2 rounded"
-                                        onClick={closeCamera}
-                                    >
-                                        Close Camera
-                                    </button>
-                                    <canvas ref={canvasRef} width="640" height="480" style={{ display: 'none' }} />
-                                </div>
-                            ) : (
-                                <div>
-                                    {capturedImage ? (
-                                        <div>
-                                            <img src={capturedImage} alt="Captured" className="mb-4 w-1/4" />
-                                            <button
-                                                className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                                onClick={handlePhotoSubmit}
-                                            >
-                                                Save Photo
-                                            </button>
-                                        </div>
-                                    ) :
-                                        (
-                                            <button
-                                                className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                                onClick={openCamera}
-                                            >
-                                                Open Camera
-                                            </button>
-                                        )}
-                                </div>
-                            )}
-                        </div>
-                    )}
-                </div>
-                <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 2: Hometown Address</h3>
-                    {employeeData.isHometownVerified === false ? (
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Hometown Address"
-                                className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                value={employeeData.hometownAddress}
-                                onChange={(e) => setEmployeeData({ ...employeeData, hometownAddress: e.target.value })}
-                            />
-
-                            <button
-                                className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                onClick={handleHometownSubmit}
-                            >
-                                Verify Hometown Address
-                            </button>
-                        </div>
-                    ) :
-                        (
-                            <div>
-                                <div className='flex justify-between'>
-                                    <p className='italic'>{employeeData.hometownAddress}</p>
-                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                        Verified
-                                    </p>
-                                </div>
-                                <button
-                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
-                                    onClick={handleHometownUpdate}
-                                >
-                                    Update
-                                </button>
-                            </div>
-                        )}
-
-                </div>
-                <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 3: Current Address</h3>
-                    {employeeData.isCurrentAddressVerified === false ? (
-                        <div>
-                            <input
-                                type="text"
-                                placeholder="Current Address"
-                                className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                value={employeeData.currentAddress}
-                                onChange={(e) => setEmployeeData({ ...employeeData, currentAddress: e.target.value })}
-                            />
-                            <button
-                                className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                onClick={handleCurrentAddressSubmit}
-                            >
-                                Verify Current Address
-                            </button>
-                        </div>
-                    ) :
-                        (
-                            <div>
-                                <div className='flex justify-between'>
-                                    <p className='italic'>{employeeData.currentAddress}</p>
-                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                        Verified
-                                    </p>
-                                </div>
-                                <button
-                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
-                                    onClick={handleCurrentAddressUpdate}
-                                >
-                                    Update
-                                </button>
-                            </div>
-                        )}
-
-                </div>
-                <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 4: Upload Aadhaar Card</h3>
-                    {employeeData.isAadhaarUploaded === false ? (
-                        <div>
-                            <input
-                                type="file"
-                                ref={aadhaarFileRef}
-                                className="mb-4"
-                            />
-                            <br />
-                            <button
-                                className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                onClick={handleAadhaarSubmit}
-                            >
-                                Upload Aadhaar Card
-                            </button>
-                        </div>
-                    ) :
-                        (
+                <div className='overflow-y-auto h-[calc(85vh-72px-2rem)]'>
+                    <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 className="text-lg font-semibold mb-4">Step 1: Capture Photo</h3>
+                        {employeeData.EmployeePhoto ? (
                             <div>
                                 <div className='flex items-center justify-between'>
-                                    <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>
+                                    <img src={employeeData.EmployeePhoto} alt="Captured" className="mb-4 w-1/4" />
                                     <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
                                         Verified
                                     </p>
                                 </div>
                                 <button
                                     className="bg-cyan-900 text-white px-3 py-1 rounded"
-                                    onClick={handleAadhaarUpdate}
+                                    onClick={handlePhotoUpdate}
                                 >
                                     Update
                                 </button>
                             </div>
-                        )}
-                </div>
-                <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                    <h3 className="text-lg font-semibold mb-4">Step 5: Answer Police Verification Questions</h3>
-                    {employeeData.isQuestionsVerified === false ? (
-                        <div>
-                            <input
-                                type="text"
-                                name="question1"
-                                placeholder="Question 1"
-                                className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                value={employeeData.step5Data.question1}
-                                onChange={handleQuestionChange}
-                            />
-                            <input
-                                type="text"
-                                name="question2"
-                                placeholder="Question 2"
-                                className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                value={employeeData.step5Data.question2}
-                                onChange={handleQuestionChange}
-                            />
-                            <input
-                                type="text"
-                                name="question3"
-                                placeholder="Question 3"
-                                className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                value={employeeData.step5Data.question3}
-                                onChange={handleQuestionChange}
-                            />
-                            <button
-                                className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                onClick={handleQuestionsSubmit}
-                            >
-                                Verify Questions
-                            </button>
-                        </div>
-                    ) :
-                        (
+                        ) : (
                             <div>
-                                <div className='flex justify-between items-center'>
+                                {isCameraOpen ? (
                                     <div>
-                                        Question 1: {employeeData.step5Data.question1}
-                                        <br />
-                                        Question 2: {employeeData.step5Data.question2}
-                                        <br />
-                                        Question 3: {employeeData.step5Data.question3}
+                                        <video ref={videoRef} width="300" height="300" className="mb-4" />
+                                        <button
+                                            className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+                                            onClick={takePhoto}
+                                        >
+                                            Capture Photo
+                                        </button>
+                                        <button
+                                            className="bg-red-500 text-white px-4 py-2 rounded"
+                                            onClick={closeCamera}
+                                        >
+                                            Close Camera
+                                        </button>
+                                        <canvas ref={canvasRef} width="640" height="480" style={{ display: 'none' }} />
                                     </div>
-                                    <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
-                                        Verified
-                                    </p>
-                                </div>
+                                ) : (
+                                    <div>
+                                        {capturedImage ? (
+                                            <div>
+                                                <img src={capturedImage} alt="Captured" className="mb-4 w-1/4" />
+                                                <button
+                                                    className="bg-cyan-900 text-white px-4 py-2 rounded"
+                                                    onClick={handlePhotoSubmit}
+                                                >
+                                                    Save Photo
+                                                </button>
+                                            </div>
+                                        ) :
+                                            (
+                                                <button
+                                                    className="bg-cyan-900 text-white px-4 py-2 rounded"
+                                                    onClick={openCamera}
+                                                >
+                                                    Open Camera
+                                                </button>
+                                            )}
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                    <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 className="text-lg font-semibold mb-4">Step 2: Hometown Address</h3>
+                        {employeeData.isHometownVerified === false ? (
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Hometown Address"
+                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
+                                    value={employeeData.hometownAddress}
+                                    onChange={(e) => setEmployeeData({ ...employeeData, hometownAddress: e.target.value })}
+                                />
+
                                 <button
-                                    className="bg-cyan-900 text-white px-3 py-1 rounded"
-                                    onClick={handleQuestionsUpdate}
+                                    className="bg-cyan-900 text-white px-4 py-2 rounded"
+                                    onClick={handleHometownSubmit}
                                 >
-                                    Update
+                                    Verify Hometown Address
                                 </button>
                             </div>
+                        ) :
+                            (
+                                <div>
+                                    <div className='flex justify-between'>
+                                        <p className='italic'>{employeeData.hometownAddress}</p>
+                                        <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                            Verified
+                                        </p>
+                                    </div>
+                                    <button
+                                        className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                        onClick={handleHometownUpdate}
+                                    >
+                                        Update
+                                    </button>
+                                </div>
+                            )}
 
-                        )}
+                    </div>
+                    <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 className="text-lg font-semibold mb-4">Step 3: Current Address</h3>
+                        {employeeData.isCurrentAddressVerified === false ? (
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Current Address"
+                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
+                                    value={employeeData.currentAddress}
+                                    onChange={(e) => setEmployeeData({ ...employeeData, currentAddress: e.target.value })}
+                                />
+                                <button
+                                    className="bg-cyan-900 text-white px-4 py-2 rounded"
+                                    onClick={handleCurrentAddressSubmit}
+                                >
+                                    Verify Current Address
+                                </button>
+                            </div>
+                        ) :
+                            (
+                                <div>
+                                    <div className='flex justify-between'>
+                                        <p className='italic'>{employeeData.currentAddress}</p>
+                                        <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                            Verified
+                                        </p>
+                                    </div>
+                                    <button
+                                        className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                        onClick={handleCurrentAddressUpdate}
+                                    >
+                                        Update
+                                    </button>
+                                </div>
+                            )}
 
+                    </div>
+                    <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 className="text-lg font-semibold mb-4">Step 4: Upload Aadhaar Card</h3>
+                        {employeeData.isAadhaarUploaded === false ? (
+                            <div>
+                                <input
+                                    type="file"
+                                    ref={aadhaarFileRef}
+                                    className="mb-4"
+                                />
+                                <br />
+                                <button
+                                    className="bg-cyan-900 text-white px-4 py-2 rounded"
+                                    onClick={handleAadhaarSubmit}
+                                >
+                                    Upload Aadhaar Card
+                                </button>
+                            </div>
+                        ) :
+                            (
+                                <div>
+                                    <div className='flex items-center justify-between'>
+                                        <a href={employeeData.AadhaarCard} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Aadhaar Card</a>
+                                        <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                            Verified
+                                        </p>
+                                    </div>
+                                    <button
+                                        className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                        onClick={handleAadhaarUpdate}
+                                    >
+                                        Update
+                                    </button>
+                                </div>
+                            )}
+                    </div>
+                    <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+                        <h3 className="text-lg font-semibold mb-4">Step 5: Answer Police Verification Questions</h3>
+                        {employeeData.isQuestionsVerified === false ? (
+                            <div>
+                                <input
+                                    type="text"
+                                    name="question1"
+                                    placeholder="Question 1"
+                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
+                                    value={employeeData.step5Data.question1}
+                                    onChange={handleQuestionChange}
+                                />
+                                <input
+                                    type="text"
+                                    name="question2"
+                                    placeholder="Question 2"
+                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
+                                    value={employeeData.step5Data.question2}
+                                    onChange={handleQuestionChange}
+                                />
+                                <input
+                                    type="text"
+                                    name="question3"
+                                    placeholder="Question 3"
+                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
+                                    value={employeeData.step5Data.question3}
+                                    onChange={handleQuestionChange}
+                                />
+                                <button
+                                    className="bg-cyan-900 text-white px-4 py-2 rounded"
+                                    onClick={handleQuestionsSubmit}
+                                >
+                                    Verify Questions
+                                </button>
+                            </div>
+                        ) :
+                            (
+                                <div>
+                                    <div className='flex justify-between items-center'>
+                                        <div>
+                                            Question 1: {employeeData.step5Data.question1}
+                                            <br />
+                                            Question 2: {employeeData.step5Data.question2}
+                                            <br />
+                                            Question 3: {employeeData.step5Data.question3}
+                                        </div>
+                                        <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
+                                            Verified
+                                        </p>
+                                    </div>
+                                    <button
+                                        className="bg-cyan-900 text-white px-3 py-1 rounded"
+                                        onClick={handleQuestionsUpdate}
+                                    >
+                                        Update
+                                    </button>
+                                </div>
+
+                            )}
+
+                    </div>
                 </div>
             </div>
         </div >
