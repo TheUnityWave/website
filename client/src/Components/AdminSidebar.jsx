@@ -63,9 +63,9 @@ const AdminSidebar = () => {
                     Get in Touch Requests
                 </NavLink>
                 <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-2 rounded">
-                <Tag className='m-auto'/>
-            Raise Ticket
-          </NavLink>
+                    <Tag className='m-auto' />
+                    Raise Ticket
+                </NavLink>
             </div>
         </>
     );
