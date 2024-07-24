@@ -70,7 +70,7 @@ const RaiseTicket = () => {
                                             : 'bg-primary hover:bg-blue-600 text-white'
                                             }`}
                                     >
-                                        {application.isResolved ? 'Issue Resolved' : 'Not resolved yet'}
+                                        {application.isResolved ? 'Issue Resolved' : 'Mark Resolved'}
                                     </button>
 
                                 </li>

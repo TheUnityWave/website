@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ChangePasswordModal from './ChangePasswordModal';
-import { ClipboardList, BookUser, PhoneCall } from 'lucide-react';
+import { ClipboardList, BookUser, PhoneCall, Tag } from 'lucide-react';
 
 const AdminSidebar = () => {
     const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
@@ -62,7 +62,8 @@ const AdminSidebar = () => {
                     <PhoneCall className='m-auto' />
                     Get in Touch Requests
                 </NavLink>
-                <NavLink to="/employee/raise-ticket" className="hover:bg-cyan-700 p-2 rounded">
+                <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-2 rounded">
+                <Tag className='m-auto'/>
             Raise Ticket
           </NavLink>
             </div>

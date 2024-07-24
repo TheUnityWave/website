@@ -52,10 +52,6 @@ const Sidebar = () => {
           <BookOpenText className='m-auto' />
           Trainings
         </NavLink>
-        <NavLink to="/employee/raise-ticket" className="hover:bg-cyan-700 p-2 rounded">
-          <MessageSquareDot className='m-auto' />
-          Raise Ticket
-        </NavLink>
       </div>
     </>
   );
