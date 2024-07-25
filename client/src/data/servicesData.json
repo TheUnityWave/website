@@ -27,12 +27,32 @@
           "name": "Driver",
           "image": "https://imgur.com/LzRZHzD.jpg",
           "description": "Professional transportation services for executives and staff."
-        }        
+        }
       ]
     },
     {
-      "id": "specialization",
-      "name": "Specialization Services",
+      "id": "business-services",
+      "name": "Business Services",
+      "images": [
+        "https://imgur.com/example9.jpg",
+        "https://imgur.com/example10.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "Corporate Consulting",
+          "image": "https://imgur.com/4Q5HcK0.jpg",
+          "description": "Expert advice and strategies for business growth."
+        },
+        {
+          "name": "Market Analysis",
+          "image": "https://imgur.com/LzRZHzD.jpg",
+          "description": "In-depth analysis of market trends and opportunities."
+        }
+      ]
+    },
+    {
+      "id": "specialized-service",
+      "name": "Specialized Service",
       "images": [
         "https://imgur.com/Lih8FiT.jpg",
         "https://imgur.com/VhMd2G9.jpg"
@@ -66,63 +86,84 @@
       ]
     },
     {
-        "id": "business",
-        "name": "Business Support",
-        "images": [
-          "https://imgur.com/1gybWfJ.jpg"
-        ],
-        "subservices": [
-          {
-            "name": "Business support manpower",
-            "image": "https://imgur.com/4Q5HcK0.jpg",
-            "description": "Manual cleaning of building exteriors by trained professionals."
-          },
-          {
-            "name": "Corporate wellness",
-            "image": "https://imgur.com/LzRZHzD.jpg",
-            "description": "Innovative drone technology for efficient and safe exterior cleaning."
-          },
-          {
-            "name": "Organizing Functions",
-            "image": "https://imgur.com/LzRZHzD.jpg",
-            "description": "Expert polishing services for marble and granite surfaces."
-          }
-        ]
-      },
-      {
-        "id": "technical",
-        "name": "Technical Services",
-        "images": [
-          "https://imgur.com/VhMd2G9.jpg",
-          "https://imgur.com/Lih8FiT.jpg"
-        ],
-        "subservices": [
-          {
-            "name": "ETP",
-            "image": "https://imgur.com/tc09odr.jpg",
-            "description": "Manual cleaning of building exteriors by trained professionals."
-          },
-          {
-            "name": "WTP",
-            "image": "https://imgur.com/LzRZHzD.jpg",
-            "description": "Innovative drone technology for efficient and safe exterior cleaning."
-          },
-          {
-            "name": "HVAC",
-            "image": "https://imgur.com/tc09odr.jpg",
-            "description": "Expert polishing services for marble and granite surfaces."
-          },
-          {
-            "name": "Plumbing",
-            "image": "https://imgur.com/LzRZHzD.jpg",
-            "description": "Deep cleaning of carpets and upholstered furniture."
-          },
-          {
-            "name": "Power Supply",
-            "image": "https://imgur.com/tc09odr.jpg",
-            "description": "Comprehensive waste collection, segregation, and disposal services."
-          }
-        ]
-      }
+      "id": "manpower-recruiting",
+      "name": "Manpower Recruiting",
+      "images": [
+        "https://imgur.com/example1.jpg",
+        "https://imgur.com/example2.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "Recruitment",
+          "image": "https://imgur.com/example1.jpg",
+          "description": "Finding and placing suitable candidates for various roles."
+        },
+        {
+          "name": "Temporary Staffing",
+          "image": "https://imgur.com/example2.jpg",
+          "description": "Providing temporary staff for short-term needs."
+        }
+      ]
+    },
+    {
+      "id": "cleaning-material",
+      "name": "Cleaning Material",
+      "images": [
+        "https://imgur.com/example3.jpg",
+        "https://imgur.com/example4.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "Cleaning Supplies",
+          "image": "https://imgur.com/example3.jpg",
+          "description": "Various cleaning supplies and equipment for different needs."
+        },
+        {
+          "name": "Sanitization Products",
+          "image": "https://imgur.com/example4.jpg",
+          "description": "Products for maintaining hygiene and sanitization."
+        }
+      ]
+    },
+    {
+      "id": "rental-material",
+      "name": "Rental Material",
+      "images": [
+        "https://imgur.com/example5.jpg",
+        "https://imgur.com/example6.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "Equipment Rental",
+          "image": "https://imgur.com/example5.jpg",
+          "description": "Rental services for various equipment and tools."
+        },
+        {
+          "name": "Furniture Rental",
+          "image": "https://imgur.com/example6.jpg",
+          "description": "Rental of furniture for events and temporary needs."
+        }
+      ]
+    },
+    {
+      "id": "wedding-arrangements",
+      "name": "Wedding Arrangements",
+      "images": [
+        "https://imgur.com/example7.jpg",
+        "https://imgur.com/example8.jpg"
+      ],
+      "subservices": [
+        {
+          "name": "Venue Booking",
+          "image": "https://imgur.com/example7.jpg",
+          "description": "Booking and management of wedding venues."
+        },
+        {
+          "name": "Decoration Services",
+          "image": "https://imgur.com/example8.jpg",
+          "description": "Complete decoration services for wedding events."
+        }
+      ]
+    }
   ]
 }
