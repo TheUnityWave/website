@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 
 const RaiseTicket = () => {
     const [applications, setApplications] = useState([]);
+    const [filter, setFilter] = useState('all');
 
     useEffect(() => {
 
         const fetchApplications = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/tickets', {
+                let url = 'http://localhost:5000/api/admin/tickets';
+                if (filter !== 'all') {
+                    url += `?userType=${filter}`;
+                }
+                const response = await fetch(url, {
                     headers: {
                         'auth-token': localStorage.getItem('token'),
                         'Content-Type': 'application/json'
@@ -22,7 +27,7 @@ const RaiseTicket = () => {
         };
         fetchApplications();
 
-    }, [applications]);
+    }, [filter]);
 
     const handleMarkDone = async (id) => {
         try {
@@ -49,6 +54,11 @@ const RaiseTicket = () => {
                 <h2 className="text-2xl bg-cyan-900 from-blue-600 to-blue-400 text-white font-bold py-4 px-6 rounded-lg shadow-md mb-6">
                     Tickets Raised
                 </h2>
+                <div className='flex justify-start gap-4'>
+                <button className='btn' onClick={() => setFilter('all')}>All</button>
+                <button className='btn' onClick={() => setFilter('Client')}>Client</button>
+                <button className='btn' onClick={() => setFilter('Employee')}>Employee</button>
+            </div>
                 <div className="mt-4 overflow-y-auto h-[calc(80vh-72px-2rem)]">
                     {applications.length > 0 ? (
                         <ul>

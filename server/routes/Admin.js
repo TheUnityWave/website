@@ -164,7 +164,14 @@ router.patch('/get-in-touch/:id', async (req, res) => {
 
 router.get('/tickets', async (req, res) => {
     try {
-        const tickets = await Ticket.find().sort({ createdAt: -1 });;
+        const { userType } = req.query;
+        let tickets;
+
+        if (userType) {
+            tickets = await Ticket.find({ userType }).sort({createdAt: -1});
+        } else {
+            tickets = await Ticket.find().sort({createdAt: -1});
+        }
         res.status(200).json(tickets);
     } catch (err) {
         console.error(err.message);
