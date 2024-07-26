@@ -172,18 +172,91 @@ router.get('/tickets', async (req, res) => {
     }
 });
 
-router.post('/tickets', async (req, res) => {
+async function generateTicketNumber() {
+    const date = new Date();
+    const year = date.getFullYear().toString().substr(-2);
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    
+    const baseTicketNumber = `TKT${year}${month}${day}`;
+    
+    let ticketNumber;
+    let counter = 1;
+    
+    do {
+      ticketNumber = `${baseTicketNumber}${counter.toString().padStart(3, '0')}`;
+      const existingTicket = await Ticket.findOne({ ticketNumber });
+      if (!existingTicket) {
+        return ticketNumber;
+      }
+      counter++;
+    } while (counter < 1000);
+    
+    throw new Error('Unable to generate unique ticket number');
+  }
+
+  router.post('/tickets', async (req, res) => {
     const { name, company, email, mobile, userType, complaint } = req.body;
 
     try {
+        const ticketNumber = await generateTicketNumber();
+
         const newTicket = new Ticket({
+            ticketNumber,
             name,
             company,
             email,
             mobile,
             userType,
             complaint,
-            // otherComplaint: complaint === 'Others' ? otherComplaint : ''
+        });
+
+        // Configure nodemailer
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            }
+        });
+
+        const options = {
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: 'Your Ticket Has Been Raised - The Unity Wave',
+            text: `
+Dear ${name},
+
+We hope this email finds you well.
+
+We are writing to confirm that your ticket/issue has been successfully raised in our system. Our team has received the details you provided and we want to assure you that we are taking it seriously.
+
+Ticket Details:
+- Ticket Number: ${ticketNumber}
+- Subject: ${complaint}
+- Date Submitted: ${new Date().toDateString()}
+
+Our dedicated support team will review your ticket promptly and work diligently to address your concerns. We aim to provide a resolution or update within 24-48 hours.
+
+If you have any additional information or updates regarding this issue, please don't hesitate to reply to this email. Your input is valuable and will help us resolve the matter more efficiently.
+
+We appreciate your patience and understanding as we work on your request. Rest assured that we are committed to providing you with the best possible support.
+
+Thank you for bringing this to our attention. We value your ${userType === 'client' ? 'business' : 'feedback'} and look forward to resolving this matter for you.
+
+Best regards,
+The Unity Wave Support Team
+
+This is an automated message. Please do not reply directly to this email. If you need to provide additional information, please reply to the original ticket or contact our support team at support@theunitywave.com.
+            `
+        };
+
+        transporter.sendMail(options, function (err, info) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            console.log("SENT : " + info.response);
         });
 
         const ticket = await newTicket.save();
@@ -210,9 +283,56 @@ router.patch('/tickets/:id', async (req, res) => {
             return res.status(404).json({ message: 'Request not found' });
         }
 
+        // Send email notification if the ticket is resolved
+        if (isResolved) {
+            // Configure nodemailer
+            const transporter = nodemailer.createTransport({
+                service: 'Gmail',
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS
+                }
+            });
+
+            const options = {
+                from: process.env.EMAIL_USER,
+                to: updatedRequest.email,
+                subject: 'Your Ticket Has Been Resolved - The Unity Wave',
+                text: `
+Dear ${updatedRequest.name},
+
+We hope this email finds you well.
+
+We are pleased to inform you that your ticket/issue has been resolved. 
+
+Ticket Details:
+- Ticket Number: ${updatedRequest.ticketNumber}
+- Subject: ${updatedRequest.complaint}
+- Date Resolved: ${new Date().toDateString()}
+
+If you have any further questions or if the issue persists, please do not hesitate to reach out to us.
+
+Thank you for your patience and understanding. We value your ${updatedRequest.userType === 'client' ? 'business' : 'feedback'}.
+
+Best regards,
+The Unity Wave Support Team
+
+This is an automated message. Please do not reply directly to this email. If you need to provide additional information, please reply to the original ticket or contact our support team at support@theunitywave.com.
+                `
+            };
+
+            transporter.sendMail(options, function (err, info) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log("SENT : " + info.response);
+            });
+        }
+
         res.json(updatedRequest);
     } catch (error) {
-        console.error('Error updating get in touch request:', error);
+        console.error('Error updating ticket:', error);
         res.status(500).json({ message: 'Server error' });
     }
 });

@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const TicketSchema = new mongoose.Schema({
+    ticketNumber: {
+        type: String,
+        unique: true,
+        required: true
+      },
     name: {
         type: String,
         required: true
