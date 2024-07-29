@@ -15,6 +15,7 @@ import EmployeeVerification from './Pages/EmployeeVerification';
 import AdminDashboard from './Pages/AdminDashboard';
 import EmployeeDashboard from './Pages/EmployeeDashboard';
 import ToastNotifications from './Components/ToastNotifications';
+import AboutUs from './Pages/AboutUs'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -70,11 +71,12 @@ function App() {
       <ToastNotifications />
       <ScrollManager />
       <Navbar />
-      <div className='relative top-20 font-primary overflow-x-hidden'>
+      <div className='relative top-16 font-primary overflow-x-hidden'>
         <Routes>
           <Route path="/" element={
             <>
               <HeroPg />
+              <AboutUs/>
               <Stats />
               <Services />
               <WhyUs />

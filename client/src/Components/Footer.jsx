@@ -12,7 +12,7 @@ const Footer = () => {
         setIsChangePasswordOpen(!isChangePasswordOpen);
     }
     return (
-        <footer className="bg-primary text-white">
+        <footer className="bg-primary text-white text-sm">
             <div className="container mx-auto px-4 py-16">
                 <div className="flex flex-wrap justify-between md:mx-16">
                     <div className="mx-5 w-auto md:w-1/4 mb-6 md:mb-0">
@@ -39,7 +39,7 @@ const Footer = () => {
                     </div>
                     <div className='w-2/4 flex flex-wrap justify-between'>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
-                            <h3 className="font-bold mb-2">Our Services</h3>
+                            <h3 className="font-bold mb-2 text-md">Our Services</h3>
                             <ul>
                                 <li><a href="#" className="hover:underline">Specialisation Services</a></li>
                                 <li><a href="#" className="hover:underline">Technical Services</a></li>
@@ -48,7 +48,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
-                            <h3 className="font-bold mb-2">Quick Links</h3>
+                            <h3 className="font-bold mb-2 text-md">Quick Links</h3>
                             <ul>
                                 <li><a href="#" className="hover:underline">About</a></li>
                                 <li><a href="#" className="hover:underline">Policy</a></li>
@@ -65,7 +65,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
-                            <h3 className="font-bold mb-2">Sectors We Serve</h3>
+                            <h3 className="font-bold mb-2 text-md">Sectors We Serve</h3>
                             <ul>
                                 <li><a href="#" className="hover:underline">Technology</a></li>
                                 <li><a href="#" className="hover:underline">Healthcare</a></li>

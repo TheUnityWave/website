@@ -12,15 +12,15 @@ const WhyUs = () => {
                 <img src={logo} alt="Logo" className="contrast-200" />
             </div>
             <div className="flex flex-wrap justify-evenly gap-8">
-                <div className="md:w-1/5 text-4xl leading-normal font-bold ">Why are we client’s favourite FM company?</div>
+                <div className="md:w-1/5 text-3xl leading-normal font-bold ">Why are we client’s favourite FM company?</div>
                 <div className="w-full md:w-1/4 border-2 border-stone-400 p-9 relative mb-16 md:mb-0">
                     <div className="absolute px-2 -top-8 left-8 bg-primary">
                         <img src={verificationImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
-                        <div className="text-2xl font-semibold">Background Verification</div>
+                        <div className="text-xl font-semibold">Background Verification</div>
                     </div>
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 text-sm">
                         Taken from the Latin words "dolorem ipsum", which translates to "pain itself", Lorem Ipsum text saw a revival.
                     </p>
                 </div>
@@ -30,9 +30,9 @@ const WhyUs = () => {
                         <img src={trainingImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
-                        <div className="text-2xl font-semibold">Online Training</div>
+                        <div className="text-xl font-semibold">Online Training</div>
                     </div>
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 text-sm">
                         Taken from the Latin words "dolorem ipsum", which translates to "pain itself", Lorem Ipsum text saw a revival.
                     </p>
                 </div>
@@ -42,9 +42,9 @@ const WhyUs = () => {
                         <img src={issueResolveImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
-                        <div className="text-2xl font-semibold">Issue Resolve</div>
+                        <div className="text-xl font-semibold">Issue Resolve</div>
                     </div>
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 text-sm">
                         Taken from the Latin words "dolorem ipsum", which translates to "pain itself", Lorem Ipsum text saw a revival.
                     </p>
                 </div>
@@ -54,9 +54,9 @@ const WhyUs = () => {
                         <img src={techImage} alt="Border" className="w-16 h-16" />
                     </div>
                     <div className="flex items-center mb-4">
-                        <div className="text-2xl font-semibold">Tech Driven Solution</div>
+                        <div className="text-xl font-semibold">Tech Driven Solution</div>
                     </div>
-                    <p className="text-gray-300">
+                    <p className="text-gray-300 text-sm">
                         Taken from the Latin words "dolorem ipsum", which translates to "pain itself", Lorem Ipsum text saw a revival.
                     </p>
                 </div>

@@ -31,13 +31,13 @@ export default function StatsCard({ count, text }) {
     }, [count])
 
     return (
-        <div ref={cardRef} className='bg-white font-primary rounded-xl h-[30vh] md:h-[35vh] w-64 p-3 flex flex-col justify-center items-center gap-12 shadow-md shadow-white'>
-            <div className='text-primary font-black text-7xl font-secondary'>
+        <div ref={cardRef} className='bg-white font-primary rounded-xl h-[30vh] md:h-[35vh] w-56 p-3 flex flex-col justify-center items-center gap-12 shadow-md shadow-white'>
+            <div className='text-primary font-black text-6xl font-secondary'>
                 <span ref={countRef}>
                     2
                 </span>+
             </div>
-            <div className='text-3xl text-center font-bold text-primary'>
+            <div className='text-2xl text-center font-bold text-primary'>
                 {text}
             </div>
         </div>

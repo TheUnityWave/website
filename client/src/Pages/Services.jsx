@@ -7,7 +7,7 @@ const Services = () => {
   const secondRowServices = servicesJson.services.slice(3);
 
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-[#d0e3ff]" id='services'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base text-cyan-900 font-semibold tracking-wide uppercase">Our Services</h2>
@@ -19,10 +19,10 @@ const Services = () => {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {firstRowServices.map((service, index) => (
             <div key={service.id} className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-lg font-medium text-gray-900">{service.name}</h3>
+              <h3 className="text-md font-medium text-gray-900">{service.name}</h3>
               <p className="mt-2 text-base text-gray-600">{service.description}</p>
               <Link to={`/service/${service.id}`}>
-                <button className='btn bg-primary w-36 text-left text-white px-4 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer mt-4'>
+                <button className='btn text-sm bg-primary text-left text-white px-2 py-1 rounded-lg hover:bg-primary/80 transition cursor-pointer mt-4'>
                   Know More
                 </button>
               </Link>
@@ -33,10 +33,10 @@ const Services = () => {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {secondRowServices.map((service, index) => (
             <div key={service.id} className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-lg font-medium text-gray-900">{service.name}</h3>
+              <h3 className="text-md font-medium text-gray-900">{service.name}</h3>
               <p className="mt-2 text-base text-gray-600">{service.description}</p>
               <Link to={`/service/${service.id}`}>
-                <button className='btn bg-primary w-36 text-left text-white px-4 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer mt-4'>
+                <button className='btn bg-primary text-left text-white px-2 py-1 rounded-lg hover:bg-primary/80 transition cursor-pointer mt-4'>
                   Know More
                 </button>
               </Link>

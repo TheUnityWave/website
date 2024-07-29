@@ -50,7 +50,7 @@ const Login = () => {
 
     return (
         <div className="flex items-center justify-center w-full bg-gray-100 h-screen">
-            <div className="relative w-full max-w-xl bg-[#D9D9D9] rounded-lg p-6">
+            <div className="relative w-full max-w-xl bg-[#d0e3ff] rounded-lg p-6">
                 <img src={logo} alt="Logo" className="w-12 h-12 mx-auto mb-4" />
                 <h2 className="text-2xl text-[#21506E] font-bold text-center mb-6">The Unity Wave!</h2>
                 <h3 className="text-3xl text-[#21506E] font-bold text-center mb-6">Log In</h3>
@@ -59,11 +59,11 @@ const Login = () => {
                 </p>
                 {errorMessage && <p className="text-center text-red-500">{errorMessage}</p>}
                 <form onSubmit={handleLoginSubmit}>
-                    <div className="mb-4">
+                    <div className="mb-4 ">
                         <input
                             type="email"
                             name="email"
-                            className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+                            className="w-full bg-white px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                             placeholder="Enter Email"
                             value={loginCredentials.email}
                             onChange={onChange}
@@ -73,7 +73,7 @@ const Login = () => {
                         <input
                             type="password"
                             name="password"
-                            className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+                            className="w-full bg-white px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                             placeholder="Enter Password"
                             value={loginCredentials.password}
                             onChange={onChange}

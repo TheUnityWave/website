@@ -112,19 +112,19 @@ export default function Navbar() {
 
   return (
     <>
-      <div className='bg-white h-20 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-12 md:px-24 py-3 z-50'>
+      <div className='bg-white m-auto h-16 shadow-md font-primary border-primary fixed w-full flex justify-between items-center px-6 md:px-20 py-3 z-50'>
         <Link to="/">
-          <img src={Logo} alt='logo' className='h-20' />
+          <img src={Logo} alt='logo' className='h-16' />
         </Link>
 
         <div onClick={toggleMenu} className='block md:hidden cursor-pointer'>
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
-        <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-md'>
+        <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-sm'>
           {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
-              <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
+              <li className='hover:text-primary transition cursor-pointer'  onClick={() => handleNavigation('about')}>About Us</li>
               <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
               <li onClick={() => handleNavigation('getintouch')} className='btn'>
@@ -132,16 +132,16 @@ export default function Navbar() {
               </li>
               <li>
                 {!localStorage.getItem('token') ? (
-                  <Link to="/login" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                  <Link to="/login" className='btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
                     Login as Employee
                   </Link>
                 ) : (
                   user && (user.isAdmin ? (
-                    <Link to="/admin/job-applications" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                    <Link to="/admin/job-applications" className='btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
                       Admin Dashboard
                     </Link>
                   ) : (
-                    <Link to="/employee/verification" className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
+                    <Link to="/employee/verification" className='btn bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
                       Employee Dashboard
                     </Link>
                   ))

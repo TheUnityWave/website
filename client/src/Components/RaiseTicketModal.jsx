@@ -59,7 +59,7 @@ const RaiseTicketModal = ({ onClose }) => {
             className="modal"
             overlayClassName="overlay"
         >
-            <div className='flex flex-col md:px-12 px-12 py-8 font-primary'>
+            <div className='flex flex-col md:px-12 px-12 py-8 font-primary '>
                 <h2 className='title text-primary font-primary font-bold text-4xl'>Raise a Ticket</h2>
                 <form onSubmit={handleSubmit} className='flex flex-col gap-2 mt-4'>
                     <label className='w-full'>

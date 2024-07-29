@@ -3,7 +3,7 @@ import React from 'react'
 
 const TestimonialCard = ({ name, title, review, imageUrl }) => {
     return (
-      <div className="item mx-auto w-[18rem] h-full md:h-[24rem] flex flex-col justify-center items-center bg-white rounded-lg overflow-hidden shadow-md shadow-white">
+      <div className="item mx-auto w-[18rem] h-full md:h-[24rem] flex flex-col justify-center items-center bg-white rounded-lg overflow-hidden shadow-lg">
         <div className="px-6 py-4">
           <div className="flex justify-center mb-4">
             <img 
@@ -18,7 +18,7 @@ const TestimonialCard = ({ name, title, review, imageUrl }) => {
           </div>
         </div>
         <div className="px-6 pb-4">
-          <p className="text-gray-700 text-center italic">
+          <p className="text-gray-700 text-center italic text-sm">
             "{review}"
           </p>
         </div>
