@@ -1,7 +1,7 @@
 import logo from '../Images/logo.png';
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import ChangePasswordModal from './ChangePasswordModal';
 import RaiseTicketModal from './RaiseTicketModal';
 
@@ -23,37 +23,38 @@ const Footer = () => {
                             Plot number 505, Gurugram, Haryana 122022, IN
                         </address>
                         <div className="flex mt-4">
-                            <a href="#" className="mr-8">
+                            <Link to='' className="mr-8">
                                 <Facebook />
-                            </a>
-                            <a href="#" className="mr-8">
+                            </Link>
+                            <Link to='' className="mr-8">
                                 <Instagram />
-                            </a>
-                            <a href="#" className="mr-8">
+                            </Link>
+                            <Link to='' className="mr-8">
                                 <Youtube />
-                            </a>
-                            <a href="#" className='mr-8'>
+                            </Link>
+                            <Link to='' className='mr-8'>
                                 <Linkedin />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className='w-2/4 flex flex-wrap justify-between'>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
                             <h3 className="font-bold mb-2 text-md">Our Services</h3>
                             <ul>
-                                <li><a href="#" className="hover:underline">Specialisation Services</a></li>
-                                <li><a href="#" className="hover:underline">Technical Services</a></li>
-                                <li><a href="#" className="hover:underline">Business Services</a></li>
-                                <li><a href="#" className="hover:underline">Soft Services</a></li>
+                                <li><Link to='' className="hover:underline">Specialisation Services</Link></li>
+                                <li><Link to='' className="hover:underline">Technical Services</Link></li>
+                                <li><Link to='' className="hover:underline">Business Services</Link></li>
+                                <li><Link to='' className="hover:underline">Soft Services</Link></li>
                             </ul>
                         </div>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
                             <h3 className="font-bold mb-2 text-md">Quick Links</h3>
                             <ul>
-                                <li><a href="#" className="hover:underline">About</a></li>
-                                <li><a href="#" className="hover:underline">Policy</a></li>
-                                <li><a href="#" className="hover:underline">Contact</a></li>
-                                <li><a href="#" className="hover:underline">Career</a></li>
+                                <li><Link to='/about' className="hover:underline">About</Link></li>
+                                <li><Link to='/' className="hover:underline">Policy</Link></li>
+                                <li><Link to='/' className="hover:underline">Contact</Link></li>
+                                <li><Link to='/blogs' className="hover:underline">Blogs</Link></li>
+                                <li><Link to='/career' className="hover:underline">Career</Link></li>
                                 <li>
                                     <NavLink onClick={toggleChangePassword} className="hover:underline opacity-100">
                                         Raise a Ticket
@@ -67,11 +68,11 @@ const Footer = () => {
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
                             <h3 className="font-bold mb-2 text-md">Sectors We Serve</h3>
                             <ul>
-                                <li><a href="#" className="hover:underline">Technology</a></li>
-                                <li><a href="#" className="hover:underline">Healthcare</a></li>
-                                <li><a href="#" className="hover:underline">Business</a></li>
-                                <li><a href="#" className="hover:underline">Construction</a></li>
-                                <li><a href="#" className="hover:underline">Events</a></li>
+                                <li><Link to='' className="hover:underline">Technology</Link></li>
+                                <li><Link to='' className="hover:underline">Healthcare</Link></li>
+                                <li><Link to='' className="hover:underline">Business</Link></li>
+                                <li><Link to='' className="hover:underline">Construction</Link></li>
+                                <li><Link to='' className="hover:underline">Events</Link></li>
                             </ul>
                         </div>
                     </div>

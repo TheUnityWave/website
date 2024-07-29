@@ -30,7 +30,7 @@ const Services = () => {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {secondRowServices.map((service, index) => (
             <div key={service.id} className="bg-white shadow-lg rounded-lg p-6">
               <h3 className="text-md font-medium text-gray-900">{service.name}</h3>
