@@ -12,7 +12,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-24 py-8">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover"/>
         <div className="p-4">

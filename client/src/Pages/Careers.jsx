@@ -63,7 +63,7 @@ const Careers = () => {
         <img src={careersImage} alt="Careers" className="w-full h-96 object-cover" />
       </div>
 
-      <div className="flex justify-center items-center min-h-screen py-12">
+      <div className="flex justify-center items-center min-h-screen py-12 bg-white">
         <div className="w-full max-w-3xl px-8 pt-6 pb-8 mb-4">
           <h2 className="text-5xl font-bold text-center mb-4 text-cyan-900">Careers</h2>
           <p className="text-2xl text-center text-cyan-900 mb-6 font-semibold">

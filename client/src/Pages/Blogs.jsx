@@ -5,7 +5,7 @@ import blogs from '../data/blogs.json';
 
 const Blogs = () => {
   return (
-    <div className="container mx-auto px-4 py-10">
+    <div className="container mx-auto bg-[#d0e3ff] px-24 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.map((blog) => (
           <div key={blog.id} className="bg-white shadow-md rounded-lg overflow-hidden">
