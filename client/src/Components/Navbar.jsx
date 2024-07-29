@@ -126,6 +126,7 @@ export default function Navbar() {
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/about">About Us</Link></li>
               <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>
+              <li className='hover:text-primary transition cursor-pointer'><Link to="/blogs">Blogs</Link></li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
               <li onClick={() => handleNavigation('getintouch')} className='btn'>
                 Get in Touch
@@ -167,11 +168,12 @@ export default function Navbar() {
       <div className={`fixed inset-0 bg-white z-40 md:hidden transition-transform duration-700 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className='flex flex-col items-center justify-center h-full font-primary'>
           <ul className='text-center flex flex-col items-center justify-center h-full gap-6'>
-            {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
+            {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname.startsWith('/blogs') || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
               <>
                 <li ><Link to="/" onClick={toggleMenu}>Home</Link></li>
                 <li ><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
                 <li onClick={() => handleNavigation('services')}>Services</li>
+                <li ><Link to="/blogs" onClick={toggleMenu}>Blogs</Link></li>
                 <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
                 <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
                   Get in Touch

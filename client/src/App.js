@@ -15,6 +15,8 @@ import EmployeeVerification from './Pages/EmployeeVerification';
 import AdminDashboard from './Pages/AdminDashboard';
 import EmployeeDashboard from './Pages/EmployeeDashboard';
 import ToastNotifications from './Components/ToastNotifications';
+import Blogs from './Pages/Blogs'
+import BlogDetail from './Pages/BlogDetail';
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -82,6 +84,8 @@ function App() {
               <GetInTouch />
             </>
           } />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/career" element={<Careers />} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
           <Route path="/login" element={<Login />} />
