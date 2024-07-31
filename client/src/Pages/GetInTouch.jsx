@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import MapComponent from '../Components/MapComponent'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+import { animateTextWordByWord } from '../utils/titleAnimation';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function GetInTouch() {
     const [formData, setFormData] = useState({
@@ -39,11 +45,20 @@ export default function GetInTouch() {
             console.error('Error submitting form:', err);
         }
     }
+
+    const titleRef = useRef(null);
+
+    useGSAP(() => {
+        animateTextWordByWord(titleRef.current);
+
+    }, []);
+
+
     return (
 
         <div id='getintouch' className='flex flex-col md:px-24 px-12 py-12 bg-[#f3f4f6] font-primary'>
 
-            <h1 className='title text-primary font-primary font-bold text-3xl'>Get in Touch</h1>
+            <h1 ref={titleRef} className='title text-primary font-primary font-bold text-3xl'>Get in Touch</h1>
 
             <div className='form-map-conatiner flex flex-col md:flex-row justify-between md:gap-16 gap-8'>
 

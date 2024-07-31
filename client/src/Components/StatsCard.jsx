@@ -21,7 +21,8 @@ export default function StatsCard({ count, text }) {
                 scrollTrigger: {
                     trigger: card,
                     start: "top 80%",
-                    once: true
+                    // once: true
+                    toggleActions: "play none none reverse",
                 },
                 onUpdate: function () {
                     countElement.innerText = Math.ceil(this.targets()[0].innerText)
