@@ -11,22 +11,24 @@
         {
           "name": "House Keeping",
           "image": "https://imgur.com/LNlYm3Y.jpg",
-          "description": "Comprehensive cleaning and maintenance of living spaces."
+          "description": "We provide a full range of professional home cleaning services to meet your specific needs. Our skilled team offers top-quality deep cleaning and regular house cleaning just for you. We offers cleaning services for both residential and commercial spaces.
+"
         },
         {
           "name": "Pantry Support Services",
           "image": "https://imgur.com/4Q5HcK0.jpg",
-          "description": "Efficient management and stocking of office pantries."
+          "description": "Upgrade your pantry with our personalized solutions. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy.
         },
         {
           "name": "Office Boy",
           "image": "https://imgur.com/tc09odr.jpg",
-          "description": "General assistance and support in office environments."
+          "description": "Improve your office with our excellent office boy services. We handle everything you need to keep your office running smoothly. Our office boys will assist in basic administrative tasks such as photocopying, filing, and delivering documents within the office, as well as organized supply management. We’re here to help your business operate efficiently."
         },
         {
           "name": "Driver",
           "image": "https://imgur.com/LzRZHzD.jpg",
-          "description": "Professional transportation services for executives and staff."
+          "description": "Experience better travel with our top-quality driver services. Our carefully selected drivers provide excellent service for both business and personal trips. They ensure a smooth and comfortable journey from your home to your destination. Enjoy stress-free travel with our professional drivers.
+"
         }
       ]
     },
@@ -41,17 +43,19 @@
         {
           "name": "Manufacturing",
           "image": "https://imgur.com/example1.jpg",
-          "description": "Skilled manpower support for manufacturing industries."
+          "description": "Our manufacturing services confidently cover a wide range of sectors, delivering end-to-end solutions that enhance production processes and elevate product quality. Using the latest technology and best practices, we ensure seamless operations, cost-efficiency, and prompt delivery. Our manpower supply reliably provides the necessary skills to meet your production demands, thus enhancing operational efficiency."
         },
         {
           "name": "Sales",
           "image": "https://imgur.com/example2.jpg",
-          "description": "Professional sales staff to drive business growth."
+          "description": "Our Sales services are designed to help your company grow with effective sales strategies. We have a team of skilled sales professionals who excel in managing client relationships, generating leads, and closing deals. We make sure our sales experts are well-suited to your industry and market, aligning our efforts with your company's goals.
+"
         },
         {
           "name": "IT",
           "image": "https://imgur.com/example3.jpg",
-          "description": "Expert IT professionals for various technical needs."
+          "description": "Our IT services offer full support to keep your technology running smoothly. We handle everything from network management and cybersecurity to software development and technical support. Our skilled IT team keeps your systems strong and dependable, so you can focus on your main business goals with confidence in our IT services.
+"
         },
         {
           "name": "Other Manpower Support",
@@ -146,7 +150,7 @@
         {
           "name": "Residential Pest Control",
           "image": "https://imgur.com/pestcontrol3.jpg",
-          "description": "Effective pest control solutions for homes."
+          "description": "We use the safest and most efficacious pest control products and tools available, to safeguard your premises from a complete range of pests. All services are customised to the unique needs and challenges of your facility and attuned to the climatic factors of your city."
         },
         {
           "name": "Commercial Pest Control",
