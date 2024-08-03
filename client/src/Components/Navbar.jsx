@@ -125,7 +125,8 @@ export default function Navbar() {
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'  onClick={() => handleNavigation('about')}>About Us</li>
-              <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>
+              <li className='hover:text-primary transition cursor-pointer' onClick={() => handleNavigation('services')}>Services</li>        
+              <li className='hover:text-primary transition cursor-pointer'><Link to="/why-us">Why Us</Link></li> {/* Add link here */}
               <li className='hover:text-primary transition cursor-pointer'><Link to="/blogs">Blogs</Link></li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
               <li onClick={() => handleNavigation('getintouch')} className='btn'>
