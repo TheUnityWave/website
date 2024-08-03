@@ -5,7 +5,7 @@
       "name": "Soft Services",
       "images": [
         "softImage",
-        "https://cdn.slidesharecdn.com/ss_thumbnails/improvingoperationalperformancedraft09pptmaskedpdf-101128191027-phpapp02-thumbnail-4.jpg?cb=1342052198"
+        "https://cdn.slidesharecdn.com/ss_thumbnails/improvingoperationalperformancedraft09pptmaskedpdf-101128191027-phpapp02-thumbnail-4.jpg?cb=1342052198.jpg"
       ],
       "subservices": [
         {
@@ -65,17 +65,17 @@
       "name": "Technical Services",
       "images": [
         "techHome",
-        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain"
+        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain.jpg"
       ],
       "subservices": [
         {
           "name": "Façade Cleaning through Manpower",
-          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain",
+          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain.jpg",
           "description": "Manual cleaning of building exteriors by trained professionals."
         },
         {
           "name": "Façade Cleaning through Drones",
-          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw",
+          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw.jpg",
           "description": "Innovative drone technology for efficient and safe exterior cleaning."
         },
         {
@@ -90,7 +90,7 @@
         },
         {
           "name": "Waste Management",
-          "image": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain",
+          "image": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain.jpg",
           "description": "Efficient waste management services for various needs."
         }
       ]
@@ -100,12 +100,12 @@
       "name": "Cleaning Rental Equipment",
       "images": [
         "cleaningHome",
-        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain"
+        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain.jpg"
       ],
       "subservices": [
         {
           "name": "Equipment Rental",
-          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain",
+          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
           "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & many more, our wide range of tools provides the right equipment for any cleaning task. We maintain our equipment in optimal condition for high efficiency and superior performance."
         },
         {
@@ -150,7 +150,7 @@
         },
         {
           "name": "Commercial Pest Control",
-          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp",
+          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp.jpg",
           "description": "Pest management services for businesses and commercial properties."
         }
       ]
