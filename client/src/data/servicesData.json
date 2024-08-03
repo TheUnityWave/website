@@ -4,7 +4,7 @@
       "id": "soft-services",
       "name": "Soft Services",
       "images": [
-        "https://imgur.com/xaUO9R9.jpg",
+        "softImage",
         "https://imgur.com/nSC0sJc.jpg"
       ],
       "subservices": [
@@ -34,7 +34,7 @@
       "id": "business-support-manpower",
       "name": "Business Support Manpower",
       "images": [
-        "https://imgur.com/example9.jpg",
+        "businessHome",
         "https://imgur.com/example10.jpg"
       ],
       "subservices": [
@@ -64,7 +64,7 @@
       "id": "technical-services",
       "name": "Technical Services",
       "images": [
-        "https://imgur.com/Lih8FiT.jpg",
+        "techHome",
         "https://imgur.com/VhMd2G9.jpg"
       ],
       "subservices": [
@@ -99,7 +99,7 @@
       "id": "cleaning-rental-equipment",
       "name": "Cleaning Rental Equipment",
       "images": [
-        "https://imgur.com/example3.jpg",
+        "cleaningHome",
         "https://imgur.com/example4.jpg"
       ],
       "subservices": [
@@ -119,7 +119,7 @@
       "id": "wedding-event-services",
       "name": "Wedding/Event Services",
       "images": [
-        "https://imgur.com/example7.jpg",
+        "weddingHome",
         "https://imgur.com/example8.jpg"
       ],
       "subservices": [
@@ -139,7 +139,7 @@
       "id": "pest-control-services",
       "name": "Pest Control Services",
       "images": [
-        "https://imgur.com/pestcontrol1.jpg",
+        "pestHome",
         "https://imgur.com/pestcontrol2.jpg"
       ],
       "subservices": [

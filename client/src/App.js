@@ -18,7 +18,6 @@ import ToastNotifications from './Components/ToastNotifications';
 import AboutUs from './Pages/AboutUs'
 import Blogs from './Pages/Blogs'
 import BlogDetail from './Pages/BlogDetail';
-import WhyUs from './Pages/WhyUs';
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
