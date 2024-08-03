@@ -55,7 +55,7 @@
         },
         {
           "name": "Other Manpower Support",
-          "image": "https://imgur.com/example4.jpg",
+          "image": "https://static.wixstatic.com/media/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg/v1/fill/w_365,h_242,q_90/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg",
           "description": "General manpower support for various business needs."
         }
       ]
@@ -65,33 +65,33 @@
       "name": "Technical Services",
       "images": [
         "techHome",
-        "https://imgur.com/VhMd2G9.jpg"
+        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain.jpg"
       ],
       "subservices": [
         {
           "name": "Façade Cleaning through Manpower",
-          "image": "https://imgur.com/tc09odr.jpg",
+          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain.jpg",
           "description": "Manual cleaning of building exteriors by trained professionals."
         },
         {
           "name": "Façade Cleaning through Drones",
-          "image": "https://imgur.com/LzRZHzD.jpg",
+          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw.jpg",
           "description": "Innovative drone technology for efficient and safe exterior cleaning."
         },
         {
           "name": "Marble and Granite Polishing",
           "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Expert polishing services for marble and granite surfaces."
+          "description": "https://th.bing.com/th/id/OIP.BVntAJ3XpZY4lpowet4P8AHaE8?w=900&h=600&rs=1&pid=ImgDetMain.jpg"
         },
         {
           "name": "Carpet and Upholstery Cleaning",
-          "image": "https://imgur.com/LzRZHzD.jpg",
+          "image": "https://www.varietycleaning.co.uk/wp-content/uploads/2018/04/Carpet-Uphostery-Cleaning.jpg",
           "description": "Deep cleaning of carpets and upholstered furniture."
         },
         {
           "name": "Waste Management",
           "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Comprehensive waste collection, segregation, and disposal services."
+          "description": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain.jpg"
         }
       ]
     },
@@ -100,7 +100,7 @@
       "name": "Cleaning Rental Equipment",
       "images": [
         "cleaningHome",
-        "https://imgur.com/example4.jpg"
+        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain.jpg"
       ],
       "subservices": [
         {
@@ -110,7 +110,7 @@
         },
         {
           "name": "Furniture Rental",
-          "image": "https://imgur.com/example6.jpg",
+          "image": "https://assets-news.housing.com/news/wp-content/uploads/2019/09/23065452/Furniture-rentals-A-growing-trend-that-is-not-just-for-the-budget-constrained-FB-1200x628-compressed.jpg",
           "description": "Rental of furniture for events and temporary needs."
         }
       ]
@@ -120,7 +120,7 @@
       "name": "Wedding/Event Services",
       "images": [
         "weddingHome",
-        "https://imgur.com/example8.jpg"
+        "https://th.bing.com/th/id/OIP.tb0_sPx8IRUSRqh6EVrFIAHaE8?w=1024&h=683&rs=1&pid=ImgDetMain.jpg"
       ],
       "subservices": [
         {
@@ -140,7 +140,7 @@
       "name": "Pest Control Services",
       "images": [
         "pestHome",
-        "https://imgur.com/pestcontrol2.jpg"
+        "https://westernallpest.com.au/wp-content/uploads/2017/05/Pest-Control-Service.jpg"
       ],
       "subservices": [
         {
@@ -150,7 +150,7 @@
         },
         {
           "name": "Commercial Pest Control",
-          "image": "https://imgur.com/pestcontrol4.jpg",
+          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp.jpg",
           "description": "Pest management services for businesses and commercial properties."
         }
       ]
