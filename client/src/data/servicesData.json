@@ -52,11 +52,6 @@
           "name": "IT",
           "image": "https://th.bing.com/th/id/R.904372fe60bc99ad186c2271e64efc22?rik=lAMltlpBpOrfxQ&riu=http%3a%2f%2fskytechgeek.com%2fwp-content%2fuploads%2f2018%2f07%2frunning-your-business-smoothly.jpg&ehk=COX%2fCxmsSrwYsYjWMqF5ZjdfECZNO3c3q6OJSwrlu%2fU%3d&risl=&pid=ImgRaw&r=0.jpg",
           "description": "Our IT services offer full support to keep your technology running smoothly. We handle everything from network management and cybersecurity to software development and technical support. Our skilled IT team keeps your systems strong and dependable, so you can focus on your main business goals with confidence in our IT services."
-        },
-        {
-          "name": "Other Manpower Support",
-          "image": "https://imgur.com/example4.jpg",
-          "description": "General manpower support for various business needs."
         }
       ]
     },
@@ -75,8 +70,8 @@
         },
         {
           "name": "Furniture Rental",
-          "image": "https://imgur.com/example6.jpg",
-          "description": "Rental of furniture for events and temporary needs."
+          "image": "https://assets-news.housing.com/news/wp-content/uploads/2019/09/23065452/Furniture-rentals-A-growing-trend-that-is-not-just-for-the-budget-constrained-FB-1200x628-compressed.jpg",
+          "description": "<b> Easy Replacement </b> -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays. <br/><br/> <b> Low Investment </b> - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment. </br><br/> <b> Advanced Equipment </b> - Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate. <br/><br/> <b> No storage or maintenance concerns </b> - Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives."
         }
       ]
     },
@@ -96,7 +91,7 @@
         {
           "name": "Cleaning Equipment Services",
           "image": "https://jimmy.mu/wp-content/uploads/2022/09/hw10pro-570x570.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - These equipment not only promote hygiene but conserve water and ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
+          "description": "<b> Tissue stand </b> - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. <br/><br/> <b> Automatic wash basins </b> - These equipment not only promote hygiene but conserve water and ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority. <br/><br/> <b> Vacuum cleaning </b> - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
         }
       ]
     },
@@ -111,12 +106,12 @@
         {
           "name": "Residential Pest Control",
           "image": "https://th.bing.com/th/id/OIP.pgmzax6uS1aBOOOdr93pXwHaEK?rs=1&pid=ImgDetMain.jpg",
-          "description": "We use the safest and most efficacious pest control products and tools available, to safeguard your premises from a complete range of pests. All services are customised to the unique needs and challenges of your facility and attuned to the climatic factors of your city."
+          "description": "We utilize the safest and most effective pest control solutions and technologies available to protect your property from a wide variety of pests. All services are tailored to your facility's specific demands and difficulties, as well as the climate in your city. "
         },
         {
           "name": "Commercial Pest Control",
-          "image": "https://imgur.com/pestcontrol4.jpg",
-          "description": "Pest management services for businesses and commercial properties."
+          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp",
+          "description": "We utilize the safest and most effective pest control solutions and technologies available to protect your property from a wide variety of pests. All services are tailored to your facility's specific demands and difficulties, as well as the climate in your city."
         }
       ]
     }
