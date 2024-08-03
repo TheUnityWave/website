@@ -35,7 +35,7 @@
       "name": "Business Support Manpower",
       "images": [
         "businessHome",
-        "https://th.bing.com/th/id/R.a52a3d6f09c95aa44900bc5c42e64360?rik=paF3emeCHR9ZpQ&riu=http%3a%2f%2fwww.comproits.com%2fimages%2fman-power-support.jpg&ehk=TIRSJgJi0EyEPvojAOcDs9bKA2eGGfeGhby9UJBxDJw%3d&risl=&pid=ImgRaw&r=0"
+        "https://www.comproits.com/images/man-power-support.jpg"
       ],
       "subservices": [
         {
@@ -50,12 +50,12 @@
         },
         {
           "name": "IT",
-          "image": "https://th.bing.com/th/id/R.904372fe60bc99ad186c2271e64efc22?rik=lAMltlpBpOrfxQ&riu=http%3a%2f%2fskytechgeek.com%2fwp-content%2fuploads%2f2018%2f07%2frunning-your-business-smoothly.jpg&ehk=COX%2fCxmsSrwYsYjWMqF5ZjdfECZNO3c3q6OJSwrlu%2fU%3d&risl=&pid=ImgRaw&r=0",
+          "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
           "description": "Our IT services offer full support to keep your technology running smoothly. We handle everything from network management and cybersecurity to software development and technical support. Our skilled IT team keeps your systems strong and dependable, so you can focus on your main business goals with confidence in our IT services."
         },
         {
           "name": "Other Manpower Support",
-          "image": "https://static.wixstatic.com/media/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg/v1/fill/w_365,h_242,q_90/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg",
+          "image": "https://static.wixstatic.com/media/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg",
           "description": "General manpower support for various business needs."
         }
       ]
