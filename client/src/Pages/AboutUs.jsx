@@ -51,7 +51,7 @@ const AboutUs = () => {
                     <div className="text-center md:text-left max-w-lg">
                         <h2 ref={headingVRef} className="text-2xl font-bold text-[#21506E]">Our Vision</h2>
                         <p ref={contentVRef} className="text-[#6B7280] mt-4">
-                            Taken from the Latin words "dolorem ipsum", which translates to "pain itself", Lorem Ipsum text saw a revival in the mid-20th century as placeholder text in printing and design.
+                        To set the standard for excellence in facility management, providing innovative, reliable, and sustainable solutions that exceed our clients' expectations and contribute to their success.
                         </p>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ const AboutUs = () => {
                     <div className="text-center md:text-left max-w-lg">
                         <h2 ref={headingRef} className="text-2xl font-bold text-[#21506E]">Our Mission</h2>
                         <p ref={contentRef} className="text-[#6B7280] mt-4">
-                            Taken from the Latin words "dolorem ipsum", which translates to "pain itself", Lorem Ipsum text saw a revival in the mid-20th century as placeholder text in printing and design.
+                        We are dedicated to providing top-tier facility management services that ensure the operational excellence, safety, and sustainability of our clients' properties, fostering environments where people can work, live, and thrive.    
                         </p>
                     </div>
                 </div>

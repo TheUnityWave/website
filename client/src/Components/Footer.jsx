@@ -41,18 +41,21 @@ const Footer = () => {
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
                             <h3 className="font-bold mb-2 text-md">Our Services</h3>
                             <ul>
-                                <li><Link to='' className="hover:underline">Specialisation Services</Link></li>
-                                <li><Link to='' className="hover:underline">Technical Services</Link></li>
-                                <li><Link to='' className="hover:underline">Business Services</Link></li>
-                                <li><Link to='' className="hover:underline">Soft Services</Link></li>
+                                <li><Link to='/service/soft-services' className="hover:underline">Soft Services</Link></li>
+                                <li><Link to='/service/business-support-manpower' className="hover:underline">Business Services</Link></li>
+                                <li><Link to='/service/technical-services' className="hover:underline">Technical Services</Link></li>
+                                <li><Link to='/service/cleaning-rental-equipment' className="hover:underline">Cleaning/Rental Equipments</Link></li>
+                                <li><Link to='/service/wedding-event-services' className="hover:underline">Event Services</Link></li>
+                                <li><Link to='/service/pest-control-services' className="hover:underline">Pest Control Services</Link></li>
                             </ul>
                         </div>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
                             <h3 className="font-bold mb-2 text-md">Quick Links</h3>
                             <ul>
-                                <li><Link to='/about' className="hover:underline">About</Link></li>
+                                {/* <li><Link to='/about' className="hover:underline">About</Link></li> */}
+                                {/* <li><Link to="/why-us" className="hover:underline">Why Us</Link></li> */}
                                 <li><Link to='/' className="hover:underline">Policy</Link></li>
-                                <li><Link to='/' className="hover:underline">Contact</Link></li>
+                                <li><Link to='/' className="hover:underline">Compliances</Link></li>
                                 <li><Link to='/blogs' className="hover:underline">Blogs</Link></li>
                                 <li><Link to='/career' className="hover:underline">Career</Link></li>
                                 <li>
@@ -68,11 +71,11 @@ const Footer = () => {
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">
                             <h3 className="font-bold mb-2 text-md">Sectors We Serve</h3>
                             <ul>
-                                <li><Link to='' className="hover:underline">Technology</Link></li>
+                                <li><Link to='/service/technical-services' className="hover:underline">Technology</Link></li>
                                 <li><Link to='' className="hover:underline">Healthcare</Link></li>
-                                <li><Link to='' className="hover:underline">Business</Link></li>
+                                <li><Link to='/service/business-support-manpower' className="hover:underline">Business</Link></li>
                                 <li><Link to='' className="hover:underline">Construction</Link></li>
-                                <li><Link to='' className="hover:underline">Events</Link></li>
+                                <li><Link to='/service/wedding-event-services' className="hover:underline">Events</Link></li>
                             </ul>
                         </div>
                     </div>

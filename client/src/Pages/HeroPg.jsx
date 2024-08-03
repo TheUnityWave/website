@@ -38,6 +38,12 @@ export default function HeroPg() {
 
   }, [])
 
+  const handleNavigation = (sectionId) => {
+    if (typeof window.scrollToSection === 'function') {
+      window.scrollToSection(sectionId);
+    }
+  };
+
   return (
     <div
       ref={containerRef}
@@ -54,7 +60,7 @@ export default function HeroPg() {
         <p ref={contentRef} className='text-md '>
           Empowering Growth Through Secure and Efficient Facility Management: Our dedicated team of over 10,000 professionals ensures safe, comfortable, and functional spaces, enabling you to focus on value creation without risk or inefficiency.
         </p>
-        <p ref={buttonRef} className='bg-white w-[7rem] text-sm text-primary px-4 py-3 rounded-lg hover:bg-[#DCEFFB] transition cursor-pointer'>
+        <p ref={buttonRef} onClick={() => handleNavigation('services')} className='bg-white w-[7rem] text-sm text-primary px-4 py-3 rounded-lg hover:bg-[#DCEFFB] transition cursor-pointer'>
           Learn More
         </p>
       </div>

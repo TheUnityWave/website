@@ -14,18 +14,26 @@ const BlogDetail = () => {
   return (
     <div className="container mx-auto px-24 py-8">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover"/>
-        <div className="p-4">
-          <h2 className="text-2xl font-bold mb-4">{blog.title}</h2>
-          <p className="text-gray-700 text-base">{blog.content}</p>
-          {/* <Link
-            to="/"
-            className="inline-block mt-4 px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md shadow"
-          >
-            Back to Blogs
-          </Link> */}
+          <h2 className="text-3xl font-bold mb-4 text-gray-800 p-8">{blog.title}</h2>
+        <img src={blog.image} alt={blog.title} className="m-auto h-96 object-cover" />
+        <div className="p-8">
+          <p className="text-gray-700 text-lg mb-4">{blog.description}</p>
+          
+          {/* <h3 className="text-2xl font-semibold mb-2 text-blue-600">Key Points:</h3> */}
+          <ul className="list-disc list-inside mb-4">
+            {blog.points.map((point, index) => (
+              <li key={index} className="text-gray-700 text-base">
+                <strong className="font-medium text-xl">{point.title}</strong>
+                <br /> {point.description}
+              </li>
+            ))}
+          </ul>
+          
+          <h3 className="text-2xl font-semibold mb-2 text-blue-600">Conclusion:</h3>
+          <p className="text-gray-700 text-lg">{blog.conclusion}</p>
         </div>
       </div>
+      {/* <Link to="/" className="mt-4 inline-block text-blue-500">Back to Blogs</Link> */}
     </div>
   );
 };

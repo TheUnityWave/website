@@ -1,33 +1,22 @@
 {
     "testimonials": [
         {
-           
-            "name": "John Doe",
+            "name": "Shivam Thakur",
             "title": "CEO, ABC Company",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "review": "We've been collaborating with The UnityWave for over a year now and their housekeeping services are genuinely exceptional. Their team is reliable, and professional, and consistently goes the extra mile to ensure our office environment is always spotless and inviting.",
             "image": "logo.png"
         },
         {
-            
-            "name": "Jane Doe",
+            "name": "Vivek Sharma",
             "title": "CEO, ABC Company",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "review": "Our experience with The UnityWave has truly been amazing. The drivers are always punctual, professional, and always ensure our executives reach their destinations safely and on time. The level of service and commitment provided is undoubtedly unparalleled.",
             "image": "clean.png"
-
         },
         {
-            
-            "name": "John Smith",
+            "name": "Ishita Gupta",
             "title": "CEO, ABC Company",
-            "image": "soft1.png",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            
-            "name": "Rachita Dashore",
-            "title": "CEO, XYZ Company",
-            "image": "soft1.png",
-            "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            "review": "We are extremely pleased with the outstanding facility management services provided by The UnityWave. Every aspect of their service, from housekeeping to office boy and pantry services, is truly top-notch.",
+            "image": "soft1.png"
         }
     ]
 }

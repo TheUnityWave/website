@@ -13,7 +13,7 @@ const Blogs = () => {
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2">{blog.title}</h2>
               <p className="text-gray-700 text-base">
-                {blog.content.substring(0, 100)}... {/* Truncate content for preview */}
+                {blog.description.substring(0, 100)}... {/* Truncate content for preview */}
               </p>
               <Link to={`/blog/${blog.id}`} className="text-cyan-900 font-bold hover:underline mt-4 block">
                 Read More...
