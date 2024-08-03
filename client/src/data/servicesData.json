@@ -106,7 +106,7 @@
         {
           "name": "Equipment Rental",
           "image": "https://imgur.com/example5.jpg",
-          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task.We maintain our equipment in optimal condition for high efficiency and superior performance."
+          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & many more, our wide range of tools provides the right equipment for any cleaning task. We maintain our equipment in optimal condition for high efficiency and superior performance."
         },
         {
           "name": "Furniture Rental",
@@ -131,11 +131,7 @@
         {
           "name": "Cleaning Equipment Services",
           "image": "https://imgur.com/example2.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. 
-
-                          Automatic wash basins - These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority.
-
-                         Vacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
+          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - These equipment not only promote hygiene but conserve water and ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
         }
       ]
     },
