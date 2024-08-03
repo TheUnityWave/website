@@ -5,7 +5,7 @@
       "name": "Soft Services",
       "images": [
         "softImage",
-        "https://cdn.slidesharecdn.com/ss_thumbnails/improvingoperationalperformancedraft09pptmaskedpdf-101128191027-phpapp02-thumbnail-4.jpg?cb=1342052198.jpg"
+        "https://cdn.slidesharecdn.com/ss_thumbnails/improvingoperationalperformancedraft09pptmaskedpdf-101128191027-phpapp02-thumbnail-4.jpg?cb=1342052198"
       ],
       "subservices": [
         {
@@ -35,7 +35,7 @@
       "name": "Business Support Manpower",
       "images": [
         "businessHome",
-        "https://th.bing.com/th/id/R.a52a3d6f09c95aa44900bc5c42e64360?rik=paF3emeCHR9ZpQ&riu=http%3a%2f%2fwww.comproits.com%2fimages%2fman-power-support.jpg&ehk=TIRSJgJi0EyEPvojAOcDs9bKA2eGGfeGhby9UJBxDJw%3d&risl=&pid=ImgRaw&r=0.jpg"
+        "https://th.bing.com/th/id/R.a52a3d6f09c95aa44900bc5c42e64360?rik=paF3emeCHR9ZpQ&riu=http%3a%2f%2fwww.comproits.com%2fimages%2fman-power-support.jpg&ehk=TIRSJgJi0EyEPvojAOcDs9bKA2eGGfeGhby9UJBxDJw%3d&risl=&pid=ImgRaw&r=0"
       ],
       "subservices": [
         {
@@ -50,7 +50,7 @@
         },
         {
           "name": "IT",
-          "image": "https://th.bing.com/th/id/R.904372fe60bc99ad186c2271e64efc22?rik=lAMltlpBpOrfxQ&riu=http%3a%2f%2fskytechgeek.com%2fwp-content%2fuploads%2f2018%2f07%2frunning-your-business-smoothly.jpg&ehk=COX%2fCxmsSrwYsYjWMqF5ZjdfECZNO3c3q6OJSwrlu%2fU%3d&risl=&pid=ImgRaw&r=0.jpg",
+          "image": "https://th.bing.com/th/id/R.904372fe60bc99ad186c2271e64efc22?rik=lAMltlpBpOrfxQ&riu=http%3a%2f%2fskytechgeek.com%2fwp-content%2fuploads%2f2018%2f07%2frunning-your-business-smoothly.jpg&ehk=COX%2fCxmsSrwYsYjWMqF5ZjdfECZNO3c3q6OJSwrlu%2fU%3d&risl=&pid=ImgRaw&r=0",
           "description": "Our IT services offer full support to keep your technology running smoothly. We handle everything from network management and cybersecurity to software development and technical support. Our skilled IT team keeps your systems strong and dependable, so you can focus on your main business goals with confidence in our IT services."
         },
         {
@@ -65,23 +65,23 @@
       "name": "Technical Services",
       "images": [
         "techHome",
-        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain.jpg"
+        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain"
       ],
       "subservices": [
         {
           "name": "Façade Cleaning through Manpower",
-          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain.jpg",
+          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain",
           "description": "Manual cleaning of building exteriors by trained professionals."
         },
         {
           "name": "Façade Cleaning through Drones",
-          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw.jpg",
+          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw",
           "description": "Innovative drone technology for efficient and safe exterior cleaning."
         },
         {
           "name": "Marble and Granite Polishing",
           "image": "https://imgur.com/tc09odr.jpg",
-          "description": "https://th.bing.com/th/id/OIP.BVntAJ3XpZY4lpowet4P8AHaE8?w=900&h=600&rs=1&pid=ImgDetMain.jpg"
+          "description": "Expert polishing services for marble and granite surfaces."
         },
         {
           "name": "Carpet and Upholstery Cleaning",
@@ -90,8 +90,8 @@
         },
         {
           "name": "Waste Management",
-          "image": "https://imgur.com/tc09odr.jpg",
-          "description": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain.jpg"
+          "image": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain",
+          "description": "Efficient waste management services for various needs."
         }
       ]
     },
@@ -100,13 +100,13 @@
       "name": "Cleaning Rental Equipment",
       "images": [
         "cleaningHome",
-        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain.jpg"
+        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain"
       ],
       "subservices": [
         {
           "name": "Equipment Rental",
-          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": " Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & many more, our wide range of tools provides the right equipment for any cleaning task. We maintain our equipment in optimal condition for high efficiency and superior performance."
+          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain",
+          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & many more, our wide range of tools provides the right equipment for any cleaning task. We maintain our equipment in optimal condition for high efficiency and superior performance."
         },
         {
           "name": "Furniture Rental",
@@ -120,12 +120,12 @@
       "name": "Wedding/Event Services",
       "images": [
         "weddingHome",
-        "https://th.bing.com/th/id/OIP.tb0_sPx8IRUSRqh6EVrFIAHaE8?w=1024&h=683&rs=1&pid=ImgDetMain.jpg"
+        "https://th.bing.com/th/id/OIP.tb0_sPx8IRUSRqh6EVrFIAHaE8?w=1024&h=683&rs=1&pid=ImgDetMain"
       ],
       "subservices": [
         {
           "name": "Helper Staff",
-          "image": "https://th.bing.com/th/id/OIP.Q2oe4aWjWnSVl8DigA0jDgAAAA?rs=1&pid=ImgDetMain.jpg",
+          "image": "https://th.bing.com/th/id/OIP.Q2oe4aWjWnSVl8DigA0jDgAAAA?rs=1&pid=ImgDetMain",
           "description": "We offer excellent wedding and event services with a skilled and friendly event staff that keeps everything running smoothly and assists guests while maintaining a professional dress code. Rely on us to manage every detail of your wedding with our extensive event services."
         },
         {
@@ -145,12 +145,12 @@
       "subservices": [
         {
           "name": "Residential Pest Control",
-          "image": "https://th.bing.com/th/id/OIP.pgmzax6uS1aBOOOdr93pXwHaEK?rs=1&pid=ImgDetMain.jpg",
+          "image": "https://th.bing.com/th/id/OIP.pgmzax6uS1aBOOOdr93pXwHaEK?rs=1&pid=ImgDetMain",
           "description": "We use the safest and most efficacious pest control products and tools available, to safeguard your premises from a complete range of pests. All services are customised to the unique needs and challenges of your facility and attuned to the climatic factors of your city."
         },
         {
           "name": "Commercial Pest Control",
-          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp.jpg",
+          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp",
           "description": "Pest management services for businesses and commercial properties."
         }
       ]
