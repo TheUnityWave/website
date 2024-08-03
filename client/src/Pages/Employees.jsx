@@ -57,11 +57,7 @@ const Employees = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto h-[calc(80vh-72px-2rem)]">
                     {employees.map(employee => {
-                        // Parse policeVerificationDetails if it's a string
-                        const policeVerificationDetails = typeof employee.policeVerificationDetails === 'string'
-                            ? JSON.parse(employee.policeVerificationDetails)
-                            : employee.policeVerificationDetails;
-
+                     
                         return (
                             <div key={employee._id} className="relative p-6 rounded-lg shadow-lg bg-white border-2 border-gray-300">
                                 {employee.isAdmin && (
@@ -82,13 +78,12 @@ const Employees = () => {
                                         View
                                     </a>
                                 </p>
+                                <p><strong>Police Verification Form:</strong>
+                                    <a href={employee.policeVerification} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                                        View
+                                    </a>
+                                </p>
 
-                                <div className="mt-4">
-                                    <h4 className="text-lg font-semibold mb-2">Police Verification Details:</h4>
-                                    <p><strong>Question 1:</strong> {policeVerificationDetails.question1}</p>
-                                    <p><strong>Question 2:</strong> {policeVerificationDetails.question2}</p>
-                                    <p><strong>Question 3:</strong> {policeVerificationDetails.question3}</p>
-                                </div>
                                 {!employee.isAdmin &&
                                     <button
                                         onClick={() => makeAdmin(employee._id)}
