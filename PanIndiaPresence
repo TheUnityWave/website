@@ -1,0 +1,13 @@
+import React from 'react';
+
+const PanIndiaPresence = () => (
+  <div className="content pan-india-presence">
+    <h2>Pan-India Presence</h2>
+    <div className="background">
+      <p>With a strong presence across India, we serve a diverse range of industries and clients...</p>
+    </div>
+    <img src="https://e7.pngegg.com/pngimages/630/798/png-clipart-textile-industry-in-india-map-business-north-indian-food-service-india-thumbnail.png" alt="Pan-India Presence" />
+  </div>
+);
+
+export default PanIndiaPresence;
