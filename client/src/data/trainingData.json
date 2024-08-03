@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Module 1: Introduction to Company Policies",
+        "description": "An overview of company policies and expectations.",
+        "content": "Detailed content about company policies goes here.",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 2,
+        "title": "Module 2: Health and Safety Guidelines",
+        "description": "Essential health and safety guidelines for employees.",
+        "content": "Detailed content about health and safety guidelines goes here.",
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 3,
+        "title": "Module 3: Performance Management",
+        "description": "Understanding performance management and appraisal systems.",
+        "content": "Detailed content about performance management goes here.",
+        "image": "https://via.placeholder.com/150"
+    }
+]
