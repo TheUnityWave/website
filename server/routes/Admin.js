@@ -168,9 +168,9 @@ router.get('/tickets', async (req, res) => {
         let tickets;
 
         if (userType) {
-            tickets = await Ticket.find({ userType }).sort({createdAt: -1});
+            tickets = await Ticket.find({ userType }).sort({ createdAt: -1 });
         } else {
-            tickets = await Ticket.find().sort({createdAt: -1});
+            tickets = await Ticket.find().sort({ createdAt: -1 });
         }
         res.status(200).json(tickets);
     } catch (err) {
@@ -184,25 +184,25 @@ async function generateTicketNumber() {
     const year = date.getFullYear().toString().substr(-2);
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
-    
+
     const baseTicketNumber = `TKT${year}${month}${day}`;
-    
+
     let ticketNumber;
     let counter = 1;
-    
-    do {
-      ticketNumber = `${baseTicketNumber}${counter.toString().padStart(3, '0')}`;
-      const existingTicket = await Ticket.findOne({ ticketNumber });
-      if (!existingTicket) {
-        return ticketNumber;
-      }
-      counter++;
-    } while (counter < 1000);
-    
-    throw new Error('Unable to generate unique ticket number');
-  }
 
-  router.post('/tickets', async (req, res) => {
+    do {
+        ticketNumber = `${baseTicketNumber}${counter.toString().padStart(3, '0')}`;
+        const existingTicket = await Ticket.findOne({ ticketNumber });
+        if (!existingTicket) {
+            return ticketNumber;
+        }
+        counter++;
+    } while (counter < 1000);
+
+    throw new Error('Unable to generate unique ticket number');
+}
+
+router.post('/tickets', async (req, res) => {
     const { name, company, email, mobile, userType, complaint } = req.body;
 
     try {

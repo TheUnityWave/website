@@ -15,7 +15,9 @@ const jwt = require('jsonwebtoken');
 // Single route for handling different types of data and file uploads
 router.post('/employee-verification', fetchEmployee, upload.fields([
     { name: 'EmployeePhoto', maxCount: 1 },
-    { name: 'AdhaarCard', maxCount: 1 }
+    { name: 'AdhaarCard', maxCount: 1 },
+    { name: 'policeVerification', maxCount: 1 },
+
 ]), async (req, res) => {
     try {
         const employee = req.employee;
@@ -27,7 +29,7 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
         const updateData = {};
 
         // Destructuring data from req.body
-        const { hometownAddress, currentAddress, policeVerificationDetails } = req.body;
+        const { hometownAddress, currentAddress } = req.body;
 
         // Collect file paths from Cloudinary
         if (req.files.EmployeePhoto && req.files.EmployeePhoto.length > 0) {
@@ -36,11 +38,13 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
         if (req.files.AdhaarCard && req.files.AdhaarCard.length > 0) {
             updateData.AdhaarCard = req.files.AdhaarCard[0].path;
         }
+        if (req.files.policeVerification && req.files.policeVerification.length > 0) {
+            updateData.policeVerification = req.files.policeVerification[0].path;
+        }
 
         // Add other fields to updateData only if they are present
         if (hometownAddress) updateData.hometownAddress = hometownAddress;
         if (currentAddress) updateData.currentAddress = currentAddress;
-        if (policeVerificationDetails) updateData.policeVerificationDetails = policeVerificationDetails;
 
         // If there are no updates to be made, return an appropriate response
         if (Object.keys(updateData).length === 0) {

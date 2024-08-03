@@ -10,15 +10,11 @@ const EmployeeVerification = () => {
     const [employeeData, setEmployeeData] = useState({
         hometownAddress: '',
         currentAddress: '',
-        step5Data: {
-            question1: '',
-            question2: '',
-            question3: ''
-        },
-    });
+        });
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const aadhaarFileRef = useRef(null);
+    const policeVerificationRef = useRef(null);
 
     const fetchEmployeeData = async () => {
         try {
@@ -37,12 +33,9 @@ const EmployeeVerification = () => {
                     isCurrentAddressVerified: (data.currentAddress ? true : false),
                     AadhaarCard: data.AdhaarCard,
                     isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    policeVerification: data.policeVerification,
+                    ispoliceVerification: (data.policeVerification ? true : false),
+                    
                     EmployeePhoto: data.EmployeePhoto
                 });
                 setIsPhotoTaken(!!data.EmployeePhoto);
@@ -152,12 +145,8 @@ const EmployeeVerification = () => {
                     isCurrentAddressVerified: (data.currentAddress ? true : false),
                     AadhaarCard: data.AdhaarCard,
                     isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    policeVerification: data.policeVerification,
+                    ispoliceVerification: (data.policeVerification ? true : false),
                     EmployeePhoto: null
                 });
                 setIsPhotoTaken(false);
@@ -224,12 +213,8 @@ const EmployeeVerification = () => {
                     isCurrentAddressVerified: (data.currentAddress ? true : false),
                     AadhaarCard: data.AdhaarCard,
                     isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    policeVerification: data.policeVerification,
+                    ispoliceVerification: (data.policeVerification ? true : false),
                     EmployeePhoto: data.EmployeePhoto
                 });
                 setIsPhotoTaken(!!data.EmployeePhoto);
@@ -260,13 +245,8 @@ const EmployeeVerification = () => {
                     isCurrentAddressVerified: false,
                     AadhaarCard: data.AdhaarCard,
                     isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
-                    EmployeePhoto: data.EmployeePhoto
+                    policeVerification: data.policeVerification,
+                    ispoliceVerification: (data.policeVerification ? true : false),
                 });
                 setIsPhotoTaken(!!data.EmployeePhoto);
                 setCapturedImage(data.EmployeePhoto);
@@ -304,7 +284,67 @@ const EmployeeVerification = () => {
         }
     };
 
-    // AADHAAR CARD SUBMIT.
+    // Police CARD SUBMIT.
+    const handlePoliceSubmit = async () => {
+        try {
+            const formData = new FormData();
+            if (policeVerificationRef.current.files[0]) {
+                formData.append('policeVerification', policeVerificationRef.current.files[0]);
+            }
+
+            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                setEmployeeData(prevData => ({ ...prevData, ispoliceVerification: true }));
+                fetchEmployeeData();
+                toast.success("Police Verification Uploaded");
+            } else {
+                toast.success("Something went wrong");
+            }
+        } catch (error) {
+            console.error('Error submitting Police Verification:', error);
+            toast.success("Something went wrong");
+        }
+    };
+
+    // AADHAAR CARD UPDATE.
+    const handlePoliceUpdate = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                }
+            });
+
+            if (response.status === 200) {
+                const data = response.data;
+                setEmployeeData({
+                    hometownAddress: data.hometownAddress || '',
+                    currentAddress: data.currentAddress || '',
+                    isHometownVerified: (data.hometownAddress ? true : false),
+                    isCurrentAddressVerified: (data.currentAddress ? true : false),
+                    AadhaarCard: data.AdhaarCard,
+                    isAadhaarUploaded:true,
+                    
+                    policeVerification: data.policeVerification,
+                    ispoliceVerification: false,
+                    
+                    EmployeePhoto: data.EmployeePhoto
+                });
+                setIsPhotoTaken(!!data.EmployeePhoto);
+                setCapturedImage(data.EmployeePhoto);
+            } else {
+                console.error('Failed to fetch employee data');
+            }
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    }
     const handleAadhaarSubmit = async () => {
         try {
             const formData = new FormData();
@@ -350,12 +390,7 @@ const EmployeeVerification = () => {
                     isCurrentAddressVerified: (data.currentAddress ? true : false),
                     AadhaarCard: data.AdhaarCard,
                     isAadhaarUploaded: false,
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: (data.policeVerificationDetails.question1 ? true : false),
+                    
                     EmployeePhoto: data.EmployeePhoto
                 });
                 setIsPhotoTaken(!!data.EmployeePhoto);
@@ -369,77 +404,77 @@ const EmployeeVerification = () => {
     }
 
     // POLICE VERIFICATION SUBMIT.
-    const handleQuestionsSubmit = async () => {
-        try {
-            const response = await axios.post(
-                'http://localhost:5000/api/employee/employee-verification',
-                { policeVerificationDetails: employeeData.step5Data },
-                {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                        'auth-token': localStorage.getItem('token')
-                    }
-                }
-            );
+    // const handleQuestionsSubmit = async () => {
+    //     try {
+    //         const response = await axios.post(
+    //             'http://localhost:5000/api/employee/employee-verification',
+    //             { policeVerificationDetails: employeeData.step5Data },
+    //             {
+    //                 headers: {
+    //                     'Content-Type': 'multipart/form-data',
+    //                     'auth-token': localStorage.getItem('token')
+    //                 }
+    //             }
+    //         );
 
-            if (response.status === 200) {
-                setEmployeeData(prevData => ({ ...prevData, isQuestionsVerified: true }));
-                toast.success("Police Verification Done");
-            } else {
-                toast.success("Something went wrong");
-            }
-        } catch (error) {
-            console.error('Error submitting questions:', error);
-            toast.success("Something went wrong");
-        }
-    };
+    //         if (response.status === 200) {
+    //             setEmployeeData(prevData => ({ ...prevData, isQuestionsVerified: true }));
+    //             toast.success("Police Verification Done");
+    //         } else {
+    //             toast.success("Something went wrong");
+    //         }
+    //     } catch (error) {
+    //         console.error('Error submitting questions:', error);
+    //         toast.success("Something went wrong");
+    //     }
+    // };
 
-    // POLICE VERIFICATION UPDATE.
-    const handleQuestionsUpdate = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
-                headers: {
-                    'auth-token': localStorage.getItem('token')
-                }
-            });
+    // // POLICE VERIFICATION UPDATE.
+    // const handleQuestionsUpdate = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+    //             headers: {
+    //                 'auth-token': localStorage.getItem('token')
+    //             }
+    //         });
 
-            if (response.status === 200) {
-                const data = response.data;
-                setEmployeeData({
-                    hometownAddress: data.hometownAddress || '',
-                    currentAddress: data.currentAddress || '',
-                    isHometownVerified: (data.hometownAddress ? true : false),
-                    isCurrentAddressVerified: (data.currentAddress ? true : false),
-                    AadhaarCard: data.AdhaarCard,
-                    isAadhaarUploaded: (data.AdhaarCard ? true : false),
-                    step5Data: {
-                        question1: data.policeVerificationDetails.question1 || '',
-                        question2: data.policeVerificationDetails.question2 || '',
-                        question3: data.policeVerificationDetails.question3 || ''
-                    },
-                    isQuestionsVerified: false,
-                    EmployeePhoto: data.EmployeePhoto
-                });
-                setIsPhotoTaken(!!data.EmployeePhoto);
-                setCapturedImage(data.EmployeePhoto);
-            } else {
-                console.error('Failed to fetch employee data');
-            }
-        } catch (error) {
-            console.error('Error fetching employee data:', error);
-        }
-    }
+    //         if (response.status === 200) {
+    //             const data = response.data;
+    //             setEmployeeData({
+    //                 hometownAddress: data.hometownAddress || '',
+    //                 currentAddress: data.currentAddress || '',
+    //                 isHometownVerified: (data.hometownAddress ? true : false),
+    //                 isCurrentAddressVerified: (data.currentAddress ? true : false),
+    //                 AadhaarCard: data.AdhaarCard,
+    //                 isAadhaarUploaded: (data.AdhaarCard ? true : false),
+    //                 step5Data: {
+    //                     question1: data.policeVerificationDetails.question1 || '',
+    //                     question2: data.policeVerificationDetails.question2 || '',
+    //                     question3: data.policeVerificationDetails.question3 || ''
+    //                 },
+    //                 isQuestionsVerified: false,
+    //                 EmployeePhoto: data.EmployeePhoto
+    //             });
+    //             setIsPhotoTaken(!!data.EmployeePhoto);
+    //             setCapturedImage(data.EmployeePhoto);
+    //         } else {
+    //             console.error('Failed to fetch employee data');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error fetching employee data:', error);
+    //     }
+    // }
 
-    const handleQuestionChange = (event) => {
-        const { name, value } = event.target;
-        setEmployeeData(prevData => ({
-            ...prevData,
-            step5Data: {
-                ...prevData.step5Data,
-                [name]: value
-            }
-        }));
-    };
+    // const handleQuestionChange = (event) => {
+    //     const { name, value } = event.target;
+    //     setEmployeeData(prevData => ({
+    //         ...prevData,
+    //         step5Data: {
+    //             ...prevData.step5Data,
+    //             [name]: value
+    //         }
+    //     }));
+    // };
 
     return (
         <div className="flex">
@@ -621,66 +656,41 @@ const EmployeeVerification = () => {
                             )}
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-6 mb-4">
-                        <h3 className="text-lg font-semibold mb-4">Step 5: Answer Police Verification Questions</h3>
-                        {employeeData.isQuestionsVerified === false ? (
+                        <h3 className="text-lg font-semibold mb-4">Step 5: Upload Police Verfication</h3>
+                        {employeeData.ispoliceVerification === false ? (
                             <div>
                                 <input
-                                    type="text"
-                                    name="question1"
-                                    placeholder="Question 1"
-                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                    value={employeeData.step5Data.question1}
-                                    onChange={handleQuestionChange}
+                                    type="file"
+                                    ref={policeVerificationRef}
+                                    className="mb-4"
                                 />
-                                <input
-                                    type="text"
-                                    name="question2"
-                                    placeholder="Question 2"
-                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                    value={employeeData.step5Data.question2}
-                                    onChange={handleQuestionChange}
-                                />
-                                <input
-                                    type="text"
-                                    name="question3"
-                                    placeholder="Question 3"
-                                    className="border border-gray-300 rounded-md px-4 py-2 mb-4 w-full"
-                                    value={employeeData.step5Data.question3}
-                                    onChange={handleQuestionChange}
-                                />
+                                <br />
                                 <button
                                     className="bg-cyan-900 text-white px-4 py-2 rounded"
-                                    onClick={handleQuestionsSubmit}
+                                    onClick={handlePoliceSubmit}
                                 >
-                                    Verify Questions
+                                    Upload Police Verification Form
                                 </button>
                             </div>
                         ) :
                             (
                                 <div>
-                                    <div className='flex justify-between items-center'>
-                                        <div>
-                                            Question 1: {employeeData.step5Data.question1}
-                                            <br />
-                                            Question 2: {employeeData.step5Data.question2}
-                                            <br />
-                                            Question 3: {employeeData.step5Data.question3}
-                                        </div>
+                                    <div className='flex items-center justify-between'>
+                                        <a href={employeeData.policeVerification} target="_blank" rel="noopener noreferrer" className="mb-4 w-1/4 text-blue-500 underline">View Submitted Form</a>
                                         <p className="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full">
                                             Verified
                                         </p>
                                     </div>
                                     <button
                                         className="bg-cyan-900 text-white px-3 py-1 rounded"
-                                        onClick={handleQuestionsUpdate}
+                                        onClick={handlePoliceUpdate}
                                     >
                                         Update
                                     </button>
                                 </div>
-
                             )}
-
                     </div>
+                    
                 </div>
             </div>
         </div >

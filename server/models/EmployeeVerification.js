@@ -14,10 +14,8 @@ const EmployeeVerificationSchema = new Schema({
     hometownAddress: { type: String, default: '' },
     currentAddress: { type: String, default: '' },
     AdhaarCard: { type: String, default: '' },
-    policeVerificationDetails: {
-        question1: { type: String, default: '' },
-        question2: { type: String, default: '' },
-        question3: { type: String, default: '' }
+    policeVerification: {
+        type: String, default: ''
     }
 }, { timestamps: true });
 

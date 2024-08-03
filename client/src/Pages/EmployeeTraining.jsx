@@ -14,10 +14,10 @@ const EmployeeTraining = () => {
                         {trainingData.map((training) => (
                             <div key={training.id} className="bg-white shadow-md rounded-lg overflow-hidden">
                                 <img src={training.image} alt={training.title} className="w-full h-32 object-cover" />
-                                <div className="p-4">
+                                <div className="p-4 flex flex-col items-start justify-between gap-2">
                                     <h3 className="text-xl font-semibold mb-2">{training.title}</h3>
                                     <p className="text-gray-700 text-base">{training.description}</p>
-                                    <Link to={`/employee/training/${training.id}`} className="px-4 py-2 bg-cyan-600 text-white rounded hover:bg-cyan-700">
+                                    <Link to={`/employee/training/${training.id}`} className="px-3 py-1 bg-cyan-600 text-white rounded hover:bg-cyan-700">
                                         Start Training
                                     </Link>
                                 </div>
