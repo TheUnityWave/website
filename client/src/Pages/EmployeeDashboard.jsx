@@ -4,7 +4,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
 import EmployeeVerification from './EmployeeVerification';
 import EmployeeTraining from './EmployeeTraining';
-import RaiseTicket from './RaiseTicket';
+import TrainingDetails from './TrainingDetails';
 
 const EmployeeDashboard = () => {
   const location = useLocation();
@@ -86,6 +86,7 @@ const EmployeeDashboard = () => {
         <Routes>
           <Route path="verification" element={<EmployeeVerification />} />
           <Route path="training" element={<EmployeeTraining />} />
+          <Route path="/training/:id" element={<TrainingDetails />} />
         </Routes>
       </div>
     </div>
