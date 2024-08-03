@@ -43,7 +43,7 @@ const AboutUs = () => {
             {/* Header Section */}
             <header className="text-center pt-12 px-20 w-full text-white">
                 <h1 className="text-2xl text-primary font-bold ">At the core of our existence is shared vision to reflect integrity in all our engagements.</h1>
-                <p ref={taglineRef} className="italic text-black text-xl mt-5">“Doing things differently”</p>
+                <p ref={taglineRef} className="italic text-black text-xl mt-5">“Make every difficulty easy”</p>
             </header>
 
             <div className="flex flex-col md:flex-row w-full h-auto bg-[#d0e3ff] py-8">

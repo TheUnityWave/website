@@ -63,7 +63,7 @@ const RaiseTicket = () => {
                     {applications.length > 0 ? (
                         <ul>
                             {applications.map((application) => (
-                                <li key={application._id} className="bg-white p-4 mb-4 shadow-md rounded-md w-full">
+                                <li key={application._id} className="bg-white text-sm p-4 mb-4 shadow-md rounded-md w-full">
                                     <h3 className="text-lg font-semibold">
                                         {application.ticketNumber} 
                                     </h3>
