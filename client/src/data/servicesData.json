@@ -61,41 +61,6 @@
       ]
     },
     {
-      "id": "technical-services",
-      "name": "Technical Services",
-      "images": [
-        "techHome",
-        "https://imgur.com/VhMd2G9.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "Façade Cleaning through Manpower",
-          "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Manual cleaning of building exteriors by trained professionals."
-        },
-        {
-          "name": "Façade Cleaning through Drones",
-          "image": "https://imgur.com/LzRZHzD.jpg",
-          "description": "Innovative drone technology for efficient and safe exterior cleaning."
-        },
-        {
-          "name": "Marble and Granite Polishing",
-          "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Expert polishing services for marble and granite surfaces."
-        },
-        {
-          "name": "Carpet and Upholstery Cleaning",
-          "image": "https://imgur.com/LzRZHzD.jpg",
-          "description": "Deep cleaning of carpets and upholstered furniture."
-        },
-        {
-          "name": "Waste Management",
-          "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Comprehensive waste collection, segregation, and disposal services."
-        }
-      ]
-    },
-    {
       "id": "cleaning-rental-equipment",
       "name": "Cleaning Rental Equipment",
       "images": [

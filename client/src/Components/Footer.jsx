@@ -43,7 +43,7 @@ const Footer = () => {
                             <ul>
                                 <li><Link to='/service/soft-services' className="hover:underline">Soft Services</Link></li>
                                 <li><Link to='/service/business-support-manpower' className="hover:underline">Business Services</Link></li>
-                                <li><Link to='/service/technical-services' className="hover:underline">Technical Services</Link></li>
+                                {/* <li><Link to='/service/technical-services' className="hover:underline">Technical Services</Link></li> */}
                                 <li><Link to='/service/cleaning-rental-equipment' className="hover:underline">Cleaning/Rental Equipments</Link></li>
                                 <li><Link to='/service/wedding-event-services' className="hover:underline">Event Services</Link></li>
                                 <li><Link to='/service/pest-control-services' className="hover:underline">Pest Control Services</Link></li>

@@ -121,7 +121,7 @@ export default function Navbar() {
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-sm'>
-          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
+          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname === '/blogs' || location.pathname.startsWith('/service/') || location.pathname.startsWith('/blog/') ? (
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'  onClick={() => handleNavigation('about')}>About Us</li>

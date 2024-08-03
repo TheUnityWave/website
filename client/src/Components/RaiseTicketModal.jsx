@@ -154,7 +154,7 @@ const RaiseTicketModal = ({ onClose }) => {
                             />
                         </label>
                     )}
-                    <div className="flex items-center justify-between w-full mt-1">
+                    <div className="flex flex-row-reverse items-center justify-between w-full mt-1">
                     <button type='submit' className='btn bg-primary text-sm text-white px-6 py-1/2 rounded-lg hover:bg-primary/80 transition cursor-pointer '>Raise Ticket</button>
                     <button type='button' onClick={onClose} className='btn text-sm bg-secondary text-white px-6 py-1/2 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>Cancel</button>
                     </div>
