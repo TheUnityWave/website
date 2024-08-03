@@ -108,11 +108,7 @@ router.post('/send-credentials/:id', async (req, res) => {
             hometownAddress: '', // Update if you have an address
             currentAddress: '', // Update if you have an address
             AdhaarCard: '', // Update if you have Adhaar card
-            policeVerificationDetails: {
-                question1: '',
-                question2: '',
-                question3: ''
-            }
+            policeVerification:''
         });
 
         await newEmployee.save();
@@ -168,9 +164,9 @@ router.get('/tickets', async (req, res) => {
         let tickets;
 
         if (userType) {
-            tickets = await Ticket.find({ userType }).sort({ createdAt: -1 });
+            tickets = await Ticket.find({ userType }).sort({ date: -1 });
         } else {
-            tickets = await Ticket.find().sort({ createdAt: -1 });
+            tickets = await Ticket.find().sort({ date: -1 });
         }
         res.status(200).json(tickets);
     } catch (err) {

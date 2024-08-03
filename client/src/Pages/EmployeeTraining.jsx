@@ -5,7 +5,7 @@ import trainingData from '../data/trainingData.json';
 const EmployeeTraining = () => {
     return (
         <div className="flex">
-            <div className=" md:p-4 bg-gray-100 flex-1">
+            <div className=" md:p-4 bg-[#f3f4f6] flex-1">
                 <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-3 px-6 mb-4 rounded-md">
                     Employee Training
                 </h2>

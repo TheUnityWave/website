@@ -83,7 +83,7 @@ export default function Navbar() {
   const renderUserInfo = () => {
     if (user) {
       return (
-        <div className="flex md:flex-row flex-col items-center gap-4">
+        <div className="flex md:flex-row flex-col items-center gap-3">
           {user.isAdmin ? (
             <button className='bg-green-500 hover:bg-green-300 transition px-4 py-2 rounded-md'>ADMIN</button>
           ) : (

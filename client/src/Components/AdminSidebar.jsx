@@ -20,8 +20,8 @@ const AdminSidebar = () => {
 
     return (
         <>
-            <div className="hidden lg:flex bg-cyan-900 text-white w-80 p-4 flex flex-col justify-between">
-                <nav className="flex flex-col space-y-4">
+            <div className="hidden lg:flex bg-cyan-900 text-white w-[20vw] p-4 flex flex-col justify-between">
+                <nav className="flex flex-col space-y-4 text-sm">
                     <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-2 rounded">
                         Job Applications
                     </NavLink>
@@ -35,7 +35,7 @@ const AdminSidebar = () => {
                         Raise Ticket
                     </NavLink>
                 </nav>
-                <nav className='flex flex-col'>
+                <nav className='flex flex-col text-sm'>
                     <NavLink onClick={toggleChangePassword} className="hover:bg-cyan-700 p-2 rounded mt-4">
                         Change Password
                     </NavLink>

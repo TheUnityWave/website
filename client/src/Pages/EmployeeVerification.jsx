@@ -403,82 +403,10 @@ const EmployeeVerification = () => {
         }
     }
 
-    // POLICE VERIFICATION SUBMIT.
-    // const handleQuestionsSubmit = async () => {
-    //     try {
-    //         const response = await axios.post(
-    //             'http://localhost:5000/api/employee/employee-verification',
-    //             { policeVerificationDetails: employeeData.step5Data },
-    //             {
-    //                 headers: {
-    //                     'Content-Type': 'multipart/form-data',
-    //                     'auth-token': localStorage.getItem('token')
-    //                 }
-    //             }
-    //         );
-
-    //         if (response.status === 200) {
-    //             setEmployeeData(prevData => ({ ...prevData, isQuestionsVerified: true }));
-    //             toast.success("Police Verification Done");
-    //         } else {
-    //             toast.success("Something went wrong");
-    //         }
-    //     } catch (error) {
-    //         console.error('Error submitting questions:', error);
-    //         toast.success("Something went wrong");
-    //     }
-    // };
-
-    // // POLICE VERIFICATION UPDATE.
-    // const handleQuestionsUpdate = async () => {
-    //     try {
-    //         const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
-    //             headers: {
-    //                 'auth-token': localStorage.getItem('token')
-    //             }
-    //         });
-
-    //         if (response.status === 200) {
-    //             const data = response.data;
-    //             setEmployeeData({
-    //                 hometownAddress: data.hometownAddress || '',
-    //                 currentAddress: data.currentAddress || '',
-    //                 isHometownVerified: (data.hometownAddress ? true : false),
-    //                 isCurrentAddressVerified: (data.currentAddress ? true : false),
-    //                 AadhaarCard: data.AdhaarCard,
-    //                 isAadhaarUploaded: (data.AdhaarCard ? true : false),
-    //                 step5Data: {
-    //                     question1: data.policeVerificationDetails.question1 || '',
-    //                     question2: data.policeVerificationDetails.question2 || '',
-    //                     question3: data.policeVerificationDetails.question3 || ''
-    //                 },
-    //                 isQuestionsVerified: false,
-    //                 EmployeePhoto: data.EmployeePhoto
-    //             });
-    //             setIsPhotoTaken(!!data.EmployeePhoto);
-    //             setCapturedImage(data.EmployeePhoto);
-    //         } else {
-    //             console.error('Failed to fetch employee data');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error fetching employee data:', error);
-    //     }
-    // }
-
-    // const handleQuestionChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setEmployeeData(prevData => ({
-    //         ...prevData,
-    //         step5Data: {
-    //             ...prevData.step5Data,
-    //             [name]: value
-    //         }
-    //     }));
-    // };
 
     return (
         <div className="flex">
-            <div className=" md:p-4 bg-gray-100 flex-1">
+            <div className=" md:p-4 bg-[#f3f4f6] flex-1">
                 <h2 className="text-2xl bg-cyan-900 text-white font-semibold py-3 px-6 mb-4 rounded-md">
                     Employee Verification
                 </h2>

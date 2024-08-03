@@ -51,7 +51,7 @@ const Employees = () => {
 
     return (
         <div className="flex">
-            <div className="p-4 md:p-8 bg-gray-200 flex-1">
+            <div className="p-4 md:p-8 bg-[#f3f4f6] flex-1">
                 <h2 className="text-2xl bg-cyan-900 from-blue-600 to-blue-400 text-white font-bold py-4 px-6 rounded-lg shadow-md mb-6">
                     Employees
                 </h2>
@@ -59,14 +59,14 @@ const Employees = () => {
                     {employees.map(employee => {
                      
                         return (
-                            <div key={employee._id} className="relative p-6 rounded-lg shadow-lg bg-white border-2 border-gray-300">
+                            <div key={employee._id} className="relative text-sm p-6 rounded-lg shadow-lg bg-white border-2 border-gray-300">
                                 {employee.isAdmin && (
                                     <div className="absolute top-2 right-2 bg-red-500 text-white text-sm font-semibold py-1 px-3 rounded-lg shadow-md">
                                         Admin
                                     </div>
                                 )}
                                 <img src={employee.EmployeePhoto} alt="Employee" className="w-32 h-32 object-cover rounded-full mx-auto border-4 border-gray-200 mb-4" />
-                                <h3 className="text-2xl font-semibold text-center mb-2">{employee.firstName} {employee.lastName}</h3>
+                                <h3 className="text-xl font-semibold text-center mb-2">{employee.firstName} {employee.lastName}</h3>
                                 <p><strong>Email:</strong> {employee.email}</p>
                                 <p><strong>Mobile:</strong> {employee.mobile}</p>
                                 <p><strong>Job:</strong> {employee.job}</p>
@@ -87,7 +87,7 @@ const Employees = () => {
                                 {!employee.isAdmin &&
                                     <button
                                         onClick={() => makeAdmin(employee._id)}
-                                        className="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+                                        className="mt-4 bg-blue-500 text-sm hover:bg-blue-600 text-white py-2 px-4 rounded"
                                         disabled={employee.isAdmin}
                                     >
                                         Make Admin

@@ -47,7 +47,7 @@ const GetInTouchAdmin = () => {
 
     return (
         <div className='flex'>
-            <div className="p-4 md:p-8 bg-gray-200 flex-1">
+            <div className="p-4 md:p-8 bg-[#f3f4f6] flex-1">
                 <h2 className="text-2xl bg-cyan-900 from-blue-600 to-blue-400 text-white font-bold py-4 px-6 rounded-lg shadow-md mb-6">
                     Get in Touch Requests
                 </h2>
