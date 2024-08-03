@@ -12,7 +12,7 @@ const ServiceDetails = () => {
   }
 
   return (
-    <div className="w-[100vw] h-auto">
+    <div className="w-[100vw] max-w-[1300px] m-auto h-auto">
       <h1 className="text-4xl font-bold text-center bg-[#d0e3ff] pt-12 pb-6 text-primary">{service.name}</h1>
       <div className="">
         {service.subservices.map((subservice, index) => (

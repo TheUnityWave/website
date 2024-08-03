@@ -67,7 +67,7 @@ const Careers = () => {
         <div className="w-full max-w-3xl px-8 pt-6 pb-8 mb-4">
           <h2 className="text-5xl font-bold text-center mb-4 text-cyan-900">Careers</h2>
           <p className="text-2xl text-center text-cyan-900 mb-6 font-semibold">
-            We are always on the lookout for talented folks to join our team. Together, let's shape your future.
+          Discover Career Opportunities in Integrated Facility Management.Unlock Your Potential and Grow with Us.
           </p>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">

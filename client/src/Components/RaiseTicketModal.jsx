@@ -15,9 +15,9 @@ const RaiseTicketModal = ({ onClose }) => {
     const [complaint, setComplaint] = useState('');
     const [complaintsList, setComplaintsList] = useState([]);
     const [otherComplaint, setOtherComplaint] = useState('');
-
-    const clientComplaints = ['Billing Issue', 'Service Outage', 'Technical Support', 'Others'];
-    const employeeComplaints = ['HR Issue', 'Payroll Problem', 'Workplace Safety', 'Others'];
+   
+    const clientComplaints = ['Unqualified Personnel', 'Unprofessional Behavior', 'Punctuality Issues', 'Poor Communication Skills', 'Inadequate Training','Uniform Issues','Health and Safety Concerns','Lack of Tools/Equipment', 'Unsatisfactory Performance', 'Replacement Request','Others'];
+    const employeeComplaints = ['Salary Discrepancy', 'Unsafe Working Conditions', 'Harassment','Training Issues', 'Unclear Instructions', 'Overtime Concerns','Accommodation Issues','Health and Safety', 'Workplace Conflict','Lack of Equipment', 'Others'];
 
     useEffect(() => {
         if (userType === 'Client') {
@@ -59,11 +59,11 @@ const RaiseTicketModal = ({ onClose }) => {
             className="modal"
             overlayClassName="overlay"
         >
-            <div className='flex flex-col md:px-12 px-12 py-8 font-primary '>
-                <h2 className='title text-primary font-primary font-bold text-4xl'>Raise a Ticket</h2>
-                <form onSubmit={handleSubmit} className='flex flex-col gap-2 mt-4'>
+            <div className='flex flex-col md:px-12 px-12  font-primary  '>
+                <h2 className='title text-primary font-primary font-bold text-3xl'>Raise a Ticket</h2>
+                <form onSubmit={handleSubmit} className='flex flex-col gap-2 mt-2 text-sm'>
                     <label className='w-full'>
-                        <p className='block mb-2 text-md font-medium text-gray-900'>Full Name <br /></p>
+                        <p className='block mb-1 text-sm font-medium text-gray-900'>Full Name <br /></p>
                         <input
                             id='name'
                             type="text"
@@ -71,12 +71,12 @@ const RaiseTicketModal = ({ onClose }) => {
                             onChange={(e) => setName(e.target.value)}
                             required
                             placeholder='Full Name'
-                            className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                            className=' w-full p-2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                         />
                     </label>
                    
                     <label className='w-full'>
-                        <p className='block mb-2 text-md font-medium text-gray-900'>Email <br /></p>
+                        <p className='block mb-1 text-sm font-medium text-gray-900'>Email <br /></p>
                         <input
                             id='company'
                             type="email"
@@ -84,11 +84,11 @@ const RaiseTicketModal = ({ onClose }) => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                             placeholder='Email'
-                            className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                            className=' w-full p-2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                         />
                     </label>
                     <label className='w-full'>
-                        <p className='block mb-2 text-md font-medium text-gray-900'>Contact Number <br /></p>
+                        <p className='block mb-1 text-sm font-medium text-gray-900'>Contact Number <br /></p>
                         <input
                             id='company'
                             type="tel"
@@ -96,11 +96,11 @@ const RaiseTicketModal = ({ onClose }) => {
                             onChange={(e) => setMobile(e.target.value)}
                             required
                             placeholder='Contact Number'
-                            className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                            className=' w-full p-2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                         />
                     </label>
                     <label className='w-full'>
-                        <p className='block mb-2 text-md font-medium text-gray-900'>Company <br /></p>
+                        <p className='block mb-1 text-sm font-medium text-gray-900'>Company <br /></p>
                         <input
                             id='company'
                             type="text"
@@ -108,17 +108,17 @@ const RaiseTicketModal = ({ onClose }) => {
                             onChange={(e) => setCompany(e.target.value)}
                             required
                             placeholder='Company'
-                            className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                            className=' w-full p-2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                         />
                     </label>
                     <label className='w-full'>
-                        <p className='block mb-2 text-md font-medium text-gray-900'>User Type <br /></p>
+                        <p className='block mb-1 text-sm font-medium text-gray-900'>User Type <br /></p>
                         <select
                             id='userType'
                             value={userType}
                             onChange={(e) => setUserType(e.target.value)}
                             required
-                            className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                            className=' w-full p-2 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                         >
                             <option value="" disabled>Select User Type</option>
                             <option value="Client">Client</option>
@@ -126,13 +126,13 @@ const RaiseTicketModal = ({ onClose }) => {
                         </select>
                     </label>
                     <label className='w-full'>
-                        <p className='block mb-2 text-md font-medium text-gray-900'>Complaint <br /></p>
+                        <p className='block mb-1 text-sm font-medium text-gray-900'>Complaint <br /></p>
                         <select
                             id='complaint'
                             value={complaint}
                             onChange={(e) => setComplaint(e.target.value)}
                             required
-                            className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                            className=' w-full p-1 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                         >
                             <option value="" disabled>Select Complaint</option>
                             {complaintsList.map((comp, index) => (
@@ -142,7 +142,7 @@ const RaiseTicketModal = ({ onClose }) => {
                     </label>
                     {complaint === 'Others' && (
                         <label className='w-full'>
-                            <p className='block mb-2 text-md font-medium text-gray-900'>Please specify your complaint <br /></p>
+                            <p className='block mb-1 text-sm font-medium text-gray-900'>Please specify your complaint <br /></p>
                             <input
                                 id='otherComplaint'
                                 type="text"
@@ -150,12 +150,14 @@ const RaiseTicketModal = ({ onClose }) => {
                                 onChange={(e) => setOtherComplaint(e.target.value)}
                                 required
                                 placeholder='Specify your complaint'
-                                className='input w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                                className=' w-full p-1 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
                             />
                         </label>
                     )}
-                    <button type='submit' className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/80 transition cursor-pointer mt-2'>Raise Ticket</button>
-                    <button type='button' onClick={onClose} className='btn bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer mt-2'>Cancel</button>
+                    <div className="flex items-center justify-between w-full mt-1">
+                    <button type='submit' className='btn bg-primary text-sm text-white px-6 py-1/2 rounded-lg hover:bg-primary/80 transition cursor-pointer '>Raise Ticket</button>
+                    <button type='button' onClick={onClose} className='btn text-sm bg-secondary text-white px-6 py-1/2 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>Cancel</button>
+                    </div>
                 </form>
             </div>
         </Modal>
