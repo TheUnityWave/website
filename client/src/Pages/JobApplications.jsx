@@ -15,6 +15,7 @@ const JobApplications = () => {
                 });
                 const data = await response.json();
                 setApplications(data);
+                
                 // console.log(data);
             } catch (error) {
                 console.error('Error fetching job applications:', error);
@@ -22,7 +23,7 @@ const JobApplications = () => {
         };
         fetchApplications();
 
-    }, [setApplications]);
+    }, []);
 
     const sendCredentials = async (id) => {
         try {

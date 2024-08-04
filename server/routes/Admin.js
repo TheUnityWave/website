@@ -67,7 +67,7 @@ router.post('/send-credentials/:id', async (req, res) => {
         if (career.sendCredentials) {
             return res.status(400).json({ message: 'Credentials have already been sent for this application' });
         }
-        console.log("sendCredentials value: ", career.sendCredentials)
+        // console.log("sendCredentials value: ", career.sendCredentials)
         const password = generatePassword();
         const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
 
@@ -92,7 +92,7 @@ router.post('/send-credentials/:id', async (req, res) => {
                 console.log(err);
                 return;
             }
-            console.log("SENT : " + info.response);
+            // console.log("SENT : " + info.response);
         });
 
         const newEmployee = new EmployeeVerification({
@@ -117,7 +117,7 @@ router.post('/send-credentials/:id', async (req, res) => {
         career.sendCredentials = true;
         await career.save();
 
-        console.log("sendCredentials value: ", career.sendCredentials)
+        // console.log("sendCredentials value: ", career.sendCredentials)
 
         res.json({ message: 'Credentials sent and employee details saved' });
     } catch (error) {
@@ -259,7 +259,7 @@ This is an automated message. Please do not reply directly to this email. If you
                 console.log(err);
                 return;
             }
-            console.log("SENT : " + info.response);
+            // console.log("SENT : " + info.response);
         });
 
         const ticket = await newTicket.save();
@@ -329,7 +329,7 @@ This is an automated message. Please do not reply directly to this email. If you
                     console.log(err);
                     return;
                 }
-                console.log("SENT : " + info.response);
+                // console.log("SENT : " + info.response);
             });
         }
 

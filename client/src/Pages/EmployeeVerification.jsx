@@ -103,7 +103,7 @@ const EmployeeVerification = () => {
             if (capturedImage) {
                 const photoBlob = dataURItoBlob(capturedImage);
                 formData.append('EmployeePhoto', photoBlob, 'employee_photo.png');
-                console.log(photoBlob);
+                // console.log(photoBlob);
             }
 
             const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {

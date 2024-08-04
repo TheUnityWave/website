@@ -8,9 +8,9 @@ const fetchEmployee = async (req, res, next) => {
     }
     try {
         const data = jwt.verify(token, process.env.JWT_SECRET);
-        console.log('JWT Data:', data); // Debugging log
+        // console.log('JWT Data:', data); // Debugging log
         const employee = await EmployeeVerification.findById(data.user.id);
-        console.log('Employee:', employee); // Debugging log
+        // console.log('Employee:', employee); // Debugging log
         if (!employee) {
             return res.status(404).send({ error: "Employee not found" });
         }

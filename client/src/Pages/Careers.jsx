@@ -35,7 +35,7 @@ const Careers = () => {
       const response = await axios.post('http://localhost:5000/api/careers', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-      console.log(response.data);
+      // console.log(response.data);
       toast.success("Application Sent Successfully");
       setIsLoading(false);
 

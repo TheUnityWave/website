@@ -13,10 +13,10 @@ router.post('/', async (req, res) => {
     });
     try {
         await getintouch.save();
-        console.log('Form submitted');
+        // console.log('Form submitted');
         res.status(201).send(getintouch);
     } catch (error) {
-        console.log('Form not submitted');
+        // console.log('Form not submitted');
         res.status(500).json({message: 'Error submitting data'})
     }
 });

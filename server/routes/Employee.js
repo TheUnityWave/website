@@ -22,8 +22,8 @@ router.post('/employee-verification', fetchEmployee, upload.fields([
     try {
         const employee = req.employee;
 
-        console.log('Request Body:', req.body);
-        console.log('Files:', req.files); // Check files received
+        // console.log('Request Body:', req.body);
+        // console.log('Files:', req.files); // Check files received
 
         // Initialize an empty update object
         const updateData = {};
@@ -139,7 +139,7 @@ router.get('/user', async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        console.log('User data sent:', user);
+        // console.log('User data sent:', user);
         res.json(user);
     } catch (error) {
         console.error('Token verification error:', error);

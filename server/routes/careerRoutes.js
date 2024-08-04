@@ -29,7 +29,7 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
       });
       // viewableResumeFile = result.secure_url;
 
-      console.log('Original file uploaded to Cloudinary:', resumeFile);
+      // console.log('Original file uploaded to Cloudinary:', resumeFile);
       // console.log('Viewable file created:', viewableResumeFile);
     } else {
       console.log('No file was uploaded');

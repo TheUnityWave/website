@@ -29,7 +29,7 @@ export default function GetInTouch() {
             const res = await axios.post('http://localhost:5000/api/getintouch', formData, {
                 headers: { "Content-Type": "application/json" }
             });
-            console.log(res.data);
+            // console.log(res.data);
             toast.success("Message Sent Successfully");
 
             // Reset form fields after successful submission

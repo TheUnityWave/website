@@ -26,8 +26,8 @@ const Login = () => {
             if (authToken) {
                 // Save the authToken
                 localStorage.setItem('token', authToken);
-                console.log(authToken);
-                console.log(localStorage.getItem('token'));
+                // console.log(authToken);
+                // console.log(localStorage.getItem('token'));
 
                 // Navigate based on isAdmin value
                 if (isAdmin) {

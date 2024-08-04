@@ -5,7 +5,7 @@ const GetInTouchAdmin = () => {
 
     useEffect(() => {
         fetchRequests();
-    }, [requests]);
+    }, []);
 
     const fetchRequests = async () => {
         try {
@@ -17,6 +17,7 @@ const GetInTouchAdmin = () => {
             });
             const data = await response.json();
             setRequests(data);
+            
         } catch (error) {
             console.error('Error fetching get in touch requests:', error);
         }
