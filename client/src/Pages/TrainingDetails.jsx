@@ -17,10 +17,10 @@ const TrainingDetails = () => {
                     <h2 className="text-3xl font-semibold mb-4">{module.name}</h2>
                     {module.weeks.map((week, weekIndex) => (
                         <div key={weekIndex} className="mb-8">
-                            <h3 className="text-2xl font-semibold mb-2">Week {week.week}:  {week.title}  </h3>
+                            <h3 className="text-xl font-semibold mb-2">Week {week.week}:  {week.title}  </h3>
                             {week.days.map((day, dayIndex) => (
                                 <div key={dayIndex} className="mb-4">
-                                    <h4 className="text-xl font-semibold mb-1">Day {day.days || day.day}: <span className='font-normal'>{day.topic}</span></h4>
+                                    <h4 className="text-md font-semibold mb-1">Day {day.days || day.day}: <span className='font-normal'>{day.topic}</span></h4>
                                 </div>
                             ))}
                             <div className="mt-4">
