@@ -28,7 +28,7 @@ const Services = () => {
   const titleRef = useRef(null);
 
   useGSAP(() => {
-    animateTextWordByWord(titleRef.current);
+    animateTextWordByWord(titleRef.current, {duration : 2});
 
 }, []);
 

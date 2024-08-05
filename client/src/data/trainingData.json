@@ -1,23 +1,250 @@
-[
-    {
-        "id": 1,
-        "title": "Module 1: Introduction to Company Policies",
-        "description": "An overview of company policies and expectations.",
-        "content": "Detailed content about company policies goes here.",
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 2,
-        "title": "Module 2: Health and Safety Guidelines",
-        "description": "Essential health and safety guidelines for employees.",
-        "content": "Detailed content about health and safety guidelines goes here.",
-        "image": "https://via.placeholder.com/150"
-    },
-    {
-        "id": 3,
-        "title": "Module 3: Performance Management",
-        "description": "Understanding performance management and appraisal systems.",
-        "content": "Detailed content about performance management goes here.",
-        "image": "https://via.placeholder.com/150"
-    }
-]
+{
+    "training_modules": [
+      {
+        "name": "Plumber Training Module",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Basics of Plumbing",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Introduction to plumbing tools and materials"
+              },
+              {
+                "days": "3-4",
+                "topic": "Basic pipe fitting and soldering techniques"
+              },
+              {
+                "day": 5,
+                "topic": "Safety guidelines and first aid"
+              }
+            ],
+            "assignments": [
+              "Identify and list various plumbing tools",
+              "Practice soldering pipes and submit a video"
+            ],
+            "compliance_guidelines": [
+              "Proper use of PPE (Personal Protective Equipment)",
+              "Adherence to local plumbing codes and regulations"
+            ]
+          },
+          {
+            "week": 2,
+            "title": "Advanced Plumbing Techniques",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Installation of water heaters and boilers"
+              },
+              {
+                "days": "3-4",
+                "topic": "Advanced troubleshooting and repair techniques"
+              },
+              {
+                "day": 5,
+                "topic": "Customer service and communication skills"
+              }
+            ],
+            "assignments": [
+              "Write a report on common plumbing issues and their solutions",
+              "Perform a mock installation of a water heater"
+            ],
+            "compliance_guidelines": [
+              "Ensuring all installations meet safety standards",
+              "Proper disposal of hazardous materials"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Driver Training Module",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Basic Driving Skills",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Vehicle controls and basic driving maneuvers"
+              },
+              {
+                "days": "3-4",
+                "topic": "Traffic rules and regulations"
+              },
+              {
+                "day": 5,
+                "topic": "Defensive driving techniques"
+              }
+            ],
+            "assignments": [
+              "Complete a driving log for a week",
+              "Write a report on the importance of traffic rules"
+            ],
+            "compliance_guidelines": [
+              "Adherence to traffic laws",
+              "Regular vehicle maintenance checks"
+            ]
+          },
+          {
+            "week": 2,
+            "title": "Advanced Driving and Customer Service",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Handling emergencies and accidents"
+              },
+              {
+                "days": "3-4",
+                "topic": "Customer service and communication skills"
+              },
+              {
+                "day": 5,
+                "topic": "Eco-driving techniques"
+              }
+            ],
+            "assignments": [
+              "Role-play different customer scenarios",
+              "Create a vehicle maintenance checklist"
+            ],
+            "compliance_guidelines": [
+              "Reporting accidents and incidents",
+              "Following company protocols for customer service"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Housekeeping Staff Training Module",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Cleaning Techniques",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Introduction to cleaning tools and agents"
+              },
+              {
+                "days": "3-4",
+                "topic": "Room cleaning procedures"
+              },
+              {
+                "day": 5,
+                "topic": "Laundry and linen management"
+              }
+            ],
+            "assignments": [
+              "Demonstrate cleaning a room and submit a video",
+              "Write a report on different cleaning agents and their uses"
+            ],
+            "compliance_guidelines": [
+              "Use of appropriate cleaning agents",
+              "Adherence to hygiene and safety standards"
+            ]
+          },
+          {
+            "week": 2,
+            "title": "Advanced Housekeeping",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Handling hazardous materials"
+              },
+              {
+                "days": "3-4",
+                "topic": "Time management and organization skills"
+              },
+              {
+                "day": 5,
+                "topic": "Customer service and communication"
+              }
+            ],
+            "assignments": [
+              "Create a cleaning schedule for a week",
+              "Perform a mock customer interaction"
+            ],
+            "compliance_guidelines": [
+              "Proper labeling and storage of hazardous materials",
+              "Following safety protocols in handling cleaning agents"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Office Boys Training Module",
+        "weeks": [
+          {
+            "week": 1,
+            "title": "Basic Office Duties",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Introduction to office equipment"
+              },
+              {
+                "days": "3-4",
+                "topic": "Mail handling and courier management"
+              },
+              {
+                "day": 5,
+                "topic": "Basic IT support (e.g., setting up workstations)"
+              }
+            ],
+            "assignments": [
+              "Set up a workstation and document the process",
+              "Write a report on the daily duties of an office boy"
+            ],
+            "compliance_guidelines": [
+              "Proper handling of office equipment",
+              "Adherence to office protocols and procedures"
+            ]
+          },
+          {
+            "week": 2,
+            "title": "Advanced Office Support",
+            "days": [
+              {
+                "days": "1-2",
+                "topic": "Record keeping and data management"
+              },
+              {
+                "days": "3-4",
+                "topic": "Event and meeting setup"
+              },
+              {
+                "day": 5,
+                "topic": "Customer service and communication skills"
+              }
+            ],
+            "assignments": [
+              "Organize a mock event and document the process",
+              "Role-play different office scenarios"
+            ],
+            "compliance_guidelines": [
+              "Maintaining confidentiality and data security",
+              "Following company policies for customer interaction"
+            ]
+          }
+        ]
+      }
+    ],
+    "general_compliance_guidelines": [
+      {
+        "category": "Punctuality",
+        "description": "Importance of being on time"
+      },
+      {
+        "category": "Professionalism",
+        "description": "Maintaining a professional demeanor"
+      },
+      {
+        "category": "Health and Safety",
+        "description": "Adhering to safety guidelines to prevent accidents"
+      },
+      {
+        "category": "Company Policies",
+        "description": "Understanding and following company-specific rules and regulations"
+      }
+    ]
+  }
