@@ -33,20 +33,21 @@ function JobDetailPage() {
   if (!job) return <div>No job found</div>;
 
   return (
-    <div className="container w-full">
-    <div className="job-detail">
-      <h1>{job.title}</h1>
+    <div className="container mx-auto px-8 md:px-24 py-8">
+    <div className="job-detail bg-white shadow-md rounded-lg p-8 overflow-hidden">
+      <h1 className="text-3xl font-bold mb-4 text-gray-800">{job.title}</h1>
       <p><strong>Department:</strong> {job.department}</p>
       <p><strong>Location:</strong> {job.location}</p>
-      <h2>Description</h2>
+      <h2 className='font-bold'>Description:</h2>
       <p>{job.description}</p>
-      <h2>Requirements</h2>
+      <br />
+      <h2 className='font-bold'>Requirements:</h2>
       <ul>
         {job.requirements.map((req, index) => (
           <li key={index}>{req}</li>
         ))}
       </ul>
-      <button>Apply Now</button>
+      <button className='btn mt-4'>Apply Now</button>
     </div>
     </div>
   );

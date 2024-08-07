@@ -12,7 +12,7 @@ const BlogDetail = () => {
   }
 
   return (
-    <div className="container mx-auto px-24 py-8">
+    <div className="container mx-auto px-8 md:px-24 py-8">
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
           <h2 className="text-3xl font-bold mb-4 text-gray-800 p-8">{blog.title}</h2>
         <img src={blog.image} alt={blog.title} className="m-auto h-96 object-cover" />

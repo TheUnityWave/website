@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import careersImage from '../Images/career.png';
 
 const CareersPage = () => {
   const [jobs, setJobs] = useState([]);
@@ -26,8 +27,14 @@ const CareersPage = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="careers-page container mx-auto bg-[#d0e3ff] px-12 md:px-24 py-10">
-      <h1>Career Opportunities</h1>
+    <div className="">
+      <div className="">
+        <img src={careersImage} alt="Careers" className="w-full h-96 object-cover" />
+      </div>
+      <p className="text-2xl px-8 md:px-56 pt-12 text-center text-cyan-900 mb-6 font-semibold">
+          Discover Career Opportunities in Integrated Facility Management. Unlock Your Potential and Grow with Us.
+      </p>
+    <div className="careers-page mx-auto container w-full bg-[#d0e3ff] px-12 md:px-24 py-10">
       {jobs.length === 0 ? (
         <p>No job openings available at the moment. Please check back later.</p>
       ) : (
@@ -53,6 +60,7 @@ const CareersPage = () => {
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 };

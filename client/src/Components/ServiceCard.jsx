@@ -8,9 +8,9 @@ const ServiceCard = ({ name, description, image, isEven }) => {
         <h1 className={`service-title text-3xl font-semibold `}> {name} </h1>
         <p dangerouslySetInnerHTML={{ __html: description }} className="service-description text-sm"/> 
       </div>
-      <div className='image min-h-32 max-h-[60vh] flex-1'>
+      <div className='image min-h-32 max-h-auto flex-1'>
         <img src={image} alt="" style={{ textIndent: '-9999px' }}
-          onError={(e) => { e.target.style.display = 'none' }} className='image min-h-32 max-h-[60vh] w-full' />
+          onError={(e) => { e.target.style.display = 'none' }} className='image min-h-32 max-h-auto w-full' />
       </div>
     </div>
 
