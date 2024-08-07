@@ -18,6 +18,8 @@ import ToastNotifications from './Components/ToastNotifications';
 import AboutUs from './Pages/AboutUs'
 import Blogs from './Pages/Blogs'
 import BlogDetail from './Pages/BlogDetail';
+import Jobs from './Pages/Jobs'
+import JobDetailPage from './Pages/JobDetail'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -88,7 +90,8 @@ function App() {
           } />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
-          <Route path="/career" element={<Careers />} />
+          <Route path="/career" element={<Jobs />} />
+          <Route path="/api/careers/:id" element={<JobDetailPage/>} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />

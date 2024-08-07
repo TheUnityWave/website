@@ -7,8 +7,10 @@ const GetInTouch = require('../models/getintouch');
 const JobApplication = require('../models/Career');
 const Ticket = require('../models/RaiseTicket');
 const Career = require('../models/Career');
+const Jobs = require('../models/Jobs');
 const { authorizeAdmin } = require('../middleware/authorizeAdmin');
 
+const { check, validationResult } = require('express-validator');
 // Endpoint to fetch all the job applications.
 router.get('/job-applications', authorizeAdmin, async (req, res) => {
     try {
@@ -108,7 +110,7 @@ router.post('/send-credentials/:id', async (req, res) => {
             hometownAddress: '', // Update if you have an address
             currentAddress: '', // Update if you have an address
             AdhaarCard: '', // Update if you have Adhaar card
-            policeVerification:''
+            policeVerification: ''
         });
 
         await newEmployee.save();
@@ -158,7 +160,7 @@ router.patch('/get-in-touch/:id', async (req, res) => {
     }
 });
 
-router.get('/tickets', async (req, res) => {
+router.get('/tickets',  async (req, res) => {
     try {
         const { userType } = req.query;
         let tickets;
@@ -339,5 +341,45 @@ This is an automated message. Please do not reply directly to this email. If you
         res.status(500).json({ message: 'Server error' });
     }
 });
+
+router.post('/postajob', [
+    authorizeAdmin,
+    [
+        check('title', 'Title is required').not().isEmpty(),
+        check('department', 'Department is required').not().isEmpty(),
+        check('location', 'Location is required').not().isEmpty(),
+        check('description', 'Description is required').not().isEmpty(),
+        check('requirements', 'At least one requirement is needed').isArray({ min: 1 })
+    ]
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+        // Check if user is admin
+       
+        const { title, department, location, description, requirements } = req.body;
+
+        const newJob = new Jobs({
+            title,
+            department,
+            location,
+            description,
+            requirements
+        });
+
+        const job = await newJob.save();
+        res.status(200).json(job);
+
+    } catch (err) {
+        console.error(err.message);
+        console.log(err.message);
+        res.status(500).send('Server Error');
+    }
+}
+);
+
 
 module.exports = router;

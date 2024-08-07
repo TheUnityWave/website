@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import image from '../Images/heropgimg.png'
+import newimage from '../Images/new_face_of.jpg'
 import mobimage from '../Images/mobimage.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -47,15 +48,21 @@ export default function HeroPg() {
   return (
     <div
       ref={containerRef}
-      className={`heropg bg-primary h-[99vh] overflow-hidden text-white flex md:flex-row flex-col justify-between items-center relative`}
+      className={`heropg w-full bg-primary h-[100vh] overflow-hidden text-white flex md:flex-row flex-col justify-between items-center relative`}
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat "
+        style={{
+          backgroundImage: `url(${newimage})`
+        }}
+      ></div>
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
         style={{
           backgroundImage: `url(${mobimage})`
         }}
       ></div>
-      <div className="content md:ml-12 flex flex-col flex-1 gap-4 md:gap-8 py-10 px-6 z-10 ">
+      <div className="content md:w-1/3 md:ml-12 flex flex-col  gap-4 md:gap-8 py-10 px-6 z-10 ">
         <h1 ref={h1Ref} className='font-black text-5xl md:text-5xl'>The Unity Wave</h1>
         <p ref={contentRef} className='text-md '>
         Your facility is our priority. From cleaning to maintenance, our facility management services cover it all. We optimize spaces, prevent issues, and keep your premises fresh. Trust our expertise. We promise to provide a safe and welcoming environment that supports your business objectives.
@@ -64,9 +71,9 @@ export default function HeroPg() {
           Learn More
         </p>
       </div>
-      <div className="image hidden md:block">
+      {/* <div className="image hidden md:block">
         <img src={image} alt='image' className='h-[100vh] object-cover ' />
-      </div>
+      </div> */}
     </div>
   )
 }

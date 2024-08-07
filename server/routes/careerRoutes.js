@@ -5,6 +5,7 @@ const cloudinary = require('cloudinary').v2;
 const path = require('path');
 
 const createUploadMiddleware = require('../middleware/cloudinary');
+const Jobs = require('../models/Jobs');
 
 const upload = createUploadMiddleware('resumes');
 
@@ -55,6 +56,39 @@ router.post('/', upload.single('resumeFile'), async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ message: 'Error submitting application', error: error.message });
+  }
+});
+
+router.get('/all', async (req, res) => {
+  try {
+    const jobs = await Jobs.find({ isActive: true }).sort({ postedDate: -1 });
+    res.json(jobs);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const job = await Jobs.findById(req.params.id);
+    
+    if (!job) {
+      console.log(job);
+      
+      return res.status(404).json({ msg: 'Job not found' });
+    }
+
+    res.json(job);
+  } catch (err) {
+    console.error(err.message);
+    
+    // Check if the error is due to an invalid ObjectId
+    if (err.kind === 'ObjectId') {
+      return res.status(404).json({ msg: 'Job not found' });
+    }
+    
+    res.status(500).send('Server Error');
   }
 });
 

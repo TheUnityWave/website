@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ChangePasswordModal from './ChangePasswordModal';
-import { ClipboardList, BookUser, PhoneCall, Tag } from 'lucide-react';
+import { ClipboardList, BookUser, PhoneCall, Tag, LucidePodcast } from 'lucide-react';
 
 const AdminSidebar = () => {
     const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
@@ -34,6 +34,9 @@ const AdminSidebar = () => {
                     <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-2 rounded">
                         Raise Ticket
                     </NavLink>
+                    <NavLink to="/admin/postajob" className="hover:bg-cyan-700 p-2 rounded">
+                        Post A Job
+                    </NavLink>
                 </nav>
                 <nav className='flex flex-col text-sm'>
                     <NavLink onClick={toggleChangePassword} className="hover:bg-cyan-700 p-2 rounded mt-4">
@@ -50,21 +53,25 @@ const AdminSidebar = () => {
 
             {/* Bottom Navbar for Small Devices */}
             <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-cyan-900 text-white flex justify-around p-2">
-                <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-2 rounded text-center">
+                <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-1 rounded text-center">
                     <ClipboardList className='m-auto' />
                     Job Applications
                 </NavLink>
-                <NavLink to="/admin/employees" className="hover:bg-cyan-700 p-2 rounded text-center">
+                <NavLink to="/admin/employees" className="hover:bg-cyan-700 p-1 rounded text-center">
                     <BookUser className='m-auto' />
                     Employees Detail
                 </NavLink>
-                <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 p-2 rounded text-center">
+                <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 p-1 rounded text-center">
                     <PhoneCall className='m-auto' />
                     Get in Touch Requests
                 </NavLink>
-                <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-2 rounded">
+                <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-1 rounded">
                     <Tag className='m-auto' />
                     Raise Ticket
+                </NavLink>
+                <NavLink to="/admin/postajob" className="hover:bg-cyan-700 p-1 rounded">
+                    <LucidePodcast className='m-auto' />
+                        Post A Job
                 </NavLink>
             </div>
         </>

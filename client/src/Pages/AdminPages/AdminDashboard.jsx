@@ -5,6 +5,7 @@ import JobApplications from './JobApplications';
 import Employees from './Employees';
 import GetInTouchAdmin from './GetInTouchAdmin';
 import RaiseTicket from './RaiseTicket';
+import PostAJob from './PostAJob';
 
 const AdminDashboard = () => {
     const location = useLocation();
@@ -87,6 +88,7 @@ const AdminDashboard = () => {
                     <Route path="employees" element={<Employees />} />
                     <Route path="getintouch" element={<GetInTouchAdmin />} />
                     <Route path="tickets" element={<RaiseTicket />} />
+                    <Route path="postajob" element={<PostAJob />} />
                 </Routes>
             </div>
         </div>
