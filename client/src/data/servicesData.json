@@ -19,7 +19,7 @@ const services = {
         {
           "name": "Pantry Support Services",
           "image": "https://encexplorer.com/wp-content/uploads/2022/12/Restaurant-New-Bern_Date-Night-1024x536.jpg",
-          "description": "Upgrade your pantry with our personalized solutions. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy."
+          "description": "We provide top pantry support services. The most important thing is to keep the germ-free sinks and table-tops with quality disinfectants, Don't worry we are here to help you out, we help you to enjoy your meal with our staff delivering eatables to your seat. We also maintain cafeteria equipment like coffee machines and water dispensers, keeping everything clean and refilled. Our team ensures utensils are safe and ready for use. Experience the best with TheUnityWave Services."
         },
         {
           "name": "Office Boy",
@@ -29,7 +29,7 @@ const services = {
         {
           "name": "Driver",
           "image": "https://blog.oneclickdrive.com/wp-content/uploads/2018/07/driver-service-2.jpg",
-          "description": "Experience better travel with our top-quality driver services. Our carefully selected drivers provide excellent service for both business and personal trips. They ensure a smooth and comfortable journey from your home to your destination. Enjoy stress-free travel with our professional drivers."
+          "description": "Enhance your mobility with our premium driver services. Our hand-picked chauffeurs provide unparalleled driver services for both business and personal travel. Our expert chauffeurs ensure a seamless journey from your doorstep to your desired destination."
         }
       ]
     },
@@ -44,17 +44,17 @@ const services = {
         {
           "name": "Manufacturing",
           "image": "https://www.twi-global.com/image-library/hero/digital-manufacturing-istock-1022887882.jpg",
-          "description": "Our manufacturing services confidently cover a wide range of sectors, delivering end-to-end solutions that enhance production processes and elevate product quality. Using the latest technology and best practices, we ensure seamless operations, cost-efficiency, and prompt delivery. Our manpower supply reliably provides the necessary skills to meet your production demands, thus enhancing operational efficiency."
+          "description": "Unlock the full potential of your manufacturing operations with our skilled workforce. Our experienced professionals are equipped to meet your production needs, ensuring a seamless integration into your processes. By leveraging our specialized manpower, you'll increase overall operational efficiency, reduce downtime, and boost productivity. Partner with us to boost your business and achieve double the success."
         },
         {
           "name": "Sales",
           "image": "https://blog.hubspot.com/hubfs/Align-Sales-Customer-Service.jpg",
-          "description": "Our Sales services are designed to help your company grow with effective sales strategies. We have a team of skilled sales professionals who excel in managing client relationships, generating leads, and closing deals. We make sure our sales experts are well-suited to your industry and market, aligning our efforts with your company's goals."
+          "description": "Our sales services are designed to help your company grow through planned and successful sales strategies. Our trained team of talented sales professionals excels in client relationship management, lead generation, and closing deals. We ensure that our sales professionals are well-suited to your industry and market, aligning our efforts with your company's goals."
         },
         {
           "name": "IT",
           "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
-          "description": "Our IT services offer full support to keep your technology running smoothly. We handle everything from network management and cybersecurity to software development and technical support. Our skilled IT team keeps your systems strong and dependable, so you can focus on your main business goals with confidence in our IT services."
+          "description": "We provide skilled IT professionals who seamlessly integrate into your team, offering comprehensive IT support for all your technology needs.Our IT support services are designed to empower your organization with top-tier technical expertise.Partner with us for reliable IT support and focus on growing your business while we handle your IT solutions."
         },
         {
           "name": "Other Manpower Support",
