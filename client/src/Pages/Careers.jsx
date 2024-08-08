@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import careersImage from '../Images/career.png';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useLocation } from 'react-router-dom';
 
 const Careers = () => {
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -14,6 +16,17 @@ const Careers = () => {
     jobCategory: '',
     resumeFile: null,
   });
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const category = params.get('category');
+    if (category) {
+      setFormData(prevState => ({
+        ...prevState,
+        jobCategory: decodeURIComponent(category)
+      }));
+    }
+  }, [location]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -59,16 +72,9 @@ const Careers = () => {
 
   return (
     <>
-      <div className="">
-        <img src={careersImage} alt="Careers" className="w-full h-96 object-cover" />
-      </div>
-
       <div className="flex justify-center items-center min-h-screen py-12 bg-white">
-        <div className="w-full max-w-3xl px-8 pt-6 pb-8 mb-4">
-          <h2 className="text-5xl font-bold text-center mb-4 text-cyan-900">Careers</h2>
-          <p className="text-2xl text-center text-cyan-900 mb-6 font-semibold">
-          Discover Career Opportunities in Integrated Facility Management.Unlock Your Potential and Grow with Us.
-          </p>
+        <div className="w-full max-w-3xl px-4 pt-6 pb-8 mb-4">
+          <h2 className="text-5xl font-bold text-center mb-4 text-cyan-900">Apply for {formData.jobCategory}</h2>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-4 md:mb-0">
@@ -141,20 +147,17 @@ const Careers = () => {
               </select>
             </div>
             <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="option2">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="jobCategory">
                 Job Category*
               </label>
-              <select
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
                 id="jobCategory"
+                type="text"
+                placeholder="Job Category"
                 value={formData.jobCategory}
-                onChange={handleChange}
-              >
-                <option>--Please choose an option--</option>
-                <option value="Housekeeping">Housekeeping</option>
-                <option value="Driver">Driver</option>
-                <option value="Plumber">Plumber</option>
-              </select>
+                readOnly
+              />
             </div>
             <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fileUpload">

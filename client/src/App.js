@@ -92,6 +92,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/career" element={<Jobs />} />
           <Route path="/api/careers/:id" element={<JobDetailPage/>} />
+          <Route path="/careers/apply" element={<Careers/>} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
