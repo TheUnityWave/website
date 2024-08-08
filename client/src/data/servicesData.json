@@ -14,22 +14,22 @@ const services = {
         {
           "name": "House Keeping",
           "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
-          "description": "We offer a comprehensive range of trained cleaners designed to cater to your specific needs. Our skilled professionals deliver exceptional deep cleaning and domestic cleaning solutions tailored to your needs. From domestic cleaning services to office services, we cover all your needs."
+          "description": We provide highly trained professional cleaning staff for office spaces, ensuring a spotless and hygienic environment. Our team is skilled in modern cleaning techniques and uses top-quality products to maintain a clean, healthy workspace. Trust your faciality management buddy for reliable and efficient office cleaning staffed services."
         },
         {
           "name": "Pantry Support Services",
           "image": "https://encexplorer.com/wp-content/uploads/2022/12/Restaurant-New-Bern_Date-Night-1024x536.jpg",
-          "description": "We provide top pantry support services. The most important thing is to keep the germ-free sinks and table-tops with quality disinfectants. Don't worry, we are here to help you out. We help you enjoy your meal with our staff delivering eatables to your seat. We also maintain cafeteria equipment like coffee machines and water dispensers, keeping everything clean and refilled. Our team ensures utensils are safe and ready for use. Experience the best with TheUnityWave Services."
+          "description": "Get a professional, trained pantry boy for your office space. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy. Trust our reliable pantry services for top-notch hospitality in your office. Contact us today for skilled pantry staff ready to meet your needs."
         },
         {
           "name": "Office Boy",
           "image": "https://5.imimg.com/data5/MA/AP/MY-31244159/office-boy-service-500x500.jpg",
-          "description": "Uplift your workspace with our top-notch office boy services. We offer comprehensive office operations solutions shaped to your business needs. From meticulous cleaning services and efficient office maintenance to organized supply management, our office boy service is designed to support the smooth functioning of your business."
+          "description": "Looking for a reliable and professional office boy? Our trained office boys ensure smooth office operations, from parking handling to maintaining cleanliness. Trust us to provide skilled and efficient support tailored to your office needs. Enhance your workplace efficiency with our expert office boy services today"
         },
         {
           "name": "Driver",
           "image": "https://blog.oneclickdrive.com/wp-content/uploads/2018/07/driver-service-2.jpg",
-          "description": "Enhance your mobility with our premium driver services. Our hand-picked chauffeurs provide unparalleled driver services for both business and personal travel. Our expert chauffeurs ensure a seamless journey from your doorstep to your desired destination."
+          "description": "Looking for reliable, trained professional drivers? We provide expert drivers for office spaces and driver agencies, ensuring safety and punctuality. Our drivers are highly skilled, thoroughly vetted, and ready to meet your business needs. Trust us for top-tier driving services that enhance your operational efficiency."
         }
       ]
     },
@@ -44,17 +44,17 @@ const services = {
         {
           "name": "Manufacturing",
           "image": "https://www.twi-global.com/image-library/hero/digital-manufacturing-istock-1022887882.jpg",
-          "description": "Unlock the full potential of your manufacturing operations with our skilled workforce. Our experienced professionals are equipped to meet your production needs, ensuring a seamless integration into your processes. By leveraging our specialized manpower, you'll increase overall operational efficiency, reduce downtime, and boost productivity. Partner with us to boost your business and achieve double the success."
+          "description": "We provide expertly trained, professional skilled labor for factories, manufacturing units, and more. Our workforce solutions ensure you have the right talent to boost productivity and efficiency. Trust us to meet your operational needs with reliable, certified workers ready to excel in any industrial environment. Quality manpower, delivered."
         },
         {
           "name": "Sales",
           "image": "https://blog.hubspot.com/hubfs/Align-Sales-Customer-Service.jpg",
-          "description": "Our sales services are designed to help your company grow through planned and successful sales strategies. Our trained team of talented sales professionals excels in client relationship management, lead generation, and closing deals. We ensure that our sales professionals are well-suited to your industry and market, aligning our efforts with your company's goals."
+          "description": "Boost your sales and grow your business with our trained sales professionals. Our expert manpower is equipped to drive results, enhance customer engagement, and increase revenue. Partner with us for reliable sales support that elevates your brand. Discover the difference with our top-tier sales professionals today."
         },
         {
           "name": "IT",
           "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
-          "description": "We provide skilled IT professionals who seamlessly integrate into your team, offering comprehensive IT support for all your technology needs. Our IT support services are designed to empower your organization with top-tier technical expertise. Partner with us for reliable IT support and focus on growing your business while we handle your IT solutions."
+          "description": "Boost your revenue and global visibility with our expertly trained IT support professionals manpower service. We provide reliable manpower that leverages cutting-edge technology to help grow your business. Partner with us to enhance your IT infrastructure, streamline operations, and achieve sustained success in the digital age with your best facality management partner"
         },
         {
           "name": "Other Manpower Support",
@@ -109,7 +109,7 @@ const services = {
         {
           "name": "Equipment Rental",
           "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": "Our Cleaning Rental Equipment services boast high-quality, professional-grade cleaning equipment available for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers, our extensive inventory guarantees the perfect tools for every cleaning job. We uphold the highest standards in equipment maintenance, ensuring dependability and peak performance.\n\n* Low Investment * Easy Replacement * One-Year Guarantee\n\nOne-Year Guarantee - Our cleaning equipment rental services are accompanied by a one-year guarantee, assuring dependable and high-performing tools for all your cleaning requirements. This guarantee instills a sense of confidence and peace of mind in the durability and quality of our equipment.\n\nEasy Replacement - We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our prompt replacement service ensures you can continue your work without delays.\n\nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment."
+          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task.We maintain our equipment in optimal condition for high efficiency and superior performance./n/nAdvantages of rental  Equipments * Low Investment * Easy Replacement * Advanced Technology Equipment:*  No storage or maintenance concerns/n/nEasy Replacement -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays./n/nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment./n/nAdvanced Equipment: Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate./n/nNo storage or maintenance concerns: Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives."
         },
         {
           "name": "Furniture Rental",
@@ -129,12 +129,12 @@ const services = {
         {
           "name": "Helper Staff",
           "image": "https://th.bing.com/th/id/OIP.Q2oe4aWjWnSVl8DigA0jDgAAAA?rs=1&pid=ImgDetMain",
-          "description": "We provide top-notch wedding and event services, with efficient, helpful, and trained event staff ensuring smooth event operations and guest assistance with a suitable dress code. Trust us to handle all aspects of your wedding with our profound event services."
+          "description": "Looking for trained manpower for events and marriages? We provide skilled and reliable staff on a daily wage basis, ensuring smooth operations for your special occasions. Our team is experienced in handling all event-related tasks, from setup to coordination. Trust us for professional support at your next event."
         },
         {
           "name": "Cleaning Equipment Services",
           "image": "https://jimmy.mu/wp-content/uploads/2022/09/hw10pro-570x570.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - Boost the hygiene and convenience of your event with our automated wash basins. These touchless machines allow guests to wash their hands without contact, boosting hygiene and preventing the transmission of germs.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer comprehensive and efficient cleaning for carpets, floors, and furniture."
+          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins -  These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
         }
       ]
     }
