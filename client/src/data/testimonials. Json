@@ -1,21 +1,21 @@
 {
     "testimonials": [
         {
-            "name": "Shivam Thakur",
-            "title": "CEO, ABC Company",
-            "review": "We've been collaborating with The UnityWave for over a year now and their housekeeping services are genuinely exceptional. Their team is reliable, and professional, and consistently goes the extra mile to ensure our office environment is always spotless and inviting.",
+            "name": "Abhishek Malik ",
+            "title": "Executive director, Calcom Vision ltd ",
+            "review": "We've been collaborating with The UnityWave for over a year now and their housekeeping services are genuinely exceptional. Their team is reliable, and professional, and consistently goes the extra mile to ensure our office environment is always spotless and inviting. We are thrilled with their service!",
             "image": "logo.png"
         },
         {
-            "name": "Vivek Sharma",
-            "title": "CEO, ABC Company",
-            "review": "Our experience with The UnityWave has truly been amazing. The drivers are always punctual, professional, and always ensure our executives reach their destinations safely and on time. The level of service and commitment provided is undoubtedly unparalleled.",
+            "name": "Mahesh Subramanian",
+            "title": "Co-Founder and director, CamCom",
+            "review": "Our experience with The UnityWave has truly been amazing. The drivers are always punctual, professional, and always ensure our executives reach their destinations safely and on time. The level of service and commitment provided is undoubtedly unparalleled. We are sincerely grateful for your excellent service",
             "image": "clean.png"
         },
         {
-            "name": "Ishita Gupta",
-            "title": "CEO, ABC Company",
-            "review": "We are extremely pleased with the outstanding facility management services provided by The UnityWave. Every aspect of their service, from housekeeping to office boy and pantry services, is truly top-notch.",
+            "name": "Amit Kumar",
+            "title": "Co-Founder, GCT Technologies PVT LTD ",
+            "review": "We are extremely pleased with the outstanding facility management services provided by The UnityWave. Every aspect of their service, from housekeeping to office boy and pantry services, is truly top-notch. Their unwavering attention to detail and commitment to quality make them our preferred choice for facility management.",
             "image": "soft1.png"
         }
     ]
