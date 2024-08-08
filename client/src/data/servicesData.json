@@ -14,7 +14,7 @@ const services = {
         {
           "name": "House Keeping",
           "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
-          "description": "We provide a full range of professional home cleaning services to meet your specific needs. Our skilled team offers top-quality deep cleaning and regular house cleaning just for you. We offer cleaning services for both residential and commercial spaces."
+          "description": "We offer a comprehensive range of trained cleaners designed to cater to your specific needs. Our skilled professionals deliver exceptional deep cleaning and domestic cleaning solutions tailored to your needs. From domestic cleaning services to office services, we cover all your needs."
         },
         {
           "name": "Pantry Support Services",
