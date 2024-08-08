@@ -19,12 +19,12 @@ const services = {
         {
           "name": "Pantry Support Services",
           "image": "https://encexplorer.com/wp-content/uploads/2022/12/Restaurant-New-Bern_Date-Night-1024x536.jpg",
-          "description": "We provide top pantry support services. The most important thing is to keep the germ-free sinks and table-tops with quality disinfectants, Don't worry we are here to help you out, we help you to enjoy your meal with our staff delivering eatables to your seat. We also maintain cafeteria equipment like coffee machines and water dispensers, keeping everything clean and refilled. Our team ensures utensils are safe and ready for use. Experience the best with TheUnityWave Services."
+          "description": "We provide top pantry support services. The most important thing is to keep the germ-free sinks and table-tops with quality disinfectants. Don't worry, we are here to help you out. We help you enjoy your meal with our staff delivering eatables to your seat. We also maintain cafeteria equipment like coffee machines and water dispensers, keeping everything clean and refilled. Our team ensures utensils are safe and ready for use. Experience the best with TheUnityWave Services."
         },
         {
           "name": "Office Boy",
           "image": "https://5.imimg.com/data5/MA/AP/MY-31244159/office-boy-service-500x500.jpg",
-          "description": "Uplift your workspace with our top-notch office boy services. We offer comprehensive office operations solutions shaped to your business needs. From meticulous cleaning services and efficient office maintenance and organized supply management, Our office boy service is designed to support the smooth functioning of your business."
+          "description": "Uplift your workspace with our top-notch office boy services. We offer comprehensive office operations solutions shaped to your business needs. From meticulous cleaning services and efficient office maintenance to organized supply management, our office boy service is designed to support the smooth functioning of your business."
         },
         {
           "name": "Driver",
@@ -54,7 +54,7 @@ const services = {
         {
           "name": "IT",
           "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
-          "description": "We provide skilled IT professionals who seamlessly integrate into your team, offering comprehensive IT support for all your technology needs.Our IT support services are designed to empower your organization with top-tier technical expertise.Partner with us for reliable IT support and focus on growing your business while we handle your IT solutions."
+          "description": "We provide skilled IT professionals who seamlessly integrate into your team, offering comprehensive IT support for all your technology needs. Our IT support services are designed to empower your organization with top-tier technical expertise. Partner with us for reliable IT support and focus on growing your business while we handle your IT solutions."
         },
         {
           "name": "Other Manpower Support",
@@ -109,7 +109,7 @@ const services = {
         {
           "name": "Equipment Rental",
           "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": "Our Cleaning Rental Equipment services boast high-quality, professional-grade cleaning equipment available for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers, our extensive inventory guarantees the perfect tools for every cleaning job. We uphold the highest standards in equipment maintenance, ensuring dependability and peak performance/n/n* Low Investment * Easy Replacement * One-Year Guarantee/n/nOne-Year Guarantee - Our cleaning equipment rental services are accompanied by a one-year guarantee, assuring dependable and high-performing tools for all your cleaning requirements. This guarantee instills a sense of confidence and peace of mind in the durability and quality of our equipment./n/nEasy Replacement -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our prompt replacement service ensures you can continue your work without delays./n/nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment."
+          "description": "Our Cleaning Rental Equipment services boast high-quality, professional-grade cleaning equipment available for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers, our extensive inventory guarantees the perfect tools for every cleaning job. We uphold the highest standards in equipment maintenance, ensuring dependability and peak performance.\n\n* Low Investment * Easy Replacement * One-Year Guarantee\n\nOne-Year Guarantee - Our cleaning equipment rental services are accompanied by a one-year guarantee, assuring dependable and high-performing tools for all your cleaning requirements. This guarantee instills a sense of confidence and peace of mind in the durability and quality of our equipment.\n\nEasy Replacement - We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our prompt replacement service ensures you can continue your work without delays.\n\nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment."
         },
         {
           "name": "Furniture Rental",
@@ -129,12 +129,12 @@ const services = {
         {
           "name": "Helper Staff",
           "image": "https://th.bing.com/th/id/OIP.Q2oe4aWjWnSVl8DigA0jDgAAAA?rs=1&pid=ImgDetMain",
-          "description": "We provide top-notch wedding and event services, we have an efficient, helpful, and trained event staff that ensures smooth event operations and guest assistance with a suitable dress code. Trust us to handle all aspects of your wedding with our profound event services."
+          "description": "We provide top-notch wedding and event services, with efficient, helpful, and trained event staff ensuring smooth event operations and guest assistance with a suitable dress code. Trust us to handle all aspects of your wedding with our profound event services."
         },
         {
           "name": "Cleaning Equipment Services",
           "image": "https://jimmy.mu/wp-content/uploads/2022/09/hw10pro-570x570.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. \n\nAutomatic wash basins -Boost the hygiene and convenience of your event with our automated wash basins. These touchless machines allow guests to wash their hands without contact, boosting hygiene and preventing the transmission of germs. \n\nVacuum cleaning -Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer comprehensive and efficient cleaning for carpets, floors, and furniture."
+          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - Boost the hygiene and convenience of your event with our automated wash basins. These touchless machines allow guests to wash their hands without contact, boosting hygiene and preventing the transmission of germs.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer comprehensive and efficient cleaning for carpets, floors, and furniture."
         }
       ]
     }
@@ -145,14 +145,14 @@ const CleaningRentalEquipment = () => {
   // Find the service that matches "Cleaning Rental Equipment"
   const cleaningRentalService = services.services.find(service => service.id === 'cleaning-rental-equipment');
   
-  https://github.com/TheUnityWave/website/blob/content/cleaning-equipment-demo.mp4
-  const videoSrc = "https://github.com/yourusername/your-repo/raw/main/assets/videos/cleaning-equipment-demo.mp4";
+  // Correct video URL
+  const videoSrc = "https://github.com/TheUnityWave/website/raw/content/cleaning-equipment-demo.mp4";
 
   return (
     <div id="cleaning-rental-equipment">
       <h2>{cleaningRentalService.name}</h2>
       
-      <video controls>
+      <video controls width="100%">
         <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -162,7 +162,7 @@ const CleaningRentalEquipment = () => {
         {cleaningRentalService.subservices.map((subservice, index) => (
           <div key={index}>
             <h3>{subservice.name}</h3>
-            <img src={subservice.image} alt={subservice.name} />
+            <img src={subservice.image} alt={subservice.name} style={{ width: '100%', maxWidth: '300px' }} />
             <p>{subservice.description}</p>
           </div>
         ))}
