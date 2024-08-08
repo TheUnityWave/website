@@ -146,7 +146,7 @@ const CleaningRentalEquipment = () => {
   const cleaningRentalService = services.services.find(service => service.id === 'cleaning-rental-equipment');
   
   // Correct video URL
-  const videoSrc = "https://github.com/TheUnityWave/website/client/src/video/cleaning-equipment-demo.mp4";
+  const videoSrc = "https://github.com/TheUnityWave/website/content/client/scr/video/cleaning-equipment-demo.mp4";
 
   return (
     <div id="cleaning-rental-equipment">
