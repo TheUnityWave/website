@@ -14,7 +14,7 @@ const services = {
         {
           "name": "House Keeping",
           "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
-          "description": We provide highly trained professional cleaning staff for office spaces, ensuring a spotless and hygienic environment. Our team is skilled in modern cleaning techniques and uses top-quality products to maintain a clean, healthy workspace. Trust your faciality management buddy for reliable and efficient office cleaning staffed services."
+          "description": "We provide highly trained professional cleaning staff for office spaces, ensuring a spotless and hygienic environment. Our team is skilled in modern cleaning techniques and uses top-quality products to maintain a clean, healthy workspace. Trust your faciality management buddy for reliable and efficient office cleaning staffed services."
         },
         {
           "name": "Pantry Support Services",
