@@ -9,24 +9,24 @@
       ],
       "subservices": [
         {
-          "name": "House Keeping",
-          "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
-          "description": "We provide a full range of professional home cleaning services to meet your specific needs. Our skilled team offers top-quality deep cleaning and regular house cleaning just for you. We offer cleaning services for both residential and commercial spaces."
+          "name": "HOUSEKEEPING SERVICES",
+          "image": "https://scrubnbubbles.com/wp-content/uploads/2020/10/cleaning-companies.jpg",
+          "description": "We offer a comprehensive range of trained cleaners designed to cater to your specific needs. Our skilled professionals deliver exceptional deep cleaning and domestic cleaning solutions tailored to your needs. From domestic cleaning services to office services, we cover all your needs."
         },
         {
           "name": "Pantry Support Services",
-          "image": "https://encexplorer.com/wp-content/uploads/2022/12/Restaurant-New-Bern_Date-Night-1024x536.jpg",
-          "description": "Upgrade your pantry with our personalized solutions. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy."
+          "image": "https://www.thespruce.com/thmb/DFlGTAJIMgXmOvPvco1evE9NpHE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignbyEmilyHenderson-KitchenPantry_PhotobyKaitlinGreen-9-d3c1f217c2aa40e389aa4e56e18433cb.jpeg",
+          "description": "We provide top pantry support services. The most important thing is to keep the germ-free sinks and table-tops with quality disinfectants, Don't worry we are here to help you out, we help you to enjoy your meal with our staff delivering eatables to your seat. We also maintain cafeteria equipment like coffee machines and water dispensers, keeping everything clean and refilled. Our team ensures utensils are safe and ready for use. Experience the best with TheUnityWave Services."
         },
         {
-          "name": "Office Boy",
-          "image": "https://5.imimg.com/data5/MA/AP/MY-31244159/office-boy-service-500x500.jpg",
-          "description": "Improve your office with our excellent office boy services. We handle everything you need to keep your office running smoothly. Our office boys will assist in basic administrative tasks such as photocopying, filing, and delivering documents within the office, as well as organized supply management. We’re here to help your business operate efficiently."
+          "name": "OFFICE BOY SERVICES",
+          "image": "https://i1.wp.com/generalefacility.com/wp-content/uploads/2021/02/Office-Boy.jpeg?resize=793%2C421&ssl=1",
+          "description": "Uplift your workspace with our top-notch office boy services. We offer comprehensive office operations solutions shaped to your business needs. From meticulous cleaning services and efficient office maintenance and organized supply management, Our office boy service is designed to support the smooth functioning of your business."
         },
         {
-          "name": "Driver",
-          "image": "https://blog.oneclickdrive.com/wp-content/uploads/2018/07/driver-service-2.jpg",
-          "description": "Experience better travel with our top-quality driver services. Our carefully selected drivers provide excellent service for both business and personal trips. They ensure a smooth and comfortable journey from your home to your destination. Enjoy stress-free travel with our professional drivers."
+          "name": "DRIVER SERVICES",
+          "image": "https://knrdriverservices.com/images/services/temporary-car-driver-servic.jpg",
+          "description": "Enhance your mobility with our premium driver services. Our hand-picked chauffeurs provide unparalleled driver services for both business and personal travel. Our expert chauffeurs ensure a seamless journey from your doorstep to your desired destination."
         }
       ]
     },
@@ -39,19 +39,19 @@
       ],
       "subservices": [
         {
-          "name": "Manufacturing Support",
-          "image": "https://www.twi-global.com/image-library/hero/digital-manufacturing-istock-1022887882.jpg",
-          "description": "Our manufacturing services confidently cover a wide range of sectors, delivering end-to-end solutions that enhance production processes and elevate product quality. Using the latest technology and best practices, we ensure seamless operations, cost-efficiency, and prompt delivery. Our manpower supply reliably provides the necessary skills to meet your production demands, thus enhancing operational efficiency."
+          "name": "Manufacturing Support Service",
+          "image": "https://www.entradagroup.com/wp-content/uploads/2019/01/manufacturing-support-platform-hero.jpg",
+          "description": "Unlock the full potential of your manufacturing operations with our skilled workforce. Our experienced professionals are equipped to meet your production needs, ensuring a seamless integration into your processes. By leveraging our specialized manpower, you'll increase overall operational efficiency, reduce downtime, and boost productivity. Partner with us to boost your business and achieve double the success."
         },
         {
-          "name": "Sales",
-          "image": "https://blog.hubspot.com/hubfs/Align-Sales-Customer-Service.jpg",
-          "description": "Our Sales services are designed to help your company grow with effective sales strategies. We have a team of skilled sales professionals who excel in managing client relationships, generating leads, and closing deals. We make sure our sales experts are well-suited to your industry and market, aligning our efforts with your company's goals."
+          "name": "Sales support service",
+          "image": "https://th.bing.com/th/id/OIP.nYH5_ItlhU8TK6WmXNuKVQHaFB?rs=1&pid=ImgDetMain",
+          "description": "Our sales services are designed to help your company grow through planned and successful sales strategies. Our trained team of talented sales professionals excels in client relationship management, lead generation, and closing deals. We ensure that our sales professionals are well-suited to your industry and market, aligning our efforts with your company's goals."
         },
         {
-          "name": "IT Services",
-          "image": "https://th.bing.com/th/id/R.904372fe60bc99ad186c2271e64efc22?rik=lAMltlpBpOrfxQ&riu=http%3a%2f%2fskytechgeek.com%2fwp-content%2fuploads%2f2018%2f07%2frunning-your-business-smoothly.jpg&ehk=COX%2fCxmsSrwYsYjWMqF5ZjdfECZNO3c3q6OJSwrlu%2fU%3d&risl=&pid=ImgRaw&r=0.jpg",
-          "description": "Our IT services offer full support to keep your technology running smoothly. We handle everything from network management and cybersecurity to software development and technical support. Our skilled IT team keeps your systems strong and dependable, so you can focus on your main business goals with confidence in our IT services."
+          "name": "IT Support Services",
+          "image": "https://bitrebels.com/wp-content/uploads/2019/01/10-vital-it-support-header-image.jpg",
+          "description": "We provide skilled IT professionals who seamlessly integrate into your team, offering comprehensive IT support for all your technology needs.Our IT support services are designed to empower your organization with top-tier technical expertise.Partner with us for reliable IT support and focus on growing your business while we handle your IT solutions."
         }
       ]
     },
@@ -65,13 +65,13 @@
       "subservices": [
         {
           "name": "",
-          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": " Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & many more, our wide range of tools provides the right equipment for any cleaning task. We maintain our equipment in optimal condition for high efficiency and superior performance."
+          "image": "https://th.bing.com/th/id/OIP.cqbEPbH-AGSmoFahJo5cbAHaE7?rs=1&pid=ImgDetMain",
+          "description": "Our Cleaning Rental Equipment services boast high-quality, professional-grade cleaning equipment available for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers, our extensive inventory guarantees the perfect tools for every cleaning job. We uphold the highest standards in equipment maintenance, ensuring dependability and peak performance."
         },
         {
           "name": "Advantages",
-          "image": "https://assets-news.housing.com/news/wp-content/uploads/2019/09/23065452/Furniture-rentals-A-growing-trend-that-is-not-just-for-the-budget-constrained-FB-1200x628-compressed.jpg",
-          "description": "<b> Easy Replacement </b> -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays. <br/><br/> <b> Low Investment </b> - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment. </br><br/> <b> Advanced Equipment </b> - Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate. <br/><br/> <b> No storage or maintenance concerns </b> - Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives."
+          "image": "https://www.edic-usa.com/wp-content/uploads/2015/12/revolution-action-600x600.jpg",
+          "description": "<b> One-Year Guarantee </b> - Our cleaning equipment rental services are accompanied by a one-year guarantee, assuring dependable and high-performing tools for all your cleaning requirements. This guarantee instills a sense of confidence and peace of mind in the durability and quality of our equipment. <br/> <b> Easy Replacement </b> -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our prompt replacement service ensures you can continue your work without delays. </br> <b>Low Investment </b> - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment. "
         }
       ]
     },
@@ -86,7 +86,7 @@
         {
           "name": "Helper Staff",
           "image": "https://imgur.com/YFximIt.png",
-          "description": "We offer excellent wedding and event services with a skilled and friendly event staff that keeps everything running smoothly and assists guests while maintaining a professional dress code. Rely on us to manage every detail of your wedding with our extensive event services."
+          "description": "We provide top-notch wedding and event services, we have an efficient, helpful, and trained event staff that ensures smooth event operations and guest assistance with a suitable dress code. Trust us to handle all aspects of your wedding with our profound event services. "
         },
         {
           "name": "Cleaning Equipment Services",

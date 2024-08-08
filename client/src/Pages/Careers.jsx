@@ -74,7 +74,7 @@ const Careers = () => {
     <>
       <div className="flex justify-center items-center min-h-screen py-12 bg-white">
         <div className="w-full max-w-3xl px-4 pt-6 pb-8 mb-4">
-          <h2 className="text-5xl font-bold text-center mb-4 text-cyan-900">Apply for {formData.jobCategory}</h2>
+          <h2 className="text-4xl font-bold text-center mb-4 text-cyan-900">Apply for {formData.jobCategory}</h2>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-4 md:mb-0">
