@@ -2,151 +2,19 @@ import React from 'react';
 
 // JSON data containing services and subservices
 const services = {
-  "services": [
-    {
-      "id": "soft-services",
-      "name": "Soft Services",
-      "images": [
-        "softImage",
-        "https://cdn.slidesharecdn.com/ss_thumbnails/improvingoperationalperformancedraft09pptmaskedpdf-101128191027-phpapp02-thumbnail-4.jpg?cb=1342052198.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "House Keeping",
-          "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
-          "description": "We offer a comprehensive range of trained cleaners designed to cater to your specific needs. Our skilled professionals deliver exceptional deep cleaning and domestic cleaning solutions tailored to your needs. From domestic cleaning services to office services, we cover all your needs."
-        },
-        {
-          "name": "Pantry Support Services",
-          "image": "https://encexplorer.com/wp-content/uploads/2022/12/Restaurant-New-Bern_Date-Night-1024x536.jpg",
-          "description": "We provide top pantry support services. The most important thing is to keep the germ-free sinks and table-tops with quality disinfectants. Don't worry, we are here to help you out. We help you enjoy your meal with our staff delivering eatables to your seat. We also maintain cafeteria equipment like coffee machines and water dispensers, keeping everything clean and refilled. Our team ensures utensils are safe and ready for use. Experience the best with TheUnityWave Services."
-        },
-        {
-          "name": "Office Boy",
-          "image": "https://5.imimg.com/data5/MA/AP/MY-31244159/office-boy-service-500x500.jpg",
-          "description": "Uplift your workspace with our top-notch office boy services. We offer comprehensive office operations solutions shaped to your business needs. From meticulous cleaning services and efficient office maintenance to organized supply management, our office boy service is designed to support the smooth functioning of your business."
-        },
-        {
-          "name": "Driver",
-          "image": "https://blog.oneclickdrive.com/wp-content/uploads/2018/07/driver-service-2.jpg",
-          "description": "Enhance your mobility with our premium driver services. Our hand-picked chauffeurs provide unparalleled driver services for both business and personal travel. Our expert chauffeurs ensure a seamless journey from your doorstep to your desired destination."
-        }
-      ]
-    },
-    {
-      "id": "business-support-manpower",
-      "name": "Business Support Manpower",
-      "images": [
-        "businessHome",
-        "https://www.comproits.com/images/man-power-support.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "Manufacturing",
-          "image": "https://www.twi-global.com/image-library/hero/digital-manufacturing-istock-1022887882.jpg",
-          "description": "Unlock the full potential of your manufacturing operations with our skilled workforce. Our experienced professionals are equipped to meet your production needs, ensuring a seamless integration into your processes. By leveraging our specialized manpower, you'll increase overall operational efficiency, reduce downtime, and boost productivity. Partner with us to boost your business and achieve double the success."
-        },
-        {
-          "name": "Sales",
-          "image": "https://blog.hubspot.com/hubfs/Align-Sales-Customer-Service.jpg",
-          "description": "Our sales services are designed to help your company grow through planned and successful sales strategies. Our trained team of talented sales professionals excels in client relationship management, lead generation, and closing deals. We ensure that our sales professionals are well-suited to your industry and market, aligning our efforts with your company's goals."
-        },
-        {
-          "name": "IT",
-          "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
-          "description": "We provide skilled IT professionals who seamlessly integrate into your team, offering comprehensive IT support for all your technology needs. Our IT support services are designed to empower your organization with top-tier technical expertise. Partner with us for reliable IT support and focus on growing your business while we handle your IT solutions."
-        },
-        {
-          "name": "Other Manpower Support",
-          "image": "https://static.wixstatic.com/media/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg",
-          "description": "General manpower support for various business needs."
-        }
-      ]
-    },
-    {
-      "id": "technical-services",
-      "name": "Technical Services",
-      "images": [
-        "techHome",
-        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "Façade Cleaning through Manpower",
-          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain.jpg",
-          "description": "Manual cleaning of building exteriors by trained professionals."
-        },
-        {
-          "name": "Façade Cleaning through Drones",
-          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw.jpg",
-          "description": "Innovative drone technology for efficient and safe exterior cleaning."
-        },
-        {
-          "name": "Marble and Granite Polishing",
-          "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Expert polishing services for marble and granite surfaces."
-        },
-        {
-          "name": "Carpet and Upholstery Cleaning",
-          "image": "https://www.varietycleaning.co.uk/wp-content/uploads/2018/04/Carpet-Uphostery-Cleaning.jpg",
-          "description": "Deep cleaning of carpets and upholstered furniture."
-        },
-        {
-          "name": "Waste Management",
-          "image": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain.jpg",
-          "description": "Efficient waste management services for various needs."
-        }
-      ]
-    },
-    {
-      "id": "cleaning-rental-equipment",
-      "name": "Cleaning Rental Equipment",
-      "images": [
-        "cleaningHome",
-        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "Equipment Rental",
-          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": "Our Cleaning Rental Equipment services boast high-quality, professional-grade cleaning equipment available for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers, our extensive inventory guarantees the perfect tools for every cleaning job. We uphold the highest standards in equipment maintenance, ensuring dependability and peak performance.\n\n* Low Investment * Easy Replacement * One-Year Guarantee\n\nOne-Year Guarantee - Our cleaning equipment rental services are accompanied by a one-year guarantee, assuring dependable and high-performing tools for all your cleaning requirements. This guarantee instills a sense of confidence and peace of mind in the durability and quality of our equipment.\n\nEasy Replacement - We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our prompt replacement service ensures you can continue your work without delays.\n\nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment."
-        },
-        {
-          "name": "Furniture Rental",
-          "image": "https://assets-news.housing.com/news/wp-content/uploads/2019/09/23065452/Furniture-rentals-A-growing-trend-that-is-not-just-for-the-budget-constrained-FB-1200x628-compressed.jpg",
-          "description": "Rental of furniture for events and temporary needs."
-        }
-      ]
-    },
-    {
-      "id": "wedding-event-services",
-      "name": "Wedding/Event Services",
-      "images": [
-        "weddingHome",
-        "https://th.bing.com/th/id/OIP.tb0_sPx8IRUSRqh6EVrFIAHaE8?w=1024&h=683&rs=1&pid=ImgDetMain"
-      ],
-      "subservices": [
-        {
-          "name": "Helper Staff",
-          "image": "https://th.bing.com/th/id/OIP.Q2oe4aWjWnSVl8DigA0jDgAAAA?rs=1&pid=ImgDetMain",
-          "description": "We provide top-notch wedding and event services, with efficient, helpful, and trained event staff ensuring smooth event operations and guest assistance with a suitable dress code. Trust us to handle all aspects of your wedding with our profound event services."
-        },
-        {
-          "name": "Cleaning Equipment Services",
-          "image": "https://jimmy.mu/wp-content/uploads/2022/09/hw10pro-570x570.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - Boost the hygiene and convenience of your event with our automated wash basins. These touchless machines allow guests to wash their hands without contact, boosting hygiene and preventing the transmission of germs.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer comprehensive and efficient cleaning for carpets, floors, and furniture."
-        }
-      ]
-    }
-  ]
+  // (Keep the JSON data as you have it)
 };
 
 const CleaningRentalEquipment = () => {
   // Find the service that matches "Cleaning Rental Equipment"
   const cleaningRentalService = services.services.find(service => service.id === 'cleaning-rental-equipment');
   
-  // Correct video URL
+  // Ensure the videoSrc is correct and accessible
   const videoSrc = "https://github.com/TheUnityWave/website/raw/content/cleaning-equipment-demo.mp4";
+
+  if (!cleaningRentalService) {
+    return <p>Service not found.</p>;
+  }
 
   return (
     <div id="cleaning-rental-equipment">
@@ -160,9 +28,9 @@ const CleaningRentalEquipment = () => {
       {/* Render the subservices */}
       <div>
         {cleaningRentalService.subservices.map((subservice, index) => (
-          <div key={index}>
+          <div key={subservice.name + index}> {/* Ensure the key is unique */}
             <h3>{subservice.name}</h3>
-            <img src={subservice.image} alt={subservice.name} style={{ width: '100%', maxWidth: '300px' }} />
+            <img src={subservice.image} alt={`${subservice.name} image`} style={{ width: '100%', maxWidth: '300px' }} />
             <p>{subservice.description}</p>
           </div>
         ))}
