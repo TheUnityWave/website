@@ -1,4 +1,7 @@
-{
+import React from 'react';
+
+// JSON data containing services and subservices
+const services = {
   "services": [
     {
       "id": "soft-services",
@@ -131,29 +134,41 @@
         {
           "name": "Cleaning Equipment Services",
           "image": "https://jimmy.mu/wp-content/uploads/2022/09/hw10pro-570x570.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - These equipment not only promote hygiene but conserve water and ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
-        }
-      ]
-    },
-    {
-      "id": "pest-control-services",
-      "name": "Pest Control Services",
-      "images": [
-        "pestHome",
-        "https://westernallpest.com.au/wp-content/uploads/2017/05/Pest-Control-Service.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "Residential Pest Control",
-          "image": "https://th.bing.com/th/id/OIP.pgmzax6uS1aBOOOdr93pXwHaEK?rs=1&pid=ImgDetMain",
-          "description": "We use the safest and most efficacious pest control products and tools available, to safeguard your premises from a complete range of pests. All services are customised to the unique needs and challenges of your facility and attuned to the climatic factors of your city."
-        },
-        {
-          "name": "Commercial Pest Control",
-          "image": "https://www.zeropest.in/assets/img/icon/Commercial-Pest-Control.webp.jpg",
-          "description": "Pest management services for businesses and commercial properties."
+          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins - These equipment not only promote hygiene but conserve water and ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing comfort and convenience."
         }
       ]
     }
   ]
-}
+};
+
+const CleaningRentalEquipment = () => {
+  // Find the service that matches "Cleaning Rental Equipment"
+  const cleaningRentalService = services.services.find(service => service.id === 'cleaning-rental-equipment');
+  
+  https://github.com/TheUnityWave/website/blob/content/cleaning-equipment-demo.mp4
+  const videoSrc = "https://github.com/yourusername/your-repo/raw/main/assets/videos/cleaning-equipment-demo.mp4";
+
+  return (
+    <div id="cleaning-rental-equipment">
+      <h2>{cleaningRentalService.name}</h2>
+      
+      <video controls>
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Render the subservices */}
+      <div>
+        {cleaningRentalService.subservices.map((subservice, index) => (
+          <div key={index}>
+            <h3>{subservice.name}</h3>
+            <img src={subservice.image} alt={subservice.name} />
+            <p>{subservice.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CleaningRentalEquipment;
