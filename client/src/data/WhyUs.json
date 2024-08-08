@@ -2,25 +2,25 @@
     {
         "id": "background-verification",
         "title": "Background Verification",
-        "description": "Taken from the Latin words 'dolorem ipsum', which translates to 'pain itself', Lorem Ipsum text saw a revival.",
+        "description": "Our thorough background verification process carefully screens each team member to ensure they meet the highest standards of reliability and trustworthiness. We prioritise your safety and security by employing advanced verification techniques like permanent and temporary address verification, police verification (having any criminal record or not), Aadhar and pan verified,  so you can have complete confidence in the personnel we provide.",
         "image": "https://imgur.com/VideoIdVerification.png"
     },
     {
         "id": "online-training",
         "title": "Online Training",
-        "description": "Taken from the Latin words 'dolorem ipsum', which translates to 'pain itself', Lorem Ipsum text saw a revival.",
+        "description": "We invest in comprehensive online training programs to ensure our team members are always up to date with the latest industry standards and work with best practices. This ongoing education guarantees that our staff is fully equipped with the knowledge and skills. Our commitment to online training ensures continuous improvement and exceptional service.",
         "image": "https://imgur.com/Training.png"
     },
     {
         "id": "issue-resolve",
         "title": "Issue Resolve",
-        "description": "Taken from the Latin words 'dolorem ipsum', which translates to 'pain itself', Lorem Ipsum text saw a revival.",
+        "description": "Facing difficulties? Raise a ticket, and our dedicated team will fastly connect with you to resolve the issue. With a 90% success rate in solving problems, we ensure that your concerns are addressed efficiently. Whether you're a client or an employee, our issue resolution solutions are designed to provide quick and reliable support, keeping your operations running smoothly. Get the support you deserve today!",
         "image": "https://imgur.com/Strike.png"
     },
     {
         "id": "tech-driven-solution",
         "title": "Tech Driven Solution",
-        "description": "Taken from the Latin words 'dolorem ipsum', which translates to 'pain itself', Lorem Ipsum text saw a revival.",
+        "description": "Embracing the latest technological advancements, we confidently offer innovative, tech-driven solutions that significantly enhance operational efficiency and streamline processes. Our technology empowers us to consistently deliver superior results, firmly establishing our position as industry leaders.",
         "image": "https://imgur.com/Circuit.png"
     }
 ]
