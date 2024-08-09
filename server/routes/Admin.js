@@ -346,10 +346,10 @@ router.post('/postajob', [
     authorizeAdmin,
     [
         check('title', 'Title is required').not().isEmpty(),
-        check('department', 'Department is required').not().isEmpty(),
+        // check('department', 'Department is required').not().isEmpty(),
         check('location', 'Location is required').not().isEmpty(),
         check('description', 'Description is required').not().isEmpty(),
-        check('requirements', 'At least one requirement is needed').isArray({ min: 1 })
+        // check('requirements', 'At least one requirement is needed').isArray({ min: 1 })
     ]
 ], async (req, res) => {
     const errors = validationResult(req);
@@ -360,14 +360,14 @@ router.post('/postajob', [
     try {
         // Check if user is admin
        
-        const { title, department, location, description, requirements } = req.body;
+        const { title, location, description } = req.body;
 
         const newJob = new Jobs({
             title,
-            department,
+            // department,
             location,
             description,
-            requirements
+            // requirements
         });
 
         const job = await newJob.save();
