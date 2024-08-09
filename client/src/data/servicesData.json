@@ -1,4 +1,7 @@
-{
+import React from 'react';
+
+// JSON data containing services and subservices
+const services = {
   "services": [
     {
       "id": "soft-services",
@@ -11,7 +14,7 @@
         {
           "name": "House Keeping",
           "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
-          "description": "We provide highly trained professional cleaning staff for office spaces, ensuring a spotless and hygienic environment. Our team is skilled in modern cleaning techniques and uses top-quality products to maintain a clean, healthy workspace. Trust your faciality management buddy for reliable and efficient office cleaning staffed services."
+          "description": "We provide highly trained professional cleaning staff for office spaces, ensuring a spotless and hygienic environment. Our team is skilled in modern cleaning techniques and uses top-quality products to maintain a clean, healthy workspace. Trust your facility management buddy for reliable and efficient office cleaning staffed services."
         },
         {
           "name": "Pantry Support Services",
@@ -21,7 +24,7 @@
         {
           "name": "Office Boy",
           "image": "https://5.imimg.com/data5/MA/AP/MY-31244159/office-boy-service-500x500.jpg",
-          "description": "Looking for a reliable and professional office boy? Our trained office boys ensure smooth office operations, from parking handling to maintaining cleanliness. Trust us to provide skilled and efficient support tailored to your office needs. Enhance your workplace efficiency with our expert office boy services today"
+          "description": "Looking for a reliable and professional office boy? Our trained office boys ensure smooth office operations, from parking handling to maintaining cleanliness. Trust us to provide skilled and efficient support tailored to your office needs. Enhance your workplace efficiency with our expert office boy services today."
         },
         {
           "name": "Driver",
@@ -51,7 +54,7 @@
         {
           "name": "IT",
           "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
-          "description": "Boost your revenue and global visibility with our expertly trained IT support professionals manpower service. We provide reliable manpower that leverages cutting-edge technology to help grow your business. Partner with us to enhance your IT infrastructure, streamline operations, and achieve sustained success in the digital age with your best facality management partner"
+          "description": "Boost your revenue and global visibility with our expertly trained IT support professionals manpower service. We provide reliable manpower that leverages cutting-edge technology to help grow your business. Partner with us to enhance your IT infrastructure, streamline operations, and achieve sustained success in the digital age with your best facility management partner."
         },
         {
           "name": "Other Manpower Support",
@@ -106,7 +109,7 @@
         {
           "name": "Equipment Rental",
           "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task.We maintain our equipment in optimal condition for high efficiency and superior performance./n/nAdvantages of rental  Equipments * Low Investment * Easy Replacement * Advanced Technology Equipment:*  No storage or maintenance concerns/n/nEasy Replacement -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays./n/nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment./n/nAdvanced Equipment: Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate./n/nNo storage or maintenance concerns: Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives."
+          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task. We maintain our equipment in optimal condition for high efficiency and superior performance./n/nAdvantages of rental Equipments * Low Investment * Easy Replacement * Advanced Technology Equipment:* No storage or maintenance concerns/n/nEasy Replacement - We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays./n/nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment./n/nAdvanced Equipment: Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate./n/nNo storage or maintenance concerns: Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives."
         },
         {
           "name": "Furniture Rental",
@@ -120,18 +123,23 @@
       "name": "Wedding/Event Services",
       "images": [
         "weddingHome",
-        "https://th.bing.com/th/id/OIP.tb0_sPx8IRUSRqh6EVrFIAHaE8?w=1024&h=683&rs=1&pid=ImgDetMain"
+        "https://th.bing.com/th/id/OIP.tb0_sPx8IRUSRqh6EVrFIAHaE8?w=1024&h=683&rs=1&pid=ImgDetMain.jpg"
       ],
       "subservices": [
         {
-          "name": "Helper Staff",
-          "image": "https://th.bing.com/th/id/OIP.Q2oe4aWjWnSVl8DigA0jDgAAAA?rs=1&pid=ImgDetMain",
-          "description": "Looking for trained manpower for events and marriages? We provide skilled and reliable staff on a daily wage basis, ensuring smooth operations for your special occasions. Our team is experienced in handling all event-related tasks, from setup to coordination. Trust us for professional support at your next event."
+          "name": "Decoration Services",
+          "image": "https://th.bing.com/th/id/OIP.59ClmjZ7L1-c8yrhVFTUOQHaE8?w=1024&h=683&rs=1&pid=ImgDetMain.jpg",
+          "description": "Stunning decorations for weddings and events."
         },
         {
-          "name": "Cleaning Equipment Services",
-          "image": "https://jimmy.mu/wp-content/uploads/2022/09/hw10pro-570x570.jpg",
-          "description": "Tissue stand - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative.\n\nAutomatic wash basins -  These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority.\n\nVacuum cleaning - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
+          "name": "Catering Services",
+          "image": "https://th.bing.com/th/id/OIP.eCKU9D_GfTsSls8j06YZ9QHaEK?w=1024&h=683&rs=1&pid=ImgDetMain.jpg",
+          "description": "Gourmet catering for weddings and special events."
+        },
+        {
+          "name": "Event Coordination",
+          "image": "https://th.bing.com/th/id/OIP.CUuRsx38uP_W4KKPfuF4ywHaE8?w=1024&h=683&rs=1&pid=ImgDetMain.jpg",
+          "description": "Professional event coordination services."
         }
       ]
     }
@@ -143,7 +151,7 @@ const CleaningRentalEquipment = () => {
   const cleaningRentalService = services.services.find(service => service.id === 'cleaning-rental-equipment');
   
   // Correct video URL
-  const videoSrc = "https://github.com/TheUnityWave/website/content/client/scr/video/cleaning-equipment-demo.mp4";
+  const videoSrc = "https://raw.githubusercontent.com/TheUnityWave/content/client/src/video/cleaning-equipment-demo.mp4";
 
   return (
     <div id="cleaning-rental-equipment">
