@@ -181,7 +181,7 @@ export default function Navbar() {
                 </li>
 
                 <li>
-                  {!localStorage.getItem('token') ? (
+                  {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname.startsWith('/blogs') || location.pathname.startsWith('/api/careers/')|| location.pathname.startsWith('/careers/apply/') || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
                     <Link to="/login" onClick={toggleMenu} className='btn bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary/80 transition cursor-pointer'>
                       Login as Employee
                     </Link>

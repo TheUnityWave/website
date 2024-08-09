@@ -7,10 +7,10 @@ export default function PostAJob() {
 
     const [jobData, setJobData] = useState({
         title: '',
-        department: '',
+        // department: '',
         location: '',
         description: '',
-        requirements: ['']
+        // requirements: ['']
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -19,23 +19,23 @@ export default function PostAJob() {
         setJobData({ ...jobData, [e.target.name]: e.target.value });
     };
 
-    const handleRequirementChange = (index, value) => {
-        const newRequirements = [...jobData.requirements];
-        newRequirements[index] = value;
-        setJobData({ ...jobData, requirements: newRequirements });
-    };
+    // const handleRequirementChange = (index, value) => {
+    //     const newRequirements = [...jobData.requirements];
+    //     newRequirements[index] = value;
+    //     setJobData({ ...jobData, requirements: newRequirements });
+    // };
 
-    const addRequirement = () => {
-        setJobData({
-            ...jobData,
-            requirements: [...jobData.requirements, '']
-        });
-    };
+    // const addRequirement = () => {
+    //     setJobData({
+    //         ...jobData,
+    //         requirements: [...jobData.requirements, '']
+    //     });
+    // };
 
-    const removeRequirement = (index) => {
-        const newRequirements = jobData.requirements.filter((_, i) => i !== index);
-        setJobData({ ...jobData, requirements: newRequirements });
-    };
+    // const removeRequirement = (index) => {
+    //     const newRequirements = jobData.requirements.filter((_, i) => i !== index);
+    //     setJobData({ ...jobData, requirements: newRequirements });
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,7 +56,7 @@ export default function PostAJob() {
             setSuccess('Job posted successfully!');
             setJobData({
                 title: '',
-                department: '',
+                // department: '',
                 location: '',
                 description: '',
                 requirements: ['']
@@ -95,7 +95,7 @@ export default function PostAJob() {
                                 required
                             />
                         </div>
-                        <div className='w-full md:w-1/2 px-3 mb-4 md:mb-0'>
+                        {/* <div className='w-full md:w-1/2 px-3 mb-4 md:mb-0'>
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="department">Department:</label>
                             <input
                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -106,7 +106,7 @@ export default function PostAJob() {
                                 onChange={handleChange}
                                 required
                             />
-                        </div>
+                        </div> */}
                         <div className='w-full md:w-1/2 px-3 mb-4 md:mb-0'>
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="location">Location:</label>
                             <input
@@ -130,7 +130,7 @@ export default function PostAJob() {
                                 required
                             />
                         </div>
-                        <div className='w-full flex flex-col gap-2 md:w-1/2 px-3 mb-4 md:mb-0'>
+                        {/* <div className='w-full flex flex-col gap-2 md:w-1/2 px-3 mb-4 md:mb-0'>
                             <label className="block text-gray-700 text-sm font-bold mb-2">Requirements:</label>
                             {jobData.requirements.map((req, index) => (
                                 <div key={index} className='flex justify-center items-center gap-2'>
@@ -148,7 +148,7 @@ export default function PostAJob() {
                             ))}
                             <button className=" bg-cyan-900  text-white font-semibold py-1 px-6 rounded focus:outline-none focus:shadow-outline"
                                 type="button" onClick={addRequirement}>Add Requirement</button>
-                        </div>
+                        </div> */}
                         <button
                             className=" bg-cyan-900  text-white font-semibold py-2 px-6 mt-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit" disabled={isLoading}
