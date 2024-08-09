@@ -1,7 +1,4 @@
-import React from 'react';
-
-// JSON data containing services and subservices
-const services = {
+{
   "services": [
     {
       "id": "soft-services",
