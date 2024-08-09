@@ -1,33 +1,32 @@
-// JSON data containing services and subservices
-const services = {
+{
   "services": [
     {
       "id": "soft-services",
       "name": "Soft Services",
       "images": [
         "softImage",
-        "https://cdn.slidesharecdn.com/ss_thumbnails/improvingoperationalperformancedraft09pptmaskedpdf-101128191027-phpapp02-thumbnail-4.jpg?cb=1342052198.jpg"
+        "https://imgur.com/nSC0sJc.jpg"
       ],
       "subservices": [
         {
-          "name": "House Keeping",
-          "image": "https://www.theurbancrews.com/wp-content/uploads/2020/08/service.jpg",
+          "name": "HOUSEKEEPING SERVICES",
+          "image": "https://scrubnbubbles.com/wp-content/uploads/2020/10/cleaning-companies.jpg",
           "description": "We provide highly trained professional cleaning staff for office spaces, ensuring a spotless and hygienic environment. Our team is skilled in modern cleaning techniques and uses top-quality products to maintain a clean, healthy workspace. Trust your faciality management buddy for reliable and efficient office cleaning staffed services."
         },
         {
           "name": "Pantry Support Services",
-          "image": "https://encexplorer.com/wp-content/uploads/2022/12/Restaurant-New-Bern_Date-Night-1024x536.jpg",
-          "description": "Get a professional, trained pantry boy for your office space. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy. Trust our reliable pantry services for top-notch hospitality in your office. Contact us today for skilled pantry staff ready to meet your needs."
+          "image": "https://www.thespruce.com/thmb/DFlGTAJIMgXmOvPvco1evE9NpHE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignbyEmilyHenderson-KitchenPantry_PhotobyKaitlinGreen-9-d3c1f217c2aa40e389aa4e56e18433cb.jpeg",
+          "description": "Get a professional, trained pantry boy for your office space. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy. Trust our reliable pantry services for top-notch hospitality in your office. Contact us today for skilled pantry staff ready to meet your needs,"
         },
         {
-          "name": "Office Boy",
-          "image": "https://5.imimg.com/data5/MA/AP/MY-31244159/office-boy-service-500x500.jpg",
+          "name": "OFFICE BOY SERVICES",
+          "image": "https://i1.wp.com/generalefacility.com/wp-content/uploads/2021/02/Office-Boy.jpeg?resize=793%2C421&ssl=1",
           "description": "Looking for a reliable and professional office boy? Our trained office boys ensure smooth office operations, from parking handling to maintaining cleanliness. Trust us to provide skilled and efficient support tailored to your office needs. Enhance your workplace efficiency with our expert office boy services today"
         },
         {
-          "name": "Driver",
-          "image": "https://blog.oneclickdrive.com/wp-content/uploads/2018/07/driver-service-2.jpg",
-          "description": "Looking for reliable, trained professional drivers? We provide expert drivers for office spaces and driver agencies, ensuring safety and punctuality. Our drivers are highly skilled, thoroughly vetted, and ready to meet your business needs. Trust us for top-tier driving services that enhance your operational efficiency."
+          "name": "DRIVER SERVICES",
+          "image": "https://knrdriverservices.com/images/services/temporary-car-driver-servic.jpg",
+          "description": "Looking for reliable, trained professional drivers? We provide expert drivers for office spaces and driver agencies, ensuring safety and punctuality. Our drivers are highly skilled, thoroughly vetted, and ready to meet your business needs. Trust us for top-tier driving services that enhance your operational efficiency"
         }
       ]
     },
@@ -36,63 +35,23 @@ const services = {
       "name": "Business Support Manpower",
       "images": [
         "businessHome",
-        "https://www.comproits.com/images/man-power-support.jpg"
+        "https://th.bing.com/th/id/R.a52a3d6f09c95aa44900bc5c42e64360?rik=paF3emeCHR9ZpQ&riu=http%3a%2f%2fwww.comproits.com%2fimages%2fman-power-support.jpg&ehk=TIRSJgJi0EyEPvojAOcDs9bKA2eGGfeGhby9UJBxDJw%3d&risl=&pid=ImgRaw&r=0.jpg"
       ],
       "subservices": [
         {
-          "name": "Manufacturing",
-          "image": "https://www.twi-global.com/image-library/hero/digital-manufacturing-istock-1022887882.jpg",
+          "name": "Manufacturing Support Service",
+          "image": "https://www.entradagroup.com/wp-content/uploads/2019/01/manufacturing-support-platform-hero.jpg",
           "description": "We provide expertly trained, professional skilled labor for factories, manufacturing units, and more. Our workforce solutions ensure you have the right talent to boost productivity and efficiency. Trust us to meet your operational needs with reliable, certified workers ready to excel in any industrial environment. Quality manpower, delivered."
         },
         {
-          "name": "Sales",
-          "image": "https://blog.hubspot.com/hubfs/Align-Sales-Customer-Service.jpg",
+          "name": "Sales support service",
+          "image": "https://th.bing.com/th/id/OIP.nYH5_ItlhU8TK6WmXNuKVQHaFB?rs=1&pid=ImgDetMain",
           "description": "Boost your sales and grow your business with our trained sales professionals. Our expert manpower is equipped to drive results, enhance customer engagement, and increase revenue. Partner with us for reliable sales support that elevates your brand. Discover the difference with our top-tier sales professionals today."
         },
         {
-          "name": "IT",
-          "image": "https://skytechgeek.com/wp-content/uploads/2018/07/running-your-business-smoothly.jpg",
+          "name": "IT Support Services",
+          "image": "https://bitrebels.com/wp-content/uploads/2019/01/10-vital-it-support-header-image.jpg",
           "description": "Boost your revenue and global visibility with our expertly trained IT support professionals manpower service. We provide reliable manpower that leverages cutting-edge technology to help grow your business. Partner with us to enhance your IT infrastructure, streamline operations, and achieve sustained success in the digital age with your best facality management partner"
-        },
-        {
-          "name": "Other Manpower Support",
-          "image": "https://static.wixstatic.com/media/62ca18_3858e9328ffc4317b3a951ef40ce2a26~mv2_d_4928_3264_s_4_2.jpg",
-          "description": "General manpower support for various business needs."
-        }
-      ]
-    },
-    {
-      "id": "technical-services",
-      "name": "Technical Services",
-      "images": [
-        "techHome",
-        "https://th.bing.com/th/id/OIP.FgLUuTBLMcELOAlqHz-b5QHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain.jpg"
-      ],
-      "subservices": [
-        {
-          "name": "Façade Cleaning through Manpower",
-          "image": "https://th.bing.com/th/id/OIP.b0PrEOI-E-3zNISM3EMStQHaEM?w=1024&h=580&rs=1&pid=ImgDetMain.jpg",
-          "description": "Manual cleaning of building exteriors by trained professionals."
-        },
-        {
-          "name": "Façade Cleaning through Drones",
-          "image": "https://i.ytimg.com/vi/RovgsruiONk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYShXMA8=&rs=AOn4CLDN7bjbZKME0U932_dfvRzQI6uvNw.jpg",
-          "description": "Innovative drone technology for efficient and safe exterior cleaning."
-        },
-        {
-          "name": "Marble and Granite Polishing",
-          "image": "https://imgur.com/tc09odr.jpg",
-          "description": "Expert polishing services for marble and granite surfaces."
-        },
-        {
-          "name": "Carpet and Upholstery Cleaning",
-          "image": "https://www.varietycleaning.co.uk/wp-content/uploads/2018/04/Carpet-Uphostery-Cleaning.jpg",
-          "description": "Deep cleaning of carpets and upholstered furniture."
-        },
-        {
-          "name": "Waste Management",
-          "image": "https://th.bing.com/th/id/OIP.MjJrTsxZ28zXU25LujWM6QHaE8?rs=1&pid=ImgDetMain.jpg",
-          "description": "Efficient waste management services for various needs."
         }
       ]
     },
@@ -101,18 +60,18 @@ const services = {
       "name": "Cleaning Rental Equipment",
       "images": [
         "cleaningHome",
-        "https://th.bing.com/th/id/OIP.SIMyJJpGZBq_oHouj_pAewHaEK?rs=1&pid=ImgDetMain.jpg"
+        "https://imgur.com/example4.jpg"
       ],
       "subservices": [
         {
-          "name": "Equipment Rental",
-          "image": "https://th.bing.com/th/id/OIP.a_5KUrPxE3gWE3u_RDJVXwAAAA?rs=1&pid=ImgDetMain.jpg",
-          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task.We maintain our equipment in optimal condition for high efficiency and superior performance./n/nAdvantages of rental  Equipments * Low Investment * Easy Replacement * Advanced Technology Equipment:*  No storage or maintenance concerns/n/nEasy Replacement -  We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays./n/nLow Investment - Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment./n/nAdvanced Equipment: Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate./n/nNo storage or maintenance concerns: Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives."
+          "name": "",
+          "image": "https://th.bing.com/th/id/OIP.cqbEPbH-AGSmoFahJo5cbAHaE7?rs=1&pid=ImgDetMain",
+          "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task.We maintain our equipment in optimal condition for high efficiency and superior performance."
         },
         {
-          "name": "Furniture Rental",
-          "image": "https://assets-news.housing.com/news/wp-content/uploads/2019/09/23065452/Furniture-rentals-A-growing-trend-that-is-not-just-for-the-budget-constrained-FB-1200x628-compressed.jpg",
-          "description": "Rental of furniture for events and temporary needs."
+          "name": "Advantages",
+          "image": "https://www.edic-usa.com/wp-content/uploads/2015/12/revolution-action-600x600.jpg",
+          "description": "<b> Low Investment  </b> -Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment.  </br> <b> Easy Replacement </b> -We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays.</br><br> Advanced Technology Equipment </b> -Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate.</br><b> No storage or maintenance concerns </b>- Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives"
         }
       ]
     },
@@ -121,57 +80,35 @@ const services = {
       "name": "Wedding/Event Services",
       "images": [
         "weddingHome",
-        "https://i.pinimg.com/736x/cd/da/0f/cdda0f02e2ff5fa2cf1111694af5a7ee--wedding-decor-event-wedding.jpg"
+        "https://imgur.com/example8.jpg"
       ],
       "subservices": [
         {
-          "name": "Marriage Garden",
-          "image": "https://cdn0.weddingwire.in/vendor/9059/3_2/960/jpg/1439080404-14871ef02480516f2c4dd88fa7590d4c.jpeg",
-          "description": "Beautifully maintained gardens for weddings and events."
+          "name": "Helper Staff",
+          "image": "https://imgur.com/YFximIt.png",
+          "description": "Looking for trained manpower for events and marriages? We provide skilled and reliable staff on a daily wage basis, ensuring smooth operations for your special occasions. Our team is experienced in handling all event-related tasks, from setup to coordination. Trust us for professional support at your next event"
         },
         {
-          "name": "Stage Lighting",
-          "image": "https://dcassetcdn.com/design_img/3499537/704573/704573_19271941_3499537_8fc84af1_image.jpg",
-          "description": "Professional stage lighting for weddings and events."
-        },
-        {
-          "name": "Catering",
-          "image": "https://d33wubrfki0l68.cloudfront.net/2f03b4abdb824768a98687026afce532a5a2d10c/93089/images/service-catering-2x.jpg",
-          "description": "High-quality catering services for weddings and events."
-        },
-        {
-          "name": "Decorations",
-          "image": "https://djpevents.com/wp-content/uploads/2017/10/Outdoor-Wedding-Event-Decor.jpeg",
-          "description": "Stunning decorations for various events."
+          "name": "Cleaning Equipment Services",
+          "image": "https://ii1.pepperfry.com/media/catalog/product/1/1/1600x1760/11-litres-stainless-steel-pedal-dustbin-11-litres-stainless-steel-pedal-dustbin-vykbfs.jpg",
+          "description": "<b> Tissue stand </b> - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. <br/><br/> <b> Automatic wash basins </b> - These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority. <br/><br/> <b> Vacuum cleaning </b> - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture."
         }
       ]
     },
     {
-      "id": "security-services",
-      "name": "Security Services",
+      "id": "pest-control-services",
+      "name": "Pest Control Services",
       "images": [
-        "securityHome",
-        "https://www.sisindia.com/assets/image/Security-Services/sis-security-services5.jpg"
+        "pestHome",
+        "https://imgur.com/pestcontrol2.jpg"
       ],
       "subservices": [
         {
-          "name": "Manned Guarding",
-          "image": "https://www.g4s.com/-/media/g4s/unitedkingdom/images/manned-guarding-microsite.ashx?mh=1180&la=en&h=585&w=876&mw=1535&hash=AA745C9A216F3EB09B48B2E3B0F803BD",
-          "description": "Professional security personnel for various facilities."
-        },
-        {
-          "name": "Access Control",
-          "image": "https://www.sisindia.com/assets/image/GS/Access_Control_Security.jpg",
-          "description": "Advanced access control systems for security."
-        },
-        {
-          "name": "CCTV Surveillance",
-          "image": "https://th.bing.com/th/id/OIP.bGIwfw7PtyTph1n0ySpTYQHaEK?rs=1&pid=ImgDetMain.jpg",
-          "description": "High-quality CCTV systems for constant monitoring."
+          "name": "",
+          "image": "https://th.bing.com/th/id/OIP.pgmzax6uS1aBOOOdr93pXwHaEK?rs=1&pid=ImgDetMain.jpg",
+          "description": "Looking for the pest control service? we got you covered, Protect your corporate offices and large ventures with our expert pest control services. Our tailored solutions ensure a pest-free environment, safeguarding your business from health risks, property damage, and compliance issues. Enhance workplace safety and maintain a clean, professional atmosphere. Trust us for reliable and effective pest management facility service "
         }
       ]
     }
   ]
-};
-
-export default services;
+}
