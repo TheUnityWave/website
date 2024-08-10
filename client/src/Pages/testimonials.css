@@ -39,7 +39,7 @@
   border-radius: 50%;
   margin: 15px auto 0;
   box-shadow: 0 8px 20px -4px #95abbb;
-  width: 100px;
+  /* width: 100px; */
   height: 100px;
 }
 
@@ -58,4 +58,8 @@
 
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
   outline: 0;
+}
+.owl-carousel .owl-item img {
+  display: block;
+  width: auto !important;
 }

@@ -64,7 +64,7 @@ export default function Testimonials() {
                             title={item.title}
                             review={item.review}
                             // imageUrl={require(`../Images/${item.image}`).default} // Use dynamic import for images
-                            imageUrl={logo} // Use dynamic import for images
+                            imageUrl={item.image} // Use dynamic import for images
                         />
                     ))}
                 </OwlCarousel>

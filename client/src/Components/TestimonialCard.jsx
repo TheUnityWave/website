@@ -7,7 +7,7 @@ const TestimonialCard = ({ name, title, review, imageUrl }) => {
         <div className="px-6 py-4">
           <div className="flex justify-center mb-4">
             <img 
-              className="w-20 h-24 rounded-full object-cover border-4 border-white shadow shadow-primary"
+              className="w-24 h-24 rounded-full object-cover border-4 border-white shadow shadow-primary"
               src={imageUrl} 
               alt={title} 
             />

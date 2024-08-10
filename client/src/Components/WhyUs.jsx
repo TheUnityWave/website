@@ -15,25 +15,25 @@ gsap.registerPlugin(ScrollTrigger);
 const contentList = [
     {
         title: "Background Verification",
-        content: "Our thorough background verification process carefully screens each team member to ensure they meet the highest standards of reliability and trustworthiness. We prioritise your safety and security by employing advanced verification techniques, so you can have complete confidence in the personnel we provide.",
+        content: "Our thorough background verification process carefully screens each team member to ensure they meet the highest standards of reliability and trustworthiness. We prioritise your safety and security by employing advanced verification techniques like permanent and temporary address verification, police verification (having any criminal record or not), Aadhar and pan verified,  so you can have complete confidence in the personnel we provide.",
         className: "w-full md:w-1/4 border-2 border-stone-400 p-9 relative mb-16 md:mb-0",
         image: verificationImage
     },
     {
         title: "Online Training",
-        content: "We invest in comprehensive online training programs to ensure our team members are always up to date with the latest industry standards and best practices. This ongoing education guarantees that our staff is fully equipped with the knowledge and skills. Our commitment to online training ensures continuous improvement and exceptional service.",
+        content: "We invest in comprehensive online training programs to ensure our team members are always up to date with the latest industry standards and work with best practices. This ongoing education guarantees that our staff is fully equipped with the knowledge and skills. Our commitment to online training ensures continuous improvement and exceptional service.",
         className: "w-full md:w-1/4 border-2 border-stone-400 p-9 relative",
         image: trainingImage
     },
     {
         title: "Issue Resolve",
-        content: "Our dedicated support team is available around the clock and committed to providing prompt and effective issue resolution. We understand the importance of maintaining seamless operations, so we ensure that any concerns or problems are addressed swiftly and efficiently, minimizing downtime and disruptions.",
+        content: "Facing difficulties? Raise a ticket, and our dedicated team will fastly connect with you to resolve the issue. With a 90% success rate in solving problems, we ensure that your concerns are addressed efficiently. Whether you're a client or an employee, our issue resolution solutions are designed to provide quick and reliable support, keeping your operations running smoothly. Get the support you deserve today!",
         className: "w-full md:w-1/4 border-2 border-stone-400 p-9 mt-16 relative",
         image: issueResolveImage
     },
     {
         title: "Tech Driven Solution",
-        content: "Embracing the latest technological advancements, we confidently offer innovative, tech-driven solutions that significantly enhance operational efficiency and streamline processes. Our technology empowers us to consistently deliver superior results, firmly establishing our position as industry leaders. ",
+        content: "Embracing the latest technological advancements, we confidently offer innovative, tech-driven solutions that significantly enhance operational efficiency and streamline processes. Our technology empowers us to consistently deliver superior results, firmly establishing our position as industry leaders.",
         className: "w-full md:w-1/4 border-2 border-stone-400 p-9 mt-16 relative",
         image: techImage
     }
