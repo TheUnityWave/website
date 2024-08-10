@@ -121,7 +121,7 @@ export default function Navbar() {
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-sm'>
-          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname === '/about' || location.pathname === '/blogs' || location.pathname.startsWith('/service/') || location.pathname.startsWith('/blog/') ? (
+          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname.startsWith('/career') || location.pathname === '/about' || location.pathname === '/blogs' || location.pathname.startsWith('/service/') || location.pathname.startsWith('/blog/') || location.pathname.startsWith('/api/careers/') ? (
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'  onClick={() => handleNavigation('about')}>About Us</li>
@@ -169,7 +169,7 @@ export default function Navbar() {
       <div className={`fixed inset-0 bg-white z-40 md:hidden transition-transform duration-700 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className='flex flex-col items-center justify-center h-full font-primary'>
           <ul className='text-center flex flex-col items-center justify-center h-full gap-6'>
-            {!localStorage.getItem('token') || location.pathname === '/' || location.pathname === '/career' || location.pathname.startsWith('/blogs') || location.pathname.startsWith('/api/careers')|| location.pathname.startsWith('/careers/apply') || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
+            {!localStorage.getItem('token') || location.pathname === '/' || location.pathname.startsWith('/career') || location.pathname.startsWith('/blogs') || location.pathname.startsWith('/api/careers')|| location.pathname.startsWith('/careers/apply') || location.pathname === '/about' || location.pathname.startsWith('/service/') ? (
               <>
                 <li ><Link to="/" onClick={toggleMenu}>Home</Link></li>
                 <li ><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
