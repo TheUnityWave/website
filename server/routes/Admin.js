@@ -160,7 +160,7 @@ router.patch('/get-in-touch/:id', async (req, res) => {
     }
 });
 
-router.get('/tickets',  async (req, res) => {
+router.get('/tickets', async (req, res) => {
     try {
         const { userType } = req.query;
         let tickets;
@@ -359,7 +359,7 @@ router.post('/postajob', [
 
     try {
         // Check if user is admin
-       
+
         const { title, location, description } = req.body;
 
         const newJob = new Jobs({
@@ -380,6 +380,62 @@ router.post('/postajob', [
     }
 }
 );
+
+router.get('/job/all', async (req, res) => {
+    try {
+      const jobs = await Jobs.find().sort({ postedDate: -1 });
+      res.json(jobs);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  });
+
+
+router.put('/job/edit/:id', authorizeAdmin, async (req, res) => {
+    const { title, location, description } = req.body;
+
+    try {
+        const updatedJob = await Jobs.findByIdAndUpdate(
+            req.params.id,
+            { title, location, description },
+            { new: true } // This option returns the modified document rather than the original
+        );
+
+        if (!updatedJob) {
+            return res.status(404).json({ msg: 'Job not found' });
+        }
+
+        res.json(updatedJob);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server error');
+    }
+});
+
+
+router.put('/job/editOpening/:id', authorizeAdmin, async (req, res) => {
+    try {
+        const jobId = req.params.id;
+
+        // Find the job by ID
+        const job = await Jobs.findById(jobId);
+        if (!job) {
+            return res.status(404).json({ msg: 'Job not found' });
+        }
+
+        // Toggle the isActive status
+        job.isActive = !job.isActive;
+
+        // Save the updated job
+        await job.save();
+
+        return res.status(200).json(job);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ msg: 'Server error' });
+    }
+});
 
 
 module.exports = router;
