@@ -11,9 +11,9 @@ const ServiceCard = ({ name, description, image, industry = [], isEven }) => {
         {industry.length > 0 && (
           <div className="industry-icons md:mt-12">
             <p className='font-bold'>
-              Industries where we serve:
+              {(name == "Advantages") ? "" :"Industries we serve:"}
             </p>
-            <div className="flex md:justify-evenly items-center gap-4">
+            <div className="flex md:justify-evenly md:mt-4 items-center gap-4">
               {industry.map(({ name: industryName, iconPath }, index) => (
                 <div key={index} className="industry-item md:w-24 md:h-24">
                   <img
