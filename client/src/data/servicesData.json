@@ -36,28 +36,7 @@
           "name": "Pantry Support Services",
           "image": "https://www.thespruce.com/thmb/DFlGTAJIMgXmOvPvco1evE9NpHE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DesignbyEmilyHenderson-KitchenPantry_PhotobyKaitlinGreen-9-d3c1f217c2aa40e389aa4e56e18433cb.jpeg",
           "description": "Get a professional, trained pantry boy for your office space. We provide dedicated pantry staff to manage and maintain your pantry for busy offices, student campuses, and co-working spaces. Our team ensures your pantry is always well-stocked and organized to keep your space running smoothly and your team happy. Trust our reliable pantry services for top-notch hospitality in your office. Contact us today for skilled pantry staff ready to meet your needs,",
-          "industry": [
-            {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
-            },
-            {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
-            },
-            {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
-            },
-            {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
-            },
-            {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
-            }
-          ]
+          "industry": []
         },
         {
           "name": "OFFICE BOY SERVICES",
@@ -66,23 +45,31 @@
           "industry": [
             {
               "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/Corporate office.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Hospital",
+              "iconPath": "/Images/industryImg/hospital.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Educational Institutions",
+              "iconPath": "/Images/industryImg/education insitute.png"
             },
             {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "name": "Banks",
+              "iconPath": "/Images/industryImg/banks.png"
+            },
+             {
+              "name": "Manufacturing Units",
+              "iconPath": "/Images/industryImg/manufacturing units.png"
+            },
+             {
+              "name": "IT Companies",
+              "iconPath": "/Images/industryImg/it companies.png"
             },
             {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "name": "Hotels",
+              "iconPath": "/Images/industryImg/hotels.png"
             }
           ]
         },
@@ -92,24 +79,28 @@
           "description": "Looking for reliable, trained professional drivers? We provide expert drivers for office spaces and driver agencies, ensuring safety and punctuality. Our drivers are highly skilled, thoroughly vetted, and ready to meet your business needs. Trust us for top-tier driving services that enhance your operational efficiency",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Logistics and Transportation",
+              "iconPath": "/Images/industryImg/logistic and transpotaion.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Ride-Sharing Services",
+              "iconPath": "/Images/industryImg/ride sharing service.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Corporate Transportation",
+              "iconPath": "/Images/industryImg/corporate transportation.png"
             },
             {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "name": "Healthcare and Medical Transport",
+              "iconPath": "/Images/industryImg/healthcare and mecidine transport.png"
+            },
+             {
+              "name": "E-commerce Delivery",
+              "iconPath": "/Images/industryImg/e-commerce and delivery.png"
             },
             {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "name": "Hospitality and Tourism",
+              "iconPath": "/Images/industryImg/hospitality and tourism.png"
             }
           ]
         }
@@ -129,24 +120,29 @@
           "description": "We provide expertly trained, professional skilled labor for factories, manufacturing units, and more. Our workforce solutions ensure you have the right talent to boost productivity and efficiency. Trust us to meet your operational needs with reliable, certified workers ready to excel in any industrial environment. Quality manpower, delivered.",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Manufacturing",
+              "iconPath": "/Images/industryImg/manufacturing.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Construction",
+              "iconPath": "/Images/industryImg/construction.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "IT services",
+              "iconPath": "/Images/industryImg/it service.png"
             },
             {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "name": "Logistics",
+              "iconPath": "/Images/industryImg/logistics.png"
+            },
+            
+             {
+              "name": "Education",
+              "iconPath": "/Images/industryImg/education insitute.png"
             },
             {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "name": "Financial Services",
+              "iconPath": "/Images/industryImg/Financial service.png"
             }
           ]
         },
@@ -156,24 +152,24 @@
           "description": "Boost your sales and grow your business with our trained sales professionals. Our expert manpower is equipped to drive results, enhance customer engagement, and increase revenue. Partner with us for reliable sales support that elevates your brand. Discover the difference with our top-tier sales professionals today.",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Technology",
+              "iconPath": "/Images/industryImg/technology.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "FMCG(Fast-Moving- Consumer Goods",
+              "iconPath": "/Images/industryImg/fmcg.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Telecommunication",
+              "iconPath": "/Images/industryImg/telecommuication.png"
             },
             {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "name": "Financial Services",
+              "iconPath": "/Images/industryImg/Financial service.png"
             },
             {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "name": "Real-Estate",
+              "iconPath": "/Images/industryImg/real estate.png"
             }
           ]
         },
@@ -181,28 +177,7 @@
           "name": "IT Support Services",
           "image": "https://bitrebels.com/wp-content/uploads/2019/01/10-vital-it-support-header-image.jpg",
           "description": "Boost your revenue and global visibility with our expertly trained IT support professionals manpower service. We provide reliable manpower that leverages cutting-edge technology to help grow your business. Partner with us to enhance your IT infrastructure, streamline operations, and achieve sustained success in the digital age with your best facality management partner",
-          "industry": [
-            {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
-            },
-            {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
-            },
-            {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
-            },
-            {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
-            },
-            {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
-            }
-          ]
+          "industry": []
         }
       ]
     },
@@ -215,28 +190,7 @@
           "name": "",
           "image": "https://th.bing.com/th/id/OIP.cqbEPbH-AGSmoFahJo5cbAHaE7?rs=1&pid=ImgDetMain",
           "description": "Our Cleaning Rental Equipment services offer high-quality equipment for rent. Whether you need floor scrubbers, carpet cleaners, or pressure washers & Many more, our wide range of tools provides the right equipment for any cleaning task.We maintain our equipment in optimal condition for high efficiency and superior performance.",
-          "industry": [
-            {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
-            },
-            {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
-            },
-            {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
-            },
-            {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
-            },
-            {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
-            }
-          ]
+          "industry": []
         },
         {
           "name": "Advantages",
@@ -244,24 +198,21 @@
           "description": "<b> Low Investment  </b> -Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment.  </br> <b> Easy Replacement </b> -We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays.</br> <b> Advanced Technology Equipment </b> -Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate.</br><b> No storage or maintenance concerns </b>- Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Low Investment",
+              "iconPath": "/Images/industryImg/Low inverstment.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Easy Replacement",
+              "iconPath": "/Images/industryImg/Easy replacementpng"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Advanced Technology Equipment",
+              "iconPath": "/Images/industryImg/Advanced Technology Equipment.png"
             },
-            {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
-            },
-            {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+           
+           {
+              "name": "No Storage or Maintenance Concerns",
+              "iconPath": "/Images/industryImg/No storage or maintenance concerns.png"
             }
           ]
         }
