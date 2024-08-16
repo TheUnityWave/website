@@ -203,7 +203,7 @@
             },
             {
               "name": "Easy Replacement",
-              "iconPath": "/Images/industryImg/Easy replacementpng"
+              "iconPath": "/Images/industryImg/Easy replacement.png"
             },
             {
               "name": "Advanced Technology Equipment",
@@ -229,24 +229,24 @@
           "description": "Looking for trained manpower for events and marriages? We provide skilled and reliable staff on a daily wage basis, ensuring smooth operations for your special occasions. Our team is experienced in handling all event-related tasks, from setup to coordination. Trust us for professional support at your next event",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Helper Staff",
+              "iconPath": "/Images/industryImg/Helper Staff.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Caterer",
+              "iconPath": "/Images/industryImg/Caterer.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Decoration",
+              "iconPath": "/Images/industryImg/Decoration.png"
             },
             {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "name": "Wedding Planner",
+              "iconPath": "/Images/industryImg/Wedding Planner.png"
             },
             {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "name": "Wedding",
+              "iconPath": "/Images/industryImg/Wedding.png"
             }
           ]
         },
@@ -254,28 +254,7 @@
           "name": "Cleaning Equipment Services",
           "image": "https://ii1.pepperfry.com/media/catalog/product/1/1/1600x1760/11-litres-stainless-steel-pedal-dustbin-11-litres-stainless-steel-pedal-dustbin-vykbfs.jpg",
           "description": "<b> Tissue stand </b> - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. <br/><br/> <b> Automatic wash basins </b> - These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority. <br/><br/> <b> Vacuum cleaning </b> - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture.",
-          "industry": [
-            {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
-            },
-            {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
-            },
-            {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
-            },
-            {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
-            },
-            {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
-            }
-          ]
+          "industry": []
         }
       ]
     },
@@ -290,24 +269,25 @@
           "description": "Looking for the pest control service? we got you covered, Protect your corporate offices and large ventures with our expert pest control services. Our tailored solutions ensure a pest-free environment, safeguarding your business from health risks, property damage, and compliance issues. Enhance workplace safety and maintain a clean, professional atmosphere. Trust us for reliable and effective pest management facility service ",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Apartments",
+              "iconPath": "/Images/industryImg/Apartments.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Retail Stores",
+              "iconPath": "/Images/industryImg/Retail Stores.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Restaurants",
+              "iconPath": "/Images/industryImg/Restaurants.png"
             },
             {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "name": "Warehouse",
+              "iconPath": "/Images/industryImg/Warehouse.png"
             },
+             
             {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "name": "Manufacturing Plants",
+              "iconPath": "/Images/industryImg/Manufacturing Plants.png"
             }
           ]
         }
