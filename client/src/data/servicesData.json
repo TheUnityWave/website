@@ -100,23 +100,27 @@
           "description": "Looking for reliable, trained professional drivers? We provide expert drivers for office spaces and driver agencies, ensuring safety and punctuality. Our drivers are highly skilled, thoroughly vetted, and ready to meet your business needs. Trust us for top-tier driving services that enhance your operational efficiency",
           "industry": [
             {
-              "name": "Corporate Office",
+              "name": "Logistics and Transportation",
               "iconPath": "/Images/industryImg/corporate office .png"
             },
             {
-              "name": "School & College",
+              "name": "Ride-Sharing Services",
               "iconPath": "/Images/industryImg/school & college.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
+              "name": "Corporate Transportation",
               "iconPath": "/Images/industryImg/shooping mall.png"
             },
             {
-              "name": "Factories and Production Facilities",
+              "name": "Healthcare and Medical Transport",
+              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+            },
+             {
+              "name": "E-commerce Delivery",
               "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
             },
             {
-              "name": "Cinemas and Theaters",
+              "name": "Hospitality and Tourism",
               "iconPath": "/Images/industryImg/cinemas and theaters.png"
             }
           ]
@@ -137,23 +141,28 @@
           "description": "We provide expertly trained, professional skilled labor for factories, manufacturing units, and more. Our workforce solutions ensure you have the right talent to boost productivity and efficiency. Trust us to meet your operational needs with reliable, certified workers ready to excel in any industrial environment. Quality manpower, delivered.",
           "industry": [
             {
-              "name": "Corporate Office",
+              "name": "Manufacturing",
               "iconPath": "/Images/industryImg/corporate office .png"
             },
             {
-              "name": "School & College",
+              "name": "Construction",
               "iconPath": "/Images/industryImg/school & college.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
+              "name": "IT services",
               "iconPath": "/Images/industryImg/shooping mall.png"
             },
             {
-              "name": "Factories and Production Facilities",
+              "name": "Logistics",
+              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+            },
+            
+             {
+              "name": "Education",
               "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
             },
             {
-              "name": "Cinemas and Theaters",
+              "name": "Financial Services",
               "iconPath": "/Images/industryImg/cinemas and theaters.png"
             }
           ]
@@ -164,23 +173,23 @@
           "description": "Boost your sales and grow your business with our trained sales professionals. Our expert manpower is equipped to drive results, enhance customer engagement, and increase revenue. Partner with us for reliable sales support that elevates your brand. Discover the difference with our top-tier sales professionals today.",
           "industry": [
             {
-              "name": "Corporate Office",
+              "name": "Technology",
               "iconPath": "/Images/industryImg/corporate office .png"
             },
             {
-              "name": "School & College",
+              "name": "FMCG(Fast-Moving- Consumer Goods",
               "iconPath": "/Images/industryImg/school & college.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
+              "name": "Telecommunication",
               "iconPath": "/Images/industryImg/shooping mall.png"
             },
             {
-              "name": "Factories and Production Facilities",
+              "name": "Financial Services",
               "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
             },
             {
-              "name": "Cinemas and Theaters",
+              "name": "Real-Estate",
               "iconPath": "/Images/industryImg/cinemas and theaters.png"
             }
           ]
