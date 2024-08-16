@@ -21,6 +21,7 @@ const ServiceDetails = () => {
             name={subservice.name}
             description={subservice.description}
             image={subservice.image}
+            industry={subservice.industry}
             isEven={index % 2 === 0}
           />
         ))}
