@@ -12,7 +12,7 @@
           "industry": [
             {
               "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/Corporate office.png"
             },
             {
               "name": "School & College",
@@ -66,22 +66,30 @@
           "industry": [
             {
               "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/Corporate office.png"
             },
             {
-              "name": "School & College",
+              "name": "Hospital",
               "iconPath": "/Images/industryImg/school & college.png"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
+              "name": "Educational Institutions",
               "iconPath": "/Images/industryImg/shooping mall.png"
             },
             {
-              "name": "Factories and Production Facilities",
+              "name": "Banks",
+              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+            },
+             {
+              "name": "Manufacturing Units",
+              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+            },
+             {
+              "name": "IT Companies",
               "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
             },
             {
-              "name": "Cinemas and Theaters",
+              "name": "Hotels",
               "iconPath": "/Images/industryImg/cinemas and theaters.png"
             }
           ]
