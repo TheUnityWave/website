@@ -70,27 +70,27 @@
             },
             {
               "name": "Hospital",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "iconPath": "/Images/industryImg/hospital.png"
             },
             {
               "name": "Educational Institutions",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "iconPath": "/Images/industryImg/education insitute.png"
             },
             {
               "name": "Banks",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/banks.png"
             },
              {
               "name": "Manufacturing Units",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/manufacturing units.png"
             },
              {
               "name": "IT Companies",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/it companies.png"
             },
             {
               "name": "Hotels",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "iconPath": "/Images/industryImg/hotels.png"
             }
           ]
         },
@@ -101,27 +101,27 @@
           "industry": [
             {
               "name": "Logistics and Transportation",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/logistic and transpotaion.png"
             },
             {
               "name": "Ride-Sharing Services",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "iconPath": "/Images/industryImg/ride sharing service.png"
             },
             {
               "name": "Corporate Transportation",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "iconPath": "/Images/industryImg/corporate transportation .png"
             },
             {
               "name": "Healthcare and Medical Transport",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/healthcare and mecidine transport.png"
             },
              {
               "name": "E-commerce Delivery",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/e-commerce and delivery.png"
             },
             {
               "name": "Hospitality and Tourism",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "iconPath": "/Images/industryImg/hospitality and tourism.png"
             }
           ]
         }
@@ -142,28 +142,28 @@
           "industry": [
             {
               "name": "Manufacturing",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/manufacturing.png"
             },
             {
               "name": "Construction",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "iconPath": "/Images/industryImg/construction.png"
             },
             {
               "name": "IT services",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "iconPath": "/Images/industryImg/it service.png"
             },
             {
               "name": "Logistics",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/logistic.png"
             },
             
              {
               "name": "Education",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/education insitute.png"
             },
             {
               "name": "Financial Services",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "iconPath": "/Images/industryImg/Financial service.png"
             }
           ]
         },
@@ -174,23 +174,23 @@
           "industry": [
             {
               "name": "Technology",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/technology.png"
             },
             {
               "name": "FMCG(Fast-Moving- Consumer Goods",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "iconPath": "/Images/industryImg/fmcg.png"
             },
             {
               "name": "Telecommunication",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "iconPath": "/Images/industryImg/telecommunication.png"
             },
             {
               "name": "Financial Services",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/Financial service.png"
             },
             {
               "name": "Real-Estate",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "iconPath": "/Images/industryImg/real estate.png"
             }
           ]
         },
@@ -201,7 +201,7 @@
           "industry": [
             {
               "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "iconPath": "/Images/industryImg/Corporate office.png"
             },
             {
               "name": "School & College",
