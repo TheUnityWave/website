@@ -261,24 +261,21 @@
           "description": "<b> Low Investment  </b> -Our rental services require a low initial investment, making it a cost-effective solution for accessing professional-grade cleaning equipment. You can achieve exceptional cleaning results without the financial burden of purchasing and maintaining costly equipment.  </br> <b> Easy Replacement </b> -We offer easy replacement options for all our rental equipment, assuring minimal downtime and uninterrupted cleaning operations. If any equipment encounters issues, our quick replacement service ensures you can continue your work without delays.</br> <b> Advanced Technology Equipment </b> -Our equipment comes with the latest technology to enhance productivity and efficiency. These tools feature automation and precision, reducing human error and increasing accuracy. They streamline complex tasks, save time, and cut operational costs. Additionally, our equipment is designed to be user-friendly, making it easier to handle and operate.</br><b> No storage or maintenance concerns </b>- Our service handles all maintenance, streamlining your operations and freeing up valuable resources. By saving you both time and space, we enable your team to concentrate on core business objectives",
           "industry": [
             {
-              "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/corporate office .png"
+              "name": "Low Investment",
+              "iconPath": "/Images/industryImg/Low inverstment.png"
             },
             {
-              "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "name": "Easy Replacement",
+              "iconPath": "/Images/industryImg/Easy replacementpng"
             },
             {
-              "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "name": "Advanced Technology Equipment",
+              "iconPath": "/Images/industryImg/Advanced Technology Equipment.png"
             },
-            {
-              "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
-            },
-            {
-              "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+           
+           {
+              "name": "No Storage or Maintenance Concerns",
+              "iconPath": "/Images/industryImg/No storage or maintenance concerns.png"
             }
           ]
         }
