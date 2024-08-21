@@ -8,7 +8,7 @@ import RaiseTicket from './RaiseTicket';
 import PostAJob from './PostAJob';
 
 const AdminDashboard = () => {
-    const location = useLocation();
+    // const location = useLocation();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

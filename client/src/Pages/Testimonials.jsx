@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import TestimonialCard from '../Components/TestimonialCard';
-import logo from "../Images/logo.png";
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

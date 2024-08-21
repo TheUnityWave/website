@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import careersImage from '../Images/career.png';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';

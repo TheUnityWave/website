@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import image from '../Images/heropgimg.png'
 import newimage from '../Images/new_face_of.jpg'
 import mobimage from '../Images/mobimage.jpg'
 

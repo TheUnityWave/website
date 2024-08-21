@@ -11,8 +11,6 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

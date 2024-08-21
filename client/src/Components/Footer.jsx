@@ -2,7 +2,6 @@ import logo from '../Images/logo.png';
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
-import ChangePasswordModal from './ChangePasswordModal';
 import RaiseTicketModal from './RaiseTicketModal';
 
 const Footer = () => {
