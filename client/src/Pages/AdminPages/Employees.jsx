@@ -6,7 +6,7 @@ const Employees = () => {
     useEffect(() => {
         const fetchEmployees = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/employees', {
+                const response = await fetch('https://website-server-p59e.onrender.com/api/admin/employees', {
                     headers: {
                         'auth-token': localStorage.getItem('token'),
                         'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const Employees = () => {
 
     const makeAdmin = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/employees/${id}`, {
+            const response = await fetch(`https://website-server-p59e.onrender.com/api/admin/employees/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

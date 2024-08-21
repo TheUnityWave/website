@@ -49,7 +49,7 @@ const EmployeeDashboard = () => {
 
   async function getCurrentUser(token) {
     try {
-      const response = await fetch('http://localhost:5000/api/employee/user', {
+      const response = await fetch('https://website-server-p59e.onrender.com/api/employee/user', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
