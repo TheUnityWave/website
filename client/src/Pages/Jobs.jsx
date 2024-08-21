@@ -14,7 +14,7 @@ const CareersPage = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get('https://website-server-p59e.onrender.com/api/careers/all');
+        const res = await axios.get('http://localhost:5000/api/careers/all');
         setJobs(res.data);
         setFilteredJobs(res.data);
         setLoading(false);
