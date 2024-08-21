@@ -52,7 +52,7 @@ const Login = () => {
         <div className="flex items-center justify-center w-full bg-gray-100 h-screen">
             <div className="relative w-full max-w-xl bg-[#d0e3ff] rounded-lg p-6">
                 <img src={logo} alt="Logo" className="w-12 h-12 mx-auto mb-4" />
-                <h2 className="text-2xl text-[#21506E] font-bold text-center mb-6">The Unity Wave!</h2>
+                <h2 className="text-2xl text-[#21506E] font-bold text-center mb-6">The Unity Wave</h2>
                 <h3 className="text-3xl text-[#21506E] font-bold text-center mb-6">Log In</h3>
                 <p className="mt-6 text-center text-gray-600">
                     For new employees, please log in using the credentials that were sent to your email.
