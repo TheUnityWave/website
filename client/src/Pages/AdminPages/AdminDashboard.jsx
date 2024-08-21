@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import AdminSidebar from '../../Components/AdminSidebar';
 import JobApplications from './JobApplications';
 import Employees from './Employees';

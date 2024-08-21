@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ChangePasswordModal from './ChangePasswordModal';
-import { CircleCheckBig, BookOpenText, MessageSquareDot } from 'lucide-react';
+import { CircleCheckBig, BookOpenText } from 'lucide-react';
 
 const Sidebar = () => {
   const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);

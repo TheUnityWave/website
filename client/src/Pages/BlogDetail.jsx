@@ -1,6 +1,6 @@
 // BlogDetail.jsx
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import blogs from '../data/blogs.json';
 
 const BlogDetail = () => {

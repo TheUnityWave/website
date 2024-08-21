@@ -11,7 +11,6 @@ import ServiceDetails from './Pages/ServiceDetails'
 import Testimonials from './Pages/Testimonials'
 import HeroPg from './Pages/HeroPg';
 import Login from './Pages/Login';
-import EmployeeVerification from './Pages/EmployeeVerification';
 import AdminDashboard from './Pages/AdminPages/AdminDashboard';
 import EmployeeDashboard from './Pages/EmployeeDashboard';
 import ToastNotifications from './Components/ToastNotifications';

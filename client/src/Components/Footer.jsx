@@ -56,7 +56,7 @@ const Footer = () => {
                                 <li><Link to='/blogs' className="hover:underline">Blogs</Link></li>
                                 <li><Link to='/career' className="hover:underline">Career</Link></li>
                                 <li><Link to='/' className="hover:underline">Compliances</Link></li>
-                                <li><a href='https://docs.google.com/document/d/1_c_9uysopYFu5O7-2uhxuZP6IkWQEoyrHoP4Uj8vrSE/edit?usp=sharing' target='_blank' className="hover:underline">Policy</a></li>
+                                <li><a href='https://docs.google.com/document/d/1_c_9uysopYFu5O7-2uhxuZP6IkWQEoyrHoP4Uj8vrSE/edit?usp=sharing' target='_blank' rel="noreferrer" className="hover:underline">Policy</a></li>
                                 <li>
                                     <NavLink onClick={toggleChangePassword} className="hover:underline opacity-100">
                                         Raise a Ticket

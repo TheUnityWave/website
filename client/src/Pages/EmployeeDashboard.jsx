@@ -1,13 +1,12 @@
 // EmployeeDashboard.js
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Sidebar from '../Components/Sidebar';
 import EmployeeVerification from './EmployeeVerification';
 import EmployeeTraining from './EmployeeTraining';
 import TrainingDetails from './TrainingDetails';
 
 const EmployeeDashboard = () => {
-  const location = useLocation();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

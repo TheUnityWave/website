@@ -18,7 +18,6 @@ const ChangePasswordModal = ({ onClose }) => {
         }
 
         try {
-            const token = localStorage.getItem('token');
             const res = await axios.post(
                 'https://website-server-p59e.onrender.com/api/employee/change-password',
                 { newPassword, confirmPassword },

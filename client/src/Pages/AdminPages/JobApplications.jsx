@@ -34,7 +34,6 @@ const JobApplications = () => {
                 }
             });
             if (response.ok) {
-                const data = await response.json();
                 alert('Credentials sent successfully');
             } else {
                 const errorData = await response.json();

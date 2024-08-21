@@ -6,6 +6,9 @@ import axios from 'axios';
 
 Modal.setAppElement('#root');
 
+const clientComplaints = ['Unqualified Personnel', 'Unprofessional Behavior', 'Punctuality Issues', 'Poor Communication Skills', 'Inadequate Training','Uniform Issues','Health and Safety Concerns','Lack of Tools/Equipment', 'Unsatisfactory Performance', 'Replacement Request','Others'];
+const employeeComplaints = ['Salary Discrepancy', 'Unsafe Working Conditions', 'Harassment','Training Issues', 'Unclear Instructions', 'Overtime Concerns','Accommodation Issues','Health and Safety', 'Workplace Conflict','Lack of Equipment', 'Others'];
+
 const RaiseTicketModal = ({ onClose }) => {
     const [name, setName] = useState('');
     const [company, setCompany] = useState('');
@@ -16,9 +19,7 @@ const RaiseTicketModal = ({ onClose }) => {
     const [complaintsList, setComplaintsList] = useState([]);
     const [otherComplaint, setOtherComplaint] = useState('');
    
-    const clientComplaints = ['Unqualified Personnel', 'Unprofessional Behavior', 'Punctuality Issues', 'Poor Communication Skills', 'Inadequate Training','Uniform Issues','Health and Safety Concerns','Lack of Tools/Equipment', 'Unsatisfactory Performance', 'Replacement Request','Others'];
-    const employeeComplaints = ['Salary Discrepancy', 'Unsafe Working Conditions', 'Harassment','Training Issues', 'Unclear Instructions', 'Overtime Concerns','Accommodation Issues','Health and Safety', 'Workplace Conflict','Lack of Equipment', 'Others'];
-
+    
     useEffect(() => {
         if (userType === 'Client') {
             setComplaintsList(clientComplaints);
