@@ -41,19 +41,5 @@
     cursor: pointer;
   }
   
-  .bg-primary {
-    background-color: cyan-900;
-  }
-  
-  .bg-primary/80 {
-    background-color: rgba(0, 123, 255, 0.8);
-  }
-  
-  .bg-secondary {
-    background-color: #6c757d;
-  }
-  
-  .bg-secondary/80 {
-    background-color: rgba(108, 117, 125, 0.8);
-  }
+
   
