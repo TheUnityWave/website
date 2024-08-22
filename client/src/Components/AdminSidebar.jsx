@@ -20,7 +20,7 @@ const AdminSidebar = () => {
 
     return (
         <>
-            <div className="hidden lg:flex bg-cyan-900 text-white w-[20vw] p-4 flex flex-col justify-between">
+            <div className="hidden lg:flex bg-cyan-900 text-white w-[20vw] p-4 flex-col justify-between">
                 <nav className="flex flex-col space-y-4 text-sm">
                     <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-2 rounded">
                         Job Applications
@@ -52,24 +52,24 @@ const AdminSidebar = () => {
             </div>
 
             {/* Bottom Navbar for Small Devices */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-cyan-900 text-white flex justify-around p-2">
-                <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 p-1 rounded text-center">
+            <div className="lg:hidden z-20 fixed bottom-0 left-0 right-0 bg-cyan-900 text-white flex justify-evenly p-2">
+                <NavLink to="/admin/job-applications" className="hover:bg-cyan-700 w-20 p-1 rounded text-center">
                     <ClipboardList className='m-auto' />
                     Job Applications
                 </NavLink>
-                <NavLink to="/admin/employees" className="hover:bg-cyan-700 p-1 rounded text-center">
+                <NavLink to="/admin/employees" className="hover:bg-cyan-700 w-20 p-1 rounded text-center">
                     <BookUser className='m-auto' />
                     Employees Detail
                 </NavLink>
-                <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 p-1 rounded text-center">
+                <NavLink to="/admin/getintouch" className="hover:bg-cyan-700 w-20 p-1 rounded text-center">
                     <PhoneCall className='m-auto' />
                     Get in Touch Requests
                 </NavLink>
-                <NavLink to="/admin/tickets" className="hover:bg-cyan-700 p-1 rounded">
+                <NavLink to="/admin/tickets" className="hover:bg-cyan-700 w-20 p-1 rounded">
                     <Tag className='m-auto' />
                     Raise Ticket
                 </NavLink>
-                <NavLink to="/admin/postajob" className="hover:bg-cyan-700 p-1 rounded">
+                <NavLink to="/admin/postajob" className="hover:bg-cyan-700 w-20 p-1 rounded">
                     <LucidePodcast className='m-auto' />
                         Post A Job
                 </NavLink>
