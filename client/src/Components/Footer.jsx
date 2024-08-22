@@ -22,17 +22,17 @@ const Footer = () => {
                             Plot number 505, Gurugram, Haryana 122022, IN
                         </address>
                         <div className="flex mt-4">
-                            <Link to='' className="mr-8">
+                            {/* <Link to='' className="mr-8">
                                 <Facebook />
-                            </Link>
-                            <Link to='' className="mr-8">
-                                <Instagram />
-                            </Link>
-                            <Link to='' className="mr-8">
+                            </Link> */}
+                            {/* <Link to='' className="mr-8">
                                 <Youtube />
-                            </Link>
-                            <Link to='' className='mr-8'>
+                                </Link> */}
+                            <Link to='https://www.linkedin.com/company/theunitywave' target='_blank' rel="noreferrer" className='mr-8'>
                                 <Linkedin />
+                            </Link>
+                            <Link to='https://www.instagram.com/theunitywave_/' target='_blank' rel="noreferrer" className="mr-8">
+                                <Instagram />
                             </Link>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ const Footer = () => {
                                 <li><Link to='/blogs' className="hover:underline">Blogs</Link></li>
                                 <li><Link to='/career' className="hover:underline">Career</Link></li>
                                 <li><Link to='/' className="hover:underline">Compliances</Link></li>
-                                <li><a href='https://docs.google.com/document/d/1_c_9uysopYFu5O7-2uhxuZP6IkWQEoyrHoP4Uj8vrSE/edit?usp=sharing' target='_blank' rel="noreferrer" className="hover:underline">Policy</a></li>
+                                <li><a href='https://superb-notify-d75.notion.site/Privacy-Policy-The-Unity-Wave-2caa680e1e3b44b0b748ebd36b6838ae' target='_blank' rel="noreferrer" className="hover:underline">Policy</a></li>
                                 <li>
                                     <NavLink onClick={toggleChangePassword} className="hover:underline opacity-100">
                                         Raise a Ticket

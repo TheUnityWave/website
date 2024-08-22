@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import newimage from '../Images/new_face_of.jpg'
 import mobimage from '../Images/mobimage.jpg'
+import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -66,8 +67,10 @@ export default function HeroPg() {
         <p ref={contentRef} className='text-md '>
         Your facility is our priority. From cleaning to maintenance, our facility management services cover it all. We optimize spaces, prevent issues, and keep your premises fresh. Trust our expertise. We promise to provide a safe and welcoming environment that supports your business objectives.
         </p>
-        <p ref={buttonRef} onClick={() => handleNavigation('services')} className='bg-white w-[7rem] text-sm text-primary px-4 py-3 rounded-lg hover:bg-[#DCEFFB] transition cursor-pointer'>
+        <p ref={buttonRef} className='bg-white w-[7rem] text-sm text-primary px-4 py-3 rounded-lg hover:bg-[#DCEFFB] transition cursor-pointer'>
+          <Link to='https://www.linkedin.com/company/theunitywave' target='_blank' rel="noreferrer">
           Learn More
+          </Link>
         </p>
       </div>
       {/* <div className="image hidden md:block">
