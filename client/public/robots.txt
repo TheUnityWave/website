@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /special-google-directory/
+
 Disallow: /private/
 Disallow: /admin/
 
