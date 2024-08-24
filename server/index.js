@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 const connectToMongoDB = require('./db');
 const employeeRoutes = require('./routes/Employee');
 const adminRoutes = require('./routes/Admin');
@@ -9,20 +10,16 @@ const careerRoutes = require('./routes/careerRoutes');
 const getintouchRoute = require('./routes/getintouchRoute');
 const login = require('./routes/Login');
 const multer = require('multer');
-const keep_alive = require('./keep_alive.js');
 require('dotenv').config();
-const app = express();
-const PORT = process.env.PORT || 5000; // Adjust port as needed
 
-// Multer middleware setup
-const storage = multer.memoryStorage(); // or multer.diskStorage() for persistent storage
+const app = express();
+const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Enable CORS if needed
+app.use(cors());
 app.use(bodyParser.json());
-app.use(express.json({ limit: '10mb' })); // Handle JSON bodies
-app.use(express.urlencoded({ limit: '10mb', extended: true })); // Handle URL-encoded bodies
-// Uncomment the above if you need to handle form data or JSON requests
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // Load environment variables
 dotenv.config({ path: __dirname + '/.env' });
@@ -30,13 +27,21 @@ dotenv.config({ path: __dirname + '/.env' });
 // Connect to MongoDB
 connectToMongoDB();
 
-// Routes
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
+
+// API Routes
 app.use('/api/employee', employeeRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/login', login);
 app.use('/api/careers', careerRoutes);
 app.use('/api/getintouch', getintouchRoute);
 
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
