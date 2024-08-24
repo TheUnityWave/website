@@ -22,9 +22,9 @@ const Footer = () => {
                             Plot number 505, Gurugram, Haryana 122022, IN
                         </address>
                         <div className="flex mt-4">
-                            {/* <Link to='' className="mr-8">
+                            <Link to='https://www.facebook.com/people/UNITY-WAVE/61563984818651/'target='_blank' rel="noreferrer" className="mr-8">
                                 <Facebook />
-                            </Link> */}
+                            </Link>
                             {/* <Link to='' className="mr-8">
                                 <Youtube />
                                 </Link> */}
