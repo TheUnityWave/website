@@ -113,6 +113,9 @@ router.patch('/send-credentials/:id', async (req, res) => {
             });
 
             await newEmployee.save();
+            
+             // Delete the career entry
+             await Career.findByIdAndDelete(id);
         }
 
         // Update the sendCredentials flag

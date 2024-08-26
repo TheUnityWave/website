@@ -35,7 +35,7 @@ const GetInTouchAdmin = () => {
 
             if (response.ok) {
                 const updatedStatus = await response.json();
-                setRequests(requests.map( req => req._id ? updatedStatus : req ));
+                setRequests(requests.map( req => req._id ? { ...req, isContacted: updatedStatus.isContacted } : req ));
                 // Update the local state
                 // setRequests(requests.map(request => 
                 //     request._id === id ? { ...request, isContacted: true } : request
