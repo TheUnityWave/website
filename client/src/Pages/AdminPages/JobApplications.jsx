@@ -8,7 +8,7 @@ const JobApplications = () => {
 
         const fetchApplications = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/job-applications', {
+                const response = await fetch('https://website-server-p59e.onrender.com/api/admin/job-applications', {
                     headers: {
                         'auth-token': localStorage.getItem('token'),
                         'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ const JobApplications = () => {
 
     const sendCredentials = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/send-credentials/${id}`, {
+            const response = await fetch(`https://website-server-p59e.onrender.com/api/admin/send-credentials/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
