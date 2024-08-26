@@ -1,6 +1,6 @@
 import logo from '../Images/logo.png';
 import React, { useState } from 'react';
-import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
 import RaiseTicketModal from './RaiseTicketModal';
 
@@ -46,6 +46,7 @@ const Footer = () => {
                                 <li><Link to='/service/cleaning-rental-equipment' className="hover:underline">Cleaning/Rental Equipments</Link></li>
                                 <li><Link to='/service/wedding-event-services' className="hover:underline">Event Services</Link></li>
                                 <li><Link to='/service/pest-control-services' className="hover:underline">Pest Control Services</Link></li>
+                                <li><Link to='/service/industrial-training-program' className="hover:underline">Industrial Training Program</Link></li>
                             </ul>
                         </div>
                         <div className="mx-5 md:w-1/4 mb-6 md:mb-0">

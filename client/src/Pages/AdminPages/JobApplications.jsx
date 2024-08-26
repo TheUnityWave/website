@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const JobApplications = () => {
     const [applications, setApplications] = useState([]);
@@ -28,20 +29,26 @@ const JobApplications = () => {
     const sendCredentials = async (id) => {
         try {
             const response = await fetch(`https://website-server-p59e.onrender.com/api/admin/send-credentials/${id}`, {
-                method: 'POST',
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify({ sendCredentials: true })
             });
+    
             if (response.ok) {
-                alert('Credentials sent successfully');
+                const updatedCareer = await response.json();
+                setApplications(applications.map(app => 
+                    app._id === id ? { ...app, sendCredentials: updatedCareer.sendCredentials } : app
+                ));
+                toast.success("Credentials Sent Successfully");
             } else {
                 const errorData = await response.json();
-                alert(errorData.message || 'Failed to send credentials');
+                toast.error(errorData.message || 'Failed to send credentials');
             }
         } catch (error) {
             console.error('Error sending credentials:', error);
-            alert('Error sending credentials');
+            toast.error('Error sending credentials');
         }
     };
 

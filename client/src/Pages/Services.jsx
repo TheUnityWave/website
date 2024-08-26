@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import servicesJson from '../data/servicesData.json'; // Adjust the path according to your project structure
-import softImage from '../Images/soft_home.png';
-import pestHome from '../Images/pest_home.png';
-import weddingHome from '../Images/wedding_home.png';
-import techHome from '../Images/tech_home.png';
-import businessHome from '../Images/business_home.png';
-import cleaningHome from '../Images/cleaning_home.png';
-
+import softImage from '../Images/soft_home.jpg';
+import pestHome from '../Images/pest_home.jpg';
+import weddingHome from '../Images/wedding_home.jpg';
+import techHome from '../Images/tech_home.jpg';
+import businessHome from '../Images/business_home.jpg';
+import cleaningHome from '../Images/cleaning_home.jpg';
+import Training from '../Images/train.jpg'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -21,7 +21,8 @@ const imageMap = {
   weddingHome,
   techHome,
   cleaningHome,
-  businessHome
+  businessHome,
+  Training
 };
 
 const Services = () => {

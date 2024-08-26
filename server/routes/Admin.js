@@ -54,14 +54,12 @@ const generatePassword = () => {
 };
 
 // Endpoint to send credentials and save details of employee.
-router.post('/send-credentials/:id', async (req, res) => {
+router.patch('/send-credentials/:id', async (req, res) => {
     try {
-        const application = await JobApplication.findById(req.params.id);
-        if (!application) {
-            return res.status(404).json({ message: 'Job application not found' });
-        }
+        const { id } = req.params;
+        const { sendCredentials } = req.body;
 
-        const career = await Career.findById(req.params.id);
+        const career = await Career.findById(id);
         if (!career) {
             return res.status(404).json({ message: 'Career application not found' });
         }
@@ -69,61 +67,62 @@ router.post('/send-credentials/:id', async (req, res) => {
         if (career.sendCredentials) {
             return res.status(400).json({ message: 'Credentials have already been sent for this application' });
         }
-        // console.log("sendCredentials value: ", career.sendCredentials)
-        const password = generatePassword();
-        const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
 
-        // Configure nodemailer
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail',
-            auth: {
-                user: process.env.EMAIL_USER, // Your email address
-                pass: process.env.EMAIL_PASS  // Your email password
-            }
-        });
+        const application = await JobApplication.findById(id);
+        if (!application) {
+            return res.status(404).json({ message: 'Job application not found' });
+        }
 
-        const options = {
-            from: process.env.EMAIL_USER,
-            to: application.email,
-            subject: 'Your Account Credentials',
-            text: `Your account has been created. Here are your credentials:\n\nEmail: ${application.email}\nPassword: ${password}\n\nPlease change your password after logging in.`
-        };
+        if (sendCredentials) {
+            const password = generatePassword();
+            const hashedPassword = await bcrypt.hash(password, 10);
 
-        transporter.sendMail(options, function (err, info) {
-            if (err) {
-                console.log(err);
-                return;
-            }
-            // console.log("SENT : " + info.response);
-        });
+            // Email sending logic
+            const transporter = nodemailer.createTransport({
+                service: 'Gmail',
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASS
+                }
+            });
 
-        const newEmployee = new EmployeeVerification({
-            firstName: application.firstName,
-            lastName: application.lastName,
-            email: application.email,
-            mobile: application.mobileNumber,
-            job: application.jobCategory,
-            experience: application.experience,
-            password: hashedPassword, // Save the hashed password
-            isAdmin: false,
-            EmployeePhoto: '', // Update if you have a photo
-            hometownAddress: '', // Update if you have an address
-            currentAddress: '', // Update if you have an address
-            AdhaarCard: '', // Update if you have Adhaar card
-            policeVerification: ''
-        });
+            const mailOptions = {
+                from: process.env.EMAIL_USER,
+                to: application.email,
+                subject: 'Your Account Credentials',
+                text: `Your account has been created. Here are your credentials:\n\nEmail: ${application.email}\nPassword: ${password}\n\nPlease change your password after logging in.`
+            };
 
-        await newEmployee.save();
+            await transporter.sendMail(mailOptions);
 
-        // Update the sendCredentials flag in the Career model
-        career.sendCredentials = true;
-        await career.save();
+            // Create new employee
+            const newEmployee = new EmployeeVerification({
+                firstName: application.firstName,
+                lastName: application.lastName,
+                email: application.email,
+                mobile: application.mobileNumber,
+                job: application.jobCategory,
+                experience: application.experience,
+                password: hashedPassword,
+                isAdmin: false,
+                EmployeePhoto: '',
+                hometownAddress: '',
+                currentAddress: '',
+                AdhaarCard: '',
+                policeVerification: ''
+            });
 
-        // console.log("sendCredentials value: ", career.sendCredentials)
+            await newEmployee.save();
+        }
 
-        res.json({ message: 'Credentials sent and employee details saved' });
+        // Update the sendCredentials flag
+        career.sendCredentials = sendCredentials;
+        const updatedCareer = await career.save();
+
+        res.json(updatedCareer);
     } catch (error) {
-        res.status(500).json({ message: 'Error sending credentials', error });
+        console.error('Error sending credentials:', error);
+        res.status(500).json({ message: 'Server error' });
     }
 });
 

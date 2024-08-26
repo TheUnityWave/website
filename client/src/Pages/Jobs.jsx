@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import careersImage from '../Images/career.png';
+import careersImage from '../Images/career.jpg';
 import debounce from 'lodash/debounce';
 
 const CareersPage = () => {

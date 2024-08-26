@@ -39,10 +39,12 @@ const RaiseTicket = () => {
                 body: JSON.stringify({ isResolved: true }),
             });
 
-            if (!response.ok) {
+            if (response.ok) {
+                const updatedTicket = await response.json();
+                setApplications(applications.map( app => app._id === id ? updatedTicket : app ))
+            } else {
                 console.error('Failed to update raise status');
-
-            } 
+            }
         } catch (error) {
             console.error('Error updating raised status:', error);
         }

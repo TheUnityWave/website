@@ -3,10 +3,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import logo from '../Images/logo 1.png';
-import verificationImage from '../Images/Video Id Verification.png';
-import trainingImage from '../Images/Training.png';
-import issueResolveImage from '../Images/Strike.png';
-import techImage from '../Images/Circuit.png';
+import verificationImage from '../Images/Video Id Verification.jpg';
+import trainingImage from '../Images/Training.jpg';
+import issueResolveImage from '../Images/Strike.jpg';
+import techImage from '../Images/Circuit.jpg';
 
 import { animateTextWordByWord } from '../utils/titleAnimation';
 
