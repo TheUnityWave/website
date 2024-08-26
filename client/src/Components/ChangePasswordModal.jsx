@@ -19,7 +19,7 @@ const ChangePasswordModal = ({ onClose }) => {
 
         try {
             const res = await axios.post(
-                'https://website-server-p59e.onrender.com/api/employee/change-password',
+                'https://website-server-six.vercel.app/api/employee/change-password',
                 { newPassword, confirmPassword },
                 {
                     headers: {

@@ -44,7 +44,7 @@ const Careers = () => {
     }
 
     try {
-      const response = await axios.post('https://website-server-p59e.onrender.com/api/careers', data, {
+      await axios.post('https://website-server-six.vercel.app/api/careers', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       // console.log(response.data);

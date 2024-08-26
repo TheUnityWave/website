@@ -32,11 +32,11 @@ export default function PostAJob() {
 
             let res;
             if (editingJob) {
-                res = await axios.put(`https://website-server-p59e.onrender.com/api/admin/job/edit/${editingJob._id}`, jobData, config);
+                res = await axios.put(`https://website-server-six.vercel.app/api/admin/job/edit/${editingJob._id}`, jobData, config);
                 toast.success("Job Updated Successfully");
                 setJobs(jobs.map(job => job._id === editingJob._id ? res.data : job));
             } else {
-                res = await axios.post('https://website-server-p59e.onrender.com/api/admin/postajob', jobData, config);
+                res = await axios.post('https://website-server-six.vercel.app/api/admin/postajob', jobData, config);
                 toast.success("Job Posted Successfully");
                 setJobs([...jobs, res.data]);
             }
@@ -68,7 +68,7 @@ export default function PostAJob() {
                     'Content-Type': 'application/json'
                 }
             };
-            const res = await axios.put(`https://website-server-p59e.onrender.com/api/admin/job/editOpening/${jobId}`, { isActive: !isActive }, config);
+            const res = await axios.put(`https://website-server-six.vercel.app/api/admin/job/editOpening/${jobId}`, { isActive: !isActive }, config);
             setJobs(jobs.map(job => job._id === jobId ? res.data : job));
             toast.success(`Job Opening ${isActive ? 'Closed' : 'Opened'} Successfully`);
         } catch (err) {
@@ -80,7 +80,7 @@ export default function PostAJob() {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const res = await axios.get('https://website-server-p59e.onrender.com/api/admin/job/all');
+                const res = await axios.get('https://website-server-six.vercel.app/api/admin/job/all');
                 setJobs(res.data);
                 setLoading(false);
             } catch (err) {

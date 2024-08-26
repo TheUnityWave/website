@@ -9,7 +9,7 @@ const GetInTouchAdmin = () => {
 
     const fetchRequests = async () => {
         try {
-            const response = await fetch('https://website-server-p59e.onrender.com/api/admin/get-in-touch', {
+            const response = await fetch('https://website-server-six.vercel.app/api/admin/get-in-touch', {
                 headers: {
                     'auth-token': localStorage.getItem('token'),
                     'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ const GetInTouchAdmin = () => {
 
     const handleMarkDone = async (id) => {
         try {
-            const response = await fetch(`https://website-server-p59e.onrender.com/api/admin/get-in-touch/${id}`, {
+            const response = await fetch(`https://website-server-six.vercel.app/api/admin/get-in-touch/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
