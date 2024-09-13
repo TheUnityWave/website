@@ -10,6 +10,7 @@ const careerRoutes = require('./routes/careerRoutes');
 const getintouchRoute = require('./routes/getintouchRoute');
 const login = require('./routes/Login');
 const multer = require('multer');
+const referRoutes = require('./routes/referRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -36,6 +37,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/login', login);
 app.use('/api/careers', careerRoutes);
 app.use('/api/getintouch', getintouchRoute);
+app.use('/api/referandearn', referRoutes);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
