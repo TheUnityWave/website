@@ -17,6 +17,7 @@ import ToastNotifications from './Components/ToastNotifications';
 import AboutUs from './Pages/AboutUs'
 import Blogs from './Pages/Blogs'
 import BlogDetail from './Pages/BlogDetail';
+import ReferAndEarn from './Pages/ReferAndEarn';
 import Jobs from './Pages/Jobs'
 import JobDetailPage from './Pages/JobDetail'
 
@@ -96,6 +97,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/employee/*" element={<EmployeeDashboard />} />
+          <Route path="/refer-and-earn" element={<ReferAndEarn />} />
         </Routes>
         <Footer />
       </div>
