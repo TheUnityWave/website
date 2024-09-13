@@ -32,7 +32,7 @@ const ReferForm = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/careers/all"); // Replace with your endpoint
+                const response = await axios.get("https://website-server-six.vercel.app/api/careers/all");
                 setAllJobs(response.data);
             } catch (error) {
                 console.error('Error fetching jobs:', error);
