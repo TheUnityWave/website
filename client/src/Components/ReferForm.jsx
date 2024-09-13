@@ -82,7 +82,7 @@ const ReferForm = () => {
     // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!formData.referrerName || !formData.candidateName || !formData.email || !formData.phone || !formData.purpose || formData.designation) {
+        if (!formData.referrerName || !formData.candidateName || !formData.email || !formData.phone || !formData.purpose) {
             toast.error("Please fill out all the fields");
             return;
         }
@@ -205,7 +205,7 @@ const ReferForm = () => {
             )}
 
 
-            <div className="mb-4">
+            <div className="my-4">
                 <p className="block text-gray-700 text-sm font-bold mb-2">Please submit the information of the candidate you are referring.</p>
 
                 <input
