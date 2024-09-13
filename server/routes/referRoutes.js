@@ -6,7 +6,7 @@ const router = express.Router();
 const upload = multer({ dest: 'uploads/' });
 
 // Route for submitting the referral form
-router.post('/', upload.none(), async (req, res) => {
+router.post('/referandearn', upload.none(), async (req, res) => {
     const { referrerName, candidateName, email, phone, purpose, designation } = req.body;
 
     try {
