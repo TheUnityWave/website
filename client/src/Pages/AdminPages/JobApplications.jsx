@@ -71,10 +71,13 @@ const JobApplications = () => {
                                     <p><strong>Experience:</strong> {application.experience}</p>
                                     <p><strong>Job Category:</strong> {application.jobCategory}</p>
                                     <div className='flex py-6 gap-6 items-center'>
-                                        <div>
+                                       <div>{application.resumeFile ? (
                                             <a href={application.resumeFile} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                                                 View Resume
-                                            </a>
+                                            </a>) : (<p>No Resume</p>)
+
+                                        }
+
                                         </div>
                                         {application.sendCredentials ? (
                                             <p className=" text-gray-500">Credentials Already Sent</p>
