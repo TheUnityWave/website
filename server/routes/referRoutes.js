@@ -1,12 +1,10 @@
 const express = require('express');
-const multer = require('multer');
 const Refer = require('../models/referModel');
 const router = express.Router();
-const path = require('path');
-const upload = multer({ dest: 'uploads/' });
+
 
 // Route for submitting the referral form
-router.post('/', upload.none(), async (req, res) => {
+router.post('/', async (req, res) => {
     const { referrerName, candidateName, email, phone, purpose, designation } = req.body;
 
     try {
