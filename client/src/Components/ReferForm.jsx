@@ -101,7 +101,7 @@ const ReferForm = () => {
 
         try {
             await axios.post('https://website-server-six.vercel.app/api/referandearn', data, {
-                headers: { 'Content-Type': 'multipart/form-data' },
+                headers: { 'Content-Type': 'application/json' },
             });
             // console.log(response.data);
             toast.success("Application Sent Successfully");
