@@ -217,47 +217,7 @@
           ]
         }
       ]
-    },
-    {
-      "id": "wedding-event-services",
-      "name": "Wedding/Event Services",
-      "images": ["weddingHome", "https://imgur.com/example8.jpg"],
-      "subservices": [
-        {
-          "name": "Helper Staff",
-          "image": "https://imgur.com/YFximIt.png",
-          "description": "Looking for trained manpower for events and marriages? We provide skilled and reliable staff on a daily wage basis, ensuring smooth operations for your special occasions. Our team is experienced in handling all event-related tasks, from setup to coordination. Trust us for professional support at your next event",
-          "industry": [
-            {
-              "name": "Helper Staff",
-              "iconPath": "/Images/industryImg/Helper Staff.jpg"
-            },
-            {
-              "name": "Caterer",
-              "iconPath": "/Images/industryImg/Caterer.jpg"
-            },
-            {
-              "name": "Decoration",
-              "iconPath": "/Images/industryImg/Decoration.jpg"
-            },
-            {
-              "name": "Wedding Planner",
-              "iconPath": "/Images/industryImg/Wedding Planner.jpg"
-            },
-            {
-              "name": "Wedding",
-              "iconPath": "/Images/industryImg/Wedding.jpg"
-            }
-          ]
-        },
-        {
-          "name": "Cleaning Equipment Services",
-          "image": "https://5.imimg.com/data5/XW/LS/MY-12866426/ss-dustbin-500x500.jpg",
-          "description": "<b> Tissue stand </b> - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. <br/><br/> <b> Automatic wash basins </b> - These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority. <br/><br/> <b> Vacuum cleaning </b> - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture.",
-          "industry": []
-        }
-      ]
-    },
+    },   
     {
       "id": "pest-control-services",
       "name": "Pest Control Services",
