@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
 import servicesJson from '../data/servicesData.json'; // Adjust the path according to your project structure
 import softImage from '../Images/soft_home.jpg';
 import pestHome from '../Images/pest_home.jpg';
