@@ -20,7 +20,7 @@ import BlogDetail from './Pages/BlogDetail';
 import ReferAndEarn from './Pages/ReferAndEarn';
 import Jobs from './Pages/Jobs'
 import JobDetailPage from './Pages/JobDetail'
-import IndustrialTraining from './Pages/Industry/IndustrialTraining'
+import IndustrialTraining from './Pages/IndustrialTraining'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
