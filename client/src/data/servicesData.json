@@ -297,34 +297,7 @@
       "id": "industrial-training-program",
       "name": "Industrial Training Program",
       "images": ["Training", "https://imgur.com/EPsZqQu"],
-      "subservices": [
-        {
-          "name": "",
-          "image": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2017/05/21/577058-560805-iti.jpg",
-          "description": "Looking for the pest control service? we got you covered, Protect your corporate offices and large ventures with our expert pest control services. Our tailored solutions ensure a pest-free environment, safeguarding your business from health risks, property damage, and compliance issues. Enhance workplace safety and maintain a clean, professional atmosphere. Trust us for reliable and effective pest management facility service ",
-          "industry": [
-            {
-              "name": "Apartments",
-              "iconPath": "/Images/industryImg/Apartments.png"
-            },
-            {
-              "name": "Retail Stores",
-              "iconPath": "/Images/industryImg/Retail Stores.png"
-            },
-            {
-              "name": "Restaurants",
-              "iconPath": "/Images/industryImg/Restaurants.png"
-            },
-            {
-              "name": "Warehouse",
-              "iconPath": "/Images/industryImg/Warehouse.png"
-            },
-             
-            {
-              "name": "Manufacturing Plants",
-              "iconPath": "/Images/industryImg/Manufacturing Plants.png"
-            }
-          ]
+      "subservices": []
         }
       ]
     }
