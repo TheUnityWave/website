@@ -19,6 +19,7 @@ import Blogs from './Pages/Blogs'
 import BlogDetail from './Pages/BlogDetail';
 import Jobs from './Pages/Jobs'
 import JobDetailPage from './Pages/JobDetail'
+import IndustrialTraining from './Pages/Industry/IndustrialTraining'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -96,6 +97,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/employee/*" element={<EmployeeDashboard />} />
+          <Route path="/service/industrial-training-program" element={< IndustrialTraining />} />
         </Routes>
         <Footer />
       </div>
