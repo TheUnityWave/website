@@ -26,8 +26,8 @@ const CareerSchema = new mongoose.Schema({
     required: true,
   },
   resumeFile: {
-    type: String,
-    required: true,
+  type: String,
+
   },
   // viewableResumeFile: {
   //   type: String,

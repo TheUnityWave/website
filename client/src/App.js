@@ -17,9 +17,10 @@ import ToastNotifications from './Components/ToastNotifications';
 import AboutUs from './Pages/AboutUs'
 import Blogs from './Pages/Blogs'
 import BlogDetail from './Pages/BlogDetail';
+import ReferAndEarn from './Pages/ReferAndEarn';
 import Jobs from './Pages/Jobs'
 import JobDetailPage from './Pages/JobDetail'
-import IndustrialTraining from './Pages/Industry/IndustrialTraining'
+import IndustrialTraining from './Pages/IndustrialTraining'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -97,7 +98,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/employee/*" element={<EmployeeDashboard />} />
-          <Route path="/service/industrial-training-program" element={< IndustrialTraining />} />
+          <Route path="/refer-and-earn" element={<ReferAndEarn />} />
+          {/* <Route path="/service/industrial-training-program" element={< IndustrialTraining />} /> */}
         </Routes>
         <Footer />
       </div>

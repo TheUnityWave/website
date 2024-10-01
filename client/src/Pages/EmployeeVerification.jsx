@@ -18,7 +18,7 @@ const EmployeeVerification = () => {
 
     const fetchEmployeeData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+            const response = await axios.get('https://website-server-six.vercel.app/api/employee/get-employee', {
                 headers: {
                     'auth-token': localStorage.getItem('token')
                 }
@@ -106,7 +106,7 @@ const EmployeeVerification = () => {
                 // console.log(photoBlob);
             }
 
-            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
+            const response = await axios.post('https://website-server-six.vercel.app/api/employee/employee-verification', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'auth-token': localStorage.getItem('token')
@@ -130,7 +130,7 @@ const EmployeeVerification = () => {
     // PHOTO UDPATE.
     const handlePhotoUpdate = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+            const response = await axios.get('https://website-server-six.vercel.app/api/employee/get-employee', {
                 headers: {
                     'auth-token': localStorage.getItem('token')
                 }
@@ -173,7 +173,7 @@ const EmployeeVerification = () => {
     const handleHometownSubmit = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/employee/employee-verification',
+                'https://website-server-six.vercel.app/api/employee/employee-verification',
                 { hometownAddress: employeeData.hometownAddress },
                 {
                     headers: {
@@ -198,7 +198,7 @@ const EmployeeVerification = () => {
     // HOME TOWN UPDATE.
     const handleHometownUpdate = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+            const response = await axios.get('https://website-server-six.vercel.app/api/employee/get-employee', {
                 headers: {
                     'auth-token': localStorage.getItem('token')
                 }
@@ -230,7 +230,7 @@ const EmployeeVerification = () => {
     // CURRENT ADDRESS SUBMIT.
     const handleCurrentAddressUpdate = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+            const response = await axios.get('https://website-server-six.vercel.app/api/employee/get-employee', {
                 headers: {
                     'auth-token': localStorage.getItem('token')
                 }
@@ -262,7 +262,7 @@ const EmployeeVerification = () => {
     const handleCurrentAddressSubmit = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:5000/api/employee/employee-verification',
+                'https://website-server-six.vercel.app/api/employee/employee-verification',
                 { currentAddress: employeeData.currentAddress },
                 {
                     headers: {
@@ -292,7 +292,7 @@ const EmployeeVerification = () => {
                 formData.append('policeVerification', policeVerificationRef.current.files[0]);
             }
 
-            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
+            const response = await axios.post('https://website-server-six.vercel.app/api/employee/employee-verification', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'auth-token': localStorage.getItem('token')
@@ -315,7 +315,7 @@ const EmployeeVerification = () => {
     // AADHAAR CARD UPDATE.
     const handlePoliceUpdate = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+            const response = await axios.get('https://website-server-six.vercel.app/api/employee/get-employee', {
                 headers: {
                     'auth-token': localStorage.getItem('token')
                 }
@@ -352,7 +352,7 @@ const EmployeeVerification = () => {
                 formData.append('AdhaarCard', aadhaarFileRef.current.files[0]);
             }
 
-            const response = await axios.post('http://localhost:5000/api/employee/employee-verification', formData, {
+            const response = await axios.post('https://website-server-six.vercel.app/api/employee/employee-verification', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'auth-token': localStorage.getItem('token')
@@ -375,7 +375,7 @@ const EmployeeVerification = () => {
     // AADHAAR CARD UPDATE.
     const handleAadhaarUpdate = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/employee/get-employee', {
+            const response = await axios.get('https://website-server-six.vercel.app/api/employee/get-employee', {
                 headers: {
                     'auth-token': localStorage.getItem('token')
                 }

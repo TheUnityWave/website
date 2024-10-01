@@ -63,7 +63,7 @@ export default function HeroPg() {
         }}
       ></div>
       <div className="content md:w-1/3 md:ml-12 flex flex-col  gap-4 md:gap-8 py-10 px-6 z-10 ">
-        <h1 ref={h1Ref} className='font-black text-5xl md:text-5xl'>The Unity Wave</h1>
+        <h1 ref={h1Ref} className='font-black text-5xl md:text-5xl'>THE UNITY WAVE</h1>
         <p ref={contentRef} className='text-md '>
         Your facility is our priority. From cleaning to maintenance, our facility management services cover it all. We optimize spaces, prevent issues, and keep your premises fresh. Trust our expertise. We promise to provide a safe and welcoming environment that supports your business objectives.
         </p>

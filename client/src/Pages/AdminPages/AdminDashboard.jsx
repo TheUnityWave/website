@@ -51,7 +51,7 @@ const AdminDashboard = () => {
 
     async function getCurrentUser(token) {
         try {
-            const response = await fetch('http://localhost:5000/api/employee/user', {
+            const response = await fetch('https://website-server-six.vercel.app/api/employee/user', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

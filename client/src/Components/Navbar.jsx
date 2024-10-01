@@ -60,7 +60,7 @@ export default function Navbar() {
 
   async function getCurrentUser(token) {
     try {
-      const response = await fetch('http://localhost:5000/api/employee/user', {
+      const response = await fetch('https://website-server-six.vercel.app/api/employee/user', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -121,7 +121,7 @@ export default function Navbar() {
           {isMenuOpen ? <X size={35} /> : <Menu size={35} />}
         </div>
         <ul className='navbar-links hidden md:flex justify-center items-center gap-12 text-sm'>
-          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname.startsWith('/career') || location.pathname === '/about' || location.pathname === '/blogs' || location.pathname.startsWith('/service/') || location.pathname.startsWith('/blog/') || location.pathname.startsWith('/api/careers/') ? (
+          {!localStorage.getItem('token') || location.pathname === '/' || location.pathname.startsWith('/career') || location.pathname === '/about' || location.pathname === '/blogs' || location.pathname.startsWith('/service/') || location.pathname.startsWith('/blog/') || location.pathname === '/refer-and-earn' || location.pathname.startsWith('/api/careers/') ? (
             <>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/">Home</Link></li>
               <li className='hover:text-primary transition cursor-pointer'  onClick={() => handleNavigation('about')}>About Us</li>
@@ -129,6 +129,7 @@ export default function Navbar() {
               {/* <li className='hover:text-primary transition cursor-pointer'><Link to="/why-us">Why Us</Link></li> */}
               <li className='hover:text-primary transition cursor-pointer'><Link to="/blogs">Blogs</Link></li>
               <li className='hover:text-primary transition cursor-pointer'><Link to="/career">Career</Link></li>
+              <li className='hover:text-primary transition cursor-pointer'><Link to="/refer-and-earn">Refer and Earn</Link></li>
               <li onClick={() => handleNavigation('getintouch')} className='btn'>
                 Get in Touch
               </li>
@@ -176,6 +177,7 @@ export default function Navbar() {
                 <li onClick={() => handleNavigation('services')}>Services</li>
                 <li ><Link to="/blogs" onClick={toggleMenu}>Blogs</Link></li>
                 <li ><Link to="/career" onClick={toggleMenu}>Career</Link></li>
+                 <li ><Link to="/refer-and-earn" onClick={toggleMenu}>Refer and Earn</Link></li>
                 <li className='btn my-4' onClick={() => handleNavigation('getintouch')}>
                   Get in Touch
                 </li>

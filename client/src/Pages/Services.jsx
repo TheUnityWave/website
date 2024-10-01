@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
 import servicesJson from '../data/servicesData.json'; // Adjust the path according to your project structure
 import softImage from '../Images/soft_home.jpg';
 import pestHome from '../Images/pest_home.jpg';
-import weddingHome from '../Images/wedding_home.jpg';
+//import weddingHome from '../Images/wedding_home.jpg';
 import techHome from '../Images/tech_home.jpg';
 import businessHome from '../Images/business_home.jpg';
 import cleaningHome from '../Images/cleaning_home.jpg';
@@ -27,11 +27,13 @@ const imageMap = {
 
 const Services = () => {
   const titleRef = useRef(null);
+  const navigate = useNavigate();
 
   useGSAP(() => {
     animateTextWordByWord(titleRef.current, {duration : 2});
 
 }, []);
+  
    const handleServiceClick = (serviceId) => {
     if (serviceId === 'industrial-training-program') {
       navigate('/service/industrial-training-program'); // Use the correct route path
@@ -39,7 +41,6 @@ const Services = () => {
       navigate(`/service/${serviceId}`);
     }
   };
-
 
   return (
     <section className="py-12 bg-[#d0e3ff] " id='services'>
@@ -77,9 +78,9 @@ const Services = () => {
               onClick={() => handleServiceClick(service.id)}
             >
               {service.images[0] && (
-                <img 
-                  src={imageMap[service.images[0]]} 
-                  alt={service.name} 
+                <img
+                  src={imageMap[service.images[0]]}
+                  alt={service.name}
                   className="object-cover w-[8rem] h-[8rem] rounded-md image-hover"
                 />
               )}

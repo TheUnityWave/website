@@ -9,7 +9,7 @@ const GetInTouchAdmin = () => {
 
     const fetchRequests = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/admin/get-in-touch', {
+            const response = await fetch('https://website-server-six.vercel.app/api/admin/get-in-touch', {
                 headers: {
                     'auth-token': localStorage.getItem('token'),
                     'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ const GetInTouchAdmin = () => {
 
     const handleMarkDone = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/get-in-touch/${id}`, {
+            const response = await fetch(`https://website-server-six.vercel.app/api/admin/get-in-touch/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const GetInTouchAdmin = () => {
 
             if (response.ok) {
                 const updatedStatus = await response.json();
-                setRequests(requests.map( req => req._id ? { ...req, isContacted: updatedStatus.isContacted } : req ));
+                setRequests(requests.map( req => req._id == id ? { ...req, isContacted: updatedStatus.isContacted } : req ));
                 // Update the local state
                 // setRequests(requests.map(request => 
                 //     request._id === id ? { ...request, isContacted: true } : request

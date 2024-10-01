@@ -12,23 +12,23 @@
           "industry": [
             {
               "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/Corporate office.png"
+              "iconPath": "/Images/industryImg/Corporate office.jpg"
             },
             {
               "name": "School & College",
-              "iconPath": "/Images/industryImg/school & college.png"
+              "iconPath": "/Images/industryImg/school & college.jpg"
             },
             {
               "name": "Shopping Malls, Hospitals and Clinics",
-              "iconPath": "/Images/industryImg/shooping mall.png"
+              "iconPath": "/Images/industryImg/shooping mall.jpg"
             },
             {
               "name": "Factories and Production Facilities",
-              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.png"
+              "iconPath": "/Images/industryImg/FACTORIES AND PRODUCTION facilites.jpg"
             },
             {
               "name": "Cinemas and Theaters",
-              "iconPath": "/Images/industryImg/cinemas and theaters.png"
+              "iconPath": "/Images/industryImg/cinemas and theaters.jpg"
             }
           ]
         },
@@ -45,31 +45,31 @@
           "industry": [
             {
               "name": "Corporate Office",
-              "iconPath": "/Images/industryImg/Corporate office.png"
+              "iconPath": "/Images/industryImg/Corporate office.jpg"
             },
             {
               "name": "Hospital",
-              "iconPath": "/Images/industryImg/hospital.png"
+              "iconPath": "/Images/industryImg/hospital.jpg"
             },
             {
               "name": "Educational Institutions",
-              "iconPath": "/Images/industryImg/education insitute.png"
+              "iconPath": "/Images/industryImg/education insitute.jpg"
             },
             {
               "name": "Banks",
-              "iconPath": "/Images/industryImg/banks.png"
+              "iconPath": "/Images/industryImg/banks.jpg"
             },
              {
               "name": "Manufacturing Units",
-              "iconPath": "/Images/industryImg/manufacturing units.png"
+              "iconPath": "/Images/industryImg/manufacturing units.jpg"
             },
              {
               "name": "IT Companies",
-              "iconPath": "/Images/industryImg/It companies.png"
+              "iconPath": "/Images/industryImg/It companies.jpg"
             },
             {
               "name": "Hotels",
-              "iconPath": "/Images/industryImg/hotels.png"
+              "iconPath": "/Images/industryImg/hotels.jpg"
             }
           ]
         },
@@ -80,27 +80,27 @@
           "industry": [
             {
               "name": "Logistics and Transportation",
-              "iconPath": "/Images/industryImg/logistic and transpotaion.png"
+              "iconPath": "/Images/industryImg/logistic and transpotaion.jpg"
             },
             {
               "name": "Ride-Sharing Services",
-              "iconPath": "/Images/industryImg/ride sharing service.png"
+              "iconPath": "/Images/industryImg/ride sharing service.jpg"
             },
             {
               "name": "Corporate Transportation",
-              "iconPath": "/Images/industryImg/corporate transportation.png"
+              "iconPath": "/Images/industryImg/corporate transportation.jpg"
             },
             {
               "name": "Healthcare and Medical Transport",
-              "iconPath": "/Images/industryImg/healthcare and mecidine transport.png"
+              "iconPath": "/Images/industryImg/healthcare and mecidine transport.jpg"
             },
              {
               "name": "E-commerce Delivery",
-              "iconPath": "/Images/industryImg/e-commerce and delivery.png"
+              "iconPath": "/Images/industryImg/e-commerce and delivery.jpg"
             },
             {
               "name": "Hospitality and Tourism",
-              "iconPath": "/Images/industryImg/hospitality and tourism.png"
+              "iconPath": "/Images/industryImg/hospitality and tourism.jpg"
             }
           ]
         }
@@ -121,28 +121,28 @@
           "industry": [
             {
               "name": "Manufacturing",
-              "iconPath": "/Images/industryImg/manufacturing.png"
+              "iconPath": "/Images/industryImg/manufacturing.jpg"
             },
             {
               "name": "Construction",
-              "iconPath": "/Images/industryImg/construction.png"
+              "iconPath": "/Images/industryImg/construction.jpg"
             },
             {
               "name": "IT services",
-              "iconPath": "/Images/industryImg/it service.png"
+              "iconPath": "/Images/industryImg/it service.jpg"
             },
             {
               "name": "Logistics",
-              "iconPath": "/Images/industryImg/logistics.png"
+              "iconPath": "/Images/industryImg/logistics.jpg"
             },
             
              {
               "name": "Education",
-              "iconPath": "/Images/industryImg/education insitute.png"
+              "iconPath": "/Images/industryImg/education insitute.jpg"
             },
             {
               "name": "Financial Services",
-              "iconPath": "/Images/industryImg/Financial service.png"
+              "iconPath": "/Images/industryImg/Financial service.jpg"
             }
           ]
         },
@@ -153,23 +153,23 @@
           "industry": [
             {
               "name": "Technology",
-              "iconPath": "/Images/industryImg/technology.png"
+              "iconPath": "/Images/industryImg/technology.jpg"
             },
             {
               "name": "FMCG(Fast-Moving- Consumer Goods",
-              "iconPath": "/Images/industryImg/fmcg.png"
+              "iconPath": "/Images/industryImg/fmcg.jpg"
             },
             {
               "name": "Telecommunication",
-              "iconPath": "/Images/industryImg/telecommuication.png"
+              "iconPath": "/Images/industryImg/telecommuication.jpg"
             },
             {
               "name": "Financial Services",
-              "iconPath": "/Images/industryImg/Financial service.png"
+              "iconPath": "/Images/industryImg/Financial service.jpg"
             },
             {
               "name": "Real-Estate",
-              "iconPath": "/Images/industryImg/real estate.png"
+              "iconPath": "/Images/industryImg/real estate.jpg"
             }
           ]
         },
@@ -199,65 +199,25 @@
           "industry": [
             {
               "name": "Low Investment",
-              "iconPath": "/Images/industryImg/Low inverstment.png"
+              "iconPath": "/Images/industryImg/Low inverstment.jpg"
             },
             {
               "name": "Easy Replacement",
-              "iconPath": "/Images/industryImg/Easy replacement.png"
+              "iconPath": "/Images/industryImg/Easy replacement.jpg"
             },
             {
               "name": "Advanced Technology Equipment",
-              "iconPath": "/Images/industryImg/Advanced Technology Equipment.png"
+              "iconPath": "/Images/industryImg/Advanced Technology Equipment.jpg"
             },
            
            {
               "name": "No Storage or Maintenance Concerns",
-              "iconPath": "/Images/industryImg/No storage or maintenance concerns.png"
+              "iconPath": "/Images/industryImg/No storage or maintenance concerns.jpg"
             }
           ]
         }
       ]
-    },
-    {
-      "id": "wedding-event-services",
-      "name": "Wedding/Event Services",
-      "images": ["weddingHome", "https://imgur.com/example8.jpg"],
-      "subservices": [
-        {
-          "name": "Helper Staff",
-          "image": "https://imgur.com/YFximIt.png",
-          "description": "Looking for trained manpower for events and marriages? We provide skilled and reliable staff on a daily wage basis, ensuring smooth operations for your special occasions. Our team is experienced in handling all event-related tasks, from setup to coordination. Trust us for professional support at your next event",
-          "industry": [
-            {
-              "name": "Helper Staff",
-              "iconPath": "/Images/industryImg/Helper Staff.png"
-            },
-            {
-              "name": "Caterer",
-              "iconPath": "/Images/industryImg/Caterer.png"
-            },
-            {
-              "name": "Decoration",
-              "iconPath": "/Images/industryImg/Decoration.png"
-            },
-            {
-              "name": "Wedding Planner",
-              "iconPath": "/Images/industryImg/Wedding Planner.png"
-            },
-            {
-              "name": "Wedding",
-              "iconPath": "/Images/industryImg/Wedding.png"
-            }
-          ]
-        },
-        {
-          "name": "Cleaning Equipment Services",
-          "image": "https://5.imimg.com/data5/XW/LS/MY-12866426/ss-dustbin-500x500.jpg",
-          "description": "<b> Tissue stand </b> - Our modern and useful tissue stands are ideal for weddings and gatherings, offering guests an effective and attractive alternative. <br/><br/> <b> Automatic wash basins </b> - These equipment not only promote hygiene but conserve water and  ensure a cleaner environment. These touchless machines allow guests to wash their hands without contact, enhancing hygiene as a main priority. <br/><br/> <b> Vacuum cleaning </b> - Our high-performance vacuum cleaning equipment keeps your event venue flawless. Our powerful vacuum cleaners offer complete and efficient cleaning for carpets, floors, and furniture.",
-          "industry": []
-        }
-      ]
-    },
+    },   
     {
       "id": "pest-control-services",
       "name": "Pest Control Services",
@@ -270,24 +230,24 @@
           "industry": [
             {
               "name": "Apartments",
-              "iconPath": "/Images/industryImg/Apartments.png"
+              "iconPath": "/Images/industryImg/Apartments.jpg"
             },
             {
               "name": "Retail Stores",
-              "iconPath": "/Images/industryImg/Retail Stores.png"
+              "iconPath": "/Images/industryImg/Retail Stores.jpg"
             },
             {
               "name": "Restaurants",
-              "iconPath": "/Images/industryImg/Restaurants.png"
+              "iconPath": "/Images/industryImg/Restaurants.jpg"
             },
             {
               "name": "Warehouse",
-              "iconPath": "/Images/industryImg/Warehouse.png"
+              "iconPath": "/Images/industryImg/Warehouse.jpg"
             },
              
             {
               "name": "Manufacturing Plants",
-              "iconPath": "/Images/industryImg/Manufacturing Plants.png"
+              "iconPath": "/Images/industryImg/Manufacturing Plants.jpg"
             }
           ]
         }
@@ -298,6 +258,7 @@
       "name": "Industrial Training Program",
       "images": ["Training", "https://imgur.com/EPsZqQu"],
       "subservices": []
+
         }
       ]
     }

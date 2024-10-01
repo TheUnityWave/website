@@ -8,7 +8,7 @@ const RaiseTicket = () => {
 
         const fetchApplications = async () => {
             try {
-                let url = 'http://localhost:5000/api/admin/tickets';
+                let url = 'https://website-server-six.vercel.app/api/admin/tickets';
                 if (filter !== 'all') {
                     url += `?userType=${filter}`;
                 }
@@ -31,7 +31,7 @@ const RaiseTicket = () => {
 
     const handleMarkDone = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/tickets/${id}`, {
+            const response = await fetch(`https://website-server-six.vercel.app/api/admin/tickets/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

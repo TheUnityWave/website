@@ -12,7 +12,7 @@ function JobDetailPage() {
     const fetchJob = async () => {
       try {
         // Replace with your actual backend URL
-        const response = await fetch(`http://localhost:5000/api/careers/${id}`);
+        const response = await fetch(`https://website-server-six.vercel.app/api/careers/${id}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

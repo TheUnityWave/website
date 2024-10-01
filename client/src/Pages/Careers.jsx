@@ -37,6 +37,10 @@ const Careers = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+       if (!formData.firstName || !formData.lastName || !formData.mobileNumber || !formData.email || !formData.experience) {
+      toast.error("Please fill out all the fields");
+      return;
+    }
     setIsLoading(true);
     const data = new FormData();
     for (const key in formData) {
@@ -44,7 +48,7 @@ const Careers = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/careers', data, {
+      await axios.post('https://website-server-six.vercel.app/api/careers', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       // console.log(response.data);
@@ -63,7 +67,7 @@ const Careers = () => {
       });
     } catch (error) {
       console.error('Error submitting application:', error);
-      toast.success("Please try again later");
+      toast.error("Please try again later");
     } finally {
       setIsLoading(false);
     }

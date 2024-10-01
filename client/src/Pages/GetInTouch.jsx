@@ -26,7 +26,7 @@ export default function GetInTouch() {
         e.preventDefault();
 
         try {
-            const res = await axios.post('http://localhost:5000/api/getintouch', formData, {
+            const res = await axios.post('https://website-server-six.vercel.app/api/getintouch', formData, {
                 headers: { "Content-Type": "application/json" }
             });
             // console.log(res.data);
