@@ -34,7 +34,7 @@ const Services = () => {
 
 }, []);
   
-  const handleServiceClick = (serviceId) => {
+   const handleServiceClick = (serviceId) => {
     if (serviceId === 'industrial-training-program') {
       navigate('/service/industrial-training-program'); // Use the correct route path
     } else {
@@ -71,7 +71,7 @@ const Services = () => {
 
         <div className="mt-10 flex md:flex-row flex-col justify-around items-center ">
           {servicesJson.services.map((service) => (
-               <div
+          <div
 
               key={service.id}
               className="p-8 flex flex-col justify-center items-center transition-transform transform hover:scale-105 hover-effect"
@@ -84,7 +84,7 @@ const Services = () => {
                   className="object-cover w-[8rem] h-[8rem] rounded-md image-hover"
                 />
               )}
-              <h3 className="mt-4 text-md font-medium text-center text-[rgba(255,255,255,0.7)]">{service.name}</h3>
+              <h3 className="mt-4 text-md font-medium text-center text-[#6B7280]">{service.name}</h3>
             </div>
           ))}
         </div>
