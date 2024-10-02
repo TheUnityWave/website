@@ -20,7 +20,7 @@ import BlogDetail from './Pages/BlogDetail';
 import ReferAndEarn from './Pages/ReferAndEarn';
 import Jobs from './Pages/Jobs'
 import JobDetailPage from './Pages/JobDetail'
-import IndustrialTraining from './Pages/IndustrialTraining'
+
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -99,7 +99,6 @@ function App() {
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/employee/*" element={<EmployeeDashboard />} />
           <Route path="/refer-and-earn" element={<ReferAndEarn />} />
-          <Route path="/service/industrial-training-program" element={< IndustrialTraining />} /> 
         </Routes>
         <Footer />
       </div>
