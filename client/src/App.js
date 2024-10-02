@@ -99,7 +99,7 @@ function App() {
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/employee/*" element={<EmployeeDashboard />} />
           <Route path="/refer-and-earn" element={<ReferAndEarn />} />
-          {/* <Route path="/service/industrial-training-program" element={< IndustrialTraining />} /> */}
+          <Route path="/service/industrial-training-program" element={< IndustrialTraining />} /> 
         </Routes>
         <Footer />
       </div>
