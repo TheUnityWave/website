@@ -27,12 +27,20 @@ const imageMap = {
 
 const Services = () => {
   const titleRef = useRef(null);
-
+    const navigate = useNavigate();
 
   useGSAP(() => {
     animateTextWordByWord(titleRef.current, {duration : 2});
 
 }, []);
+
+   const handleServiceClick = (serviceId) => {
+    if (serviceId === 'industrial-training-program') {
+      navigate('/service/industrial-training-program'); // Use the correct route path
+    } else {
+      navigate(`/service/${serviceId}`);
+    }
+  };
 
   return (
     <section className="py-12 bg-[#d0e3ff] " id='services'>
@@ -63,10 +71,10 @@ const Services = () => {
 
         <div className="mt-10 flex md:flex-row flex-col justify-around items-center ">
           {servicesJson.services.map((service) => (
-           <Link 
-              to={`/service/${service.id}`} // Adjust the path as needed for your routing
+          <div
               key={service.id}
               className="p-8 flex flex-col justify-center items-center transition-transform transform hover:scale-105 hover-effect"
+              onClick={() => handleServiceClick(service.id)}
             >
               {service.images[0] && (
                 <img
@@ -76,7 +84,7 @@ const Services = () => {
                 />
               )}
               <h3 className="mt-4 text-md font-medium text-center text-[#6B7280]">{service.name}</h3>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
