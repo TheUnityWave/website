@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 const imageMap = {
   softImage,
   pestHome,
-  weddingHome,
+//  weddingHome,
   techHome,
   cleaningHome,
   businessHome,
