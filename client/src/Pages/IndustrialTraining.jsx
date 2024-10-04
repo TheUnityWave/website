@@ -14,7 +14,7 @@ const TrainingProgram = () => {
           <CourseInfo />
             <CourseService />
             <Faq />
-            <Feedback /> }
+            <Feedback /> 
         </div>
     );
 };
