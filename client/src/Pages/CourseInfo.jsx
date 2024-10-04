@@ -4,7 +4,7 @@ import Line from '../Images/line.png';
 import Doubtimg from '../Images/Doubtimg.jpg';
 import Teamwork from '../Images/teamWork.jpg';
 import SoftSkills from '../Images/SoftSkills.jpg';
-import Time from '../Images/time.png';
+import Time from '../Images/time.jpg';
 import Interview from '../Images/interview.jpg';
 import Feedback from '../Images/feedback.jpg';
 
