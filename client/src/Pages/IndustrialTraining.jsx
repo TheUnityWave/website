@@ -11,7 +11,7 @@ const TrainingProgram = () => {
         <div>
             <Industry />
            <Course />
-{           <CourseInfo />
+          <CourseInfo />
             <CourseService />
             <Faq />
             <Feedback /> }
