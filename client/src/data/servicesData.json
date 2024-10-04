@@ -226,7 +226,7 @@
         {
           "name": "",
           "image": "https://th.bing.com/th/id/OIP.pgmzax6uS1aBOOOdr93pXwHaEK?rs=1&pid=ImgDetMain.jpg",
-          "description": "Looking for the Pest control service? we got you covered, Protect your corporate offices and large ventures with our expert pest control services. Our tailored solutions ensure a pest-free environment, safeguarding your business from health risks, property damage, and compliance issues. Enhance workplace safety and maintain a clean, professional atmosphere. Trust us for reliable and effective pest management facility service ",
+          "description": "Looking for the pest control service? we got you covered, Protect your corporate offices and large ventures with our expert pest control services. Our tailored solutions ensure a pest-free environment, safeguarding your business from health risks, property damage, and compliance issues. Enhance workplace safety and maintain a clean, professional atmosphere. Trust us for reliable and effective pest management facility service ",
           "industry": [
             {
               "name": "Apartments",
@@ -255,7 +255,7 @@
     },
     {
       "id": "industrial-training-program",
-      "name": "Industrial training program",
+      "name": "Industrial Training Program",
       "images": ["Training", "https://imgur.com/EPsZqQu"],
       "subservices": []
 
