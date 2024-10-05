@@ -33,7 +33,7 @@ const Industry = () => {
 
 
         try {
-            const response = await axios.post('http://localhost:5000/api/demoform', data, {
+            const response = await axios.post('https://website-server-six.vercel.app/api//demoform', data, {
                 headers: { 'Content-Type': 'application/json' },
             });
             toast.success("Application Sent Successfully");
