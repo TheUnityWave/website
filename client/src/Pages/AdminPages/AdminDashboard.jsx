@@ -6,6 +6,8 @@ import Employees from './Employees';
 import GetInTouchAdmin from './GetInTouchAdmin';
 import RaiseTicket from './RaiseTicket';
 import PostAJob from './PostAJob';
+import ReferApplications from './ReferApplications';
+import DemoApplications from './DemoApplications';
 
 const AdminDashboard = () => {
     // const location = useLocation();
@@ -89,6 +91,8 @@ const AdminDashboard = () => {
                     <Route path="getintouch" element={<GetInTouchAdmin />} />
                     <Route path="tickets" element={<RaiseTicket />} />
                     <Route path="postajob" element={<PostAJob />} />
+                    <Route path="referandearn" element={<ReferApplications />} />
+                    <Route path="demoform" element={<DemoApplications />} />
                 </Routes>
             </div>
         </div>
