@@ -8,7 +8,10 @@ const JobApplication = require('../models/Career');
 const Ticket = require('../models/RaiseTicket');
 const Career = require('../models/Career');
 const Jobs = require('../models/Jobs');
+const Referral = require('../models/referModel');
+const Demo = require('../models/DemoFormModel');
 const { authorizeAdmin } = require('../middleware/authorizeAdmin');
+
 
 const { check, validationResult } = require('express-validator');
 // Endpoint to fetch all the job applications.
@@ -439,5 +442,22 @@ router.put('/job/editOpening/:id', authorizeAdmin, async (req, res) => {
     }
 });
 
+router.get('/referandearn', async (req, res) => {
+    try {
+        const referrals = await Referral.find(); // Fetch all referrals from the DB
+        res.json(referrals);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+router.get('/demoform', async (req, res) => {
+    try {
+        const DemoForm = await Demo.find(); // Fetch all referrals from the DB
+        res.json(DemoForm);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error' });
+    }
+});
 
 module.exports = router;
