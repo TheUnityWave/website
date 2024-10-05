@@ -7,7 +7,7 @@ const DemoApplications = () => {
 
         const fetchApplications = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/demoform', {
+                const response = await fetch('https://website-server-six.vercel.app/api/admin/demoform', {
                     headers: {
                         'auth-token': localStorage.getItem('token'),
                         'Content-Type': 'application/json'
