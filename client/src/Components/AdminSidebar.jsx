@@ -37,6 +37,12 @@ const AdminSidebar = () => {
                     <NavLink to="/admin/postajob" className="hover:bg-cyan-700 p-2 rounded">
                         Post A Job
                     </NavLink>
+                     <NavLink to="/admin/referandearn" className="hover:bg-cyan-700 p-2 rounded">
+                        Refer Applications
+                    </NavLink>
+                    <NavLink to="/admin/demoform" className="hover:bg-cyan-700 p-2 rounded">
+                        Demo Applications
+                    </NavLink>
                 </nav>
                 <nav className='flex flex-col text-sm'>
                     <NavLink onClick={toggleChangePassword} className="hover:bg-cyan-700 p-2 rounded mt-4">
@@ -72,6 +78,14 @@ const AdminSidebar = () => {
                 <NavLink to="/admin/postajob" className="hover:bg-cyan-700 w-20 p-1 rounded">
                     <LucidePodcast className='m-auto' />
                         Post A Job
+                </NavLink>
+                 <NavLink to="/admin/referandearn" className="hover:bg-cyan-700 w-20 p-1 rounded">
+                    <LucidePodcast className='m-auto' />
+                    Refer Applications
+                </NavLink>
+                <NavLink to="/admin/demoform" className="hover:bg-cyan-700 w-20 p-1 rounded">
+                    <LucidePodcast className='m-auto' />
+                    Demo Applications
                 </NavLink>
             </div>
         </>
